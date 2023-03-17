@@ -1,5 +1,64 @@
     <div class="block-main">
-        <div id="artificial_turf " class="block">
+        <div class="block-product">
+            <div class="container">
+                <div class ="title-block">
+                    <div class = "title-content">
+                        <h3 class = "title">Danh mục ưa thích</h3>
+                        <div class="describe">Danh mục được nhiều khách hàng yêu thích</div>
+                    </div>
+                </div>
+                <div id ="row">
+                    <div class = "box-banner-index">
+                        <div class = "index">
+                            <a href = "#">
+                                <img src = ".\img\img-listFav\banner_index_1.webp">
+                            </a>
+                        </div>
+                    </div>
+                    <div class = "box-banner-index">
+                        <div class = "index">
+                            <a href = "#">
+                                <img src = ".\img\img-listFav\banner_index_2.webp">
+                            </a>
+                        </div>
+                    </div>
+                    <div class = "box-banner-index">
+                        <div class = "index">
+                            <a href = "#">
+                                <img src = ".\img\img-listFav\banner_index_3.webp">
+                            </a>
+                        </div>
+                    </div>
+                    <div class = "box-banner-index">
+                        <div class = "index">
+                            <a href = "#">
+                                <img src = ".\img\img-listFav\banner_index_4.webp">
+                            </a>
+                        </div>
+                    </div>
+                    <div class = "box-banner-index">
+                        <div class = "index">
+                            <a href = "#">
+                                <img src = ".\img\img-listFav\banner_index_5.webp">
+                            </a>
+                        </div>
+                    </div>
+                    <div class = "box-banner-index">
+                        <div class = "index">
+                            <a href = "#">
+                                <img src = ".\img\img-listFav\banner_index_6.webp" style="width: 360px; max-height: 200px;">
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        
+        <div id="artificial_turf " class="block-product">
             <div class="container">
                 <div class="title-block">
                     <div class="title-content">
@@ -161,7 +220,7 @@
 
         </div>
 
-        <div id="natural_turf " class="block">
+        <div id="natural_turf " class="block-product">
             <div class="container">
                 <div class="title-block">
                     <div class="title-content">
@@ -322,7 +381,7 @@
             </div>
 
         </div>
-        <div id="futsal_turf " class="block">
+        <div id="futsal_turf " class="block-product">
             <div class="container">
                 <div class="title-block">
                     <div class="title-content">

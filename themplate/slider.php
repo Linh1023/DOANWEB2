@@ -7,7 +7,7 @@
             </ul>
 
         </div>
-        <div id = "info">
+        <div id = "info" >
             <div class = "info_1">
                 <div class = "box_info"> 
                     <div class = "icon">
@@ -46,67 +46,4 @@
             </div>
         </div>
         
-        <div class = "title-block">
-            <div class = "wrap-content">
-                <h3 class = "title-group">Danh mục ưa thích</h3>
-                <div class="title-group-note">Danh mục được nhiều khách hàng yêu thích</div>
-            </div>
-        </div>
-
-        <div id = "row">
-            <div class = "box-banner-index">
-                <div class = "index">
-                    <a href = "#">
-                        <img src = ".\img\img-listFav\banner_index_1.webp">
-                    </a>
-                </div>
-            </div>
-            <div class = "box-banner-index">
-                <div class = "index">
-                    <a href = "#">
-                        <img src = ".\img\img-listFav\banner_index_2.webp">
-                    </a>
-                </div>
-            </div>
-            <div class = "box-banner-index">
-                <div class = "index">
-                    <a href = "#">
-                        <img src = ".\img\img-listFav\banner_index_3.webp">
-                    </a>
-                </div>
-            </div>
-            <div class = "box-banner-index">
-                <div class = "index">
-                    <a href = "#">
-                        <img src = ".\img\img-listFav\banner_index_4.webp">
-                    </a>
-                </div>
-            </div>
-            <div class = "box-banner-index">
-                <div class = "index">
-                    <a href = "#">
-                        <img src = ".\img\img-listFav\banner_index_5.webp">
-                    </a>
-                </div>
-            </div>
-            <div class = "box-banner-index">
-                <div class = "index">
-                    <a href = "#">
-                        <img src = ".\img\img-listFav\banner_index_6.webp" style="width: 360px; max-height: 200px;">
-                    </a>
-                </div>
-            </div>
-
-
-
-
-        </div>
-
-
-        <div class = "title-block">
-            <div class = "wrap-content">
-                <h3 class = "title-group">Giày đá bóng sân cỏ nhân tạo</h3>
-                <div class="title-group-note">Giày đá banh đinh TF cập nhật thường xuyên</div>
-            </div>
-        </div>
     </div>
