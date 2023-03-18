@@ -16,14 +16,18 @@
     <!-- slider -->
     <link rel="stylesheet" href="./css/slider.css">
     <script src="./js/slider.js"></script>
+
+    <!-- header -->
+    <link rel="stylesheet" href="./css/top_menu.css">
+    <link rel="stylesheet" href="./fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./css/header.css">
+
 </head>
 <body>
-    <div id="wraper">
-        <div id="header">
-            
-        </div>
+    <div id="wrapper">
+        <?php include('themplate/header.php');?>
         <div id="topmenu">
-
+        <?php include('themplate/top_menu.php');?>
         </div>
         <div id="main">
             <?php include('themplate/slider.php');?>

@@ -1,0 +1,76 @@
+#header{
+  border-bottom: 1px solid rgb(194, 194, 194);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+}
+.container2{
+  margin: 0 auto;
+  display: flex;/*thu div lai bang kich thuoc dung cua div*/
+  width:1600px;
+  justify-content: space-around; /*chinh cho 3 cai div cach nhau ra*/
+
+}
+
+.content1{
+  display: flex;
+}
+
+.content1 .ti-headphone{
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.content1 #phone_header{
+  margin-top: 25px;
+  margin-left: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content1:hover{
+  color: rgb(2, 4, 66);
+  cursor: pointer;
+}
+
+.content2{
+  margin: 0 auto;
+}
+
+.content3 {
+  margin-top: 20px;
+}
+
+.content3 ul{
+  display: flex;
+  list-style-type: none;
+}
+
+.content3 ul li {
+  margin: 0px 15px;
+  font-size: 25px;
+}
+
+.content3 ul .gh:hover, .content3 ul .user:hover, .content3 ul .kl:hover {
+  color:aqua;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1600px) {
+  .container2{
+    width:1200px;
+  }
+}
+@media screen and (max-width: 1200px) {
+
+  .container2{
+    width: auto;
+    display: flex;
+  
+  }
+  .conent2{
+    flex:1;
+  }
+
+}
+@media screen and (max-width: 876px){}
+@media screen and (max-width: 375px){
+
+}
