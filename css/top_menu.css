@@ -1,24 +1,27 @@
 .top_menu{
-    margin-top: 20px;
+    width:1200px;
+    margin: 0 auto;
 }
 
 .top_menu ul{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     list-style-type: none;
     position: relative;
 }
 
 .top_menu > ul > li{
     height: 50px;
-    margin: 0px 15px;
-    padding: 15px 0px;
+    line-height:50px;
     text-align: left;
     
 }
+.top_menu > ul  > li > a >i{
+    font-size: 10px;
+}
 .top_menu > ul  > li > a{
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     color:black;
     text-decoration: none;
     top: 30px;
@@ -78,3 +81,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
 }
 
+@media screen and (max-width: 1200px) {
+    .top_menu ul{
+        display: none;
+    }
+}

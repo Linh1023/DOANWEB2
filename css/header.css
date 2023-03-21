@@ -1,12 +1,14 @@
 #header{
   border-bottom: 1px solid rgb(194, 194, 194);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.09);
+  padding: 10px;
 }
 .container2{
   margin: 0 auto;
   display: flex;/*thu div lai bang kich thuoc dung cua div*/
-  width:1600px;
+  width:1200px;
   justify-content: space-around; /*chinh cho 3 cai div cach nhau ra*/
+  height:65px;
 
 }
 
@@ -30,6 +32,9 @@
   cursor: pointer;
 }
 
+.content2 img{
+  margin: 10px 0;;
+}
 .content2{
   margin: 0 auto;
 }

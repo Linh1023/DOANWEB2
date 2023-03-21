@@ -26,9 +26,7 @@
 <body>
     <div id="wrapper">
         <?php include('themplate/header.php');?>
-        <div id="topmenu">
         <?php include('themplate/top_menu.php');?>
-        </div>
         <div id="main">
             <?php include('themplate/slider.php');?>
             <?php include('themplate/products.php');?>
