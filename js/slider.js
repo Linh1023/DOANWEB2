@@ -21,7 +21,7 @@ setInterval(next, 5000);//set thoi gian chay lai ham
 
 function prev(){
     index --;
-    if(index < 0) index = arr_hinh.length
+    if(index < 0) index = arr_hinh.length-1
 
     var show = document.getElementById("slide_img");
     show.src = arr_hinh[index];
