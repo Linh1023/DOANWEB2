@@ -22,6 +22,13 @@
     <link rel="stylesheet" href="./fonts/themify-icons-font/themify-icons/themify-icons.css">
     <link rel="stylesheet" href="./css/header.css">
 
+    <!-- footer -->
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <!-- post -->
+    <link rel="stylesheet" href="./css/post.css">
+
+
 </head>
 <body>
     <div id="wrapper">
@@ -30,8 +37,12 @@
         <div id="main">
             <?php include('themplate/slider.php');?>
             <?php include('themplate/products.php');?>
+            <?php include('themplate/post.php');?>
+            
         </div>
-        <div id="footer"></div>
+        <div id="footer">
+            <?php include('themplate/footer.php');?>
+        </div>
     </div>
     
 </body>
