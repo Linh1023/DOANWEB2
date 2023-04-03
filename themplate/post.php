@@ -1,4 +1,4 @@
-<div id="post">
+<div id="post" class="container">
     <div class="main">
         <div class="content">
             <div class="row">
