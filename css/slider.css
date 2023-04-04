@@ -78,6 +78,7 @@
 #contain1 #info .box_info .content{
     text-align: center;
     margin-top: 5px;
+    width:100%;
     font-family: Arial, Helvetica, sans-serif;
     color: gray;
 }

@@ -42,7 +42,8 @@
 #post .blogs{
     display: inline-flex;
     width: auto;
-    height: 370px;
+    flex-wrap:wrap;
+    justify-content: space-around;
 }
 #post .blog{
     height: 370px;
