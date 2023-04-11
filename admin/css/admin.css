@@ -1,0 +1,69 @@
+.LiMenu {
+    height: 50px;
+}
+
+.text-font-menu {
+    font-size: 17px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li .border-size-menu+.border-size-menu {
+    border: 2px solid red;
+}
+
+.position-static {
+    position: static !important;
+}
+
+/* sm */
+
+
+
+@media screen and (min-width: 576px) {
+    .absolute-sm {
+        position: absolute !important;
+    }
+
+    .static-sm {
+        position: static !important;
+    }
+
+    
+
+}
+
+/* md */
+@media (max-width: 768px) {
+    .col.col-12.bg-dark.col-lg-10.col-md-10 {
+        margin-top: 56px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .static-md {
+        position: static !important;
+    }
+
+}
+
+/* lg */
+@media (min-width: 992px) {
+    .static-lg {
+        position: static !important;
+    }
+
+}
+.list-unstyled.text-black >a{
+    color:#fff;
+    text-decoration: none;
+}
+#menu{
+    left:47px;
+    /* height:100%; */
+}
