@@ -32,16 +32,16 @@
 </head>
 <body>
     <div id="wrapper">
-        <?php include('themplate/header.php');?>
-        <?php include('themplate/top_menu.php');?>
+        <?php include('template/header.php');?>
+        <?php include('template/top_menu.php');?>
         <div id="main">
-            <?php include('themplate/slider.php');?>
-            <?php include('themplate/products.php');?>
-            <?php include('themplate/post.php');?>
+            <?php include('template/slider.php');?>
+            <?php include('template/products.php');?>
+            <?php include('template/post.php');?>
             
         </div>
         <div id="footer">
-            <?php include('themplate/footer.php');?>
+            <?php include('template/footer.php');?>
         </div>
     </div>
     

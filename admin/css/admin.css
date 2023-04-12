@@ -11,6 +11,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+p,a{
+    text-decoration:none;
+    margin: 0 !important;
+    padding: 0 !important;
+    
+}
 
 li .border-size-menu+.border-size-menu {
     border: 2px solid red;
@@ -42,12 +48,19 @@ li .border-size-menu+.border-size-menu {
     .col.col-12.bg-dark.col-lg-10.col-md-10 {
         margin-top: 56px;
     }
-
+    
 }
 
 @media (min-width: 768px) {
     .static-md {
         position: static !important;
+    }
+    #menu{
+        height:100vh;
+        top:30px !important;
+    }
+    #main{
+        margin-top:30px !important;
     }
 
 }
@@ -57,13 +70,93 @@ li .border-size-menu+.border-size-menu {
     .static-lg {
         position: static !important;
     }
-
+    #menu{
+        height:100vh;
+        top:30px !important;
+    }
+    #main{
+        margin-top:30px !important;
+    }
 }
 .list-unstyled.text-black >a{
     color:#fff;
     text-decoration: none;
 }
 #menu{
-    left:47px;
-    /* height:100%; */
+    left:0;
+    top:0
 }
+div#topbar {
+    position: fixed;
+    height: 30px;
+    width: 100vw;
+    top: 0px;
+    z-index: 50;
+}
+#main{
+    margin-top: 56px;
+}
+#main > *:nth-child(2) > *{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+#main > *:nth-child(2) {
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+#topbar-1:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+#topbar-1 a{
+    color:#fff;
+    max-height:30px;
+
+    
+}
+.icon-back{
+    margin-right:10px;
+    max-height:30px
+}
+/* sanpham */
+#sanpham tr + tr{
+    
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    border-radius: 10%;
+}
+#sanpham table{
+    width:100%;
+    
+}
+#sanpham{
+    display: flex;
+}
+#sanpham table tr td .row > a:hover{
+    background-color: #ccc;
+}
+#sanpham table tr td .row > a{
+    width:50px;
+    color:#000;
+    text-align: center;
+    cursor: pointer;
+
+}
+#sanpham table tr td .row .xo{
+    background-color: rgb(165, 48, 48);
+}
+#sanpham table tr td .row .s{
+    background-color: rgb(199, 199, 0);
+}
+#sanpham table tr td .row .xe{
+    background-color: rgb(73, 167, 73);
+}
+#sanpham table tr td{
+    padding-left:15px;
+}
+#sanpham table tr td .hanhdongsp{
+    margin-bottom: 10px;
+}
+
+
+/*  */
