@@ -8,7 +8,9 @@
             <div class="col  col-4 d-none d-lg-flex">
                 
              </div>
-            <div class="col col-7 col-lg-4 px-4 justify-content-end d-flex">
-                Xin chào Admin Giày đá bóng chính hãng
+            <div class="col col-7 col-lg-4 px-4 justify-content-end d-flex align-text-top">
+                <p class="text-center">
+                    Xin chào Admin Giày đá bóng chính hãng
+                </p>
             </div>
         </div>

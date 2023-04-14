@@ -8,14 +8,14 @@
         <div class="row d-none d-lg-block d-md-block">
             <div class="img-logo ">
                     <a href="index.php">
-                    <img class="row w-100 mx-auto mt-3" src="./img/sneaker.jpg" alt="">
+                    <img class="row w-100 mx-auto mt-3" src="../img/img-logo/sneaker.jpg" alt="">
                     </a>
                 </div>
 
         </div>
-        <ul class="list-unstyled text-black ">
-            <a href="index.php?chon=$&id=tc">
-                <li class="row LiMenu text-center px-3 align-items-center border-secondary border-size-menu ">
+        <ul id='ulMenu' class="mt-2 list-unstyled text-black ">
+            <a href="index.php?id=tc">
+                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -24,8 +24,8 @@
                     </div>
                 </li>
             </a>
-            <a href="index.php?chon=$&id=nd">
-                <li class="row LiMenu text-center px-3 align-items-center border-secondary border-size-menu ">
+            <a href="index.php?id=nd">
+                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -34,8 +34,8 @@
                     </div>
                 </li>
             </a>
-            <a href="index.php?chon=$&id=sp">
-                <li class="row LiMenu text-center px-3 align-items-center border-secondary border-size-menu ">
+            <a href="index.php?id=sp">
+                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -44,8 +44,8 @@
                     </div>
                 </li>
             </a>
-            <a href="index.php?chon=$&id=dh">
-                <li class="row LiMenu text-center px-3 align-items-center border-secondary border-size-menu ">
+            <a href="index.php?id=dh">
+                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -54,8 +54,8 @@
                     </div>
                 </li>
             </a>
-            <a href="index.php?chon=$&id=bd">
-                <li class="row LiMenu text-center px-3 align-items-center border-secondary border-size-menu ">
+            <a href="index.php?id=bd">
+                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -64,8 +64,8 @@
                     </div>
                 </li>
             </a>
-            <a href="index.php?chon=$&id=pq">
-                <li class="row LiMenu text-center px-3 align-items-center border-secondary border-size-menu ">
+            <a href="index.php?id=pq">
+                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>

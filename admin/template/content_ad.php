@@ -1,4 +1,4 @@
-<div class="row" style="background-color:#f0f5f8;height:calc(100% - 72px)">
+<div id="content"class="row" style="background-color:#f0f5f8;height:calc(100% - 72px)">
 <?php
 if(isset($_GET['id'])){
     switch($_GET['id']){

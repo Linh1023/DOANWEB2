@@ -78,6 +78,7 @@ li .border-size-menu+.border-size-menu {
         margin-top:30px !important;
     }
 }
+/*  index*/
 .list-unstyled.text-black >a{
     color:#fff;
     text-decoration: none;
@@ -92,6 +93,7 @@ div#topbar {
     width: 100vw;
     top: 0px;
     z-index: 50;
+    box-shadow: 0 1px 6px 0 rgb(152 152 152 / 34%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
 #main{
     margin-top: 56px;
@@ -117,6 +119,10 @@ div#topbar {
 .icon-back{
     margin-right:10px;
     max-height:30px
+}
+/* menu */
+ul#ulMenu > a > li:hover{
+    /* background-color: #6c757d; */
 }
 /* sanpham */
 #sanpham tr + tr{
@@ -151,12 +157,87 @@ div#topbar {
 #sanpham table tr td .row .xe{
     background-color: rgb(73, 167, 73);
 }
-#sanpham table tr td{
+#sanpham table tr td ,#sanpham table tr th{
     padding-left:15px;
 }
-#sanpham table tr td .hanhdongsp{
-    margin-bottom: 10px;
+
+
+/*  khach hang*/
+#khachhang tr + tr{
+    
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    border-radius: 10%;
+}
+#khachhang table{
+    width:100%;
+    
+}
+#khachhang{
+    display: flex;
+}
+#khachhang table tr td .row > a:hover{
+    background-color: #ccc;
+}
+#khachhang table tr td .row > a{
+    width:50px;
+    color:#000;
+    text-align: center;
+    cursor: pointer;
+
+}
+#khachhang table tr td .row .xo{
+    background-color: rgb(165, 48, 48);
+}
+#khachhang table tr td .row .s{
+    background-color: rgb(199, 199, 0);
+}
+#khachhang table tr td .row .xe{
+    background-color: rgb(73, 167, 73);
+}
+#khachhang table tr td ,#khachhang table tr th{
+    padding-left:15px;
 }
 
+/* nhanvien */
+#nhanvien tr + tr{
+    
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    border-radius: 10%;
+}
+#nhanvien table{
+    width:100%;
+    
+}
+#nhanvien{
+    display: flex;
+}
+#nhanvien table tr td .row > a:hover{
+    background-color: #ccc;
+}
+#nhanvien table tr td .row > a{
+    width:50px;
+    color:#000;
+    text-align: center;
+    cursor: pointer;
 
-/*  */
+}
+#nhanvien table tr td .row .xo{
+    background-color: rgb(165, 48, 48);
+}
+#nhanvien table tr td .row .s{
+    background-color: rgb(199, 199, 0);
+}
+#nhanvien table tr td .row .xe{
+    background-color: rgb(73, 167, 73);
+}
+#nhanvien table tr td ,#nhanvien table tr th{
+    padding-left:15px;
+} 
+#main table tr td .hanhdong{
+    margin-bottom: 10px;
+}
+#main table tr td .hanhdong >a{
+    border-radius: 10px;
+}

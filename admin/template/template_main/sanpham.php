@@ -13,7 +13,6 @@ if ($result->num_rows > 0) {
                 <th>ID</th>
                 <th>Tên sản phẩm</th>
                 <th>Giá</th>
-                <th>Mô tả</th>
                 <th>Số lượng</th>
                 <th>Hãng</th>
             </tr>";
@@ -32,10 +31,11 @@ if ($result->num_rows > 0) {
                 <div class='row'>"
                     .$row['Ten']."
                 </div>
-                <div class='row hanhdongsp'>";
+                <div class='row hanhdong'>";
                
             foreach($hanhdong as $key=>$val){
-                echo"<a href='index.php?id=".$key."&dm=sp&idsp=".$row['MaSP']." ' class='".$key."'>
+                echo"<a href='index.php?id=sp&hd=".$key."&idsp=".$row['MaSP']."' class='".$key."'>
+                
                         <div class='col'>
                             $val
                         </div>
@@ -44,7 +44,6 @@ if ($result->num_rows > 0) {
         echo "        </div>
             </td>
             <td>" . $row["Gia"]. "</td>
-            <td>" . $row["MoTa"]. "</td>
             <td>" . $row["SLTonKho"]. "</td>
             <td>" . $rowTenHang["Ten"]. "</td>
         </tr>";

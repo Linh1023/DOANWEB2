@@ -10,3 +10,15 @@ function showmenu(){
     }
 
 }
+function choosemenu(){
+    // var ds = document.querySelectorAll('#ulMenu a li');
+    // ds.forEach(function(item) {
+    //     item.addEventListener("click", function() {
+    //       ds.forEach(function(item) {
+    //         item.style.backgroundColor = "white";
+    //       });
+    //       this.style.backgroundColor = "blue";
+    //     });
+    //   });
+
+}
