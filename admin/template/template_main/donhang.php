@@ -1,7 +1,4 @@
-<!--
-    kich thuoc table la w = 1076
-    kich thuoc khung la 1100x 1048
--->
+
 <form action="" method="POST">
     <h2 id="title_dh">Danh sách đơn hàng</h2>
     <!-- Tạo thành chọn ngày lọc -->
