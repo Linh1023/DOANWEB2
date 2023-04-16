@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+detail<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,7 +15,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/admin.js"></script>
 
-    <link rel="stylesheet" href="./css/DonHang.css">
 
     <link rel="stylesheet" href="./css/admin.css">
 
@@ -29,7 +28,10 @@
             <div class="row " style="min-height:1200px;padding-bottom:50px;position: relative;">
                 <div class="col-2 d-none d-lg-block d-md-block"></div>
                 <?php include('template/menu_ad.php');?>
-                <?php include('template/main_ad.php');?>
+                <div id="main" class="col col-12 col-lg-10 col-md-10 ">
+                    <?php include('header_ad.php');?>
+                    <?php include('detail.php');?>
+                </div>
                 
             </div>
         </div>
