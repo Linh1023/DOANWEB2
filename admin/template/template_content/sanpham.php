@@ -1,4 +1,11 @@
 <div id="sanpham">
+    <div class="row">
+        <div class="col mx-2" style="max-width:165px;border-radius: 20px;background-color: #5ba0ee; color: #000;">
+            <a href="new-sp.php" class="row">
+                <div class="col text-black">Thêm Sản Phẩm</div>
+            </a>
+        </div>
+    </div>
 <?php
 include '../db/dbconnect.php';
 // Truy vấn danh sách sản phẩm
