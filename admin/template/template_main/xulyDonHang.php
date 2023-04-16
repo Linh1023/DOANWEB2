@@ -8,10 +8,4 @@
             header('Location:../../index.php?chon=$&id=dh');
         }
     }
-
-    if(isset($_GET['Refresh'])){
-        header('Location:../../index.php?chon=$&id=dh');
-    }
-
-    
 ?>

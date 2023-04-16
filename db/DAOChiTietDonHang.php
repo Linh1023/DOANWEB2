@@ -1,5 +1,5 @@
 <?php
-class DAODonHang
+class DAOChiTietDonHang
 {
     private $host = 'localhost';
     private $username = 'root';
@@ -26,9 +26,9 @@ class DAODonHang
             mysqli_close($this->conn);
     }
 
-    public function getList($table)
+    public function getList($madon)
     {
-        $sql = 'SELECT * FROM '.$table;
+        $sql = 'SELECT MaSP,SoLuong,Gia,TongTien FROM chitietdonhang WHERE MaDonHang ='.$madon;
         $data = null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row = mysqli_fetch_array($result)){
@@ -41,27 +41,5 @@ class DAODonHang
             return false;
     }
 
-    public function xulyDon($madon)
-    {
-        $sql = 'UPDATE donhang SET TrangThai = 1 WHERE MaDonHang = '.$madon;
-        if($result = mysqli_query($this->conn,$sql)){
-            return true;
-        }
-        else
-            return false;
-    }
-    public function Loc($from,$to){
-        $sql = "SELECT * FROM donhang WHERE NgayDat between '$from' AND '$to'";
-        $data = null;
-        if($result = mysqli_query($this->conn,$sql)){
-            while($row = mysqli_fetch_array($result)){
-                $data[] = $row;
-            }
-            mysqli_free_result($result);
-            return $data;
-        }
-        else
-            return false;
-    }
 }
 ?>

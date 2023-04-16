@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#ctdh{
+    margin: 100px 250px;
+    border: 2px solid black;
+    width: 900px;
+}
+h2{
+    color: red;
+    margin: 10px 50px;
+    text-align: center;
+    background-color: bisque;
+    border-radius: 10px;
+}
+
+p{
+    font-size: 18px;
+    margin: 10px 50px;
+    font-weight: bold;
+}
+
+#ds_donhang{
+    width: 90%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 30px 50px;
+}
+#ds_donhang th{
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 18px;
+    background-color: orange;
+}
+
+#ds_donhang td{
+    text-align: center;
+    border: 1px solid black;
+    padding: 8px;
+}
+
