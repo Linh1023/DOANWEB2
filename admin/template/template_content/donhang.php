@@ -89,16 +89,28 @@
                             <td><?php echo $data[$i][1]?></td>
                             <td><?php echo $data[$i][2]?></td>
                             <td><?php echo $data[$i][3]?></td>
-                            <td><?php 
+                            <td <?php
+                                if($data[$i][4]!=1){
+                                    echo "style = 'background-color: red; color: white;'";
+                                }
+                            ?>>
+                                <?php 
                                     if($data[$i][4]==1){
                                         echo 'Đã sử lý';
                                     }
                                     else{
                                         echo 'Chưa xử lý';
                                     }
-                                ?></td>
+                                ?>
+                            </td>
                             <td><?php echo $data[$i][5]?></td>
-                            <td><a href="./template/template_content/xulyDonHang.php?XL=<?php echo $data[$i][0]?>"><div>Xử lý đơn hàng</div></a></td>
+                            <td>
+                                <?php
+                                    if($data[$i][4]!=1){
+                                        echo '<a href="./template/template_content/xulyDonHang.php?XL='. $data[$i][0].'"><div>Xử lý đơn hàng</div></a>';
+                                    }
+                                ?>
+                            </td>
                             <td><a href="./template/template_content/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&LuuY=<?php echo $data[$i][1]?>&MaTK=<?php echo $data[$i][2]?>&Date=<?php echo $data[$i][3]?>&TT=<?php echo $data[$i][5]?>"><div>Xem chi tiết đơn hàng</div></a></td>
                         </tr>
         <?php    
