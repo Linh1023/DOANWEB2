@@ -5,8 +5,6 @@ detail<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -29,8 +27,10 @@ detail<!DOCTYPE html>
                 <div class="col-2 d-none d-lg-block d-md-block"></div>
                 <?php include('template/menu_ad.php');?>
                 <div id="main" class="col col-12 col-lg-10 col-md-10 ">
-                    <?php include('header_ad.php');?>
-                    <?php include('detail.php');?>
+                    <?php include('template/header_ad.php');?>
+                    <div id="content"class="row" style="background-color:#f0f5f8;height:calc(100% - 72px)">
+                        
+                    </div>
                 </div>
                 
             </div>

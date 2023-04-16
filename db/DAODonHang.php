@@ -41,8 +41,7 @@ class DAODonHang
             return false;
     }
 
-    public function xulyDon($madon)
-    {
+    public function xulyDon($madon){
         $sql = 'UPDATE donhang SET TrangThai = 1 WHERE MaDonHang = '.$madon;
         if($result = mysqli_query($this->conn,$sql)){
             return true;
