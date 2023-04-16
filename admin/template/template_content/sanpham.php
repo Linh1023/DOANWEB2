@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
                 <div class='row hanhdong'>";
                
             foreach($hanhdong as $key=>$val){
-                echo"<a href='index.php?id=sp&hd=".$key."&idsp=".$row['MaSP']."' class='".$key."'>
+                echo"<a href='template/template_content/detail_ad.php?id=sp&hd=".$key."&idsp=".$row['MaSP']."' class='".$key."'>
                 
                         <div class='col'>
                             $val
