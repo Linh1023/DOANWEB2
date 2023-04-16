@@ -90,7 +90,6 @@ li .border-size-menu+.border-size-menu {
 }
 #menu{
     left:0;
-    top:0
 }
 div#topbar {
     position: fixed;
@@ -126,9 +125,6 @@ div#topbar {
     max-height:30px
 }
 /* menu */
-ul#ulMenu > a > li:hover{
-    /* background-color: #6c757d; */
-}
 /* sanpham */
 #sanpham tr + tr{
     
@@ -141,7 +137,7 @@ ul#ulMenu > a > li:hover{
     
 }
 #sanpham{
-    display: flex;
+    /* display: flex; */
 }
 #sanpham table tr td .row > a:hover{
     background-color: #ccc;
