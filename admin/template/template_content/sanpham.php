@@ -16,11 +16,6 @@ if ($result->num_rows > 0) {
                 <th>Số lượng</th>
                 <th>Hãng</th>
             </tr>";
-    $hanhdong=array(
-        "xe"=>"Xem",
-        "s"=>"Sửa",
-        "xo"=>"Xóa"
-    );
     while($row = $result->fetch_assoc()) {
         $selectTenHang = 'SELECT Ten FROM hang WHERE MaHang = "'. $row['MaHang'] . '"';
         $resultTenHang = mysqli_query($conn, $selectTenHang);
@@ -32,15 +27,27 @@ if ($result->num_rows > 0) {
                     .$row['Ten']."
                 </div>
                 <div class='row hanhdong'>";
-               
-            foreach($hanhdong as $key=>$val){
-                echo"<a href='template/template_content/detail_ad.php?id=sp&hd=".$key."&idsp=".$row['MaSP']."' class='".$key."'>
+                echo"<a href='#' class='xem'>
                 
                         <div class='col'>
-                            $val
+                            Xem
                         </div>
                     </a>";
-                }
+                
+                echo"<a href='edit.php?hd=s&id=".$row['MaSP']."' class='sua'>
+                
+                        <div class='col'>
+                            Sửa
+                        </div>
+                    </a>";
+                
+                echo"<a href='edit.php?hd=x&id=".$row['MaSP']."' class='xoa'>
+                
+                        <div class='col'>
+                            Xóa
+                        </div>
+                    </a>";
+                
         echo "        </div>
             </td>
             <td>" . $row["Gia"]. "</td>

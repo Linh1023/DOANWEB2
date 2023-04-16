@@ -25,6 +25,9 @@ if(isset($_GET['id'])){
         case 'pq':
             include('template_content/phanquyen.php');
         break;
+        case 'pn':
+            include('template_content/phieunhap.php');
+        break;
     }
 }
                     

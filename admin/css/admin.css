@@ -66,6 +66,11 @@ li .border-size-menu+.border-size-menu {
 }
 
 /* lg */
+@media (min-width: 1400px) {
+    #menu{
+        width: 250px;
+    }
+}
 @media (min-width: 992px) {
     .static-lg {
         position: static !important;
@@ -148,13 +153,13 @@ ul#ulMenu > a > li:hover{
     cursor: pointer;
 
 }
-#sanpham table tr td .row .xo{
+#sanpham table tr td .row .xoa{
     background-color: rgb(165, 48, 48);
 }
-#sanpham table tr td .row .s{
+#sanpham table tr td .row .sua{
     background-color: rgb(199, 199, 0);
 }
-#sanpham table tr td .row .xe{
+#sanpham table tr td .row .xem{
     background-color: rgb(73, 167, 73);
 }
 #sanpham table tr td ,#sanpham table tr th{
