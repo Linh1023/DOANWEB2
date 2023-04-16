@@ -28,12 +28,15 @@
             <th>Xem chi tiết</th>
         </tr>
         <?php
-            include("../db/DAODonHang.php");
-            $db = new DAODonHang();
-            $db->connect();
-            $data = $db->getList('donhang');
-            $i=0;
-            while ($i < count($data)){
+            if(isset($_POST['Loc']) == false){
+                include("../db/DAODonHang.php");
+                $db = new DAODonHang();
+                $db->connect();
+                $data = $db->getList('donhang');
+                $i=0;
+                while ($i < count($data)){
+
+            
         ?>
                 <tr>
                     <td><?php echo $data[$i][0]?></td>
@@ -50,10 +53,47 @@
                         ?></td>
                     <td><?php echo $data[$i][5]?></td>
                     <td><a href="./template/template_main/xulyDonHang.php?XL=<?php echo $data[$i][0]?>"><div>Xử lý đơn hàng</div></a></td>
-                    <td><a href="xuly.php?CT=<?php echo $data[$i][0]?>"><div>Xem chi tiết đơn hàng</div></a></td>
+                    <td><a href="./template/template_main/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&LuuY=<?php echo $data[$i][1]?>&MaTK=<?php echo $data[$i][2]?>&Date=<?php echo $data[$i][3]?>&TT=<?php echo $data[$i][5]?>"><div>Xem chi tiết đơn hàng</div></a></td>
                 </tr>
         <?php
-                $i++;
+                    $i++;
+                }
+            }
+            else{
+                if(isset($_POST['from']) && $_POST['to']){
+                    $from = $_POST['from'];
+                    $to = $_POST['to'];
+                    include('../db/DAODonHang.php');
+                    $db = new DAODonHang();
+                    $db->connect();
+                    $data = $db->Loc($from,$to);
+                    if($data == false){
+                        return;
+                    }
+                    $i=0;
+                    while ($i < count($data)){
+        ?>
+                        <tr>
+                            <td><?php echo $data[$i][0]?></td>
+                            <td><?php echo $data[$i][1]?></td>
+                            <td><?php echo $data[$i][2]?></td>
+                            <td><?php echo $data[$i][3]?></td>
+                            <td><?php 
+                                    if($data[$i][4]==1){
+                                        echo 'Đã sử lý';
+                                    }
+                                    else{
+                                        echo 'Chưa xử lý';
+                                    }
+                                ?></td>
+                            <td><?php echo $data[$i][5]?></td>
+                            <td><a href="./template/template_main/xulyDonHang.php?XL=<?php echo $data[$i][0]?>"><div>Xử lý đơn hàng</div></a></td>
+                            <td><a href="./template/template_main/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&LuuY=<?php echo $data[$i][1]?>&MaTK=<?php echo $data[$i][2]?>&Date=<?php echo $data[$i][3]?>&TT=<?php echo $data[$i][5]?>"><div>Xem chi tiết đơn hàng</div></a></td>
+                        </tr>
+        <?php    
+                        $i++;
+                    }
+                }
             }
         ?>
 
