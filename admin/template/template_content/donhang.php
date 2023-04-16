@@ -54,7 +54,7 @@
                             }
                         ?>
                     </td>
-                    <td><?php echo $data[$i][5]?></td>
+                    <td><?php echo number_format($data[$i][5],0,',','.')."đ"?></td>
                     <td>
                         <?php
                             if($data[$i][4]!=1){
@@ -103,7 +103,7 @@
                                     }
                                 ?>
                             </td>
-                            <td><?php echo $data[$i][5]?></td>
+                            <td><?php echo number_format($data[$i][5],0,',','.')."đ"?></td>
                             <td>
                                 <?php
                                     if($data[$i][4]!=1){
