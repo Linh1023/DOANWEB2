@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2023 at 05:43 AM
+-- Generation Time: Apr 16, 2023 at 05:15 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -34,6 +34,24 @@ CREATE TABLE `chitietdonhang` (
   `Gia` int(11) NOT NULL,
   `TongTien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `chitietdonhang`
+--
+
+INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `SoLuong`, `Gia`, `TongTien`) VALUES
+('001', 1, 10, 1190000, 11900000),
+('001', 2, 10, 1190000, 11900000),
+('003', 5, 1, 1900000, 1900000),
+('007', 3, 1, 3100000, 3100000),
+('007', 4, 2, 3100000, 6200000),
+('008', 7, 1, 3500000, 3500000),
+('010', 8, 1, 2900000, 2900000),
+('013', 5, 1, 4100000, 4100000),
+('013', 6, 1, 4100000, 4100000),
+('013', 9, 1, 4100000, 4100000),
+('021', 10, 1, 3500000, 3500000),
+('031', 12, 1, 550000, 550000);
 
 -- --------------------------------------------------------
 
@@ -75,6 +93,23 @@ CREATE TABLE `donhang` (
   `TrangThai` tinyint(1) NOT NULL,
   `TongTien` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `donhang`
+--
+
+INSERT INTO `donhang` (`MaDonHang`, `LuuY`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongTien`) VALUES
+(1, '', 'TK-001', '2023-02-23', 1, 11900000),
+(2, '', 'TK-003', '2022-09-08', 0, 11900000),
+(3, '', 'TK-002', '2021-07-12', 0, 3100000),
+(4, '', 'TK-003', '2020-08-09', 0, 6200000),
+(5, '', 'TK-004', '2018-09-13', 0, 6000000),
+(6, '', 'TK-001', '2018-09-17', 0, 4100000),
+(7, '', 'TK-002', '2019-02-17', 0, 3500000),
+(8, '', 'TK-003', '2019-02-28', 1, 2900000),
+(9, '', 'TK-004', '2020-05-28', 1, 4100000),
+(10, '', 'TK-001', '2018-06-28', 1, 3500000),
+(12, '', 'TK-003', '2023-08-24', 1, 550000);
 
 -- --------------------------------------------------------
 
