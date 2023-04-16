@@ -3,7 +3,7 @@
     padding: 0px;
 }
 #title_dh{
-    color: red;
+    color: brown;
     margin: 30px 30px;
     text-align: center;
     background-color: bisque;
@@ -32,9 +32,9 @@ label{
     background-color: aqua;
 }
 #ds_donhang{
+    width: 100%;
     border: 1px solid black;
     border-collapse: collapse;
-    margin: 30px 5px;
 }
 #ds_donhang th{
     text-align: center;
@@ -46,8 +46,9 @@ label{
 
 #ds_donhang td{
     text-align: center;
+    font-size: 16px;
     border: 1px solid black;
-    padding: 8px;
+    padding: 5px;
 }
 
 #ds_donhang a{

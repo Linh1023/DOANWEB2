@@ -14,7 +14,8 @@
     <p>Mã tài khoản:      <?php echo $MaTK?></p>
     <p>Lưu ý:             <?php echo $LuuY?></p>
     <p>Ngày đặt:          <?php echo $Date?></p>
-    <p>Tổng tiền:         <?php echo $TT?></p>
+    <!-- Hien thi theo tien viet nam -->
+    <p>Tổng tiền:         <?php echo number_format($TT,0,',','.')."đ"?></p>
 
     <table id="ds_donhang">
         <tr>
@@ -34,8 +35,8 @@
                 <tr>
                     <td><?php echo $data[$i][0]?></td>
                     <td><?php echo $data[$i][1]?></td>
-                    <td><?php echo $data[$i][2]?></td>
-                    <td><?php echo $data[$i][3]?></td>
+                    <td><?php echo number_format($data[$i][2],0,',','.')."đ"?></td>
+                    <td><?php echo number_format($data[$i][3],0,',','.')."đ"?></td>
                 </tr>
         <?php
                 $i++;

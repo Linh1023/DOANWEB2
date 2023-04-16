@@ -5,10 +5,11 @@
 #ctdh{
     margin: 100px 250px;
     border: 2px solid black;
+    border-radius: 10px;
     width: 900px;
 }
 h2{
-    color: red;
+    color: brown;
     margin: 10px 50px;
     text-align: center;
     background-color: bisque;
