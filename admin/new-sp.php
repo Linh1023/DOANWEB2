@@ -1,4 +1,3 @@
-detail
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +30,7 @@ detail
                     <?php include('template/header_ad.php'); ?>
                     <div id="content" class="row" style="background-color:#f0f5f8;height:calc(100% - 72px)">
                         <div class="main mx-auto ">
-                            <div class="row justify-content-center display-4">Sửa sản phẩm</div>
+                            <div class="row justify-content-center display-4">Thêm sản phẩm</div>
                             <div class="row mt-2">
                                 <label class="row">
                                     <div class="col col-4">Tên:</div>
@@ -136,7 +135,11 @@ detail
                                             <option value="15">Giảm 15%</option>
                                             <option value="Khác">Khác</option>
                                         </select>
-
+                                        <!-- if (selectedValue === '80') {
+                                            input.value = parseInt(input.value) - 20;
+                                            input.disabled = true;
+                                            } else {
+                                            input.disabled = false; -->
                                     </div>
                                 </label>
                             </div>

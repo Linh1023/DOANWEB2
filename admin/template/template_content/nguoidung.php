@@ -20,7 +20,6 @@ if ($result->num_rows > 0) {
                 <th>Địa chỉ</th>
                 <th>SĐT</th>
                 <th>Tên đăng nhập</th>
-                <th>Email</th>
                 <th>Mat Khau</th>
                 <th>Tình trạng</th>
             </tr>";
@@ -54,7 +53,6 @@ if ($result->num_rows > 0) {
             <td>" . $row["DiaChi"]. "</td>
             <td>" . $row["SDT"]. "</td>
             <td>" . $rowTaiKhoan["TenDN"]. "</td>
-            <td>" . $rowTaiKhoan["Email"]. "</td>
             <td>" . $rowTaiKhoan["MatKhau"]. "</td>
             <td>" . $rowTaiKhoan["TinhTrang"]. "</td>
         </tr>";
@@ -79,7 +77,6 @@ if ($result->num_rows > 0) {
             <th>Địa chỉ</th>
             <th>SĐT</th>
             <th>Tên đăng nhập</th>
-            <th>Email</th>
             <th>Mat Khau</th>
             <th>Tình trạng</th>
         </tr>";
@@ -113,7 +110,6 @@ if ($result->num_rows > 0) {
             <td>" . $row["DiaChi"]. "</td>
             <td>" . $row["SDT"]. "</td>
             <td>" . $rowTaiKhoan["TenDN"]. "</td>
-            <td>" . $rowTaiKhoan["Email"]. "</td>
             <td>" . $rowTaiKhoan["MatKhau"]. "</td>
             <td>" . $rowTaiKhoan["TinhTrang"]. "</td>
         </tr>";

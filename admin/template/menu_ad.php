@@ -74,6 +74,16 @@
                     </div>
                 </li>
             </a>
+            <a href="index.php?id=pn">
+                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                    <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
+                        <i class="fa fa-yin-yang"></i>
+                    </div>
+                    <div class="col-lg-9 col-12 px-0">
+                        <p class="text-font-menu m-0">Phiếu Nhập</p>
+                    </div>
+                </li>
+            </a>
         </ul>
     </div>
 
