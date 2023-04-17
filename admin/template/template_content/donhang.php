@@ -1,6 +1,6 @@
 
 <form action="" method="POST">
-    <h2 id="title_dh">Danh sách đơn hàng</h2>
+    <h2 id="title_dh">Danh sách đơn</h2>
     <!-- Tạo thành chọn ngày lọc -->
     <h3 id="title_loc">Lọc đơn hàng theo ngày</h3>
     <label for="from" class="label_from">Từ :</label>
