@@ -30,13 +30,31 @@ detail
                 <div id="main" class="col col-12 col-lg-10 col-md-10 ">
                     <?php include('template/header_ad.php'); ?>
                     <div id="content" class="row" style="background-color:#f0f5f8;height:calc(100% - 72px)">
+                    <?php
+                    if(isset($_GET['id'])){
+                        include('../db/dbconnect.php');
+                        $id=$_GET['id'];
+                        $sql='SELECT * FROM sanpham WHERE MaSP="'.$id.'"';
+                        $result = $conn->query($sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            // Lấy thông tin sản phẩm
+                            $row = mysqli_fetch_assoc($result);
+                            $ten = $row["Ten"];
+                            $moTa = $row["MoTa"];
+                            $gia = $row["Gia"];
+                            $hinhAnh = $row["AnhChinh"];
+                            $khuyenMai = $row["KhuyenMai"];
+                            $soLuong = $row["SLTonKho"];
+                        }
+                    }
+                    ?>
                         <div class="main mx-auto ">
                             <div class="row justify-content-center display-4">Sửa sản phẩm</div>
                             <div class="row mt-2">
                                 <label class="row">
                                     <div class="col col-4">Tên:</div>
                                     <div class="col col-8">
-                                        <input class="w-100" type="text">
+                                        <input class="w-100" type="text" value="<?php echo $ten;?>">
                                     </div>
                                 </label>
                             </div>
@@ -44,7 +62,7 @@ detail
                                 <label class="row">
                                     <div class="col col-4">Mô tả:</div>
                                     <div class="col col-8">
-                                        <textarea class="w-100" rows="" cols="">hi</textarea>
+                                        <textarea class="w-100" rows="" cols=""><?php echo $moTa;?></textarea>
 
                                     </div>
                                 </label>
@@ -53,7 +71,7 @@ detail
                                 <label class="row">
                                     <div class="col col-4">Giá:</div>
                                     <div class="col col-8">
-                                        <input class="w-100" type="text">
+                                        <input class="w-100" type="text" value="<?php echo $gia;?>">
                                     </div>
                                 </label>
                             </div>
@@ -84,7 +102,7 @@ detail
                                 <label class="row">
                                     <div class="col col-4">Số lượng tồn kho:</div>
                                     <div class="col col-8">
-                                        <input class="w-100" type="text">
+                                        <input class="w-100" type="number" value="<?php echo $solu;?>">
                                     </div>
                                 </label>
                             </div>
@@ -100,7 +118,7 @@ detail
                                 <div class="col col-4"></div>
                                 <div class="col col-8">
                                     <div class="row">
-                                        <img style="width: 300px;min-height: 150px;"src="../img/img-logo/sneaker.jpg" alt="" id="imagePreview">
+                                        <img style="width: 300px;min-height: 150px;" src="<?php echo ($hinhAnh=="#")?"../img/img-logo/sneaker.jpg":$hinhAnh?>"alt="" id="imagePreview">
                                     </div>
                                 </div>
                             </div>

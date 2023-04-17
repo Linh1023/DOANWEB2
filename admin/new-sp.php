@@ -151,7 +151,13 @@
                                     </div>
                                 </label>
                             </div>
-
+                            <div class="row">
+                                <div class="col col-4"></div>
+                                <div class="col col-8">
+                                    <div class="col" class='btn bg-success'>Thêm</div>
+                                    <div class="col" class='btn'>Hủy</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
