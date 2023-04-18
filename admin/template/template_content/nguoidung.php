@@ -68,7 +68,9 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "
-    <div id='nhanvien'>
+    <div id='nhanvien' class='d-block'>
+    <div class='row mark m-0'>
+    <p class='text-center'>Bảng nhân viên</p></div>
     <table>
         <tr>
             <th>ID</th>
