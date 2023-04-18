@@ -5,7 +5,7 @@
         $db = new DAODonHang();
         $db->connect();
         if($db->XuLyDon($MaDon) == true){
-            header('Location:../../index.php?chon=$&id=dh');
+            header('Location:../../index.php?id=dh');
         }
     }
 ?>

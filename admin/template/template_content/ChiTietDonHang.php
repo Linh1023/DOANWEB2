@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../../css/ChiTietDonHang.css">
+<link rel="stylesheet" href="../../css/bootstrap.min.css">
 
 <?php
     $Madon = $_GET['CT'];
@@ -8,12 +9,20 @@
     $TT = $_GET['TT'];
 ?>
 
-<div id="ctdh">
+<div id="ctdh" class="container">
     <h2>Chi Tiết Hóa Đơn</h2>
-    <p>Mã đơn hàng:       <?php echo $Madon?></p>
-    <p>Mã tài khoản:      <?php echo $MaTK?></p>
-    <p>Lưu ý:             <?php echo $LuuY?></p>
-    <p>Ngày đặt:          <?php echo $Date?></p>
+    <div class="row">
+        <div class="col col-6">
+                <p>Mã đơn hàng:       <?php echo $Madon?></p>
+                <p>Mã tài khoản:      <?php echo $MaTK?></p>
+        </div>
+        <div class="col col-6">
+            <p>Lưu ý:             <?php echo $LuuY?></p>
+                <p>Ngày đặt:          <?php echo $Date?></p>
+        </div>
+    </div>
+    
+    
     <!-- Hien thi theo tien viet nam -->
     <p>Tổng tiền:         <?php echo number_format($TT,0,',','.')."đ"?></p>
 
