@@ -1,10 +1,10 @@
 <div id="content"class="row" style="background-color:#f0f5f8;height:calc(100% - 72px)">
 <?php
-if(isset($_GET['id'])&&isset($_GET['hd'])&&isset($_GET['idsp'])){
-    if($_GET['id'])
-        include('template_content/detail_'.$id.'.php');
-}
-else
+// if(isset($_GET['id'])&&isset($_GET['hd'])&&isset($_GET['idsp'])){
+//     if($_GET['id'])
+//         include('template_content/detail_'.$id.'.php');
+// }
+// else
 if(isset($_GET['id'])){
     switch($_GET['id']){
         case 'tc':

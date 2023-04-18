@@ -31,6 +31,7 @@
                 $db->connect();
                 $data = $db->getList('donhang');
                 $i=0;
+                echo $data;
                 while ($i < count($data)){
 
             
