@@ -32,9 +32,9 @@
                         <div class="main mx-auto ">
                     <?php
                     if(isset($_GET['id'])){
+                        $id=$_GET['id'];
                         echo '<div class="row justify-content-center display-4">Sửa sản phẩm</div>';
                         include('../db/dbconnect.php');
-                        $id=$_GET['id'];
                         $sql='SELECT * FROM sanpham WHERE MaSP="'.$id.'"';
                         $result = $conn->query($sql);
                         if (mysqli_num_rows($result) > 0) {
@@ -59,7 +59,7 @@
                     }
                     ?>
                             
-                            <form action="xulyEdit.php" method="get">
+                            <form action="xuly/xulyEdit.php" method="get">
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Tên:</div>
@@ -180,10 +180,12 @@
                                         <div class="col col-3"></div>
                                         <div class="col col-9">
                                             <?php
-                                            if(isset($_GET['id']))
-                                            echo'<input type="submit" class="btn bg-success" value="Lưu thay đổi">';
+                                            if(isset($_GET['id'])){
+                                                echo "<input type='hidden' name='id' value=".$id.">'";
+                                                echo'<input type="submit" class="btn bg-success" name="hd" value="Lưu">';
+                                            }
                                             else
-                                            echo'<input type="submit" class="btn bg-success" value="Thêm">';
+                                            echo'<input type="submit" class="btn bg-success"name="hd" value="Thêm">';
                                             ?>
                                             <a href="index.php?id=sp "><div  class='btn text-black bg-danger'>Hủy</div></a>
                                         </div>
