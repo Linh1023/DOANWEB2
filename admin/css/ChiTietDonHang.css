@@ -3,6 +3,8 @@
     padding: 0px;
 }
 #ctdh{
+    position: fixed;
+    background-color: white;
     margin: 100px 250px;
     border: 2px solid black;
     border-radius: 10px;
@@ -10,7 +12,7 @@
 }
 h2{
     color: brown;
-    margin: 10px 50px;
+    margin: 30px 50px ;
     text-align: center;
     background-color: bisque;
     border-radius: 10px;

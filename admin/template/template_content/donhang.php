@@ -31,7 +31,6 @@
                 $db->connect();
                 $data = $db->getList('donhang');
                 $i=0;
-                echo $data;
                 while ($i < count($data)){
 
             
@@ -61,7 +60,9 @@
                                 echo '<a href="./template/template_content/xulyDonHang.php?XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
                             }
                         ?>
+                    </td>
                     <td><a href="./template/template_content/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&LuuY=<?php echo $data[$i][1]?>&MaTK=<?php echo $data[$i][2]?>&Date=<?php echo $data[$i][3]?>&TT=<?php echo $data[$i][5]?>"><div>Xem chi tiết đơn hàng</div></a></td>
+                
                 </tr>
         <?php
                     $i++;
@@ -100,7 +101,13 @@
                                     }
                                 ?></td>
                             <td><?php echo number_format($data[$i][5],0,',','.')."đ"?></td>
-                            <td><a href="./template/template_main/xulyDonHang.php?XL=<?php echo $data[$i][0]?>"><div>Xử lý đơn hàng</div></a></td>
+                            <td>
+                                <?php
+                                        if($data[$i][4]!=1){
+                                            echo '<a href="./template/template_content/xulyDonHang.php?XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
+                                        }
+                                    ?>
+                            </td>
                             <td><a href="./template/template_main/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&LuuY=<?php echo $data[$i][1]?>&MaTK=<?php echo $data[$i][2]?>&Date=<?php echo $data[$i][3]?>&TT=<?php echo $data[$i][5]?>"><div>Xem chi tiết đơn hàng</div></a></td>
                         </tr>
         <?php    
