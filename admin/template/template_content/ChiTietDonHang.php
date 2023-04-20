@@ -41,6 +41,7 @@
     <table id="ds_donhang">
         <tr>
             <th>Mã sản phẩm</th>
+            <th>Size</th>
             <th>Số lượng</th>
             <th>Giá</th>
             <th>Tổng tiền</th>
@@ -56,8 +57,9 @@
                 <tr>
                     <td><?php echo $data[$i][0]?></td>
                     <td><?php echo $data[$i][1]?></td>
-                    <td><?php echo number_format($data[$i][2],0,',','.')."đ"?></td>
+                    <td><?php echo $data[$i][2]?></td>
                     <td><?php echo number_format($data[$i][3],0,',','.')."đ"?></td>
+                    <td><?php echo number_format($data[$i][4],0,',','.')."đ"?></td>
                 </tr>
         <?php
                 $i++;

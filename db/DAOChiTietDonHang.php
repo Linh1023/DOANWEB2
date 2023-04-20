@@ -28,7 +28,7 @@ class DAOChiTietDonHang
 
     public function getList($madon)
     {
-        $sql = 'SELECT MaSP,SoLuong,Gia,TongTien FROM chitietdonhang WHERE MaDonHang ='.$madon;
+        $sql = 'SELECT MaSP,Size,SoLuong,Gia,TongTien FROM chitietdonhang WHERE MaDonHang ='.$madon;
         $data = null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row = mysqli_fetch_array($result)){

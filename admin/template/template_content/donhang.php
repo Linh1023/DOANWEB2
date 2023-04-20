@@ -16,7 +16,6 @@
     <table id="ds_donhang">
         <tr>
             <th>Mã đơn</th>
-            <th>Lưu ý</th>
             <th>Mã khách hàng</th>
             <th>Ngày đặt</th>
             <th>Trạng thái</th>
@@ -39,24 +38,23 @@
                     <td><?php echo $data[$i][0]?></td>
                     <td><?php echo $data[$i][1]?></td>
                     <td><?php echo $data[$i][2]?></td>
-                    <td><?php echo $data[$i][3]?></td>
                     <td <?php
-                        if($data[$i][4]!=1){
+                        if($data[$i][3]!=1){
                             echo "style = 'background-color: red; color: white;'";
                         }
                     ?>>
                         <?php 
-                            if($data[$i][4]==1){
+                            if($data[$i][3]==1){
                                 echo 'Đã sử lý';
                             }
                             else{
                                 echo 'Chưa xử lý';
                             }
                         ?></td>
-                    <td><?php echo number_format($data[$i][5],0,',','.')."đ"?></td>
+                    <td><?php echo number_format($data[$i][4],0,',','.')."đ"?></td>
                     <td>
                         <?php
-                            if($data[$i][4]!=1){
+                            if($data[$i][3]!=1){
                                 echo '<a href="./template/template_content/xulyDonHang.php?XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
                             }
                         ?>
@@ -86,24 +84,23 @@
                             <td><?php echo $data[$i][0]?></td>
                             <td><?php echo $data[$i][1]?></td>
                             <td><?php echo $data[$i][2]?></td>
-                            <td><?php echo $data[$i][3]?></td>
                             <td <?php
-                                if($data[$i][4]!=1){
+                                if($data[$i][3]!=1){
                                     echo "style = 'background-color: red; color: white;'";
                                 }
                             ?>>
                                 <?php 
-                                    if($data[$i][4]==1){
+                                    if($data[$i][3]==1){
                                         echo 'Đã sử lý';
                                     }
                                     else{
                                         echo 'Chưa xử lý';
                                     }
                                 ?></td>
-                            <td><?php echo number_format($data[$i][5],0,',','.')."đ"?></td>
+                            <td><?php echo number_format($data[$i][4],0,',','.')."đ"?></td>
                             <td>
                                 <?php
-                                        if($data[$i][4]!=1){
+                                        if($data[$i][3]!=1){
                                             echo '<a href="./template/template_content/xulyDonHang.php?XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
                                         }
                                     ?>
