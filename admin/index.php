@@ -17,6 +17,9 @@
 
     <link rel="stylesheet" href="./css/admin.css">
 
+    <!-- Css cua khuyen mai -->
+    <link rel="stylesheet" href="./css/KhuyenMai.css">
+
     <title>Admin</title>
 </head>
 
