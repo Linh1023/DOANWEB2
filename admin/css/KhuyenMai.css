@@ -13,7 +13,9 @@
 }
 
 #add_km{
+    color: black;
     background-color: cornflowerblue;
+    display: inline-block;
     font-weight: bold;
     border: 0px;
     padding: 5px 10px;

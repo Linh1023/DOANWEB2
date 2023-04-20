@@ -1,7 +1,7 @@
 
 <form method="post" action="./template/template_content/KhuyenMai/xulyKhuyenMai.php">
     <h3 id="title_km">Quản lý khuyến mãi</h3>
-    <input type="submit" id="add_km" value="Tạo khuyến mãi">
+    <a href="./template/template_content/KhuyenMai/xulyKhuyenMai.php?cn=Add"><div id="add_km">Tạo khuyến mãi</div></a>
     <table id="tbl_km">
         <tr>
             <th style = "width: 15%">Mã khuyến mãi</th>
