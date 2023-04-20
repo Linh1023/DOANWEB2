@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../../../css/XuLyKhuyenMai.css" >
-
+<!-- ^KM_ -->
 <?php
     if(isset($_GET['cn'])){
         switch($_GET['cn']){
