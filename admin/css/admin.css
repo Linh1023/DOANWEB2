@@ -66,11 +66,7 @@ li .border-size-menu+.border-size-menu {
 }
 
 /* lg */
-@media (min-width: 1400px) {
-    #menu{
-        width: 250px;
-    }
-}
+
 @media (min-width: 992px) {
     .static-lg {
         position: static !important;
@@ -82,6 +78,24 @@ li .border-size-menu+.border-size-menu {
     #main{
         margin-top:30px !important;
     }
+    #sanpham tr:hover .row.hanhdong>* {
+        display: block;
+    }
+    
+    #sanpham .row.hanhdong >* {
+        display: none;
+    }
+    #sanpham .hanhdong{
+        height:24px;
+    }
+}
+/* lg max */
+@media (min-width: 1400px) {
+    #menu{
+        width: 250px;
+    }
+    
+
 }
 /*  index*/
 .list-unstyled.text-black >a{

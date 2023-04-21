@@ -1,19 +1,19 @@
 <?php
-if (isset($_GET['hd'])){
-    $hd=$_GET['hd'];
-
+if (isset($_POST['hd'])){
+    $hd=$_POST['hd'];
+    $id=$_POST['id'];
     include '../../db/dbconnect.php';
     switch($hd){
         case "Lưu":
             // Truy vấn danh sách sản phẩm
-            $sql = "UPDATE sanpham   SET Ten='".$_GET['ten']."',
-                                        MoTa='".$_GET['mota']."',
-                                        Gia=".$_GET['gia'].",
-                                        KhuyenMai='".$_GET['khuyenmai']."' ,
-                                        DanhMuc='".$_GET['danhmuc']."' ,
-                                        SLTonKho=".$_GET['soluong'].",
-                                        AnhChinh='".$_GET['anhchinh']."'
-                                        WHERE maSP='".$_GET['id']."'";
+            $sql = "UPDATE sanpham   SET Ten='".$_POST['ten']."',
+                                        MoTa='".$_POST['mota']."',
+                                        Gia=".$_POST['gia'].",
+                                        KhuyenMai='".$_POST['khuyenmai']."' ,
+                                        DanhMuc='".$_POST['danhmuc']."' ,
+                                        AnhChinh='".$_POST['anhchinh']."',
+                                        MaHang='".$_POST['hang']."'
+                                        WHERE maSP='".$_POST['id']."'";
             echo $sql;
             $result=mysqli_query($conn, $sql);
             break;
@@ -26,8 +26,7 @@ if (isset($_GET['hd'])){
             if ($result->num_rows > 0) {
                 $i=0;
                 while($row = $result->fetch_assoc()) {
-                    foreach($row as $val)
-                    $listId[$i]=$val;
+                    $listId[$i]=$row['MaSP'];
                     $i++;
                 }
             }
@@ -44,17 +43,16 @@ if (isset($_GET['hd'])){
             while(strlen($id)!=3){
                 $id="0".$id;
             }
-            $sql="INSERT INTO sanpham (MaSP, Ten, MoTa, Gia, KhuyenMai, DanhMuc,SLTonKho, AnhChinh )
-            VALUES ('".$id."','".$_GET['ten']."','".$_GET['mota']."',".$_GET['gia'].",'".$_GET['khuyenmai']."','".$_GET['danhmuc']."',".$_GET['soluong'].",'".$_GET['anhchinh']."')";
+        // Thêm vào db
+            $sql="INSERT INTO sanpham (MaSP, Ten, MoTa, Gia, KhuyenMai, DanhMuc, AnhChinh,MaHang,NgayTao)
+            VALUES ('".$id."','".$_POST['ten']."','".$_POST['mota']."',".$_POST['gia'].",'".$_POST['khuyenmai']."','".$_POST['danhmuc']."','".$_POST['anhchinh']."','".$_POST['hang']."',CURDATE())";
             $result=mysqli_query($conn, $sql);
-            echo $sql;
-            if ($result)echo "ok";
-            else echo"lỗi";
+            if(!$result)echo "Lỗi";
             break;
     }
     // Đóng kết nối
     $conn->close();
-    // header("Location:../edit.php?id=".$id);
+    header("Location:../edit.php?id=".$id);
 }
 
 ?>

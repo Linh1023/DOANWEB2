@@ -8,6 +8,10 @@
     </div>
 <?php
 include '../db/dbconnect.php';
+if(isset($_GET['hd'])&&$_GET['hd']=='x'){
+    $sql = 'DELETE FROM sanpham WHERE MaSP = "'.$_GET['idsp'].'"';
+    $result = $conn->query($sql);
+}
 // Truy vấn danh sách sản phẩm
 $sql = "SELECT * FROM sanpham";
 $result = $conn->query($sql);
@@ -42,13 +46,12 @@ if ($result->num_rows > 0) {
                     </a>";
                 
                 echo"<a href='edit.php?hd=s&id=".$row['MaSP']."' class='sua'>
-                
                         <div class='col'>
                             Sửa
                         </div>
                     </a>";
                 
-                echo"<a href='edit.php?hd=x&id=".$row['MaSP']."' class='xoa'>
+                echo"<a href='index.php?id=sp&hd=x&idsp=".$row['MaSP']."' class='xoa'>
                 
                         <div class='col'>
                             Xóa
