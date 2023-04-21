@@ -54,5 +54,14 @@ class DAOKhuyenMai{
         }
         return false;
     }
+
+    public function updateKM($MaKM,$TenKM,$MoTa,$TiLeGiam){
+        $sql = "INSERT INTO khuyenmai (MaKhuyenMai,TenKhuyenMai,MoTa,TiLeGiam) VALUES ('$MaKM', '$TenKM', '$MoTa', '$TiLeGiam')";
+        if($result = mysqli_query($this->conn,$sql)){
+            return true;
+        }
+        return false;
+    }
+
 }
 ?>
