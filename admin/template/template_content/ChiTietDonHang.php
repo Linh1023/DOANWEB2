@@ -4,7 +4,6 @@
 
 <?php
     $Madon = $_GET['CT'];
-    $LuuY = $_GET['LuuY'];
     $MaTK = $_GET['MaTK'];
     $Date = $_GET['Date'];
     $TT = $_GET['TT'];
@@ -30,7 +29,6 @@
         <div class="col col-6">
             <p>Tên khách hàng: <?php echo $data[2]?></p>
             <p>Số điện thoại: <?php echo $data[4]?></p>  
-            <p>Lưu ý: <?php echo $LuuY?></p>
             <p>Ngày đặt: <?php echo $Date?></p>
         </div>
     </div>

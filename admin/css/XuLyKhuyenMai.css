@@ -57,8 +57,13 @@ input, #MoTa{
 #Add, #Edit{
     text-align: center;
     color:black;
-    margin: 10px 295px;
-    background-color: darkturquoise;
+    margin: 10px 275px;
+    background-color: #F4A950;
     width: 30%;
     display: inline-block;
+    cursor: pointer;
+}
+
+#Add:hover, #Edit:hover{
+    background-color: darkturquoise;
 }

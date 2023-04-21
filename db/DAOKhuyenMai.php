@@ -28,7 +28,9 @@ class DAOKhuyenMai{
         $data=null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row=mysqli_fetch_array($result)){
-                $data[] = $row;
+                if($row[0] != '#'){
+                    $data[] = $row;
+                }
             }
             mysqli_free_result($result);
         }
