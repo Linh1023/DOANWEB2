@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2023 at 09:21 AM
+-- Generation Time: Apr 21, 2023 at 12:02 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `chitietdonhang` (
   `MaSP` varchar(50) NOT NULL,
   `MaDonHang` int(11) NOT NULL,
+  `Size` int(11) NOT NULL,
   `SoLuong` int(11) NOT NULL,
   `Gia` int(11) NOT NULL,
   `TongTien` int(11) NOT NULL
@@ -39,19 +40,19 @@ CREATE TABLE `chitietdonhang` (
 -- Dumping data for table `chitietdonhang`
 --
 
-INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `SoLuong`, `Gia`, `TongTien`) VALUES
-('001', 1, 10, 1190000, 11900000),
-('001', 2, 10, 1190000, 11900000),
-('003', 5, 1, 1900000, 1900000),
-('007', 3, 1, 3100000, 3100000),
-('007', 4, 2, 3100000, 6200000),
-('008', 7, 1, 3500000, 3500000),
-('010', 8, 1, 2900000, 2900000),
-('013', 5, 1, 4100000, 4100000),
-('013', 6, 1, 4100000, 4100000),
-('013', 9, 1, 4100000, 4100000),
-('021', 10, 1, 3500000, 3500000),
-('031', 12, 1, 550000, 550000);
+INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `Size`, `SoLuong`, `Gia`, `TongTien`) VALUES
+('001', 1, 39, 10, 1190000, 11900000),
+('001', 2, 41, 10, 1190000, 11900000),
+('003', 5, 40, 1, 1900000, 1900000),
+('007', 3, 39, 1, 3100000, 3100000),
+('007', 4, 41, 2, 3100000, 6200000),
+('008', 7, 40, 1, 3500000, 3500000),
+('010', 8, 41, 1, 2900000, 2900000),
+('013', 5, 39, 1, 4100000, 4100000),
+('013', 6, 42, 1, 4100000, 4100000),
+('013', 9, 40, 1, 4100000, 4100000),
+('021', 10, 39, 1, 3500000, 3500000),
+('031', 12, 41, 1, 550000, 550000);
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,6 @@ CREATE TABLE `danhsachanh` (
 
 CREATE TABLE `donhang` (
   `MaDonHang` int(11) NOT NULL,
-  `LuuY` varchar(50) NOT NULL,
   `MaTaiKhoan` varchar(50) NOT NULL,
   `NgayDat` date NOT NULL,
   `TrangThai` tinyint(1) NOT NULL,
@@ -98,18 +98,18 @@ CREATE TABLE `donhang` (
 -- Dumping data for table `donhang`
 --
 
-INSERT INTO `donhang` (`MaDonHang`, `LuuY`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongTien`) VALUES
-(1, '', 'TK-001', '2023-02-23', 1, 11900000),
-(2, '', 'TK-003', '2022-09-08', 0, 11900000),
-(3, '', 'TK-002', '2021-07-12', 0, 3100000),
-(4, '', 'TK-003', '2020-08-09', 0, 6200000),
-(5, '', 'TK-004', '2018-09-13', 0, 6000000),
-(6, '', 'TK-001', '2018-09-17', 0, 4100000),
-(7, '', 'TK-002', '2019-02-17', 0, 3500000),
-(8, '', 'TK-003', '2019-02-28', 1, 2900000),
-(9, '', 'TK-004', '2020-05-28', 1, 4100000),
-(10, '', 'TK-001', '2018-06-28', 1, 3500000),
-(12, '', 'TK-003', '2023-08-24', 1, 550000);
+INSERT INTO `donhang` (`MaDonHang`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongTien`) VALUES
+(1, 'TK-001', '2023-02-23', 1, 11900000),
+(2, 'TK-002', '2022-09-08', 0, 11900000),
+(3, 'TK-002', '2021-07-12', 1, 3100000),
+(4, 'TK-001', '2020-08-09', 0, 6200000),
+(5, 'TK-002', '2018-09-13', 0, 6000000),
+(6, 'TK-001', '2018-09-17', 0, 4100000),
+(7, 'TK-002', '2019-02-17', 0, 3500000),
+(8, 'TK-001', '2019-02-28', 0, 2900000),
+(9, 'TK-001', '2020-05-28', 0, 4100000),
+(10, 'TK-001', '2018-06-28', 0, 3500000),
+(12, 'TK-002', '2023-08-24', 0, 550000);
 
 -- --------------------------------------------------------
 
@@ -155,6 +155,30 @@ CREATE TABLE `khachhang` (
 INSERT INTO `khachhang` (`MaKhach`, `TichDiem`, `TenKhach`, `DiaChi`, `SDT`, `MaTaiKhoan`) VALUES
 ('KH-001', 0, 'Le Trung Kien', '187 Le Van Tho Phuong 15 Quan Go Vap', '0908123456', 'TK-001'),
 ('KH-002', 0, 'Nguyen Thi Trang', '589/965 Nguyen Kiem Quan Go Vap', '0908878795', 'TK-002');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `khuyenmai`
+--
+
+CREATE TABLE `khuyenmai` (
+  `MaKhuyenMai` varchar(50) NOT NULL,
+  `TenKhuyenMai` varchar(50) NOT NULL,
+  `MoTa` varchar(50) NOT NULL,
+  `TiLeGiam` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `khuyenmai`
+--
+
+INSERT INTO `khuyenmai` (`MaKhuyenMai`, `TenKhuyenMai`, `MoTa`, `TiLeGiam`) VALUES
+('#', '#', '#', 0),
+('KM_001', 'Mung sinh nhat cua hang', 'Cac doi giay ap dung se duoc giam 15%', 15),
+('KM_002', 'Mung worldcup ', 'Cac doi giay ap dung se duoc giam 10%', 10),
+('KM_003', 'Mung viet nam vo dich Sea Game', 'Cac doi giay ap dung se duoc giam 20%', 20),
+('KM_005', 'Mua Euro', 'Cac giay ap dung duoc giam 7%', 7);
 
 -- --------------------------------------------------------
 
@@ -309,6 +333,12 @@ ALTER TABLE `khachhang`
   ADD KEY `MaTaiKhoan` (`MaTaiKhoan`);
 
 --
+-- Indexes for table `khuyenmai`
+--
+ALTER TABLE `khuyenmai`
+  ADD PRIMARY KEY (`MaKhuyenMai`);
+
+--
 -- Indexes for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
@@ -328,7 +358,8 @@ ALTER TABLE `phieunhaphang`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`MaSP`),
-  ADD KEY `MaHang` (`MaHang`);
+  ADD KEY `MaHang` (`MaHang`),
+  ADD KEY `KhuyenMai` (`KhuyenMai`);
 
 --
 -- Indexes for table `taikhoan`
@@ -389,7 +420,8 @@ ALTER TABLE `phieunhaphang`
 -- Constraints for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  ADD CONSTRAINT `sanpham_ibfk_1` FOREIGN KEY (`MaHang`) REFERENCES `hang` (`MaHang`);
+  ADD CONSTRAINT `sanpham_ibfk_1` FOREIGN KEY (`MaHang`) REFERENCES `hang` (`MaHang`),
+  ADD CONSTRAINT `sanpham_ibfk_2` FOREIGN KEY (`KhuyenMai`) REFERENCES `khuyenmai` (`MaKhuyenMai`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

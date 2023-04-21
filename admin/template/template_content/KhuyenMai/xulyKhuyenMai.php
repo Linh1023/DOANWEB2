@@ -141,5 +141,16 @@
         }
     }
 
-    if
+    if(isset($_POST['Edit'])){
+        $_MaKM = $_POST['MaKM'];        
+        $_TenKM = $_POST['TenKM'];
+        $_MoTa = $_POST['MoTa'];
+        $_TiLeGiam = $_POST['TiLeGiam'];
+
+
+        if($_MaKM == "" || $_TenKM == "" || $_MoTa == "" || $_TiLeGiam == ""){
+            echo "<script>alert('Khong duoc de trong thong tin')</script>";
+            return;
+        }
+    }
 ?>
