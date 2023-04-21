@@ -24,7 +24,7 @@ class DAOKhuyenMai{
     }
 
     public function getList(){
-        $sql = "SELECT MaKhuyenMai,TenKhuyenMai,MoTa FROM khuyenmai";
+        $sql = "SELECT * FROM khuyenmai";
         $data=null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row=mysqli_fetch_array($result)){
@@ -35,6 +35,24 @@ class DAOKhuyenMai{
             mysqli_free_result($result);
         }
         return $data;
+    }
+
+    public function hasKM($MaKM){
+        $sql = "SELECT * FROM khuyenmai WHERE MaKhuyenMai='".$MaKM."'";
+        if($result = mysqli_query($this->conn,$sql)){
+            if($result->num_rows != 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public function insertKM($MaKM,$TenKM,$MoTa,$TiLeGiam){
+        $sql = "INSERT INTO khuyenmai (MaKhuyenMai,TenKhuyenMai,MoTa,TiLeGiam) VALUES ('$MaKM', '$TenKM', '$MoTa', '$TiLeGiam')";
+        if($result = mysqli_query($this->conn,$sql)){
+            return true;
+        }
+        return false;
     }
 }
 ?>

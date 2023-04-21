@@ -26,7 +26,7 @@
                 <td><?php echo $data[$i][1]?></td>
                 <td><?php echo $data[$i][2]?></td>
                 <td>
-                    <a href="./template/template_content/KhuyenMai/xulyKhuyenMai.php?cn=Edit&id=<?php echo $data[$i][0]?>&ten=<?php echo $data[$i][1]?>&mota=<?php echo $data[$i][2]?>"><div id="edit_km">Sửa</div></a>
+                    <a href="./template/template_content/KhuyenMai/xulyKhuyenMai.php?cn=Edit&MaKM=<?php echo $data[$i][0]?>&TenKM=<?php echo $data[$i][1]?>&MoTa=<?php echo $data[$i][2]?>&TiLeGiam=<?php echo $data[$i][3]?>"><div id="edit_km">Sửa</div></a>
                     <a href="./template/template_content/KhuyenMai/xulyKhuyenMai.php?cn=Delete&id=<?php echo $data[$i][0]?>"><div id="delete_km">Xóa</div></a>
                 </td>
             </tr>
@@ -36,6 +36,5 @@
         ?>
         
     </table>
-
 
 </form>
