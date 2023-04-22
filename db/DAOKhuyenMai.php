@@ -73,7 +73,7 @@ class DAOKhuyenMai{
         return true;
     }
     
-    public function delete($MaKM){
+    public function deleteKM($MaKM){
         $sql = "DELETE FROM khuyenmai WHERE MaKhuyenMai = '".$MaKM."'";
         if($result = mysqli_query($this->conn,$sql)){
             return true;

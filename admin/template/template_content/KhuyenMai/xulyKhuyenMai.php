@@ -62,7 +62,14 @@
                     echo "<script>alert('Còn sản phẩm đang áp dụng khuyến mãi này');window.location='../../../index.php?id=km';</script>";
                     return;
                 }
-                
+                if($db->deleteKM($_MaKM) == true){
+                    echo "<script>alert('Đã xóa khuyến mãi ');window.location='../../../index.php?id=km';</script>";
+                    return;
+                }
+                else{
+                    echo "<script>alert('Không xóa khuyến mãi này được');window.location='../../../index.php?id=km';</script>";
+                    return;
+                }
                 break;
             }
             case 'Edit':{
