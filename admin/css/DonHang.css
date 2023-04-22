@@ -52,7 +52,7 @@ label{
 }
 
 #ds_donhang a div{
-    display: inline-block;
+    display: none;
     border: none;
     background-color: orange;
     color: black;
@@ -65,4 +65,8 @@ label{
 
 #ds_donhang a div:hover{
     background-color: aqua;
+}
+
+#ds_donhang tr:hover a div{
+    display: inline-block;
 }

@@ -62,6 +62,23 @@ class DAOKhuyenMai{
         }
         return false;
     }
- 
+
+    public function hasSP($MaKM){
+        $sql = "SELECT * FROM sanpham WHERE KhuyenMai='".$MaKM."'";
+        if($result = mysqli_query($this->conn,$sql)){
+            if($result->num_rows != 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public function delete($MaKM){
+        $sql = "DELETE FROM khuyenmai WHERE MaKhuyenMai = '".$MaKM."'";
+        if($result = mysqli_query($this->conn,$sql)){
+            return true;
+        }
+        return false;
+    }
 }
 ?>

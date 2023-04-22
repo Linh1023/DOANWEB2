@@ -57,6 +57,12 @@
                 break;
             }
             case 'Delete':{
+                $_MaKM = $_GET['MaKM'];
+                if($db->hasSP($_MaKM) == false){
+                    echo "<script>alert('Còn sản phẩm đang áp dụng khuyến mãi này');window.location='../../../index.php?id=km';</script>";
+                    return;
+                }
+                
                 break;
             }
             case 'Edit':{

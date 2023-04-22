@@ -27,7 +27,7 @@
                 <td><?php echo $data[$i][2]?></td>
                 <td>
                     <a href="./template/template_content/KhuyenMai/xulyKhuyenMai.php?cn=Edit&MaKM=<?php echo $data[$i][0]?>&TenKM=<?php echo $data[$i][1]?>&MoTa=<?php echo $data[$i][2]?>&TiLeGiam=<?php echo $data[$i][3]?>"><div id="edit_km">Sửa</div></a>
-                    <a href="./template/template_content/KhuyenMai/xulyKhuyenMai.php?cn=Delete&id=<?php echo $data[$i][0]?>"><div id="delete_km" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</div></a>
+                    <a href="./template/template_content/KhuyenMai/xulyKhuyenMai.php?cn=Delete&MaKM=<?php echo $data[$i][0]?>"><div id="delete_km" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</div></a>
                     <!--onclick="return confirm(`Bạn có muốn xóa không ?`)" thực hiện kiểm tra xem người dùng có muốn xóa hay không nếu onclick trả về giá trị false thì không thực hiện di chuyển đến href  -->
                 </td>
             </tr>
