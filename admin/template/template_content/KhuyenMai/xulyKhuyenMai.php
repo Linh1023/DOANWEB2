@@ -57,7 +57,6 @@
                 break;
             }
             case 'Delete':{
-                echo 'delete';
                 break;
             }
             case 'Edit':{
@@ -95,7 +94,8 @@
                         
                         <label for="MaKM">Mã khuyến mãi: </label><br>
                         <input type="text" id="MaKM" name="MaKM" value="<?php echo $_MaKM?>" readonly><br>
-                        
+                        <!-- Su dung thuoc tinh readonly de thuc hien khoa ma khuyen mai lai -->
+
                         <label for="TenKM">Tên khuyến mãi: </label><br>
                         <input type="text" id="TenKM" name="TenKM" value="<?php echo $_TenKM?>"><br>
                         

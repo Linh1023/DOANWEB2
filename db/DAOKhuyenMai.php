@@ -56,7 +56,7 @@ class DAOKhuyenMai{
     }
 
     public function updateKM($MaKM,$TenKM,$MoTa,$TiLeGiam){
-        $sql = "UPDATE khuyenmai SET TenKhuyenMai = '".$TenKM."' MoTa = '".$MoTa."' TiLeGiam = ".$TiLeGiam." WHERE MaKhuyenMai = '".$MaKM."'";
+        $sql = "UPDATE khuyenmai SET TenKhuyenMai = '".$TenKM."' ,MoTa = '".$MoTa."' ,TiLeGiam = ".$TiLeGiam." WHERE MaKhuyenMai = '".$MaKM."'";
         if($result = mysqli_query($this->conn,$sql)){
             return true;
         }
