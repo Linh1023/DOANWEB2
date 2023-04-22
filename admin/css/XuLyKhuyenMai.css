@@ -47,12 +47,11 @@ input, #MoTa{
     padding: 10px 10px;
     margin: 20px 70px;
     width: 85%;
-    font-weight: 600;
+    font-weight: 800;
     color: brown;
 }
 #MoTa{
     height: 70px;
-    font-weight: 800;
 }
 #Add, #Edit{
     text-align: center;
