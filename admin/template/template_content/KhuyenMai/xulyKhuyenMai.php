@@ -152,5 +152,13 @@
             echo "<script>alert('Khong duoc de trong thong tin')</script>";
             return;
         }
+
+        if($db->updateKM($_MaKM,$_TenKM,$_MoTa,$_TiLeGiam) == true){
+            echo "<script>alert('Sua thanh cong');window.location='../../../index.php?id=km';</script>";
+        }
+        else{
+            echo "<script>alert('Sua that bai');</script>";
+        }
+
     }
 ?>
