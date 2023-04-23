@@ -21,7 +21,7 @@
             <th>Trạng thái</th>
             <th>Tổng tiền</th>
             <th>Cập nhật trạng thái</th>
-            <th>Xem chi tiết</th>
+            <th style = "width: 23%">Xem chi tiết</th>
         </tr>
         <?php
             if(isset($_POST['Loc']) == false){
