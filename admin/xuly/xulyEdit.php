@@ -9,8 +9,8 @@ if (isset($_POST['hd'])){
             $sql = "UPDATE sanpham   SET Ten='".$_POST['ten']."',
                                         MoTa='".$_POST['mota']."',
                                         Gia=".$_POST['gia'].",
-                                        KhuyenMai='".$_POST['khuyenmai']."' ,
-                                        DanhMuc='".$_POST['danhmuc']."' ,
+                                        MaKhuyenMai='".$_POST['khuyenmai']."' ,
+                                        MaDM='".$_POST['danhmuc']."' ,
                                         AnhChinh='".$_POST['anhchinh']."',
                                         MaHang='".$_POST['hang']."'
                                         WHERE maSP='".$_POST['id']."'";
@@ -18,7 +18,7 @@ if (isset($_POST['hd'])){
             $result=mysqli_query($conn, $sql);
             break;
         case "Thêm":
-        // Tao listid da co san
+            // Tao listid da co san
             $listId=[];
             $sql = "SELECT MaSP FROM sanpham";
             $result = $conn->query($sql);
@@ -30,24 +30,38 @@ if (isset($_POST['hd'])){
                     $i++;
                 }
             }
-        // tìm id thích hợp
-            for ($i=1;$i<1000;$i++){
-                $found=false;
-                if(!in_array($i,$listId)){
-                    $id=$i;break;
+            // tìm id thích hợp
+            for ($i = 1; $i < 1000; $i++) {
+                $found = false;
+                if (!in_array($i, $listId)) {
+                    $id=$i;
+                    break;
                 }
             }
-        // ép kiểu string
-            $id=(string)$id;
-            if (strlen($id)>3){echo"Lỗi";return;}
-            while(strlen($id)!=3){
-                $id="0".$id;
+            // ép kiểu string
+            $id=(string) $id;
+            if (strlen($id) > 3) {
+                echo "Lỗi tạo mã";
+                return;
             }
-        // Thêm vào db
-            $sql="INSERT INTO sanpham (MaSP, Ten, MoTa, Gia, KhuyenMai, DanhMuc, AnhChinh,MaHang,NgayTao)
-            VALUES ('".$id."','".$_POST['ten']."','".$_POST['mota']."',".$_POST['gia'].",'".$_POST['khuyenmai']."','".$_POST['danhmuc']."','".$_POST['anhchinh']."','".$_POST['hang']."',CURDATE())";
-            $result=mysqli_query($conn, $sql);
-            if(!$result)echo "Lỗi";
+            while (strlen($id) != 3) {
+                $id="0" . $id;
+            }
+            // Thêm vào db
+            $sql = "INSERT INTO sanpham (MaSP, Ten, MoTa, Gia, MaKhuyenMai, MaDM, AnhChinh,MaHang,NgayTao)
+            VALUES ('" . $id . "',
+            '" . $_POST['ten'] . "',
+            '" . $_POST['mota'] . "',
+            " . $_POST['gia'] . ",
+            '" . $_POST['khuyenmai'] . "',
+            '" . $_POST['danhmuc'] . "',
+            '" . $_POST['anhchinh'] . "',
+            '" . $_POST['hang'] . "',
+            CURDATE())";
+            $result = mysqli_query($conn, $sql);
+            echo "$sql";
+            if (!$result)
+                echo "Lỗi khi thực hiện ở database";
             break;
     }
     // Đóng kết nối

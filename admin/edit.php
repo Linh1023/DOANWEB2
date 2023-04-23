@@ -39,8 +39,6 @@
                                 echo '<div class="row justify-content-center display-4">Sửa sản phẩm</div>';
                                 $sql = 'SELECT * FROM sanpham WHERE MaSP="' . $id . '"';
                                 $result = $conn->query($sql);
-                                
-                                
                                 if (mysqli_num_rows($result) > 0) {
                                     // Lấy thông tin sản phẩm
                                     $row = mysqli_fetch_assoc($result);
@@ -48,31 +46,54 @@
                                     $moTa = $row["MoTa"];
                                     $gia = $row["Gia"];
                                     $hinhAnh = $row["AnhChinh"];
-                                    $khuyenMai = $row["KhuyenMai"];
+                                    $maKhuyenMai = $row["MaKhuyenMai"];
                                     $soLuong = $row["SLTonKho"];
-                                    $hang = $row["MaHang"];                                    
+                                    $maHang = $row["MaHang"];                                    
+                                    $maDanhMuc = $row["MaDM"];                                    
                                 }
                                 else {echo"lỗi";}
+                            }
                             // Thêm sản phẩm
-                            } else {
+                             else {
                                 echo '<div class="row justify-content-center display-4">Thêm sản phẩm</div>';
                                 $ten = '';
                                 $moTa = '';
                                 $gia = '';
                                 $hinhAnh = '';
-                                $khuyenMai = '';
+                                $maKhuyenMai = '';
                                 $soLuong = 0;
-                                $hang='';
+                                $maHang='';
+                                $maDanhMuc='';
                             }
-                            // Xuat danh sách hãng db ra mảng
-                            $listHang = [];
-                            $sql = "SELECT * FROM hang";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    $listHang[$row['MaHang']]=$row['Ten'];
+
+                            //Luu bảng khuyen mãi, hang va danh muc
+                                // Xuat danh sách hãng db ra mảng
+                                $listHang = [];
+                                $sql = "SELECT * FROM hang";
+                                $result = $conn->query($sql);
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $listHang[$row['MaHang']]=$row['Ten'];
+                                    }
                                 }
-                            }
+                                // Xuat danh sách danhmuc db ra mảng
+                                $listDanhMuc = [];
+                                $sql = "SELECT * FROM danhmuc";
+                                $result = $conn->query($sql);
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $listDanhMuc[$row['MaDM']]=$row['TenDM'];
+                                    }
+                                }
+                                // Xuat danh sách khuyenmai db ra mảng
+                                $listKhuyenMai = [];
+                                $sql = "SELECT * FROM khuyenmai";
+                                $result = $conn->query($sql);
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $listKhuyenMai[$row['MaKhuyenMai']]=$row['TenKhuyenMai'];
+                                    }
+                                }
                            
                             ?>
                             <!-- Tạo form thêm / sửa -->
@@ -107,10 +128,14 @@
                                         <div class="col col-3">Danh mục:</div>
                                         <div class="col col-9">
                                             <select class="w-100" name="danhmuc">
-                                                <option value="no" >Chưa phân loại</option>
-                                                <option value="nt">Giày đá bóng sân cỏ nhân tạo</option>
-                                                <option value="tn">Giày đá bóng sân cỏ tự nhiên</option>
-                                                <option value="Khác">Khác</option>
+                                            <?php
+                                                foreach($listDanhMuc as $maDM=>$tenDM){
+                                                    if($maDM==$maDanhMuc)
+                                                    echo'<option value='.$maDM.' selected>'.$tenDM.'</option>';    
+                                                    else
+                                                    echo"<option value='$maDM'>$tenDM</option>";                                                
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </label>
@@ -140,11 +165,11 @@
                                         <div class="col col-9">
                                             <select class="w-100" name="hang">
                                                 <?php
-                                                foreach($listHang as $maHang=>$tenHang){
-                                                    if($maHang==$hang)
-                                                    echo'<option value='.$maHang.' selected>'.$tenHang.'</option>';    
+                                                foreach($listHang as $maH=>$tenH){
+                                                    if($maH==$maHang)
+                                                    echo'<option value='.$maH.' selected>'.$tenH.'</option>';    
                                                     else
-                                                    echo"<option value='$maHang'>$tenHang</option>";                                                
+                                                    echo"<option value='$maH'>$tenH</option>";                                                
                                                 }
                                                 ?>
                                             </select>
@@ -156,11 +181,14 @@
                                         <div class="col col-3">Khuyến mãi:</div>
                                         <div class="col col-9">
                                             <select class="w-100" name="khuyenmai">
-                                                <option value="#" >Không</option>
-                                                <option value="5">Giảm 5%</option>
-                                                <option value="10">Giảm 10%</option>
-                                                <option value="15">Giảm 15%</option>
-                                                <option value="Khác">Khác</option>
+                                            <?php
+                                                foreach($listKhuyenMai as $maKM=>$tenKM){
+                                                    if($maKM==$maKhuyenMai)
+                                                    echo'<option value='.$maKM.' selected>'.$tenKM.'</option>';    
+                                                    else
+                                                    echo"<option value='$maKM'>$tenKM</option>";                                                
+                                                }
+                                                ?>
                                             </select>
 
                                         </div>

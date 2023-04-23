@@ -8,10 +8,7 @@
     </div>
 <?php
 include '../db/dbconnect.php';
-if(isset($_GET['hd'])&&$_GET['hd']=='x'){
-    $sql = 'DELETE FROM sanpham WHERE MaSP = "'.$_GET['idsp'].'"';
-    $result = $conn->query($sql);
-}
+
 // Truy vấn danh sách sản phẩm
 $sql = "SELECT * FROM sanpham";
 $result = $conn->query($sql);
@@ -51,7 +48,7 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='index.php?id=sp&hd=x&idsp=".$row['MaSP']."' class='xoa'>
+                echo"<a href='xuly/xulyXoaSP.php?id=sp&hd=Xóa&idsp=".$row['MaSP']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm này vĩnh viễn và thông tin liên quan tới nó hong <3')\">
                 
                         <div class='col'>
                             Xóa
