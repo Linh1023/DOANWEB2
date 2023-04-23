@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div class="wrapper" style=" background-color: #6c757d;height:100%;">
+    <div class="wrapper" style=" background-color: #6c757d;height:100%;min-height:100vh">
         <?php include('template/topbar_ad.php');?>
         <div class="container">
             <div class="row " style="min-height:900px;padding-bottom:50px;position: relative;">

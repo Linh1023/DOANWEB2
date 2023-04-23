@@ -66,7 +66,7 @@ if (isset($_POST['hd'])){
     }
     // Đóng kết nối
     $conn->close();
-    header("Location:../edit.php?id=".$id);
+    header("Location:../editsp.php?id=".$id);
 }
 
 ?>

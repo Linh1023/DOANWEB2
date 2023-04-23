@@ -1,7 +1,7 @@
 <div id="sanpham">
     <div class="row">
         <div class="col mx-2" style="max-width:165px;border-radius: 20px;background-color: #5ba0ee; color: #000;">
-            <a href="edit.php" class="row">
+            <a href="editsp.php" class="row">
                 <div class="col text-black">Thêm Sản Phẩm</div>
             </a>
         </div>
@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='edit.php?hd=s&id=".$row['MaSP']."' class='sua'>
+                echo"<a href='editsp.php?hd=s&id=".$row['MaSP']."' class='sua'>
                         <div class='col'>
                             Sửa
                         </div>

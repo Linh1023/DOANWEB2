@@ -104,6 +104,7 @@ li .border-size-menu+.border-size-menu {
 }
 #menu{
     left:0;
+    overflow-y: auto;
 }
 div#topbar {
     position: fixed;

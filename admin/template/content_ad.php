@@ -28,6 +28,12 @@ if(isset($_GET['id'])){
         case 'pn':
             include('template_content/phieunhap.php');
         break;
+        case 'h':
+            include('template_content/hang.php');
+        break;
+        case 'dm':
+            include('template_content/danhmuc.php');
+        break;
         case 'km':
             include('template_content/KhuyenMai/khuyenmai.php');
         break;

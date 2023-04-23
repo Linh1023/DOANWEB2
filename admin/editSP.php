@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div class="wrapper" style=" background-color: #6c757d;">
+    <div class="wrapper" style=" background-color: #6c757d;height:100%;min-height:100vh">
         <?php include('template/topbar_ad.php'); ?>
         <div class="container">
             <div class="row " style="min-height:1200px;padding-bottom:50px;position: relative;">
@@ -201,7 +201,7 @@
                                         if (isset($_GET['id'])) {
                                             echo "<input type='hidden' name='id' value=" . $id . ">";
                                             echo '<a><input type="submit" class="btn bg-success" name="hd" value="Lưu"></a>';
-                                            echo "<a class='text-black' href='edit.php'> 
+                                            echo "<a class='text-black' href='editsp.php'> 
                                                 <div class='btn bg-secondary'>Thêm mới</div>
                                             </a>";
                                         } else
@@ -222,6 +222,9 @@
         </div>
 
     </div>
+    <?php
+    $conn->close();
+    ?>
     <script>
         showmenu();
         choosemenu();
