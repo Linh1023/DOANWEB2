@@ -12,21 +12,19 @@ if ($result->num_rows > 0) {
     <div id='khachhang' class='d-block'>
     <div class='row mark m-0'>
     <p class='text-center'>Bảng khách hàng</p></div>
-    <table>
+    <table class='w-100  bangnoidung'>
             <tr>
                 <th>ID</th>
                 <th>Tên Khách Hàng</th>
                 <th>Điểm</th>
-                <th>Địa chỉ</th>
-                <th>SĐT</th>
                 <th>Tên đăng nhập</th>
                 <th>Mat Khau</th>
                 <th>Tình trạng</th>
             </tr>";
     $hanhdong=array(
-        "xe"=>"Xem",
-        "s"=>"Sửa",
-        "xo"=>"Xóa"
+        "xem"=>"Xem",
+        "sua"=>"Sửa",
+        "xoa"=>"Xóa"
     );
     while($row = $result->fetch_assoc()) {
         $selectTaiKhoan = 'SELECT * FROM taikhoan WHERE MaTaiKhoan = "'. $row['MaTaiKhoan'] . '"';
@@ -50,8 +48,6 @@ if ($result->num_rows > 0) {
         echo "        </div>
             </td>
             <td>" . $row["TichDiem"]. "</td>
-            <td>" . $row["DiaChi"]. "</td>
-            <td>" . $row["SDT"]. "</td>
             <td>" . $rowTaiKhoan["TenDN"]. "</td>
             <td>" . $rowTaiKhoan["MatKhau"]. "</td>
             <td>" . $rowTaiKhoan["TinhTrang"]. "</td>
@@ -71,22 +67,15 @@ if ($result->num_rows > 0) {
     <div id='nhanvien' class='d-block'>
     <div class='row mark m-0'>
     <p class='text-center'>Bảng nhân viên</p></div>
-    <table>
+    <table class='w-100 bangnoidung'>
         <tr>
             <th>ID</th>
             <th>Tên Nhân viên</th>
             <th>Quyền</th>
-            <th>Địa chỉ</th>
-            <th>SĐT</th>
             <th>Tên đăng nhập</th>
             <th>Mat Khau</th>
             <th>Tình trạng</th>
         </tr>";
-    $hanhdong=array(
-        "xe"=>"Xem",
-        "s"=>"Sửa",
-        "xo"=>"Xóa"
-    );
     while($row = $result->fetch_assoc()) {
         $selectTaiKhoan = 'SELECT * FROM taikhoan WHERE MaTaiKhoan = "'. $row['MaTaiKhoan'] . '"';
         $resultTaiKhoan = mysqli_query($conn, $selectTaiKhoan);
@@ -109,8 +98,6 @@ if ($result->num_rows > 0) {
         echo "        </div>
             </td>
             <td>" . $row["Quyen"]. "</td>
-            <td>" . $row["DiaChi"]. "</td>
-            <td>" . $row["SDT"]. "</td>
             <td>" . $rowTaiKhoan["TenDN"]. "</td>
             <td>" . $rowTaiKhoan["MatKhau"]. "</td>
             <td>" . $rowTaiKhoan["TinhTrang"]. "</td>

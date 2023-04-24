@@ -25,6 +25,12 @@ li .border-size-menu+.border-size-menu {
 .position-static {
     position: static !important;
 }
+.adminthem{
+    max-width:165px;
+    border-radius: 20px;
+    background-color: #5ba0ee;
+    color: #000;
+}
 
 /* sm */
 
@@ -78,23 +84,23 @@ li .border-size-menu+.border-size-menu {
     #main{
         margin-top:30px !important;
     }
-    #sanpham tr:hover .row.hanhdong>* {
-        display: block;
-    }
-    
-    #sanpham .row.hanhdong >* {
-        display: none;
-    }
-    #sanpham .hanhdong{
-        height:24px;
-    }
+
 }
 /* lg max */
 @media (min-width: 1400px) {
     #menu{
         width: 250px;
     }
+    table.bangnoidung tr:hover .row.hanhdong>* {
+        display: block;
+    }
     
+    table.bangnoidung .row.hanhdong >* {
+        display: none;
+    }
+    table.bangnoidung .hanhdong{
+        height:24px;
+    }
 
 }
 /*  index*/
@@ -140,120 +146,44 @@ div#topbar {
     max-height:30px
 }
 /* menu */
-/* sanpham */
-#sanpham tr + tr{
-    
-    border-top: 1px dashed black;
-    border-bottom: 1px dashed black;
-    border-radius: 10%;
-}
-#sanpham table{
-    width:100%;
-    
-}
-#sanpham{
-    /* display: flex; */
-}
-#sanpham table tr td .row > a:hover{
+table.bangnoidung tr td .row > a:hover{
     background-color: #ccc;
 }
-#sanpham table tr td .row > a{
+table.bangnoidung tr td .row > a{
     width:50px;
     color:#000;
     text-align: center;
     cursor: pointer;
 
 }
-#sanpham table tr td .row .xoa{
+table.bangnoidung tr td .row .xoa{
     background-color: rgb(165, 48, 48);
 }
-#sanpham table tr td .row .sua{
+table.bangnoidung tr td .row .sua{
     background-color: rgb(199, 199, 0);
 }
-#sanpham table tr td .row .xem{
+table.bangnoidung tr td .row .xem{
     background-color: rgb(73, 167, 73);
 }
-#sanpham table tr td ,#sanpham table tr th{
+table.bangnoidung tr td ,table.bangnoidung tr th{
     padding-left:15px;
 }
-
-
-/*  khach hang*/
-#khachhang tr + tr{
+table.bangnoidung tr + tr{
     
     border-top: 1px dashed black;
     border-bottom: 1px dashed black;
     border-radius: 10%;
 }
-#khachhang table{
-    width:100%;
-    
+table.bangnoidung tr td .hanhdong{
+    margin-bottom: 10px;
 }
+table.bangnoidung tr td .hanhdong >a{
+    border-radius: 10px;
+}
+
 #khachhang{
     display: flex;
 }
-#khachhang table tr td .row > a:hover{
-    background-color: #ccc;
-}
-#khachhang table tr td .row > a{
-    width:50px;
-    color:#000;
-    text-align: center;
-    cursor: pointer;
-
-}
-#khachhang table tr td .row .xo{
-    background-color: rgb(165, 48, 48);
-}
-#khachhang table tr td .row .s{
-    background-color: rgb(199, 199, 0);
-}
-#khachhang table tr td .row .xe{
-    background-color: rgb(73, 167, 73);
-}
-#khachhang table tr td ,#khachhang table tr th{
-    padding-left:15px;
-}
-
-/* nhanvien */
-#nhanvien tr + tr{
-    
-    border-top: 1px dashed black;
-    border-bottom: 1px dashed black;
-    border-radius: 10%;
-}
-#nhanvien table{
-    width:100%;
-    
-}
 #nhanvien{
     display: flex;
-}
-#nhanvien table tr td .row > a:hover{
-    background-color: #ccc;
-}
-#nhanvien table tr td .row > a{
-    width:50px;
-    color:#000;
-    text-align: center;
-    cursor: pointer;
-
-}
-#nhanvien table tr td .row .xo{
-    background-color: rgb(165, 48, 48);
-}
-#nhanvien table tr td .row .s{
-    background-color: rgb(199, 199, 0);
-}
-#nhanvien table tr td .row .xe{
-    background-color: rgb(73, 167, 73);
-}
-#nhanvien table tr td ,#nhanvien table tr th{
-    padding-left:15px;
-} 
-#main table tr td .hanhdong{
-    margin-bottom: 10px;
-}
-#main table tr td .hanhdong >a{
-    border-radius: 10px;
 }

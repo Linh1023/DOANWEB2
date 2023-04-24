@@ -97,7 +97,7 @@
                            
                             ?>
                             <!-- Tạo form thêm / sửa -->
-                            <form action="xuly/xulyEdit.php" method="post">
+                            <form action="xuly/xulyEditSP.php" method="post">
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Tên:</div>

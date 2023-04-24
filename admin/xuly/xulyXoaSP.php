@@ -1,6 +1,6 @@
 <?php
 include '../../db/dbconnect.php';
-if(isset($_GET['hd']) && $_GET['hd'] == 'Xóa') {
+if(isset($_GET['idsp'])) {
     $idsp = $_GET['idsp'];
     $sql = 'DELETE FROM sanpham WHERE MaSP = "'.$idsp.'"';
     $result = $conn->query($sql);

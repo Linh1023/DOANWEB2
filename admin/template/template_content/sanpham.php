@@ -1,6 +1,6 @@
 <div id="sanpham">
     <div class="row">
-        <div class="col mx-2" style="max-width:165px;border-radius: 20px;background-color: #5ba0ee; color: #000;">
+        <div class="col mx-2 adminthem">
             <a href="editsp.php" class="row">
                 <div class="col text-black">Thêm Sản Phẩm</div>
             </a>
@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 // Kiểm tra kết quả trả về
 if ($result->num_rows > 0) {
     // Hiển thị danh sách sản phẩm
-    echo "<table>
+    echo "<table class='w-100  bangnoidung'>
             <tr>
                 <th>ID</th>
                 <th>Tên sản phẩm</th>
@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='xuly/xulyXoaSP.php?id=sp&hd=Xóa&idsp=".$row['MaSP']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm này vĩnh viễn và thông tin liên quan tới nó hong <3')\">
+                echo"<a href='xuly/xulyXoaSP.php?idsp=".$row['MaSP']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['Ten']." và thông tin liên quan tới nó vĩnh viễn hong <3')\">
                 
                         <div class='col'>
                             Xóa
