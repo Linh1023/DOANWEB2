@@ -20,6 +20,12 @@
     <!-- Css cua khuyen mai -->
     <link rel="stylesheet" href="./css/KhuyenMai.css">
 
+    <!-- Css cua khuyen mai -->
+    <link rel="stylesheet" href="./css/PhanQuyen.css">
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="../fonts/themify-icons-font/themify-icons/themify-icons.css">
+
     <title>Admin</title>
 </head>
 
