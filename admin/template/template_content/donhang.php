@@ -45,7 +45,7 @@
                     ?>>
                         <?php 
                             if($data[$i][3]==1){
-                                echo 'Đã sử lý';
+                                echo 'Đã xử lý';
                             }
                             else{
                                 echo 'Chưa xử lý';
@@ -91,7 +91,7 @@
                             ?>>
                                 <?php 
                                     if($data[$i][3]==1){
-                                        echo 'Đã sử lý';
+                                        echo 'Đã xử lý';
                                     }
                                     else{
                                         echo 'Chưa xử lý';
@@ -105,7 +105,7 @@
                                         }
                                     ?>
                             </td>
-                            <td><a href="./template/template_main/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&LuuY=<?php echo $data[$i][1]?>&MaTK=<?php echo $data[$i][2]?>&Date=<?php echo $data[$i][3]?>&TT=<?php echo $data[$i][5]?>"><div>Xem chi tiết đơn hàng</div></a></td>
+                            <td><a href="./template/template_content/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&MaTK=<?php echo $data[$i][1]?>&Date=<?php echo $data[$i][2]?>&TT=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
                         </tr>
         <?php    
                         $i++;
