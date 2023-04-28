@@ -154,9 +154,9 @@
                                     <div class="col col-9">
                                         <div class="row">
                                             <img style="width: 300px;min-height: 150px;"
-                                                src="<?php echo ($hinhAnh = "#") ? "../img/img-logo/sneaker.jpg" : $hinhAnh ?>"
+                                                src="<?php echo ($hinhAnh = "#") ? "../img/img-logo/sneaker.jpg" : "../img/products/".$hinhAnh ?>"
                                                 alt="" id="imagePreview">
-                                        </div>
+                                        </div>""
                                     </div>
                                 </div>
                                 <div class="row mt-2">
