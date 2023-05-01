@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
 }
+
 label{
     margin: 10px 0px;
 }
@@ -26,13 +27,15 @@ label{
 }
 
 #check_item{
+    margin: 10px 5px;
     min-height: 400px;
-    margin: 50px;
-    padding: 20px;
+    padding: 82px 132px;
     border: 3px solid sienna;
     border-radius: 15px;
-
+    background-color: rgb(204, 182, 182);
+    
 }
+
 
 #check_item .checkbox_item{
     display: inline-block;
@@ -46,14 +49,16 @@ label{
 #check_item .checkbox_item .checkbox{
     display: none;
 }
-
+#check_item .checkbox_item span{
+    text-align: center;
+}
 #check_item .checkbox_item span::before{
     content: '';
     width:50px;
     height: 25px;
     display: inline-block;
     border-radius: 15px;
-    border: 3px solid burlywood;
+    border: 3px solid rgb(205, 149, 77);
     position: relative;
     top: 4px;
     z-index: 2;
@@ -63,12 +68,13 @@ label{
 #check_item .checkbox_item i{
     position: absolute;
     left: 1px;
-    top: 10px;
+    top: 11px;
     color: brown;
     font-weight: bold;
     transition: all 0.5s;
     font-size: 21px;
     z-index: 3;
+    transition: all 0.3s linear;
 }
 
 #check_item .checkbox_item .checkbox:checked~i{
