@@ -1,95 +1,37 @@
-<form action="" method="GET">
+<form action="" method="POST">
     
     <h2 id="title-pq">Quản lý phân quyền</h2>
     <h4 id="dsq">Danh sách quyền: </h4> 
 
-    <select id="quyen">
-        <option name="Admin" id="Admin" value="Quản lý">Quản lý</option>
-        <option name="BTV" id="BTV" value="Nhân viên">Nhân viên</option>
-        <option name="User" id="User" value="Thành viên đăng ký">Thành viên đăng ký</option>
-    </select>
+    <table id="quyen">
+        <tr>
+            <th>Mã quyền</th>
+            <th>Tên quyền</th>
+            <th>Thực hiện phân quyền</th>
+        </tr>
+        <?php
+            include("../db/DAOQuyen.php");
+            $db = new DAOQuyen();
+            $db->connect();
+            $data = $db->getList();
+            if($data==null){
+                return;
+            }
+            $i = 0;
+            while ($i < count($data)){ 
+        
+        ?>
+            <tr>
+                <td><?php echo $data[$i][0]?></td>
+                <td><?php echo $data[$i][1]?></td>
+                <td><a href = "../admin/template/template_content/PhanQuyen/xulyPhanQuyen.php?id=<?php echo $data[$i][0]?>"><div>Thực hiện phân quyền</div></a></td>
 
-    <div id="check_item">
-        <div class="row">
-            <div class="col-6">
-                <label for="ND" class="checkbox_item w-100 ">
-                    <input type="checkbox" name="ND" class="checkbox" id="ND"/> 
-                    <span>Quản lý người dùng</span>
-                    <i class="fas fa-circle"></i>     
-                </label>
-            </div>
-
-            <div class="col-6">
-                <label for="SP" class="checkbox_item w-100">
-                    <input type="checkbox" name="SP" class="checkbox" id="SP"/> 
-                    <span>
-                        Quản lý sản phẩm
-                    </span>
-                    <i class="fas fa-circle"></i>     
-                </label>
-            </div>
-
-            <div class="col-6">
-                <label for="DH" class="checkbox_item w-100">
-                    <input type="checkbox" name="DH" class="checkbox" id="DH"/> 
-                    <span>
-                        Quản lý đơn hàng
-                    </span>
-                    <i class="fas fa-circle"></i>     
-                </label>
-            </div>
-
-            <div class="col-6">
-                <label for="BD" class="checkbox_item w-100">
-                    <input type="checkbox" name="BD" class="checkbox" id="BD"/> 
-                            <span>
-                                Quản lý bài đăng
-                            </span>
-                            <i class="fas fa-circle"></i>     
-                </label>
-            </div>
-
-            <div class="col-6">
-                <label for="PN" class="checkbox_item w-100">
-                    <input type="checkbox" name="PN" class="checkbox" id="PN"/> 
-                    <span>
-                        Quản lý phiếu nhập
-                    </span>
-                    <i class="fas fa-circle"></i>     
-                </label>
-            </div>
-            <div class="col-6">
-                <label for="KM" class="checkbox_item w-100">
-                    <input type="checkbox" name="KM" class="checkbox" id="KM"/> 
-                    <span>
-                        Quản lý khuyến mãi
-                    </span>
-                    <i class="fas fa-circle"></i>     
-                </label>
-            </div>
-            <div class="col-6">
-                <label for="H" class="checkbox_item w-100">
-                    <input type="checkbox" name="H" class="checkbox" id="H"/> 
-                    <span>
-                        Quản lý hãng
-                    </span>
-                    <i class="fas fa-circle"></i>   
-                </label>   
-        </div>
-            <div class="col-6">
-                <label for="DM" class="checkbox_item w-100">
-                    <input type="checkbox" name="DM" class="checkbox" id="DM"/> 
-                    <span>
-                        Quản lý danh mục
-                    </span>
-                    <i class="fas fa-circle"></i>     
-                </label>
-            </div>
-        </div>
-
-    </div>
+            <tr>
+        <?php
+                $i++;
+            }
+        
+        ?>
+    </table>
     
-    <div id="submit">
-        <input type=submit name="edit" id="edit" value="Thực hiện phân quyền"/>
-    </div>
 </form>

@@ -20,23 +20,66 @@ label{
 }
 
 #quyen{
-    margin: 0px 30px;
+    margin: 50px 0px;
     border: 3px solid black;
     padding: 8px 30px;
     font-weight: bold;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#quyen th{
+    padding: 10px 5px;
+    border: 3px solid black;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+#quyen td{
+    padding: 10px 5px;
+    border: 3px solid black;
+    text-align: center;
+
+}
+
+#quyen td a{
+    color: bisque;
+}
+
+#quyen td a div {
+    padding: 10px;
+    background-color: brown;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+#quyen td a div:hover {
+    background-color: aqua;
+    color: black;
 }
 
 #check_item{
-    margin: 10px 5px;
+    margin: 10px auto;
     min-height: 400px;
     padding: 82px 132px;
     border: 3px solid sienna;
     border-radius: 15px;
     background-color: rgb(204, 182, 182);
-    
+    width: 80%;
+    position: relative;
 }
 
-
+#check_item #exit{
+    position: absolute;
+    color: black;
+    text-decoration: none;
+    top: 0px;
+    right: 22px;
+    font-size: 30px;
+}
+#check_item #exit:hover{
+    color: brown;
+}
 #check_item .checkbox_item{
     display: inline-block;
     font-weight: bold;
@@ -72,13 +115,13 @@ label{
     color: brown;
     font-weight: bold;
     transition: all 0.5s;
-    font-size: 21px;
+    font-size: 20px;
     z-index: 3;
     transition: all 0.3s linear;
 }
 
 #check_item .checkbox_item .checkbox:checked~i{
-    left: 25px;
+    left: 28px;
     color: white;
 }
 
@@ -89,6 +132,7 @@ label{
 #check_item .checkbox_item .checkbox:checked~span::before{
     background-color: bisque;
 }
+
 
 
 #submit{
