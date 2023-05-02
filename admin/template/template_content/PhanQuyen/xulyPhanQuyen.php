@@ -45,3 +45,21 @@
 </form>
 
 
+<?php
+    if(isset($_POST['edit'])){
+        if($db->delete($MaQuyen)){
+            $i = 0;
+            while ($i < count($data)){
+                if(isset($_POST[$data[$i][0]])){
+                    $db->insert($MaQuyen, $data[$i][0]);
+                
+                }
+                $i++;
+            }
+            
+        } 
+
+        echo "<script>alert('Phan quyen thanh cong');window.location='../../../index.php?id=pq';</script>";
+    }
+?>
+

@@ -48,5 +48,21 @@ class DAOPhanQuyen{
     }
 
 
+    public function delete($MaQuyen){
+        $sql = "DELETE FROM phanquyen WHERE MaQuyen = '".$MaQuyen."'";
+        if($result = mysqli_query($this->conn,$sql)){
+            return true;
+        }
+        return false;
+    }
+
+    public function insert($MaQuyen, $MaChiTiet){
+        $sql = "INSERT INTO phanquyen (MaQuyen,MaChiTiet) VALUES ('$MaQuyen', '$MaChiTiet')";
+        if($result = mysqli_query($this->conn,$sql)){
+            return true;
+        }
+        return false;
+    }
+
 }
 ?>
