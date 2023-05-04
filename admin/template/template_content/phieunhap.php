@@ -40,7 +40,7 @@
                     <td><?php echo number_format($data[$i][2],0,',','.')."đ"?></td>
                     <td><?php echo $data[$i][3]?></td>
                     <td><?php echo $data[$i][4]?></td>
-                    <td><a href="./template/template_content/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&NgayTao=<?php echo $data[$i][1]?>&TongDon=<?php echo $data[$i][2]?>&MaH=<?php echo $data[$i][3]?>&MaTK=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
+                    <td><a href="./template/template_content/ChiTietPhieuNhap.php?CT=<?php echo $data[$i][0]?>&NgayTao=<?php echo $data[$i][1]?>&TongDon=<?php echo $data[$i][2]?>&MaH=<?php echo $data[$i][3]?>&MaTK=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
                 
                 </tr>
         <?php
@@ -67,7 +67,7 @@
                     <td><?php echo number_format($data[$i][2],0,',','.')."đ"?></td>
                     <td><?php echo $data[$i][3]?></td>
                     <td><?php echo $data[$i][4]?></td>
-                    <td><a href="./template/template_content/ChiTietPhieuNhap.php?CT=<?php echo $data[$i][0]?>&MaTK=<?php echo $data[$i][1]?>&Date=<?php echo $data[$i][2]?>&TT=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
+                    <td><a href="./template/template_content/ChiTietPhieuNhap.php?CT=<?php echo $data[$i][0]?>&NgayTao=<?php echo $data[$i][1]?>&TongDon=<?php echo $data[$i][2]?>&MaH=<?php echo $data[$i][3]?>&MaTK=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
                 
                 </tr>
         <?php    
