@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='xuly/xulyXoaH.php?idsp=".$row['MaHang']."' class='xoa' onclick='if(".$soSP["count"].">0) return confirm(`Bạn không thể xóa vì! có ".$soSP["count"]." sản phẩm thuộc hãng này`) '>
+                echo "<a href='xuly/xulyXoaH.php?idsp=".$row['MaHang']."' class='xoa' onclick='if(".$soSP["count"]."!=0){return confirm(`Bạn không thể xóa vì! có ".$soSP["count"]." sản phẩm thuộc hãng này`)} else {return confirm(`bạn chắc chắn muốn xóa chứ`)}'>
                 
                         <div class='col'>
                             Xóa

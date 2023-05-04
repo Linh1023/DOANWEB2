@@ -15,7 +15,7 @@
         </div>
         <ul id='ulMenu' class="mt-2 list-unstyled text-black ">
             <a href="index.php?id=tc">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -25,7 +25,7 @@
                 </li>
             </a>
             <a href="index.php?id=nd">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -35,7 +35,7 @@
                 </li>
             </a>
             <a href="index.php?id=sp">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -45,7 +45,7 @@
                 </li>
             </a>
             <a href="index.php?id=dh">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -55,7 +55,7 @@
                 </li>
             </a>
             <a href="index.php?id=bd">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -65,7 +65,7 @@
                 </li>
             </a>
             <a href="index.php?id=pq">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -75,7 +75,7 @@
                 </li>
             </a>
             <a href="index.php?id=pn">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -85,7 +85,7 @@
                 </li>
             </a>
             <a href="index.php?id=km">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -95,7 +95,7 @@
                 </li>
             </a>
             <a href="index.php?id=h">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -105,7 +105,7 @@
                 </li>
             </a>
             <a href="index.php?id=dm">
-                <li class="row LiMenu mx-0 text-center px-3 align-items-center border-secondary border-size-menu ">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu ">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
