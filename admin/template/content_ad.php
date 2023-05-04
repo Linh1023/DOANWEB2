@@ -29,10 +29,10 @@ if(isset($_GET['id'])){
             include('template_content/phieunhap.php');
         break;
         case 'h':
-            include('template_content/hang.php');
+            include('template_content/Hang/Hang.php');
         break;
         case 'dm':
-            include('template_content/danhmuc.php');
+            include('template_content/DanhMuc/DanhMuc.php');
         break;
         case 'km':
             include('template_content/KhuyenMai/khuyenmai.php');

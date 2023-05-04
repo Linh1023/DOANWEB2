@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script src="./js/admin.js"></script>
+    <script src="./js/DanhMuc.js"></script>
 
     <link rel="stylesheet" href="./css/DonHang.css">
 
@@ -20,9 +22,11 @@
     <!-- Css cua khuyen mai -->
     <link rel="stylesheet" href="./css/KhuyenMai.css">
 
-    <!-- Css cua khuyen mai -->
+    <!-- Css cua phan quyen -->
     <link rel="stylesheet" href="./css/PhanQuyen.css">
 
+
+    <link rel="stylesheet" href="./css/DanhMuc.css">
     <!-- Icon -->
     <link rel="stylesheet" href="../fonts/themify-icons-font/themify-icons/themify-icons.css">
 
