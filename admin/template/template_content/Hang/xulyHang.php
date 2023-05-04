@@ -108,16 +108,20 @@
             return;
         }
 
+        if($db->checkHangDaXoa($_MaHang)==true){
+            if($db->insertHangDaXoa($_MaHang,$_TenHang,$_NgayTao)==true){
+                echo "<script>alert('Thêm thành công');window.location='../../../index.php?id=h';</script>";
+                return;
+            }
+            return;
+        }
+
         if($db->hasHang($_MaHang) == false){
             echo "<script>alert('Mã hãng đã tồn tại ')</script>";
             return;
         }
 
-        if($db->checkHangdaxoa($_MaHang)==true){
-            if($db->insertHangDaXoa($_MaHang,$_TenHang,$_NgayTao) == true){
-                
-            }
-        }
+        
         if($db->insertHang($_MaHang,$_TenHang,$_NgayTao) == true){
             echo "<script>alert('Them thanh cong');window.location='../../../index.php?id=h';</script>";
         }

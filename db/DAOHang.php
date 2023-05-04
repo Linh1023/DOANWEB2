@@ -70,7 +70,7 @@ class DAOHang{
         return false;
     }
 
-    public function updateHang($MaHang,$Ten,$TrangThai){
+    public function updateHang($MaHang,$Ten){
         $sql = "UPDATE hang SET Ten = '".$Ten."' WHERE MaHang = '".$MaHang."'";
         if($result = mysqli_query($this->conn,$sql)){
             return true;
@@ -78,8 +78,8 @@ class DAOHang{
         return false;
     }
 
-    public function insertHangDaXoa($MaHang,$Ten,$NgayTao,$TrangThai){
-        $sql = "UPDATE hang SET Ten = '".$Ten."' NgayTao = '".$NgayTao."' TrangThai = 1 WHERE MaHang = '".$MaHang."'";
+    public function insertHangDaXoa($MaHang,$Ten,$NgayTao){
+        $sql = "UPDATE hang SET  TrangThai = 1 ,Ten = '".$Ten."',NgayTao = '".$NgayTao."' WHERE MaHang = '".$MaHang."'";
         if($result = mysqli_query($this->conn,$sql)){
             return true;
         }
