@@ -50,8 +50,6 @@
                     echo "<script>alert('Không xóa hãng này được');window.location='../../../index.php?id=h';</script>";
                     return;
                 }
-
-                break;
             }
             case 'Edit':{
                         if(isset($_GET['MaHang'])){
