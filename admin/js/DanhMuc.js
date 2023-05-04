@@ -13,11 +13,8 @@ function add(){
     let form = document.getElementById("form_dm");
     form.style.display = "block";
 
-    let a = document.getElementById("a_dm");
-    a.href = "./template/template_content/Hang/xulyHang.php?cn=Add";
-
     let nd = document.getElementById("tt_dm");
-    nd.innerHTML = "Thêm thông tin danh mục";
+    nd.value = "Thêm thông tin danh mục";
 }
 
 function edit(MaDanhMuc,TenDanhMuc) { 
@@ -31,9 +28,7 @@ function edit(MaDanhMuc,TenDanhMuc) {
     let form = document.getElementById("form_dm");
     form.style.display = "block";
 
-    let a = document.getElementById("a_dm");
-    a.href = "./template/template_content/Hang/xulyHang.php?cn=Edit";
 
     let nd = document.getElementById("tt_dm");
-    nd.innerHTML = "Sửa thông tin danh mục";
+    nd.value = "Sửa thông tin danh mục";
 }

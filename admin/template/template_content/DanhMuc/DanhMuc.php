@@ -25,7 +25,7 @@
                 <td><?php echo $data[$i][1]?></td>
                 <td>
                     <button id="edit_dm" onclick="edit(`<?php echo $data[$i][0]?>`,`<?php echo $data[$i][1]?>`)">Sửa</button>
-                    <button id="delete_dm" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</button>
+                    <a href="./template/template_content/DanhMuc/xulyDanhMuc.php?cn=Delete&MaDanhMuc=<?php echo $data[$i][0]?>"><div id="delete_dm" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</div></a>
                     <!--onclick="return confirm(`Bạn có muốn xóa không ?`)" thực hiện kiểm tra xem người dùng có muốn xóa hay không nếu onclick trả về giá trị false thì không thực hiện di chuyển đến href  -->
                 </td>
             </tr>
@@ -36,7 +36,7 @@
     </table>
 </div>
 
-<form  method="post" action="./template/template_content/DanhMuc/xulyDanhMuc.php" id="form_dm">
+<form  method="POST" action="./template/template_content/DanhMuc/xulyDanhMuc.php" id="form_dm">
         <p id="exit_dm" onclick=exit()>X</p> 
         <label for="MaDanhMuc">Mã danh mục: </label><br>
         <input type="text" id="MaDanhMuc" name="MaDanhMuc" value=""><br>
@@ -45,7 +45,7 @@
         <label for="TenDanhMuc">Tên danh mục: </label><br>
         <input type="text" id="TenDanhMuc" name="TenDanhMuc" value=""><br>
 
-        <a href="" id="a_dm"><div id="tt_dm">Thêm danh mục</div></a>
+        <input type = "submit" id = "tt_dm" name = "tt_dm" value = "Thêm danh mục">
 </form>
 
 

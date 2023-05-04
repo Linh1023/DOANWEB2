@@ -37,18 +37,18 @@ class DAODanhMuc{
         return $data;
     }
 
-    public function hasHang($MaHang){
-        $sql = "SELECT * FROM hang WHERE MaHang='".$MaHang."'";
+    public function hasDanhMuc($MaDanhMuc){
+        $sql = "SELECT * FROM danhmuc WHERE MaDM='".$MaDanhMuc."'";
         if($result = mysqli_query($this->conn,$sql)){
             if($result->num_rows != 0){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
-    public function checkHangDaXoa($MaHang){
-        $sql = "SELECT * FROM hang WHERE MaHang='".$MaHang."'";
+    public function checkDanhMucDaXoa($MaDanhMuc){
+        $sql = "SELECT * FROM danhmuc WHERE MaDM='".$MaDanhMuc."'";
         if($result = mysqli_query($this->conn,$sql)){
             while($row=mysqli_fetch_array($result)){
                 if($row['TrangThai'] == 0){
@@ -62,32 +62,32 @@ class DAODanhMuc{
 
 
 
-    public function insertHang($MaHang,$Ten,$NgayTao){
-        $sql = "INSERT INTO hang (MaHang,Ten,NgayTao,TrangThai) VALUES ('$MaHang', '$Ten','$NgayTao',1)";
+    public function insertDanhMuc($MaDanhMuc,$Ten){
+        $sql = "INSERT INTO danhmuc (MaDM,TenDM,TrangThai) VALUES ('$MaDanhMuc', '$Ten',1)";
         if($result = mysqli_query($this->conn,$sql)){
             return true;
         }
         return false;
     }
 
-    public function updateHang($MaHang,$Ten){
-        $sql = "UPDATE hang SET Ten = '".$Ten."' WHERE MaHang = '".$MaHang."'";
+    public function updateDanhMuc($MaDanhMuc,$Ten){
+        $sql = "UPDATE danhmuc SET TenDM = '".$Ten."' WHERE MaDM = '".$MaDanhMuc."'";
         if($result = mysqli_query($this->conn,$sql)){
             return true;
         }
         return false;
     }
 
-    public function insertHangDaXoa($MaHang,$Ten,$NgayTao){
-        $sql = "UPDATE hang SET  TrangThai = 1 ,Ten = '".$Ten."',NgayTao = '".$NgayTao."' WHERE MaHang = '".$MaHang."'";
+    public function insertDanhMucDaXoa($MaDanhMuc,$Ten){
+        $sql = "UPDATE danhmuc SET  TrangThai = 1 ,TenDM = '".$Ten."' WHERE MaDM = '".$MaDanhMuc."'";
         if($result = mysqli_query($this->conn,$sql)){
             return true;
         }
         return false;
     }
     
-    public function deleteHang($MaHang){
-        $sql = "UPDATE hang SET TrangThai = 0 WHERE MaHang = '".$MaHang."'";
+    public function deleteDanhMuc($MaDanhMuc){
+        $sql = "UPDATE danhmuc SET TrangThai = 0 WHERE MaDM = '".$MaDanhMuc."'";
         if($result = mysqli_query($this->conn,$sql)){
             return true;
         }

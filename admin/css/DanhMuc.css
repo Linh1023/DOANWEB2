@@ -88,6 +88,7 @@ label {
     color: burlywood;
     border-radius: 20px;
     font-weight: bold;
+    border: none;
 }
 
 @media (max-width: 700px) {
