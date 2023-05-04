@@ -1,7 +1,3 @@
-.LiMenu {
-    height: 50px;
-}
-
 .text-font-menu {
     font-size: 17px;
 }
@@ -187,4 +183,8 @@ table.bangnoidung tr td .hanhdong >a{
 }
 #nhanvien{
     display: flex;
+}
+#imageContainer > img{
+    width: 100px;
+    margin: 0 0 0 10px;
 }
