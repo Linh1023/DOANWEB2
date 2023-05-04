@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2023 at 11:59 AM
+-- Generation Time: May 04, 2023 at 09:15 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -114,16 +114,17 @@ INSERT INTO `chitietquyen` (`MaChiTiet`, `TenChiTiet`, `MoTa`) VALUES
 
 CREATE TABLE `danhmuc` (
   `MaDM` varchar(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `TenDM` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+  `TenDM` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `TrangThai` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `danhmuc`
 --
 
-INSERT INTO `danhmuc` (`MaDM`, `TenDM`) VALUES
-('1', 'Giày đinh sân cỏ nhân tạo'),
-('2', 'Giày đinh sân cỏ tự nhiên');
+INSERT INTO `danhmuc` (`MaDM`, `TenDM`, `TrangThai`) VALUES
+('1', 'Giay dinh san co nhan tao\r\n', 1),
+('2', 'Giay dinh san co tu nhien', 1);
 
 -- --------------------------------------------------------
 
@@ -165,18 +166,21 @@ INSERT INTO `donhang` (`MaDonHang`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongT
 CREATE TABLE `hang` (
   `MaHang` varchar(50) NOT NULL,
   `Ten` varchar(50) NOT NULL,
-  `NgayTao` date NOT NULL
+  `NgayTao` date NOT NULL,
+  `TrangThai` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `hang`
 --
 
-INSERT INTO `hang` (`MaHang`, `Ten`, `NgayTao`) VALUES
-('MH-001', 'Adidas', '2022-02-23'),
-('MH-002', 'Nike', '2021-09-23'),
-('MH-021', 'Pan Thailand', '2020-06-18'),
-('MH-033', 'Puma', '2023-02-23');
+INSERT INTO `hang` (`MaHang`, `Ten`, `NgayTao`, `TrangThai`) VALUES
+('MH-', '213', '2023-05-04', 0),
+('MH-001', 'Adidas', '2022-02-23', 1),
+('MH-002', 'Nike', '2021-09-23', 1),
+('MH-01', 'test=', '2023-05-04', 0),
+('MH-021', 'Pan Thailand', '2020-06-18', 1),
+('MH-033', 'Puma', '2023-02-23', 1);
 
 -- --------------------------------------------------------
 
@@ -341,7 +345,7 @@ INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, 
 ('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2021-12-10', 'MH-001', 89),
 ('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2021-12-12', 'MH-001', 76),
 ('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2023-03-11', 'MH-001', 80),
-('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2021-03-11', 'MH-001', 80),
+('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '006.jpg', '1', '#', '2021-03-11', 'MH-001', 80),
 ('008', 'ADIDAS X SPEEDFLOW .1 FG GW7456 DIAMOND EDGE PACK ', 3500000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2021-03-11', 'MH-001', 80),
 ('010', 'NIKE ZOOM MERCURIAL VAPOR 15 PRO TF TRẮNG', 2900000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-002', 190),
 ('011', 'NIKE GRIPKNIT PHANTOM GX ELITE FG', 5500000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2020-09-10', 'MH-002', 100),
