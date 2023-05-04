@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
             <tr>
                 <th>ID</th>
                 <th>Tên danh mục</th>
-                <th>Số lượng</th>
+                <th>Trạng thái</th>
             </tr>";
     while($row = $result->fetch_assoc()) {
         $sqlDemDM = 'SELECT COUNT(*) as count FROM sanpham WHERE MaDM = "'. $row['MaDM'] . '"';

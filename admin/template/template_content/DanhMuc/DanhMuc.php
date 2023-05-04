@@ -24,7 +24,7 @@
                 <td><?php echo $data[$i][0]?></td>
                 <td><?php echo $data[$i][1]?></td>
                 <td>
-                    <button id="edit_dm" onclick=edit()>Sửa</button>
+                    <button id="edit_dm" onclick="edit(`<?php echo $data[$i][0]?>`,`<?php echo $data[$i][1]?>`)">Sửa</button>
                     <button id="delete_dm" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</button>
                     <!--onclick="return confirm(`Bạn có muốn xóa không ?`)" thực hiện kiểm tra xem người dùng có muốn xóa hay không nếu onclick trả về giá trị false thì không thực hiện di chuyển đến href  -->
                 </td>
