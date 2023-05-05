@@ -1,4 +1,4 @@
-
+<script src="../js/login.js"></script>
         <header>
             <div id = "header">
                 <div class="container2">
@@ -13,7 +13,7 @@
                     <div class = "content3">
                         <ul>
                             <li class = "ti-search kl"></li>
-                            <li class="ti-user user"></li>
+                            <li class="ti-user user" onclick="hienthi()"></li>
                             <li class="ti-shopping-cart gh"></li>
                         </ul>
                     </div>

@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        
+    <form action="index.php">
         <div id="artificial_turf " class="block-product">
             <div class="container">
                 <div class="title-block">
@@ -217,8 +217,8 @@
                     <div class="viewall-content">Xem tất cả</div>
                 </div>
             </div>
-
         </div>
+    </form>
 
         <div id="natural_turf " class="block-product">
             <div class="container">
@@ -644,6 +644,9 @@
                 <div class="quickview-quantity">
                     Số lượng còn lại: <p>25 đôi</p>
                 </div>
+                <form id="add-to-cart-form" action="cart.php?action=add" method=""POST>
+                    <input type="text" value="1" name="quantity[]">
+                </form>
                 <button class="add-cart">
                     <span class="icon-add-cart"></span>
                     <span>Thêm vào giỏ hàng</span>

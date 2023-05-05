@@ -11,6 +11,7 @@
 <!-- products -->
     <link rel="stylesheet" href="./css/products.css">
     <script src="./js/index.js"></script>
+    <script src="./js/login.js"></script>
     <!-- <link rel="stylesheet" href="./fonts/fontawesome-free-5.12.0-web/css/all.min.css"> -->
 
     <!-- slider -->
@@ -28,12 +29,17 @@
     <!-- post -->
     <link rel="stylesheet" href="./css/post.css">
 
+    <!-- login -->
+    <link rel="stylesheet" href="./css/formDN.css">
+
 
 </head>
 <body>
     <div id="wrapper">
         <?php include('template/header.php');?>
         <?php include('template/top_menu.php');?>
+        <?php include('account/login.php');?>
+        <?php include('account/register.php');?>
         <div id="main">
             <?php include('template/slider.php');?>
             <?php include('template/products.php');?>
