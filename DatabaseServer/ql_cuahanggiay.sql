@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2023 at 09:17 AM
+-- Generation Time: May 05, 2023 at 11:47 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -80,6 +80,19 @@ CREATE TABLE `chitietphieunhap` (
   `TongGia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `chitietphieunhap`
+--
+
+INSERT INTO `chitietphieunhap` (`MaSP`, `MaPhieu`, `SoLuong`, `Gia`, `TongGia`) VALUES
+('001', 1, 50, 1190000, 59500000),
+('005', 6, 30, 2950000, 88500000),
+('008', 5, 10, 3500000, 35000000),
+('010', 2, 10, 2900000, 29000000),
+('010', 5, 10, 2900000, 29000000),
+('022', 3, 20, 6500000, 130000000),
+('031', 4, 50, 550000, 27500000);
+
 -- --------------------------------------------------------
 
 --
@@ -123,8 +136,11 @@ CREATE TABLE `danhmuc` (
 --
 
 INSERT INTO `danhmuc` (`MaDM`, `TenDM`, `TrangThai`) VALUES
-('1', 'Giay dinh san co nhan tao\r\n', 1),
-('2', 'Giay dinh san co tu nhien', 1);
+('DM-1', 'Giay dinh san co nhan tao\r\n', 1),
+('DM-2', 'Giay dinh san co tu nhien', 1),
+('DM-3', 'Giay tre em', 1),
+('DM-4', 'Giay de bang', 1),
+('DM-5', 'test', 0);
 
 -- --------------------------------------------------------
 
@@ -295,6 +311,18 @@ CREATE TABLE `phieunhaphang` (
   `MaTaiKhoan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `phieunhaphang`
+--
+
+INSERT INTO `phieunhaphang` (`MaPhieu`, `NgayTao`, `TongDon`, `MaHang`, `MaTaiKhoan`) VALUES
+(1, '2021-09-23', 59500000, 'MH-001', 'TK-003'),
+(2, '2022-06-23', 29000000, 'MH-002', 'TK-003'),
+(3, '2022-12-23', 130000000, 'MH-033', 'TK-004'),
+(4, '2022-12-09', 27500000, 'MH-021', 'TK-003'),
+(5, '2020-06-18', 64000000, 'MH-002', 'TK-003'),
+(6, '2020-09-10', 88500000, 'MH-001', 'TK-004');
+
 -- --------------------------------------------------------
 
 --
@@ -339,26 +367,26 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, `MoTa`, `NgayTao`, `MaHang`, `SLTonKho`) VALUES
-('001', 'ADIDAS NEMEZIZ 19.3 TF TRẮNG XANH MUTATOR 2020 PAC', 1190000, 'KM_001', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-23', 'MH-001', 100),
-('002', 'ADIDAS COPA SENSE.3 TF GAME DATA PACK - GZ1366', 1890000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2022-06-23', 'MH-001', 90),
-('003', 'ADIDAS PREDATOR EDGE.3 L TF - GV8527 Data Game Pac', 1900000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2022-06-23', 'MH-001', 20),
-('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2021-12-10', 'MH-001', 89),
-('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2021-12-12', 'MH-001', 76),
-('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2023-03-11', 'MH-001', 80),
-('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '006.jpg', '1', '#', '2021-03-11', 'MH-001', 80),
-('008', 'ADIDAS X SPEEDFLOW .1 FG GW7456 DIAMOND EDGE PACK ', 3500000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2021-03-11', 'MH-001', 80),
-('010', 'NIKE ZOOM MERCURIAL VAPOR 15 PRO TF TRẮNG', 2900000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-002', 190),
-('011', 'NIKE GRIPKNIT PHANTOM GX ELITE FG', 5500000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2020-09-10', 'MH-002', 100),
-('012', 'NIKE TIEMPO LEGEND 9 ELITE FG CZ8482-075 RECHARGE ', 3900000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2022-09-11', 'MH-002', 100),
-('013', 'NIKE MERCURIAL SUPERFLY 8 ELITE FG CV0958-760 MOTI', 4100000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2023-09-11', 'MH-002', 100),
-('016', ' NIKE TIEMPO LEGEND 9 ACADEMY TF WORLD CUP', 1690000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2020-09-10', 'MH-002', 100),
-('017', 'NIKE TIEMPO REACT LEGEND 9 PRO TF WORLD CUP', 2550000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-10', 'MH-002', 100),
-('018', 'NIKE TIEMPO REACT LEGEND 9 PRO TF', 2550000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-10', 'MH-002', 101),
-('019', ' NIKE ZOOM MERCURIAL VAPOR 15 PRO TF HỒNG', 2950000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-002', 190),
-('020', '  PUMA ULTRA ULTIMATE CAGE TF 10689301 FASTEST PAC', 2850000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-033', 190),
-('021', 'PUMA ULTRA 1.3 FG/AG 106477-02 FASTER FOOTBALL PAC', 3500000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2023-01-10', 'MH-033', 190),
-('022', 'PUMA FUTURE Z NEYMAR X COPA AMERICA FG 10684201', 6500000, '#', '#', 'Giày đinh sân cỏ tự nhiên', '#', '2022-01-10', 'MH-033', 190),
-('031', 'GIÀY PAN VIGOR X TF ĐẾ ĐINH', 550000, '#', '#', 'Giày đinh sân cỏ nhân tạo', '#', '2023-07-11', 'MH-021', 190);
+('001', 'ADIDAS NEMEZIZ 19.3 TF TRẮNG XANH MUTATOR 2020 PAC', 1190000, 'KM_001', '001.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-23', 'MH-001', 100),
+('002', 'ADIDAS COPA SENSE.3 TF GAME DATA PACK - GZ1366', 1890000, '#', '002.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2022-06-23', 'MH-001', 90),
+('003', 'ADIDAS PREDATOR EDGE.3 L TF - GV8527 Data Game Pac', 1900000, '#', '003.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2022-06-23', 'MH-001', 20),
+('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, '#', '004.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-12-10', 'MH-001', 89),
+('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, '#', '005.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-12-12', 'MH-001', 76),
+('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, '#', '006.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2023-03-11', 'MH-001', 80),
+('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '007.jpg', '1', '#', '2021-03-11', 'MH-001', 80),
+('008', 'ADIDAS X SPEEDFLOW .1 FG GW7456 DIAMOND EDGE PACK ', 3500000, '#', '008.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2021-03-11', 'MH-001', 80),
+('010', 'NIKE ZOOM MERCURIAL VAPOR 15 PRO TF TRẮNG', 2900000, '#', '010.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-002', 190),
+('011', 'NIKE GRIPKNIT PHANTOM GX ELITE FG', 5500000, '#', '011.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2020-09-10', 'MH-002', 100),
+('012', 'NIKE TIEMPO LEGEND 9 ELITE FG CZ8482-075 RECHARGE ', 3900000, '#', '012.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2022-09-11', 'MH-002', 100),
+('013', 'NIKE MERCURIAL SUPERFLY 8 ELITE FG CV0958-760 MOTI', 4100000, '#', '013.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2023-09-11', 'MH-002', 100),
+('016', ' NIKE TIEMPO LEGEND 9 ACADEMY TF WORLD CUP', 1690000, '#', '016.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2020-09-10', 'MH-002', 100),
+('017', 'NIKE TIEMPO REACT LEGEND 9 PRO TF WORLD CUP', 2550000, '#', '017.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-10', 'MH-002', 100),
+('018', 'NIKE TIEMPO REACT LEGEND 9 PRO TF', 2550000, '#', '018.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-10', 'MH-002', 101),
+('019', ' NIKE ZOOM MERCURIAL VAPOR 15 PRO TF HỒNG', 2950000, '#', '019.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-002', 190),
+('020', '  PUMA ULTRA ULTIMATE CAGE TF 10689301 FASTEST PAC', 2850000, '#', '020.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-033', 190),
+('021', 'PUMA ULTRA 1.3 FG/AG 106477-02 FASTER FOOTBALL PAC', 3500000, '#', '021.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2023-01-10', 'MH-033', 190),
+('022', 'PUMA FUTURE Z NEYMAR X COPA AMERICA FG 10684201', 6500000, '#', '022.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2022-01-10', 'MH-033', 190),
+('031', 'GIÀY PAN VIGOR X TF ĐẾ ĐINH', 550000, '#', '031.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2023-07-11', 'MH-021', 190);
 
 -- --------------------------------------------------------
 

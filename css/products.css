@@ -132,9 +132,7 @@
 
     color:#fff
 }
-.product-info{
-    
-}
+
 .product-name{
     height:52px;
     font-size: 15px;
@@ -210,6 +208,7 @@
     right:0;
     background-color: hsla(0, 0%, 20%, 0.304);
     display: none;
+    z-index: 5;
 }
 #quickview{
     width:1000px;
@@ -239,7 +238,8 @@
     flex-direction: column;
     margin-right: 20px;
 }
-.img-main{}
+
+
 .img-main img{
     height:345px;
     width:345px;
@@ -269,11 +269,9 @@
     width:70px;
 }
 
-.quickview-content{}
 .quickview .title{
     font-size:25px;
 }
-.list-star{}
 .quickview-price{
     color:#ce1818;
     font-weight: 700;
@@ -334,7 +332,7 @@
     margin-top: 10px;
 }
 
-.icon-add{}
+
 .quickview-description{
     font-size: 20px;
     opacity: 0.8;
