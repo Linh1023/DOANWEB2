@@ -1,38 +1,50 @@
+<?php
+    if(isset($_GET['MaSP'])){
+        $MaSP = $_GET["MaSP"];
+
+        include("./db/DAOSP.php");
+        $db = new DAOSP();
+        $db->connect();
+
+        $data = $db->getList($MaSP);
+    }
+
+?>
 <div id="main_product">
     <div id = "top_main">
         <div id = "selection">
             <div class = "item_selection">
                 <label>
                         <input type = "radio" name = "img_selected" />
-                        <img src = "./img/products/001.jpg">
+                        <img src = "./img/products/<?php echo $data[0][4]?>">
                 </label>
             </div>
             <div class = "item_selection">
                 <label>
                         <input type = "radio" name = "img_selected" />
-                        <img src = "./img/products/001.jpg">
+                        <img src = "./img/products/<?php echo $data[0][0]?>_1.jpg">
                 </label>
             </div>
             <div class = "item_selection">
                 <label>
                         <input type = "radio" name = "img_selected" />
-                        <img src = "./img/products/001.jpg">
+                        <img src = "./img/products/<?php echo $data[0][0]?>_2.jpg">
                 </label>
             </div>
             <div class = "item_selection">
                 <label>
                         <input type = "radio" name = "img_selected" />
-                        <img src = "./img/products/001.jpg">
+                        <img src = "./img/products/<?php echo $data[0][0]?>_3.jpg">
                 </label>
             </div>
         </div>
         <div id = "image">
-            <img src = "./img/products/001.jpg">
+            <img src = "./img/products/<?php echo $data[0][4]?>">
         </div>
         <div id = "info">
-            <h1>ADIDAS NEMEZIZ 19.3 TF TRẮNG XANH MUTATOR 2020 PACK</h2>
+            <h1><?php echo $data[0][1]?></h2>
             <div id = "price">
-                <p>1,000,000đ</p>
+                <p><?php echo number_format($data[0][2],0,',','.')."đ"?></p>
             </div>
             <p>Kích thước</p>
             <div id = "size">
@@ -78,11 +90,11 @@
             <div id = "tonkho">
                 <p>
                     Tồn kho:
-                    <span>12</span>  
+                    <span><?php echo $data[0][9]?></span>  
                 </p>
             </div>
             <div id = "giohang">
-                <a href = "#">
+                <a href = "xuly.php">
                     <span id="icon"><i class="ti-shopping-cart"></i></span> 
                     <span id = "themvaogio">Thêm vào giỏ</span>
                 </a>

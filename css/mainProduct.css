@@ -102,3 +102,25 @@
 #tonkho p{
     font-size: 22px;
 }
+
+#info #giohang{
+    background-color: rgb(58, 189, 58);
+    margin: 20px 10px ;
+    border-radius: 6px;
+    display: inline-block;
+    padding: 20px 40px;
+}
+#info #giohang:hover{
+    background-color: green;
+}
+#info #giohang a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: white;
+
+}
+
+#info #giohang a span{
+    margin: 0px 5px ;
+}
