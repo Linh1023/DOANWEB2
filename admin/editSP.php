@@ -97,7 +97,7 @@
                            
                             ?>
                             <!-- Tạo form thêm / sửa -->
-                            <form action="xuly/xulyEditSP.php" method="post" enctype="multipart/form-data">
+                            <form action="xuly/xulyEditSP.php" method="post">
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Tên:</div>
@@ -154,32 +154,11 @@
                                     <div class="col col-9">
                                         <div class="row">
                                             <img style="width: 300px;min-height: 150px;"
-                                                src="<?php if(!strpos($hinhAnh,'.')) 
-                                                    echo "../img/img-logo/sneaker.jpg";
-                                                     else echo" ../img/products/".$hinhAnh; ?>"
-                                                
+                                                src="<?php echo ($hinhAnh = "#") ? "../img/img-logo/sneaker.jpg" : $hinhAnh ?>"
                                                 alt="" id="imagePreview">
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="row mt-2">
-                                    <label class="row">
-                                        <div class="col col-3">Thư viện ảnh:</div>
-                                        <div class="col col-9">
-                                            <input class="w-100" type="file" id="anhSPs" name="anhphu" multiple enctype="multipart/form-data"
-                                                onchange="getLinkImgs()">
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="row mt-2">
-                                        <div class="col col-3"></div>
-                                        <div class="col col-9">
-                                        <div id="imageContainer"></div>
-
-                                        </div>
-                                </div>
-                                
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Hãng:</div>

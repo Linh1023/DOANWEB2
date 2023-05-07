@@ -1,0 +1,21 @@
+#form,#formdk {
+    position: fixed;
+    z-index:10;
+    width: 300px;
+    border: 1px solid green;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: 620px;
+    font-weight: 700px;
+    background-color: white ;
+    display: none;
+}
+#form input,#formdk input {
+    width: 100%;
+    padding: 10px 0;
+}
+#form p,#formdk p {
+    margin-left:250px;
+    cursor: pointer;
+}

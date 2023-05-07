@@ -52,6 +52,10 @@
   margin: 0px 15px;
   font-size: 25px;
 }
+.content3 ul li a {
+  color:black;
+  cursor: pointer;
+}
 
 .content3 ul .gh:hover, .content3 ul .user:hover, .content3 ul .kl:hover {
   color:aqua;

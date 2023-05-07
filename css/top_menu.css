@@ -1,6 +1,13 @@
 .top_menu{
-    width:1200px;
-    margin: 0 auto;
+    top: 0px;
+    width:100%;
+    padding : 0 110px;
+    position: sticky;
+    z-index: 20;
+    background-color: white;
+    box-shadow: 1px 10px 15px 3px gray;
+    /*box-shadow : x y blur scale color*/
+
 }
 
 .top_menu ul{
