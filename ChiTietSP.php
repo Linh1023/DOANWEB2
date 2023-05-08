@@ -19,6 +19,7 @@
     <!-- footer -->
     <link rel="stylesheet" href="./css/footer.css">
 
+    <script src="./js/ChiTietSP.js"></script>
 
 
 </head>

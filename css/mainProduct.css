@@ -29,11 +29,15 @@
     display: none;
 }
 
-.item_selection  label  img{
+.item_selection  label img{
     display: block;
     width: 50%;
     border: 1px solid gray;
     
+}
+
+.item_selection label input:checked~img{
+    border: 1px solid red;
 }
 
 #image {
@@ -91,10 +95,38 @@
     padding: 10px 25px;
     font-size: 20px;
     cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
 #info #size #size_list .size-item span:hover{
     border: 1px solid orangered;
 }
+#info #size #size_list .size-item input:checked~span{
+    border: 2px solid orangered;
+}
+#info #size #size_list .size-item input:checked~span::before{
+    content: "";
+    position: absolute;
+    bottom: 32px;
+    right: 10px;
+    width: 13px;
+    height: 13px;
+    background-color: orangered;
+    transform: skewY(50deg);
+}
+
+#info #size #size_list .size-item input:checked~span::after{
+    content: "";
+    position: absolute;
+    bottom: 37px;
+    right: -9px;
+    width: 20px;
+    height: 13px;
+    background-color: orangered;
+    transform: skewY(-50deg);
+
+}
+
 #info #size #size_list .size-item input{
     display: none;
 }

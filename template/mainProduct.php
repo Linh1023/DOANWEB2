@@ -15,31 +15,24 @@
         <div id = "selection">
             <div class = "item_selection">
                 <label>
-                        <input type = "radio" name = "img_selected" />
+                        <input type = "radio" name = "img_selected" onclick="ChuyenAnh('./img/products/<?php echo $data[0][4]?>')" checked/>
                         <img src = "./img/products/<?php echo $data[0][4]?>">
                 </label>
             </div>
+            <?php
+                for($i = 1; $i < 4;$i++){
+
+            ?>
             <div class = "item_selection">
                 <label>
-                        <input type = "radio" name = "img_selected" />
-                        <img src = "./img/products/<?php echo $data[0][0]?>_1.jpg">
+                        <input type = "radio" name = "img_selected" onclick="ChuyenAnh('./img/products/<?php echo $data[0][0]?>_<?php echo $i?>.jpg')"/>
+                        <img src = "./img/products/<?php echo $data[0][0]?>_<?php echo $i?>.jpg">
                 </label>
             </div>
-            <div class = "item_selection">
-                <label>
-                        <input type = "radio" name = "img_selected" />
-                        <img src = "./img/products/<?php echo $data[0][0]?>_2.jpg">
-                </label>
-            </div>
-            <div class = "item_selection">
-                <label>
-                        <input type = "radio" name = "img_selected" />
-                        <img src = "./img/products/<?php echo $data[0][0]?>_3.jpg">
-                </label>
-            </div>
+            <?php } ?>
         </div>
         <div id = "image">
-            <img src = "./img/products/<?php echo $data[0][4]?>">
+            <img src = "./img/products/<?php echo $data[0][4]?>" id="AnhChinh">
         </div>
         <div id = "info">
             <h1><?php echo $data[0][1]?></h2>
@@ -102,7 +95,9 @@
         </div>
     </div>
     <div id = "bottom_main">
-        
+        <div id = "MoTa">
+            
+        </div>
 
     </div>
 </div>
