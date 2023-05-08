@@ -156,3 +156,83 @@
 #info #giohang a span{
     margin: 0px 5px ;
 }
+
+#bottom_main{
+    margin: 150px 0px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#MoTa{
+    width: 60%;
+    
+}
+
+#MoTa #title{
+    top: -70px;
+    display: inline-block;
+    background-color: white;
+    padding: 20px 30px;
+    border-top: 4px solid dodgerblue;
+    border-right: 2px solid gray;
+    border-left: 2px solid gray;
+    
+}
+
+#MoTa #title h2{
+    text-transform: uppercase;
+    color: dodgerblue;
+}
+
+#MoTa #content {
+    border: 2px solid gray;
+    padding: 20px;
+}
+#danhsach{
+    width: 30%;
+}
+
+
+#danhsach #list_sp{
+    display: block;
+    padding: 20px 30px;
+    background-color: slategrey;
+}
+
+#danhsach #list_sp h3{
+    text-transform: uppercase;
+}
+
+#danhsach ul{
+    padding: 10px 5px;
+    border: 2px solid gray;
+}
+
+#danhsach  ul li{
+    display: inline-block;
+}
+#danhsach  ul li a{
+    text-decoration: none;
+}
+#danhsach  ul li a .item{
+    display: flex;
+}
+
+#danhsach  ul li a .item img{
+    width: 30%;
+}
+
+#danhsach  ul li a .item .content_list{
+    width: 70%;
+    color: black;
+    font-weight: 200;
+    margin-left: 10px;
+}
+
+#danhsach ul li a .item .content_list h2{
+    margin-bottom: 2px;
+}
+
+
+

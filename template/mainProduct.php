@@ -96,8 +96,31 @@
     </div>
     <div id = "bottom_main">
         <div id = "MoTa">
-            
+            <div id = "title">
+                <h2>Mô tả sản phẩm</h2>
+            </div>
+            <div id = "content">
+                <p><?php echo $data[0][6]?></p>
+                
+            </div>
         </div>
-
+        <div id = "danhsach">
+            <div id = "list_sp">
+                    <h3>Các sản phẩm liên quan</h3>
+            </div>
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="item">
+                            <img src="./img/products/<?php echo $data[0][4]?>">
+                            <div class = "content_list">
+                                <h2>Product</h2>
+                                <span>1,000,000đ</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
