@@ -9,7 +9,18 @@ use Vtiful\Kernel\Format;
 
         $data = $db->getList($MaSP);
         $dataLq = $db->getListLienQuan($data[0][8], $MaSP);
-        shuffle($dataLq);
+        if($dataLq != null){
+            shuffle($dataLq);
+        }
+
+
+
+        $Tilegiam = $db->getTiLeGiam($MaSP);
+
+
+        function TinhTienGiam($Tilegiam, $data){
+            return $data[0][2] - $data[0][2]*$Tilegiam/100;
+        }
     }
 
 ?>
@@ -40,7 +51,7 @@ use Vtiful\Kernel\Format;
         <div id = "info">
             <h1><?php echo $data[0][1]?></h2>
             <div id = "price">
-                <p><?php echo number_format($data[0][2],0,',','.')."đ"?></p>
+                <p><?php echo number_format(TinhTienGiam($Tilegiam,$data),0,',','.')."đ"?></p>
                 <p id="niemyet"><?php echo number_format($data[0][2],0,',','.')."đ"?></p>
             </div>
             <p>Kích thước</p>
@@ -114,29 +125,33 @@ use Vtiful\Kernel\Format;
             <ul>
                 
                 <?php
-                $n = 3;
-                if(count($dataLq) > 3){
-                    $n = 4;
-                }
-                else{
-                    $n = count($dataLq);
-                }
-                for($i=0;$i<$n;$i++){ 
+                if($dataLq!=null){
+                    $n = 3;
+                    if(count($dataLq) > 3){
+                        $n = 4;
+                    }
+                    else{
+                        $n = count($dataLq);
+                    }
+                    for($i=0;$i<$n;$i++){ 
                     
                     
                 ?>
-                <li>
-                    <a href="ChiTietSP.php?MaSP=<?php echo $dataLq[$i][0]?>">
-                        <div class="item">
-                            <img src="./img/products/<?php echo $dataLq[$i][4]?>">
-                            <div class = "content_list">
-                                <h2><?php echo $dataLq[$i][1]?></h2>
-                                <span><?php echo number_format($dataLq[$i][2],0,',','.')."đ"?></span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <?php } ?>
+                        <li>
+                            <a href="ChiTietSP.php?MaSP=<?php echo $dataLq[$i][0]?>">
+                                <div class="item">
+                                    <img src="./img/products/<?php echo $dataLq[$i][4]?>">
+                                    <div class = "content_list">
+                                        <h2><?php echo $dataLq[$i][1]?></h2>
+                                        <span><?php echo number_format($dataLq[$i][2],0,',','.')."đ"?></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                <?php 
+                    }
+                } 
+                ?>
             </ul>
             <div id = "danhmuc">
                 <div class = "item">
