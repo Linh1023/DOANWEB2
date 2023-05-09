@@ -70,12 +70,17 @@
     font-size: 40px;
     font-weight: bold;
 }
-
+#info #price #niemyet{
+    margin-top: 5px;
+    font-size: 20px;
+    text-decoration: line-through;
+}
 #info p{
     font-size: 22px;
     font-weight: bold;
     color: gray;
 }
+
 #info #size{
     margin: 10px 0px;
 }
@@ -86,13 +91,13 @@
 }
 
 #info #size #size_list .size-item{
-    padding: 20px ;
+    padding: 9px ;
     margin: 5px 0px ;
 }
 
 #info #size #size_list .size-item span{
     border: 1px solid grey;
-    padding: 10px 25px;
+    padding: 10px 20px;
     font-size: 20px;
     cursor: pointer;
     overflow: hidden;
@@ -227,12 +232,33 @@
     width: 70%;
     color: black;
     font-weight: 200;
-    margin-left: 10px;
+    margin-left: 27px;
 }
 
 #danhsach ul li a .item .content_list h2{
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 400;
 }
 
+#danhsach ul li a .item .content_list span{
+    color: orangered;
+    font-size: 18px;
+}
 
+#danhsach #danhmuc {
+    display: inline-block;
+    margin: 20px 0px;
+}
+#danhsach #danhmuc .item{
+    margin: 10px 0px;
+}
 
+#danhsach #danhmuc .item a img{
+    width: 121%;
+}
+
+#danhsach #danhmuc .item a img:hover{
+    box-shadow: 1px 1px 5px 5px gray;
+    transform: translate(0px, 3px);
+}

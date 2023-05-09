@@ -1,4 +1,5 @@
 <?php
+use Vtiful\Kernel\Format;
     if(isset($_GET['MaSP'])){
         $MaSP = $_GET["MaSP"];
 
@@ -7,6 +8,8 @@
         $db->connect();
 
         $data = $db->getList($MaSP);
+        $dataLq = $db->getListLienQuan($data[0][8], $MaSP);
+        shuffle($dataLq);
     }
 
 ?>
@@ -38,6 +41,7 @@
             <h1><?php echo $data[0][1]?></h2>
             <div id = "price">
                 <p><?php echo number_format($data[0][2],0,',','.')."đ"?></p>
+                <p id="niemyet"><?php echo number_format($data[0][2],0,',','.')."đ"?></p>
             </div>
             <p>Kích thước</p>
             <div id = "size">
@@ -100,8 +104,7 @@
                 <h2>Mô tả sản phẩm</h2>
             </div>
             <div id = "content">
-                <p><?php echo $data[0][6]?></p>
-                
+                <?php echo $data[0][6]?>
             </div>
         </div>
         <div id = "danhsach">
@@ -109,18 +112,49 @@
                     <h3>Các sản phẩm liên quan</h3>
             </div>
             <ul>
+                
+                <?php
+                $n = 3;
+                if(count($dataLq) > 3){
+                    $n = 4;
+                }
+                else{
+                    $n = count($dataLq);
+                }
+                for($i=0;$i<$n;$i++){ 
+                    
+                    
+                ?>
                 <li>
-                    <a href="#">
+                    <a href="ChiTietSP.php?MaSP=<?php echo $dataLq[$i][0]?>">
                         <div class="item">
-                            <img src="./img/products/<?php echo $data[0][4]?>">
+                            <img src="./img/products/<?php echo $dataLq[$i][4]?>">
                             <div class = "content_list">
-                                <h2>Product</h2>
-                                <span>1,000,000đ</span>
+                                <h2><?php echo $dataLq[$i][1]?></h2>
+                                <span><?php echo number_format($dataLq[$i][2],0,',','.')."đ"?></span>
                             </div>
                         </div>
                     </a>
                 </li>
+                <?php } ?>
             </ul>
+            <div id = "danhmuc">
+                <div class = "item">
+                    <a href="#">
+                        <img src="./img/img-danhmuc/adidas.jpg">
+                    </a>
+                </div>
+                <div class = "item">
+                    <a href="#">
+                        <img src="./img/img-danhmuc/nike.jpg">
+                    </a>
+                </div>
+                <div class = "item">
+                    <a href="#">
+                        <img src="./img/img-danhmuc/pan.jpg">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
