@@ -1,10 +1,10 @@
 
 
 <link rel="stylesheet" href="../css/formDN.css"/>
-
+<link rel="stylesheet" href="themify-icons-font/themify-icons/themify-icons.css">
 
 <form method="post" action="" id="formdk">
-    <p onclick=tat()>X</p>
+    <p onclick=tatdk()>X</p>
     <h2>Đăng ký</h2>
     
     Username: <input type="text" name="username" value="" required>

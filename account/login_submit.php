@@ -11,7 +11,7 @@
         }
 
 
-        $sql = "SELECT TenDN,MatKhau FROM taikhoan WHERE TenDN = '$username'";
+        $sql = "SELECT TenDN,MatKhau,Quyen FROM taikhoan WHERE TenDN = '$username'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) == 0){
@@ -25,10 +25,16 @@
             echo '<script language="javascript">alert("Mật khẩu không đúng. Vui lòng nhập lại!"); window.location="index.php";</script>';
             exit;
         }
-        //Lưu tên đăng nhập
-        $_SESSION['username'] = $username;
-        echo '<script language="javascript">alert("Ban da dang nhap thanh cong!"); window.location="index.php";</script>';
+        if($row['Quyen'] == "admin") {
+            echo '<script language="javascript">alert("Ban da dang nhap thanh cong!"); window.location="admin/index.php";</script>';
+        }
+        else{
+            //Lưu tên đăng nhập
+            $_SESSION['MaTaiKhoan'] = $username;
+            
+            echo '<script language="javascript">alert("Ban da dang nhap thanh cong!"); window.location="index.php";</script>';
+            die();
+        }
         
-        die();
     }
 ?>

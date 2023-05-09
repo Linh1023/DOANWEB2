@@ -1,5 +1,9 @@
 function hienthi(){
     let a = document.getElementById('form');
+    let b = document.getElementById('formdk');
+    if(b.style.display == 'block'){
+        b.style.display = 'none';
+    }
     if(a.style.display == 'none'){
         a.style.display = 'block';
     }
@@ -8,8 +12,12 @@ function hienthi(){
     }
 }
 
-function tat(){
+function tatdn(){
     let a = document.getElementById('form');
+    a.style.display = 'none';
+}
+function tatdk(){
+    let a = document.getElementById('formdk');
     a.style.display = 'none';
 }
 

@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="themify-icons-font/themify-icons/themify-icons.css">
 
 <form method="post" action="" id="form" >
-    <p onclick=tat()>X</p>
+    <p onclick=tatdn()>X</p>
     <h2>Đăng nhập</h2>
     Username: 
     <input type="text" name="username" value="" required />

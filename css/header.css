@@ -57,7 +57,8 @@
   cursor: pointer;
 }
 
-.content3 ul .gh:hover, .content3 ul .user:hover, .content3 ul .kl:hover {
+
+.content3 ul .gh:hover, .content3 ul .user:hover, .content3 ul .kl:hover,.content3 ul .ti-share-alt:hover, .content3 ul li a:hover {
   color:aqua;
   cursor: pointer;
 }

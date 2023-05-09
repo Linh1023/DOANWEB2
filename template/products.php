@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-    <form action="index.php">
+    
         <div id="artificial_turf " class="block-product">
             <div class="container">
                 <div class="title-block">
@@ -218,7 +218,7 @@
                 </div>
             </div>
         </div>
-    </form>
+  
 
         <div id="natural_turf " class="block-product">
             <div class="container">
