@@ -21,11 +21,12 @@
         }
         //Kiểm tra mật khẩu có đúng không:
         $row = mysqli_fetch_array($result);
+        $password = md5($password);
         if ($password != $row['MatKhau']) {
             echo '<script language="javascript">alert("Mật khẩu không đúng. Vui lòng nhập lại!"); window.location="index.php";</script>';
             exit;
         }
-        if($row['Quyen'] == "admin") {
+        if($row['Quyen'] == "Admin") {
             echo '<script language="javascript">alert("Ban da dang nhap thanh cong!"); window.location="admin/index.php";</script>';
         }
         else{

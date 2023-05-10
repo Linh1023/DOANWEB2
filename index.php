@@ -37,9 +37,9 @@
 <body>
     <div id="wrapper">
         <?php include('account/login.php');?>
+        <?php include('account/register.php');?>
         <?php include('template/header.php');?>
         <?php include('template/top_menu.php');?>
-        <?php include('account/register.php');?>
         <div id="main">
             <?php include('template/slider.php');?>
             <?php include('template/products.php');?>
