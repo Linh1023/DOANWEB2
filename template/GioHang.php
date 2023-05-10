@@ -148,6 +148,7 @@
                     <label class="tien"><?php 
                         $TongTien = 0;
                         if(isset($_SESSION['cart'])){
+                            
                             foreach ($_SESSION['cart'] as $key => $value){
                                 $TongTien += $value['SL'] * $value['Price'];
                             }
@@ -155,7 +156,21 @@
                         echo number_format($TongTien,0,",",".") . "đ";
                     ?></label>
                 </h2>
-                <a href="#">THANH TOÁN</a>
+                <?php
+                    if(isset($_SESSION['cart']) and count($_SESSION['cart']) != 0){
+                        
+
+                ?>
+                    <a href="./template/XuLyThanhToan.php">THANH TOÁN</a>
+                <?php
+                    }
+                    else{
+                        
+                ?>
+                    <a href="index.php">Tiếp tục mua hàng</a>
+                <?php        
+                    }
+                ?>
             </div>
         </div>
 </div>
