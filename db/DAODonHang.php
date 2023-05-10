@@ -72,5 +72,9 @@ class DAODonHang
             return false;
     
     }
+
+    public function getMaTK($TenDN){
+        
+    }
 }
 ?>
