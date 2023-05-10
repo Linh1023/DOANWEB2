@@ -32,7 +32,17 @@
                         ?>
                             <li>
                                 <a href="GioHang.php"><i class="ti-shopping-cart gh"></i></a>
-                                <span>3</span>
+                                <span>
+                                    <?php
+                                        $Cart = 0;
+                                        if(isset($_SESSION['cart'])){
+                                            foreach($_SESSION['cart'] as $key => $value){
+                                                $Cart += $value['SL'];
+                                            }
+                                        }
+                                        echo $Cart;
+                                    ?>
+                                </span>
                             </li>
                         </ul>
                     </div>
