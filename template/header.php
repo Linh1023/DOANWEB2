@@ -16,7 +16,6 @@
                             <li class = "ti-search kl"></li>
 
                             <?php 
-                                // session_start();
                                 if (isset($_SESSION['MaTaiKhoan']) ){
                                     ?>
                                         <li><a href="./account/logout.php"><i class="ti-share-alt"></i></a></li>
@@ -31,7 +30,7 @@
 
                                 }
                         ?>
-                            <li class="ti-shopping-cart gh"></li>
+                            <li><a href="GioHang.php"><i class="ti-shopping-cart gh"></i></a></li>
                         </ul>
                     </div>
                 </div>

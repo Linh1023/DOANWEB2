@@ -1,7 +1,8 @@
 <?php
-use Vtiful\Kernel\Format;
+
     if(isset($_GET['MaSP'])){
         $MaSP = $_GET["MaSP"];
+
 
         include("./db/DAOSP.php");
         $db = new DAOSP();
@@ -24,6 +25,8 @@ use Vtiful\Kernel\Format;
     }
 
 ?>
+<form method="POST" action="GioHang.php">
+<input type="hidden" name="MaSP" value="<?php echo $data[0][0]?>">
 <div id="main_product">
     <div id = "top_main">
         <div id = "selection">
@@ -59,37 +62,37 @@ use Vtiful\Kernel\Format;
                 <ul id = "size_list">
                     <li class = "size-item">
                         <label>
-                            <input type = "radio" name = "option" value = "39">
+                            <input type = "radio" name = "Size" value = "39">
                             <span>39</span>
                         </label>
                     </li>
                     <li class = "size-item">
                         <label>
-                            <input type = "radio" name = "option" value = "40">
+                            <input type = "radio" name = "Size" value = "40" checked>
                             <span>40</span>
                         </label>
                     </li>
                     <li class = "size-item">
                         <label>
-                            <input type = "radio" name = "option" value = "41">
+                            <input type = "radio" name = "Size" value = "41">
                             <span>41</span>
                         </label>
                     </li>
                     <li class = "size-item">
                         <label>
-                            <input type = "radio" name = "option" value = "42">
+                            <input type = "radio" name = "Size" value = "42">
                             <span>42</span>
                         </label>
                     </li>
                     <li class = "size-item">
                         <label>
-                            <input type = "radio" name = "option" value = "43">
+                            <input type = "radio" name = "Size" value = "43">
                             <span>43</span>
                         </label>
                     </li>
                     <li class = "size-item">
                         <label>
-                            <input type = "radio" name = "option" value = "44">
+                            <input type = "radio" name = "Size" value = "44">
                             <span>44</span>
                         </label>
                     </li>
@@ -101,14 +104,15 @@ use Vtiful\Kernel\Format;
                     <span><?php echo $data[0][9]?></span>  
                 </p>
             </div>
-            <div id = "giohang">
-                <a href = "xuly.php">
+            <label id="giohang">
+                    <input type = "submit" name = "add_to_cart" value = "ThemGio">
                     <span id="icon"><i class="ti-shopping-cart"></i></span> 
                     <span id = "themvaogio">Thêm vào giỏ</span>
-                </a>
-            </div>
+            </label>
+
         </div>
     </div>
+</form>
     <div id = "bottom_main">
         <div id = "MoTa">
             <div id = "title">
