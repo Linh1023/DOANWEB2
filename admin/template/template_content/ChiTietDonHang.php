@@ -11,8 +11,15 @@
     $db_kh = new DAOKhachHang();
     $db_kh->connect();
     $data = $db_kh->LayThongTinKhach($MaTK);
-    if($data == null){
-        header("location:../../index.php?id=dh");
+    if(isset($_GET['PQ'])){
+        if($data == null){
+            header("location:../../../../index.php?id=dh");
+        }
+    }
+    else{
+        if($data == null){
+            header("location:../../index.php?id=dh");
+        }
     }
 ?>
 
@@ -63,4 +70,14 @@
                 $i++;
             }
         ?>
+    </table>
+
+    <?php
+        if(isset($_GET['PQ'])){
+    ?>
+        <a href="../../../GioHang.php"><div id="back">Xác nhận</div></a>
+    <?php        
+        }
+    ?>
+
 </div>

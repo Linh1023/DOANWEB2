@@ -2,10 +2,13 @@
     session_start();
 
     include("../db/DAODonHang.php");
+    include("../db/DAOChiTietDonHang.php");
 
     $db = new DAODonHang();
     $db->connect();
 
+    $dbCTHD = new DAOChiTietDonHang();
+    $dbCTHD->connect();
 
 
     if(!isset($_SESSION['MaTaiKhoan'])){
@@ -17,7 +20,6 @@
 
     $NgayDat= date("Y-m-d");
 
-    // echo $NgayDat;
 
     $TongTien = 0 ;
 
@@ -29,7 +31,18 @@
     }
 
     if($db->Insert($MaTK,$NgayDat,$TongTien)){
-        echo '<script>alert("Đơn hàng sẽ được xử lý nhanh nhất có thể"); window.location="../GioHang.php";</script>';
+        $MaDon = $db->getMaDon();
+        foreach ($_SESSION['cart'] as $key => $value){
+            $ThanhTien = $value['SL'] * $value['Price'];
+            if($dbCTHD->Insert($value['ID'],$MaDon[0],$value['Size'],$value['SL'],$value['Price'],$ThanhTien)){
+
+            }
+            else{
+                echo "Error" . $value['ID'];
+            }
+        }
+        unset($_SESSION['cart']);
+        echo "<script>window.location='../admin/template/template_content/ChiTietDonHang.php?PQ=User&CT=$MaDon[0]&MaTK=$MaTK&Date=$NgayDat&TT=$TongTien';</script>";
     }
     else{
         echo '<script>alert("Tạo đơn thất bại"); window.location="../GioHang.php";</script>';
