@@ -64,17 +64,13 @@ class DAODonHang
     }
 
     public function Insert($MaTK,$NgayDat,$TongTien){
-        $sql = "INSERT INTO donhang ('MaTaiKhoan','NgayDat','TrangThai','TongTien') VALUES (".$MaTK.",".$NgayDat.",0,".$TongTien.")";
+        $sql = "INSERT INTO donhang (MaTaiKhoan,NgayDat,TrangThai,TongTien) VALUES (".$MaTK.",".$NgayDat.",". 0 .",".$TongTien.")";
         if($result = mysqli_query($this->conn,$sql)){
             return true;
         }
         else
             return false;
     
-    }
-
-    public function getMaTK($TenDN){
-        
     }
 }
 ?>
