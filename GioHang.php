@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +12,7 @@
 
     <link rel="stylesheet" href="./css/GioHang.css">
     
+    <script src="./js/login.js"></script>
     <!-- header -->
     <link rel="stylesheet" href="./css/top_menu.css">
     <link rel="stylesheet" href="./fonts/themify-icons-font/themify-icons/themify-icons.css">
@@ -23,13 +22,17 @@
     <!-- footer -->
     <link rel="stylesheet" href="./css/footer.css">
 
+    <!-- login -->
+    <link rel="stylesheet" href="./css/formDN.css">
 
 
 </head>
 <body>
     <div id="wrapper">
+        <?php include('account/login.php');?>
         <?php include('template/header.php');?>
         <?php include('template/top_menu.php');?>
+        <?php include('account/register.php');?>
 
         <div id="main">
             <?php include('template/GioHang.php');?>

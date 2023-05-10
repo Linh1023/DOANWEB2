@@ -3,18 +3,38 @@
     $db = new DAOSP();
     $db->connect();
     
-   
+    //unset($_SESSION['cart']);
+    
+    if(isset($_POST['update-click'])){
+        var_dump($_POST);
+        foreach($_POST['quantity'] as $id => $quantity){
+            foreach($_SESSION['cart'] as $key => $value){
+                if($value['ID'] == $id){
+                    $_SESSION['cart'][$key]['SL'] = $quantity;
+                }
+            }
 
+
+        }
+       echo ' <script>window.location="GioHang.php";</script>';
+    }
+
+
+    if(isset($_GET['action'])){
+        $action = $_GET['action'];
+        if($action == 'remove'){
+            foreach($_SESSION['cart'] as $key => $value){
+                if($value['ID'] == $_GET['id']){
+                    unset($_SESSION['cart'][$key]);
+                    echo ' <script>window.location="GioHang.php";</script>';
+                }
+            }
+        }
+    }
 
     if(isset($_POST['add_to_cart'])){
         $MaSP = $_POST['MaSP'];
         $Size = $_POST['Size'];
-        if(isset($_POST['sl'])){
-            $SL = $_POST['sl'];
-        }
-        else{
-            $SL = 1;
-        }
 
 
         $data = $db->getList($MaSP);
@@ -25,7 +45,7 @@
             return $data[0][2] - $data[0][2]*$TiLegiam/100;
         }
         
-        echo $TiLegiam;
+        $TongTien = 0;
 
         
 
@@ -40,7 +60,7 @@
                     "Price" => TinhTienGiam($TiLegiam,$data),
                     "Img" => $data[0][4],
                     "Size" => $Size,
-                    "SL" => $SL
+                    "SL" => "1"
                 );
     
                 $_SESSION['cart'][] = $session_array;
@@ -53,18 +73,19 @@
                 "Price" => TinhTienGiam($TiLegiam,$data),
                 "Img" => $data[0][4],
                 "Size" => $Size,
-                "SL" => $SL
+                "SL" => "1"
             );
 
             $_SESSION['cart'][] = $session_array;
         }
     }
-    session_destroy();
+    
 ?>
 
 
 
 <div id = "gio_hang_container">
+    <form method="POST" action="">
         <div id = "thong_tin">
             <h1>Giỏ hàng</h1>
             <div id="cart_form">
@@ -80,8 +101,9 @@
                                 <th>&ensp; </th>
                             </tr>
                             <?php
-                                foreach($_SESSION['cart'] as $key => $value)
-                                {
+                                if(isset($_SESSION['cart'])){
+                                    foreach($_SESSION['cart'] as $key => $value)
+                                    {
                             ?>
                             <tr>
                                 <td><a href="#"><img src = "./img/products/<?php echo $value['Img']?>"></a></td>
@@ -93,16 +115,19 @@
                                     <?php echo number_format($value['Price'],0,",",".")."đ"?>
                                 </td>
                                 <td>
-                                    <input type = "number" value="1" class = "sl">
+                                    <input type = "number" value="<?php echo $value['SL']?>" min = "1" class = "sl" name="quantity[<?=$value['ID']?>]">
                                 </td>
                                 <td>
                                 <?php echo number_format($value['Price'] * $value['SL'],0,",",".")."đ"?>
                                 </td>
                                 <td>
+                                    <a href = "GioHang.php?action=remove&id=<?php echo $value['ID']?>"> 
                                     <button type = "button" class = "delete"><i class="ti-trash trash"></i></button>
                                 </td>
                             </tr>
-                            <?php } ?>
+                            <?php } 
+                                }
+                            ?>
                         </tbody>
                         
                     </table>
@@ -111,15 +136,24 @@
             
             <div class="clearfix">
                 <a href="index.php">mua tiếp</a>
-                <button type="button" class="btn">Cập nhật giỏ hàng</button>
+                <input type="submit" name="update-click" id="update-click" value = "Cập nhật giỏ hàng">
             </div>
         </div>
+    </form>
         <div id = "thanh_toan">
             <h2>Đơn hàng</h2>
             <div id="thanh_toan_container">
                 <h2>
                     <label>Tổng tiền</label>
-                    <label class="tien">20000000</label>
+                    <label class="tien"><?php 
+                        $TongTien = 0;
+                        if(isset($_SESSION['cart'])){
+                            foreach ($_SESSION['cart'] as $key => $value){
+                                $TongTien += $value['SL'] * $value['Price'];
+                            }
+                        }
+                        echo number_format($TongTien,0,",",".") . "đ";
+                    ?></label>
                 </h2>
                 <a href="#">THANH TOÁN</a>
             </div>

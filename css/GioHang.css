@@ -16,9 +16,12 @@ body{
     display: flex;
 }
 
+#gio_hang_container form{
+    width: 180%;
+}
+
 #gio_hang_container #thong_tin{
     padding: 0px 15px;
-    width: 70%;
 }
 
 #gio_hang_container #thong_tin h1{
@@ -91,7 +94,7 @@ body{
 #gio_hang_container #thong_tin .clearfix{
     width: 100%;
 }
-#gio_hang_container #thong_tin .clearfix a, #gio_hang_container #thong_tin .clearfix .btn{
+#gio_hang_container #thong_tin .clearfix a, #gio_hang_container #thong_tin .clearfix #update-click{
     margin-top: 20px;
     margin-right: 25px;
     padding: 8px 25px;
@@ -105,7 +108,7 @@ body{
 }
 
 #gio_hang_container #thanh_toan{
-    width: 30%;
+    width: 70%;
     padding: 0px 15px;
 }
 

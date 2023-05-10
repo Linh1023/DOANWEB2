@@ -30,7 +30,10 @@
 
                                 }
                         ?>
-                            <li><a href="GioHang.php"><i class="ti-shopping-cart gh"></i></a></li>
+                            <li>
+                                <a href="GioHang.php"><i class="ti-shopping-cart gh"></i></a>
+                                <span>3</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
