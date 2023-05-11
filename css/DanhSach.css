@@ -1,0 +1,97 @@
+#main{
+    display : flex;
+    justify-content: space-around;
+}
+.Loc{
+    margin-top: 67px;
+    width: 300px;
+}
+
+.Loc #Loc_submit{
+    padding: 10px;
+    display: block;
+    background: rgb(58, 189, 58);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+
+.Loc .selection{
+    box-shadow: #000 1px 1px 13px -7px;
+}
+.Loc .selection .title {
+    padding: 20px;
+    border-bottom: 3px solid gray;
+    position: relative;
+}
+.Loc .selection .title .ti-minus{
+    position: absolute;
+    top: 12px;
+    right: 4px;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.Loc .selection .item{
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.Loc .selection .item label{
+    display: block;
+    margin: 10px;
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.Loc .selection .item label input{
+    display: none;
+}
+
+.Loc .selection .item label .content{
+    display: inline-block;
+    font-weight: bold;
+    padding: 0px;
+}
+
+
+
+.Loc .selection .item label .content::before{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+    border: 1px solid black;
+    margin-right: 30px;
+    top: 4px;
+}
+
+
+.Loc .selection .item label i{
+    position: absolute;
+    top: -20px;
+    left:3px;
+    transition: all 0.5s linear;
+    font-weight: bold;
+    color: steelblue;
+    font-size: 19px;
+
+}
+
+.Loc .selection .item label input:checked~i{
+    top: 5px;
+    left: 3px;
+}
+
+.block-main{
+    margin-top: 50px;
+    display: inline-block;
+}
