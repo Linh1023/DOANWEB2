@@ -217,6 +217,7 @@
         </div>
 
     </div>
+    
     <div id="wrapper-quickview">
         <div id="quickview">
             <!-- <span class="icon-close-quickview">

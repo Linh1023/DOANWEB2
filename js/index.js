@@ -68,7 +68,6 @@ function showQuickview(){
     content.forEach(function(content) {
         content.addEventListener("click", function(event) {
           event.preventDefault(); // Ngăn chặn hành động mặc định của sự kiện click
-          getInformation(`a`,`23000`,`98`,`a`,`2`);
           elementToShow.style.display = "flex";
           parentElement.style.display = "block";
         });
@@ -76,19 +75,6 @@ function showQuickview(){
 
 }
 
-function getInformation(Name,Price,SL,MoTa,Img){
-    let title= document.getElementById('TenGiay');
-    title.innerHTML = Name;
-    let gia = document.getElementsByClassName('quickview-price');
-    gia.innerHTML = Price;
-    let soluong = document.getElementsByClassName('quickview-quantity');
-    soluong.p = SL;
-
-    let mota = document.getElementsByClassName('quickview-direction');
-    mota.p = MoTa;
-
-
-}
 // function changeSlider(){
 // let arr_hinh=[
 //     "/img/img-slider/slide_index_1.png",
