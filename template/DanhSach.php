@@ -15,7 +15,6 @@
                 $i = 0;
                 while ($i < count($dataH)){
             ?>
-                if
                 <label>
                     <input type = "radio" name = "Hang" value = "<?php echo $dataH[$i][0]?>">
                     <div class = "content"><?php echo $dataH[$i][1]?></div>
