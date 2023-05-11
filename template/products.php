@@ -83,7 +83,7 @@
                             $n = count($data);
                         }
 
-                        for($i = 0; $i < 8 ;$i++){
+                        for($i = 0; $i < $n ;$i++){
                             $TiLeGiam = $db->getTiLeGiam($data[$i]['MaSP']);
                     ?>
                         <div class="product">
@@ -96,7 +96,7 @@
                             </div>
                             <div class="product-info">
                                 <div class="product-name">
-                                    <?php echo $data[$i][1]?>
+                                    <a href = "./ChiTietSP.php?MaSP=<?php echo $data[$i][0]?>"><?php echo $data[$i][1]?></a>
                                 </div>
                                 <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                                 <div class="product-price">
@@ -133,7 +133,7 @@
                             $n = count($data);
                         }
 
-                        for($i = 0; $i < 8 ;$i++){
+                        for($i = 0; $i < $n ;$i++){
                             $TiLeGiam = $db->getTiLeGiam($data[$i]['MaSP']);
                     ?>
                     <div class="product">
@@ -146,7 +146,7 @@
                         </div>
                         <div class="product-info">
                             <div class="product-name">
-                            <?php echo $data[$i][1]?>
+                                <a href = "./ChiTietSP.php?MaSP=<?php echo $data[$i][0]?>"><?php echo $data[$i][1]?></a>
                             </div>
                             <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                             <div class="product-price">
@@ -195,7 +195,7 @@
                         </div>
                         <div class="product-info">
                             <div class="product-name">
-                            <?php echo $data[$i][1]?>
+                                <a href = "./ChiTietSP.php?MaSP=<?php echo $data[$i][0]?>"><?php echo $data[$i][1]?></a>
                             </div>
                             <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                             <div class="product-price">
