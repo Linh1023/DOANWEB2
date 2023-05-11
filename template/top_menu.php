@@ -3,12 +3,12 @@
             <li>
                 <a href="index.php">TRANG CHỦ</a>
             </li>
-           <li>
+           <!-- <li>
                 <a href="">GIÀY SALE</a>
            </li>
            <li>
                 <a href="">GIÀY TRẺ EM</a>
-           </li>
+           </li> -->
            <li>
                 <a href="./DanhSach.php?MaDM=DM-1">GIÀY ĐINH SÂN CỎ NHÂN TẠO <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
@@ -38,7 +38,7 @@
                     <li><a href="./DanhSach.php?MaDM=DM-2&MaHang=MH-033">Puma FG/MG</a></li>
                 </ul>
            </li>
-           <li>
+           <!-- <li>
                 <a href="">PHỤ KIỆN <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
                     <li><a href="">Vớ</a></li>
@@ -67,6 +67,6 @@
           </li>
            <li>
                 <a href="">LIÊN HỆ</a>
-           </li>
+           </li> -->
         </ul>
     </div>
