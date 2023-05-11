@@ -13,7 +13,7 @@ function getValueColor() {
 }
 function getValueSize() {
     // var form = document.getElementById("js-color");
-    var radios = document.getElementsByName('size');
+    var radios = document.getElementsByName('Size');
     var elemClicked = document.getElementsByClassName("size")
 
     for (var i = 0; i < radios.length; i++) {
