@@ -10,7 +10,7 @@
                 <a href="">GIÀY TRẺ EM</a>
            </li>
            <li>
-                <a href="">GIÀY ĐINH SÂN CỎ NHÂN TẠO <i class="ti-angle-down"></i></a>
+                <a href="./DanhSach.php?MaDM=DM-1">GIÀY ĐINH SÂN CỎ NHÂN TẠO <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
                     <li><a href="">Adidas TF<i class="ti-angle-right"></i></a>
                         <ul class="ds_phu_phu">
@@ -31,7 +31,7 @@
                 </ul>
            </li>
            <li>
-                <a href="">GIÀY ĐINH SÂN CỎ TỰ NHIÊN <i class="ti-angle-down"></i></a>
+                <a href="./DanhSach.php?MaDM=DM-2">GIÀY ĐINH SÂN CỎ TỰ NHIÊN <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
                     <li><a href="">Adidas FG/MG</a></li>
                     <li><a href="">Nike FG/MG</a></li>

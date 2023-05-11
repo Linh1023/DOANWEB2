@@ -75,6 +75,7 @@
             <div class="container">
                 <div class="products">
                     <?php
+                        if(isset($_GET['MaDM'])){
                         function TinhTienGiam($TiLegiam, $data){
                             return $data[0]['Gia'] - $data[0]['Gia']*$TiLegiam/100;
                         }
@@ -83,8 +84,8 @@
                         $db = new DAOSP();
                         $db->connect();
 
-                        $MaDM1 = "DM-1";
-                        $data = $db->getListDanhMuc($MaDM1);
+                        $MaDM = $_GET['MaDM'];
+                        $data = $db->getListDanhMuc($MaDM);
 
                         $n = count($data);
                 
@@ -235,7 +236,9 @@
         </div>
 
     </div>
-
+    <?php
+                        }
+    ?>
     <script>
         showQuickview();
         hideQuickview();
