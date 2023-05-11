@@ -76,7 +76,7 @@
             
                 <div class="products">
                     <?php
-                        if(isset($_GET['MaDM'])){
+                        if(isset($_GET['MaDM']) || isset($_GET['Sale'])){
                         function TinhTienGiam($TiLegiam, $data){
                             return $data - $data*$TiLegiam/100;
                         }
@@ -89,10 +89,15 @@
                         $data = null;
 
                         //su dung cach ghep chuoi de toi uu hoa cac thao tac loc
-                        $MaDM = $_GET['MaDM'];
-                        //Khoi tao chuoi de truy van theo danh muc
-                        $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang ";
+                        if(isset($_GET['MaDM'])){
+                            $MaDM = $_GET['MaDM'];
+                            //Khoi tao chuoi de truy van theo danh muc
+                            $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang ";
+                        }
                         
+                        if(isset($_GET['Sale'])){
+                            $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE sanpham.MaHang = hang.MaHang AND MaKhuyenMai != '#' ";
+                        }
 
                         //Kiem tra xem nguoi dung co chon rieng 1 hang nao tu top menu khong
                         if(isset($_GET['MaHang'])){

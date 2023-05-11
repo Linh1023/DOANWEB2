@@ -4,7 +4,7 @@
                 <a href="index.php">TRANG CHỦ</a>
             </li>
            <li>
-                <a href="">GIÀY SALE</a>
+                <a href="./DanhSach.php?Sale=1">GIÀY SALE</a>
            </li>
            <li>
                 <a href="./DanhSach.php?MaDM=DM-3">GIÀY TRẺ EM</a>
