@@ -13,8 +13,6 @@
                     </div>
                     <div class = "content3">
                         <ul>
-                            <li class = "ti-search kl"></li>
-
                             <?php 
                                 if (isset($_SESSION['MaTaiKhoan']) ){
                                     ?>
