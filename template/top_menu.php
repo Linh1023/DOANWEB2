@@ -3,12 +3,12 @@
             <li>
                 <a href="index.php">TRANG CHỦ</a>
             </li>
-           <!-- <li>
+           <li>
                 <a href="">GIÀY SALE</a>
            </li>
            <li>
-                <a href="">GIÀY TRẺ EM</a>
-           </li> -->
+                <a href="./DanhSach.php?MaDM=DM-3">GIÀY TRẺ EM</a>
+           </li>
            <li>
                 <a href="./DanhSach.php?MaDM=DM-1">GIÀY ĐINH SÂN CỎ NHÂN TẠO <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
@@ -38,16 +38,6 @@
                     <li><a href="./DanhSach.php?MaDM=DM-2&MaHang=MH-033">Puma FG/MG</a></li>
                 </ul>
            </li>
-           <!-- <li>
-                <a href="">PHỤ KIỆN <i class="ti-angle-down"></i></a>
-                <ul class="ds_phu">
-                    <li><a href="">Vớ</a></li>
-                    <li><a href="">Phụ kiện & Găng tay thủ môn</a></li>
-                    <li><a href="">Rờ te ( Bảo hộ chân )</a></li>
-                    <li><a href="">Banh</a></li>
-                    <li><a href="">Hỗ trợ chấn thương Starbalm</a></li>
-                </ul>
-           </li>
            <li>
                 <a href="">GIỚI THIỆU <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
@@ -65,8 +55,5 @@
                     <li><a href="">Chính sách thanh toán</a></li>
                 </ul>
           </li>
-           <li>
-                <a href="">LIÊN HỆ</a>
-           </li> -->
         </ul>
     </div>
