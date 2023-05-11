@@ -218,6 +218,8 @@
 
     </div>
     
+    <form action="./GioHang.php" method="post">
+    <input type="hidden" name="MaSP" value="<?php echo $data[0][0]?>">
     <div id="wrapper-quickview">
         <div id="quickview">
             <!-- <span class="icon-close-quickview">
@@ -264,52 +266,27 @@
                 <div class="quickview-price">
                     2.550.000đ
                 </div>
-                <div class="quickview-select">
-                    <label>Màu sắc:</label>
-                    <ul class="list list-color" id="js-color">
-                        <li class="color clicked">
-                            <label>
-                                <input onclick="getValueColor()" name="color" checked="checked" type="radio"
-                                    value="Xanh" id="">
-                                <span>Xanh</span>
-                            </label>
-                        </li>
-                        <li class="color">
-                            <label>
-                                <input onclick="getValueColor()" name="color" type="radio" value="Đỏ" id="">
-                                <span>Đỏ</span>
-                            </label>
-                        </li>
-                        <li class="color">
-                            <label>
-                                <input onclick="getValueColor()" name="color" type="radio" value="Vàng" id="">
-                                <span>Vàng</span>
-                            </label>
-                        </li>
-
-
-                    </ul>
-                </div>
+             
                 <div class="quickview-select">
                     <label>Kích thước:</label>
                     <ul class="list list-size">
                         <li class="size clicked">
                             <label>
-                                <input onclick="getValueSize()" name="size" checked="checked" type="radio" value="40"
+                                <input onclick="getValueSize()" name="Size" checked="checked" type="radio" value="40"
                                     id="">
                                 <span>40</span>
                             </label>
                         </li>
                         <li class="size">
                             <label>
-                                <input onclick="getValueSize()" name="size" type="radio" value="41" id="">
+                                <input onclick="getValueSize()" name="Size" type="radio" value="41" id="">
                                 <span>41</span>
 
                             </label>
                         </li>
                         <li class="size">
                             <label>
-                                <input onclick="getValueSize()" name="size" type="radio" value="42" id="">
+                                <input onclick="getValueSize()" name="Size" type="radio" value="42" id="">
                                 <span>42</span>
                             </label>
                         </li>
@@ -321,10 +298,11 @@
                 <form id="add-to-cart-form" action="cart.php?action=add" method=""POST>
                     <input type="text" value="1" name="quantity[]">
                 </form>
-                <button class="add-cart">
-                    <span class="icon-add-cart"></span>
-                    <span>Thêm vào giỏ hàng</span>
-                </button>
+                <label id="giohang">
+                    <input type = "submit" name = "add_to_cart" value = "ThemGio">
+                    <span id="icon"><i class="ti-shopping-cart"></i></span> 
+                    <span id = "themvaogio">Thêm vào giỏ</span>
+                </label>
                 <div class="quickview-description">
                     <h4>Mô tả: </h4>
                     Sản phẩm được thiết kế từ Quang Linh :>>>
@@ -332,6 +310,7 @@
             </div>
         </div>
     </div>
+    </form>
 
     <script>
         showQuickview();
