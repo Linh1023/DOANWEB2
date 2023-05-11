@@ -1,10 +1,12 @@
 #main{
-    display : flex;
-    justify-content: space-around;
+    width: 100%;
+    position: relative;
+    min-height: 1000px;
 }
 .Loc{
-    margin-top: 67px;
+    margin-left: 30px;
     width: 300px;
+    position: absolute;
 }
 
 .Loc #Loc_submit{
@@ -83,7 +85,7 @@
     position: absolute;
     top: -20px;
     left:3px;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
     font-weight: bold;
     color: steelblue;
     font-size: 19px;
@@ -97,5 +99,5 @@
 
 .block-main{
     margin-top: 50px;
-    display: inline-block;
+    margin-left: 250px;
 }

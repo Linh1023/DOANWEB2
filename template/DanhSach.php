@@ -1,6 +1,6 @@
 
 <div class = "Loc">
-    <form method="GET" action="">
+    <form method="POST" action="">
     <div class = "selection" id="Hang">
         <div class = "title">
             <h3>Thương hiệu</h3>
@@ -15,6 +15,7 @@
                 $i = 0;
                 while ($i < count($dataH)){
             ?>
+                if
                 <label>
                     <input type = "radio" name = "Hang" value = "<?php echo $dataH[$i][0]?>">
                     <div class = "content"><?php echo $dataH[$i][1]?></div>
@@ -53,13 +54,13 @@
                     <i class = "ti-check"></i>
                 </label>
                 <label>
-                    <input type = "radio" name = "Gia" value = "3000000">
+                    <input type = "radio" name = "Gia" value = "3000000-">
                     <div class = "content">Lớn hơn 3,000,000₫</div>
                     <i class = "ti-check"></i>
                 </label>
         </div>
     </div>
-    <input type="submit" value="Lọc sản phẩm" name = "action" id = "Loc_submit">
+    <input type="submit" value="Lọc sản phẩm" name = "Loc" id = "Loc_submit">
 
     </form>
 </div>
@@ -73,21 +74,70 @@
 <div class="block-main">
         <div id="artificial_turf " class="block-product">
             <div class="container">
+            
                 <div class="products">
                     <?php
                         if(isset($_GET['MaDM'])){
                         function TinhTienGiam($TiLegiam, $data){
-                            return $data[0]['Gia'] - $data[0]['Gia']*$TiLegiam/100;
+                            return $data - $data*$TiLegiam/100;
                         }
 
                         include('./db/DAOSP.php');
                         $db = new DAOSP();
                         $db->connect();
 
-                        $MaDM = $_GET['MaDM'];
-                        $data = $db->getListDanhMuc($MaDM);
 
-                        $n = count($data);
+                        $data = null;
+
+                        //su dung cach ghep chuoi de toi uu hoa cac thao tac loc
+                        $MaDM = $_GET['MaDM'];
+                        //Khoi tao chuoi de truy van theo danh muc
+                        $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang ";
+                        //kiem tra xem co loc hay khong
+
+                        if(isset($_POST['Loc'])){
+                            if(isset($_POST['Hang'])){
+                                //Neu co chon Hang thi them dieu kien loc hang vao chuoi truy van
+                                $Hang = $_POST['Hang'];
+                                $sql = $sql . "AND sanpham.MaHang = '".$Hang."' ";
+                            }
+                            if (isset($_POST['Gia'])){
+                                // Dua dieu kien loc theo gia vao cau truy van
+                                $Gia = $_POST['Gia'];
+                                $sql = $sql . ' AND sanpham.Gia';
+                                switch ($Gia) {
+                                    case '0-1000000':{
+                                        $sql = $sql . " < 1000000";
+                                        break;
+                                    }
+                                    case '1000000-1500000':{
+                                        $sql = $sql . " BETWEEN 1000000 AND 1500000" ;
+                                        break;
+                                    }
+                                    case "1500000-2000000":{
+                                        $sql = $sql . " BETWEEN 1500000 AND 2000000" ;
+                                        break;
+                                    }
+                                    case "2000000-3000000":{
+                                        $sql = $sql . " BETWEEN 2000000 AND 3000000" ;
+                                        break;
+                                    }
+                                    case "3000000-":{
+                                        $sql = $sql . " > 3000000";
+                                        break;
+                                    }
+
+                                }
+
+                            }
+                        }
+                        $data = $db->getListDanhSach($sql);
+
+                        $n = 0;
+
+                        if($data != null) {
+                            $n = count($data);
+                        }
                 
                         for($i = 0; $i < $n ;$i++){
                             $TiLeGiam = $db->getTiLeGiam($data[$i]['MaSP']);
@@ -101,22 +151,22 @@
                                 <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
                             </div>
                             <div class="product-info">
+
                                 <div class="product-name">
+                                    
                                     <a href = "./ChiTietSP.php?MaSP=<?php echo $data[$i][0]?>"><?php echo $data[$i][1]?></a>
                                 </div>
                                 <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                                 <div class="product-price">
-                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data),0,',','.') ."đ"?></span>
+                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data[$i]['Gia']),0,',','.') ."đ"?></span>
                                     <span class="price-old price"><?php echo number_format($data[$i]['Gia'],0,',','.') ."đ"?></span>
                                 </div>
                             </div>
                         </div>
                     <?php
                         }
+                    }
                     ?>
-                </div>
-                <div class="viewall">
-                    <div class="viewall-content">Xem tất cả</div>
                 </div>
             </div>
     </div>
@@ -236,9 +286,7 @@
         </div>
 
     </div>
-    <?php
-                        }
-    ?>
+
     <script>
         showQuickview();
         hideQuickview();

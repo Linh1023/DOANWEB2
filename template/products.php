@@ -69,7 +69,7 @@
                 <div class="products">
                     <?php
                         function TinhTienGiam($TiLegiam, $data){
-                            return $data[0]['Gia'] - $data[0]['Gia']*$TiLegiam/100;
+                            return $data - $data*$TiLegiam/100;
                         }
 
                         include('./db/DAOSP.php');
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                                 <div class="product-price">
-                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data),0,',','.') ."đ"?></span>
+                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data[$i]['Gia']),0,',','.') ."đ"?></span>
                                     <span class="price-old price"><?php echo number_format($data[$i]['Gia'],0,',','.') ."đ"?></span>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@
                             </div>
                             <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                             <div class="product-price">
-                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data),0,',','.') ."đ"?></span>
+                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data[$i]['Gia']),0,',','.') ."đ"?></span>
                                     <span class="price-old price"><?php echo number_format($data[$i]['Gia'],0,',','.') ."đ"?></span>
                             </div>
                         </div>
@@ -199,7 +199,7 @@
                             </div>
                             <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                             <div class="product-price">
-                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data),0,',','.') ."đ"?></span>
+                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data[$i]['Gia']),0,',','.') ."đ"?></span>
                                     <span class="price-old price"><?php echo number_format($data[$i]['Gia'],0,',','.') ."đ"?></span>
                             </div>
                         </div>
