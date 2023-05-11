@@ -11,7 +11,7 @@
         }
 
 
-        $sql = "SELECT TenDN,MatKhau,Quyen FROM taikhoan WHERE TenDN = '$username'";
+        $sql = "SELECT MaTaiKhoan,TenDN,MatKhau,Quyen FROM taikhoan WHERE TenDN = '$username'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) == 0){
@@ -31,7 +31,7 @@
         }
         else{
             //Lưu tên đăng nhập
-            $_SESSION['MaTaiKhoan'] = $username;
+            $_SESSION['MaTaiKhoan'] = $row['MaTaiKhoan'];
             
             echo '<script language="javascript">alert("Ban da dang nhap thanh cong!"); window.location="index.php";</script>';
             die();

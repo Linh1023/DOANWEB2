@@ -51,6 +51,7 @@
 .content3 ul li {
   margin: 0px 15px;
   font-size: 25px;
+  position: relative;
 }
 .content3 ul li a {
   color:black;
@@ -62,6 +63,18 @@
   color:aqua;
   cursor: pointer;
 }
+
+.content3 ul li span{
+    background-color: orangered;
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    right: -15px;
+    top: -13px;
+    border-radius: 90%;
+    padding: 8px;
+}
+
 
 @media screen and (max-width: 1600px) {
   .container2{

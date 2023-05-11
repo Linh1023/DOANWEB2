@@ -62,5 +62,27 @@ class DAODonHang
         else
             return false;
     }
+
+    public function Insert($MaTK,$NgayDat,$TongTien){
+        $sql = "INSERT INTO donhang (MaTaiKhoan,NgayDat,TrangThai,TongTien) VALUES ('$MaTK','$NgayDat',0,'$TongTien')";
+        if($result = mysqli_query($this->conn,$sql)){
+            return true;
+        }
+        else
+            return false;
+    
+    }
+
+    public function getMaDon(){
+        $sql = 'SELECT MAX(MaDonHang) FROM donhang';
+        $data = null;
+        if($result = mysqli_query($this->conn,$sql)){
+            while($row = mysqli_fetch_array($result)){
+                $data[] = $row;
+            }
+            mysqli_free_result($result);
+            return $data[0];
+        }
+    }
 }
 ?>

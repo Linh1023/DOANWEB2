@@ -41,5 +41,14 @@ class DAOChiTietDonHang
             return false;
     }
 
+    public function Insert($MaSP,$MaDon,$Size,$SoLuong,$Gia,$ThanhTien){
+        $sql = "INSERT INTO chitietdonhang (MaSP,MaDonHang,Size,SoLuong,Gia,TongTien) VALUES ('$MaSP','$MaDon',$Size,$SoLuong,$Gia,$ThanhTien)";
+        if($result = mysqli_query($this->conn,$sql)){
+            return true;
+        }
+        else
+            return false;
+    
+    }
 }
 ?>

@@ -1,0 +1,197 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#gio_hang_container{
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 0px 15px;
+    width: 1170px;
+    display: flex;
+}
+
+#gio_hang_container form{
+    width: 180%;
+}
+
+#gio_hang_container #thong_tin{
+    padding: 0px 15px;
+}
+
+#gio_hang_container #thong_tin h1{
+    font-size: 21px;
+    margin: 20px 0px;
+    color: black;
+    font-weight: 100;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang{
+
+    border: 0.5px solid #333;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang  th{
+    white-space: pre-wrap;
+    border: 0.5px solid #333;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang td{
+    border: 0.5px solid #333;
+    text-align: center;
+    font-size: 14px;
+    padding: 22px 25px;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang td a{
+    text-decoration: none;
+    color: black;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang td a img{
+    max-width: 100%;
+}
+#gio_hang_container #thong_tin #cart_form #don_hang td strong{
+    width: 100%;
+    float: left;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang td .variant_title{
+    width: 100%;
+    float: left;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang td .sl{
+    font-size: 17px;
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang td .delete{
+    border: 0px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#gio_hang_container #thong_tin #cart_form #don_hang td .trash{
+    font-size: 20px;
+}
+
+#gio_hang_container #thong_tin .clearfix{
+    width: 100%;
+}
+#gio_hang_container #thong_tin .clearfix a, #gio_hang_container #thong_tin .clearfix #update-click{
+    margin-top: 20px;
+    margin-right: 25px;
+    padding: 8px 25px;
+    font-size: 18px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#gio_hang_container #thanh_toan{
+    width: 70%;
+    padding: 0px 15px;
+}
+
+#gio_hang_container #thanh_toan > h2{
+    font-size: 21px;
+    color: black;
+    margin: 20px 0px;
+    font-weight: 100;
+}
+
+#gio_hang_container #thanh_toan #thanh_toan_container{
+    border: 1px solid black;
+    padding: 27px 22px;
+}
+
+#gio_hang_container #thanh_toan #thanh_toan_container h2{
+    font-size: 18px;
+    margin: 20px 0px;
+    width: 100%;
+}
+
+
+#gio_hang_container #thanh_toan #thanh_toan_container h2 .tien{
+    color: #e32124;
+    float: right;
+}
+
+#gio_hang_container #thanh_toan #thanh_toan_container a{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 18px;
+    background-color: #e32124;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+@media  screen and (max-width: 800px){
+    #gio_hang_container{
+        padding: 0px;
+        max-width: 100%;
+        display: block;
+    }
+
+    #gio_hang_container #thong_tin{
+        width: 100%;
+    }
+    
+    #gio_hang_container #thanh_toan{
+        width: 100%;
+    }
+
+    #gio_hang_container #thong_tin #cart_form{
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    #gio_hang_container #thong_tin #cart_form  #don_hang td{
+        max-width: 300px;
+    }
+
+    #gio_hang_container #thong_tin #cart_form #don_hang td strong{
+        width: 100%;
+        white-space: pre;
+        float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    #gio_hang_container #thong_tin #cart_form #don_hang td .variant_title{
+        width: 100%;
+        float: left;
+    }
+    
+
+    #gio_hang_container #thong_tin #cart_form #don_hang td .sl{
+        font-size: 20px;
+        width: 100%;
+    }
+
+    #gio_hang_container #thong_tin .clearfix a, #gio_hang_container #thong_tin .clearfix .btn{
+        font-size: 14px;
+    }
+    
+}
