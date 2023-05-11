@@ -1,7 +1,7 @@
     <div class="top_menu">
         <ul>
             <li>
-                <a href="">TRANG CHỦ</a>
+                <a href="index.php">TRANG CHỦ</a>
             </li>
            <li>
                 <a href="">GIÀY SALE</a>

@@ -67,151 +67,47 @@
                     </div>
                 </div>
                 <div class="products">
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
+                    <?php
+                        function TinhTienGiam($TiLegiam, $data){
+                            return $data[0]['Gia'] - $data[0]['Gia']*$TiLegiam/100;
+                        }
 
-                            </div>
-                            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
+                        include('./db/DAOSP.php');
+                        $db = new DAOSP();
+                        $db->connect();
 
-                            </div>
-                            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
+                        $MaDM1 = "DM-1";
+                        $data = $db->getListDanhMuc($MaDM1);
+                        $n = 8;
+                        if (count($data)< 8){
+                            $n = count($data);
+                        }
 
-                            </div>
-                            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
+                        for($i = 0; $i < 8 ;$i++){
+                            $TiLeGiam = $db->getTiLeGiam($data[$i]['MaSP']);
+                    ?>
+                        <div class="product">
+                            <div class="product-image">
+                                <div class="quickview-background">
+                                    <div class="quickview-box">Xem Nhanh</div>
 
+                                </div>
+                                <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
                             </div>
-                            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
+                            <div class="product-info">
+                                <div class="product-name">
+                                    <?php echo $data[$i][1]?>
+                                </div>
+                                <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
+                                <div class="product-price">
+                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data),0,',','.') ."đ"?></span>
+                                    <span class="price-old price"><?php echo number_format($data[$i]['Gia'],0,',','.') ."đ"?></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    <?php
+                        }
+                    ?>
                 </div>
                 <div class="viewall">
                     <div class="viewall-content">Xem tất cả</div>
@@ -229,151 +125,39 @@
                     </div>
                 </div>
                 <div class="products">
+                    <?php
+                        $MaDM1 = "DM-2";
+                        $data = $db->getListDanhMuc($MaDM1);
+                        $n = 8;
+                        if (count($data)< 8){
+                            $n = count($data);
+                        }
+
+                        for($i = 0; $i < 8 ;$i++){
+                            $TiLeGiam = $db->getTiLeGiam($data[$i]['MaSP']);
+                    ?>
                     <div class="product">
                         <div class="product-image">
                             <div class="quickview-background">
                                 <div class="quickview-box">Xem Nhanh</div>
 
                             </div>
-                            <img src="./img/products/cotunhien.webp" alt="">
+                            <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
                         </div>
                         <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
+                            <div class="product-name">
+                            <?php echo $data[$i][1]?>
                             </div>
-                            <div class="product-vendor">NIKE</div>
+                            <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                             <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
+                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data),0,',','.') ."đ"?></span>
+                                    <span class="price-old price"><?php echo number_format($data[$i]['Gia'],0,',','.') ."đ"?></span>
                             </div>
                         </div>
                     </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/cotunhien.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/cotunhien.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/cotunhien.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/cotunhien.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/cotunhien.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/cotunhien.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/cotunhien.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    <?php
+                        }
+                    ?>
                 </div>
                 <div class="viewall">
                     <div class="viewall-content">Xem tất cả</div>
@@ -390,151 +174,40 @@
                     </div>
                 </div>
                 <div class="products">
+                    <?php
+                        $MaDM1 = "DM-4";
+                        $data = $db->getListDanhMuc($MaDM1);
+                        $n = 8;
+                        if (count($data) < 8){
+                            $n = count($data);
+                        }
+
+                        for($i = 0; $i < $n ;$i++){
+                            $TiLeGiam = $db->getTiLeGiam($data[$i]['MaSP']);
+                    ?>
                     <div class="product">
                         <div class="product-image">
                             <div class="quickview-background">
                                 <div class="quickview-box">Xem Nhanh</div>
 
                             </div>
-                            <img src="./img/products/futsal.webp" alt="">
+                            <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
                         </div>
                         <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
+                            <div class="product-name">
+                            <?php echo $data[$i][1]?>
                             </div>
-                            <div class="product-vendor">NIKE</div>
+                            <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
                             <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-
+                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data),0,',','.') ."đ"?></span>
+                                    <span class="price-old price"><?php echo number_format($data[$i]['Gia'],0,',','.') ."đ"?></span>
                             </div>
                         </div>
                     </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/futsal.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/futsal.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/futsal.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/futsal.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/futsal.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/futsal.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="product-image">
-                            <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
-                            </div>
-                            <img src="./img/products/futsal.webp" alt="">
-                        </div>
-                        <div class="product-info">
-                            <div class="product-name">Nike Mercurial Vapor 14 Academy TF DJ2879-484 Blueprint Pack linh
-                            </div>
-                            <div class="product-vendor">NIKE</div>
-                            <div class="product-price">
-                                <span class="price-new price">1.890.000 đ</span>
-                                <span class="price-old price">2.890.000 đ</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    <?php
+                        }
+                    ?>
+                </div>
                 </div>
                 <div class="viewall">
                     <div class="viewall-content">Xem tất cả</div>
