@@ -43,6 +43,7 @@
         }
         unset($_SESSION['cart']);
         echo "<script>window.location='../admin/template/template_content/ChiTietDonHang.php?PQ=User&CT=$MaDon[0]&MaTK=$MaTK&Date=$NgayDat&TT=$TongTien';</script>";
+        
     }
     else{
         echo '<script>alert("Tạo đơn thất bại"); window.location="../GioHang.php";</script>';
