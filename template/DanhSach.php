@@ -1,68 +1,5 @@
 
-<div class = "Loc">
-    <form method="POST" action="">
-    <div class = "selection" id="Hang">
-        <div class = "title">
-            <h3>Thương hiệu</h3>
-            <i class="ti-minus"></i>
-        </div>
-        <div class = "item">
-            <?php
-                include('./db/DAOHang.php');
-                $dbH = new DAOHang();
-                $dbH->connect();
-                $dataH = $dbH->getList();
-                $i = 0;
-                while ($i < count($dataH)){
-            ?>
-                <label>
-                    <input type = "radio" name = "Hang" value = "<?php echo $dataH[$i][0]?>">
-                    <div class = "content"><?php echo $dataH[$i][1]?></div>
-                    <i class = "ti-check"></i>
-                </label>
-            <?php
-                    $i++; 
-                }
-            ?>
-        </div>
-    </div>
-    <div class = "selection" id="Gia">
-        <div class = "title">
-            <h3>Giá</h3>
-            <i class="ti-minus"></i>
-        </div>
-        <div class = "item">
-                <label>
-                    <input type = "radio" name = "Gia" value = "0-1000000">
-                    <div class = "content">Nhỏ hơn 1,000,000đ</div>
-                    <i class = "ti-check"></i>
-                </label>
-                <label>
-                    <input type = "radio" name = "Gia" value = "1000000-1500000">
-                    <div class = "content">Từ 1,000,000₫ - 1,500,000₫</div>
-                    <i class = "ti-check"></i>
-                </label>
-                <label>
-                    <input type = "radio" name = "Gia" value = "1500000-2000000">
-                    <div class = "content">Từ 1,500,000₫ - 2,000,000₫</div>
-                    <i class = "ti-check"></i>
-                </label>
-                <label>
-                    <input type = "radio" name = "Gia" value = "2000000-3000000">
-                    <div class = "content">Từ 2,000,000₫ - 3,000,000₫</div>
-                    <i class = "ti-check"></i>
-                </label>
-                <label>
-                    <input type = "radio" name = "Gia" value = "3000000-">
-                    <div class = "content">Lớn hơn 3,000,000₫</div>
-                    <i class = "ti-check"></i>
-                </label>
-        </div>
-    </div>
-    <input type="submit" value="Lọc sản phẩm" name = "Loc" id = "Loc_submit">
 
-    </form>
-</div>
 
 
 
@@ -71,6 +8,71 @@
 
 
 <div class="block-main">
+        <div class = "Loc">
+            <form method="POST" action="">
+            <div class = "selection" id="Hang">
+                <div class = "title">
+                    <h3>Thương hiệu</h3>
+                    <i class="ti-minus"></i>
+                </div>
+                <div class = "item">
+                    <?php
+                        include('./db/DAOHang.php');
+                        $dbH = new DAOHang();
+                        $dbH->connect();
+                        $dataH = $dbH->getList();
+                        $i = 0;
+                        while ($i < count($dataH)){
+                    ?>
+                        <label>
+                            <input type = "radio" name = "Hang" value = "<?php echo $dataH[$i][0]?>">
+                            <div class = "content"><?php echo $dataH[$i][1]?></div>
+                            <i class = "ti-check"></i>
+                        </label>
+                    <?php
+                            $i++; 
+                        }
+                    ?>
+                </div>
+            </div>
+            <div class = "selection" id="Gia">
+                <div class = "title">
+                    <h3>Giá</h3>
+                    <i class="ti-minus"></i>
+                </div>
+                <div class = "item">
+                        <label>
+                            <input type = "radio" name = "Gia" value = "0-1000000">
+                            <div class = "content">Nhỏ hơn 1,000,000đ</div>
+                            <i class = "ti-check"></i>
+                        </label>
+                        <label>
+                            <input type = "radio" name = "Gia" value = "1000000-1500000">
+                            <div class = "content">Từ 1,000,000₫ - 1,500,000₫</div>
+                            <i class = "ti-check"></i>
+                        </label>
+                        <label>
+                            <input type = "radio" name = "Gia" value = "1500000-2000000">
+                            <div class = "content">Từ 1,500,000₫ - 2,000,000₫</div>
+                            <i class = "ti-check"></i>
+                        </label>
+                        <label>
+                            <input type = "radio" name = "Gia" value = "2000000-3000000">
+                            <div class = "content">Từ 2,000,000₫ - 3,000,000₫</div>
+                            <i class = "ti-check"></i>
+                        </label>
+                        <label>
+                            <input type = "radio" name = "Gia" value = "3000000-">
+                            <div class = "content">Lớn hơn 3,000,000₫</div>
+                            <i class = "ti-check"></i>
+                        </label>
+                </div>
+            </div>
+            <input type="submit" value="Lọc sản phẩm" name = "Loc" id = "Loc_submit">
+
+            </form>
+        </div>
+        
         <div id="artificial_turf " class="block-product">
             <div class="container">
             
@@ -94,7 +96,7 @@
                             //Khoi tao chuoi de truy van theo danh muc
                             $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang ";
                         }
-                        
+
                         if(isset($_GET['Sale'])){
                             $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE sanpham.MaHang = hang.MaHang AND MaKhuyenMai != '#' ";
                         }

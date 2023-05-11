@@ -1,12 +1,10 @@
 #main{
     width: 100%;
-    position: relative;
     min-height: 1000px;
 }
 .Loc{
     margin-left: 30px;
     width: 300px;
-    position: absolute;
 }
 
 .Loc #Loc_submit{
@@ -99,5 +97,6 @@
 
 .block-main{
     margin-top: 50px;
-    margin-left: 250px;
+    display: flex;
+    justify-content: space-around;
 }
