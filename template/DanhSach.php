@@ -92,8 +92,17 @@
                         $MaDM = $_GET['MaDM'];
                         //Khoi tao chuoi de truy van theo danh muc
                         $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang ";
-                        //kiem tra xem co loc hay khong
+                        
 
+                        //Kiem tra xem nguoi dung co chon rieng 1 hang nao tu top menu khong
+                        if(isset($_GET['MaHang'])){
+                            $Hang = $_GET['MaHang'];
+                            $sql = $sql . "AND sanpham.MaHang = '".$Hang."' ";
+                        }
+                        
+                        
+                        
+                        //kiem tra xem co loc hay khong
                         if(isset($_POST['Loc'])){
                             if(isset($_POST['Hang'])){
                                 //Neu co chon Hang thi them dieu kien loc hang vao chuoi truy van

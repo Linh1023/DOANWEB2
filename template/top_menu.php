@@ -12,30 +12,30 @@
            <li>
                 <a href="./DanhSach.php?MaDM=DM-1">GIÀY ĐINH SÂN CỎ NHÂN TẠO <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
-                    <li><a href="">Adidas TF<i class="ti-angle-right"></i></a>
-                        <ul class="ds_phu_phu">
+                    <li><a href="./DanhSach.php?MaDM=DM-1&MaHang=MH-001">Adidas TF</a>
+                        <!-- <ul class="ds_phu_phu">
                             <li><a href="">Adidas Nemeziz</a></li>
                             <li><a href="">Adidas Copa</a> </li>
                             <li><a href="">Adidas Predator</a> </li>
                             <li><a href="">Adidas X Ghosted</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li><a href="">Nike TF<i class="ti-angle-right"></i></a>
-                        <ul class="ds_phu_phu">
+                    <li><a href="./DanhSach.php?MaDM=DM-1&MaHang=MH-002">Nike TF</a>
+                        <!-- <ul class="ds_phu_phu">
                             <li><a href="">Nike Tiempo</a></li>
                             <li><a href="">Nike Mercurial</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li><a href="">Puma TF</a></li>
-                    <li><a href="">Pan Thailand TF</a></li>
+                    <li><a href="./DanhSach.php?MaDM=DM-1&MaHang=MH-033">Puma TF</a></li>
+                    <li><a href="./DanhSach.php?MaDM=DM-1&MaHang=MH-021">Pan Thailand TF</a></li>
                 </ul>
            </li>
            <li>
                 <a href="./DanhSach.php?MaDM=DM-2">GIÀY ĐINH SÂN CỎ TỰ NHIÊN <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
-                    <li><a href="">Adidas FG/MG</a></li>
-                    <li><a href="">Nike FG/MG</a></li>
-                    <li><a href="">Puma FG/MG</a></li>
+                    <li><a href="./DanhSach.php?MaDM=DM-2&MaHang=MH-001">Adidas FG/MG</a></li>
+                    <li><a href="./DanhSach.php?MaDM=DM-2&MaHang=MH-002">Nike FG/MG</a></li>
+                    <li><a href="./DanhSach.php?MaDM=DM-2&MaHang=MH-033">Puma FG/MG</a></li>
                 </ul>
            </li>
            <li>
