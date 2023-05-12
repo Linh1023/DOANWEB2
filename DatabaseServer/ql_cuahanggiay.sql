@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2023 at 11:47 AM
+-- Generation Time: May 11, 2023 at 05:50 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -55,7 +55,10 @@ CREATE TABLE `chitietdonhang` (
 INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `Size`, `SoLuong`, `Gia`, `TongTien`) VALUES
 ('001', 1, 39, 10, 1190000, 11900000),
 ('001', 2, 41, 10, 1190000, 11900000),
+('001', 29, 40, 2, 1011500, 2023000),
 ('003', 5, 40, 1, 1900000, 1900000),
+('004', 26, 42, 3, 2200000, 6600000),
+('004', 27, 42, 3, 2200000, 6600000),
 ('007', 3, 39, 1, 3100000, 3100000),
 ('007', 4, 41, 2, 3100000, 6200000),
 ('008', 7, 40, 1, 3500000, 3500000),
@@ -64,6 +67,8 @@ INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `Size`, `SoLuong`, `Gia`, `To
 ('013', 6, 42, 1, 4100000, 4100000),
 ('013', 9, 40, 1, 4100000, 4100000),
 ('021', 10, 39, 1, 3500000, 3500000),
+('021', 26, 40, 1, 3500000, 3500000),
+('021', 27, 40, 3, 3500000, 10500000),
 ('031', 12, 41, 1, 550000, 550000);
 
 -- --------------------------------------------------------
@@ -150,7 +155,7 @@ INSERT INTO `danhmuc` (`MaDM`, `TenDM`, `TrangThai`) VALUES
 
 CREATE TABLE `donhang` (
   `MaDonHang` int(11) NOT NULL,
-  `MaTaiKhoan` varchar(50) NOT NULL,
+  `MaTaiKhoan` int(50) NOT NULL,
   `NgayDat` date NOT NULL,
   `TrangThai` tinyint(1) NOT NULL,
   `TongTien` int(11) NOT NULL
@@ -161,17 +166,20 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`MaDonHang`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongTien`) VALUES
-(1, 'TK-001', '2023-02-23', 1, 11900000),
-(2, 'TK-002', '2022-09-08', 1, 11900000),
-(3, 'TK-002', '2021-07-12', 1, 3100000),
-(4, 'TK-001', '2020-08-09', 1, 6200000),
-(5, 'TK-002', '2018-09-13', 1, 6000000),
-(6, 'TK-001', '2018-09-17', 0, 4100000),
-(7, 'TK-002', '2019-02-17', 0, 3500000),
-(8, 'TK-001', '2019-02-28', 0, 2900000),
-(9, 'TK-001', '2020-05-28', 0, 4100000),
-(10, 'TK-001', '2018-06-28', 0, 3500000),
-(12, 'TK-002', '2023-08-24', 0, 550000);
+(1, 1, '2023-02-23', 1, 11900000),
+(2, 2, '2022-09-08', 1, 11900000),
+(3, 2, '2021-07-12', 1, 3100000),
+(4, 2, '2020-08-09', 1, 6200000),
+(5, 3, '2018-09-13', 1, 6000000),
+(6, 2, '2018-09-17', 1, 4100000),
+(7, 2, '2019-02-17', 1, 3500000),
+(8, 2, '2019-02-28', 1, 2900000),
+(9, 3, '2020-05-28', 1, 4100000),
+(10, 2, '2018-06-28', 0, 3500000),
+(12, 3, '2023-08-24', 1, 550000),
+(26, 2, '2023-05-11', 1, 10100000),
+(27, 2, '2023-05-11', 1, 17100000),
+(29, 2, '2023-05-11', 0, 2023000);
 
 -- --------------------------------------------------------
 
@@ -191,10 +199,8 @@ CREATE TABLE `hang` (
 --
 
 INSERT INTO `hang` (`MaHang`, `Ten`, `NgayTao`, `TrangThai`) VALUES
-('MH-', '213', '2023-05-04', 0),
 ('MH-001', 'Adidas', '2022-02-23', 1),
 ('MH-002', 'Nike', '2021-09-23', 1),
-('MH-01', 'test=', '2023-05-04', 0),
 ('MH-021', 'Pan Thailand', '2020-06-18', 1),
 ('MH-033', 'Puma', '2023-02-23', 1);
 
@@ -205,21 +211,20 @@ INSERT INTO `hang` (`MaHang`, `Ten`, `NgayTao`, `TrangThai`) VALUES
 --
 
 CREATE TABLE `khachhang` (
-  `MaKhach` varchar(50) NOT NULL,
-  `TichDiem` int(11) NOT NULL,
+  `MaKhach` int(50) NOT NULL,
   `TenKhach` varchar(50) NOT NULL,
   `DiaChi` varchar(50) NOT NULL,
   `SDT` varchar(50) NOT NULL,
-  `MaTaiKhoan` varchar(50) NOT NULL
+  `MaTaiKhoan` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `khachhang`
 --
 
-INSERT INTO `khachhang` (`MaKhach`, `TichDiem`, `TenKhach`, `DiaChi`, `SDT`, `MaTaiKhoan`) VALUES
-('KH-001', 0, 'Le Trung Kien', '187 Le Van Tho Phuong 15 Quan Go Vap', '0908123456', 'TK-001'),
-('KH-002', 0, 'Nguyen Thi Trang', '589/965 Nguyen Kiem Quan Go Vap', '0908878795', 'TK-002');
+INSERT INTO `khachhang` (`MaKhach`, `TenKhach`, `DiaChi`, `SDT`, `MaTaiKhoan`) VALUES
+(1, 'Le Trung Kien', '187 Le Van Tho Phuong 15 Quan Go Vap', '0908123456', 2),
+(2, 'Nguyen Thi Trang', '589/965 Nguyen Kiem Quan Go Vap', '0908878795', 3);
 
 -- --------------------------------------------------------
 
@@ -257,7 +262,7 @@ CREATE TABLE `nhanvien` (
   `DiaChi` varchar(50) NOT NULL,
   `TenNhanVien` varchar(50) NOT NULL,
   `SDT` varchar(50) NOT NULL,
-  `MaTaiKhoan` varchar(50) NOT NULL
+  `MaTaiKhoan` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -265,8 +270,8 @@ CREATE TABLE `nhanvien` (
 --
 
 INSERT INTO `nhanvien` (`MaNhanVien`, `Quyen`, `DiaChi`, `TenNhanVien`, `SDT`, `MaTaiKhoan`) VALUES
-('NV-001', 1, '589/965 Le Van Duyet Quan Binh Thanh', 'Nguyen Thi Linh', '0569896512', 'TK-003'),
-('NV-002', 1, '589/965 Le Quang Dinh Quan Binh Thanh', 'Nguyen Van Tai', '0598978954', 'TK-004');
+('NV-001', 1, '589/965 Le Van Duyet Quan Binh Thanh', 'Nguyen Thi Linh', '0569896512', 3),
+('NV-002', 1, '589/965 Le Quang Dinh Quan Binh Thanh', 'Nguyen Van Tai', '0598978954', 4);
 
 -- --------------------------------------------------------
 
@@ -308,7 +313,7 @@ CREATE TABLE `phieunhaphang` (
   `NgayTao` date NOT NULL,
   `TongDon` int(11) NOT NULL,
   `MaHang` varchar(50) NOT NULL,
-  `MaTaiKhoan` varchar(50) NOT NULL
+  `MaTaiKhoan` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -316,12 +321,12 @@ CREATE TABLE `phieunhaphang` (
 --
 
 INSERT INTO `phieunhaphang` (`MaPhieu`, `NgayTao`, `TongDon`, `MaHang`, `MaTaiKhoan`) VALUES
-(1, '2021-09-23', 59500000, 'MH-001', 'TK-003'),
-(2, '2022-06-23', 29000000, 'MH-002', 'TK-003'),
-(3, '2022-12-23', 130000000, 'MH-033', 'TK-004'),
-(4, '2022-12-09', 27500000, 'MH-021', 'TK-003'),
-(5, '2020-06-18', 64000000, 'MH-002', 'TK-003'),
-(6, '2020-09-10', 88500000, 'MH-001', 'TK-004');
+(1, '2021-09-23', 59500000, 'MH-001', 3),
+(2, '2022-06-23', 29000000, 'MH-002', 4),
+(3, '2022-12-23', 130000000, 'MH-033', 3),
+(4, '2022-12-09', 27500000, 'MH-021', 3),
+(5, '2020-06-18', 64000000, 'MH-002', 4),
+(6, '2020-09-10', 88500000, 'MH-001', 3);
 
 -- --------------------------------------------------------
 
@@ -367,26 +372,35 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, `MoTa`, `NgayTao`, `MaHang`, `SLTonKho`) VALUES
-('001', 'ADIDAS NEMEZIZ 19.3 TF TRẮNG XANH MUTATOR 2020 PAC', 1190000, 'KM_001', '001.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-23', 'MH-001', 100),
-('002', 'ADIDAS COPA SENSE.3 TF GAME DATA PACK - GZ1366', 1890000, '#', '002.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2022-06-23', 'MH-001', 90),
-('003', 'ADIDAS PREDATOR EDGE.3 L TF - GV8527 Data Game Pac', 1900000, '#', '003.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2022-06-23', 'MH-001', 20),
-('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, '#', '004.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-12-10', 'MH-001', 89),
-('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, '#', '005.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-12-12', 'MH-001', 76),
-('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, '#', '006.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2023-03-11', 'MH-001', 80),
-('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '007.jpg', '1', '#', '2021-03-11', 'MH-001', 80),
-('008', 'ADIDAS X SPEEDFLOW .1 FG GW7456 DIAMOND EDGE PACK ', 3500000, '#', '008.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2021-03-11', 'MH-001', 80),
-('010', 'NIKE ZOOM MERCURIAL VAPOR 15 PRO TF TRẮNG', 2900000, '#', '010.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-002', 190),
-('011', 'NIKE GRIPKNIT PHANTOM GX ELITE FG', 5500000, '#', '011.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2020-09-10', 'MH-002', 100),
-('012', 'NIKE TIEMPO LEGEND 9 ELITE FG CZ8482-075 RECHARGE ', 3900000, '#', '012.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2022-09-11', 'MH-002', 100),
-('013', 'NIKE MERCURIAL SUPERFLY 8 ELITE FG CV0958-760 MOTI', 4100000, '#', '013.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2023-09-11', 'MH-002', 100),
-('016', ' NIKE TIEMPO LEGEND 9 ACADEMY TF WORLD CUP', 1690000, '#', '016.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2020-09-10', 'MH-002', 100),
-('017', 'NIKE TIEMPO REACT LEGEND 9 PRO TF WORLD CUP', 2550000, '#', '017.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-10', 'MH-002', 100),
-('018', 'NIKE TIEMPO REACT LEGEND 9 PRO TF', 2550000, '#', '018.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2021-09-10', 'MH-002', 101),
-('019', ' NIKE ZOOM MERCURIAL VAPOR 15 PRO TF HỒNG', 2950000, '#', '019.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-002', 190),
-('020', '  PUMA ULTRA ULTIMATE CAGE TF 10689301 FASTEST PAC', 2850000, '#', '020.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2023-02-10', 'MH-033', 190),
-('021', 'PUMA ULTRA 1.3 FG/AG 106477-02 FASTER FOOTBALL PAC', 3500000, '#', '021.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2023-01-10', 'MH-033', 190),
-('022', 'PUMA FUTURE Z NEYMAR X COPA AMERICA FG 10684201', 6500000, '#', '022.jpg', 'Giày đinh sân cỏ tự nhiên', '#', '2022-01-10', 'MH-033', 190),
-('031', 'GIÀY PAN VIGOR X TF ĐẾ ĐINH', 550000, '#', '031.jpg', 'Giày đinh sân cỏ nhân tạo', '#', '2023-07-11', 'MH-021', 190);
+('001', 'ADIDAS NEMEZIZ 19.3 TF TRẮNG XANH MUTATOR 2020 PAC', 1190000, 'KM_001', '001.jpg', 'DM-1', '#', '2021-09-23', 'MH-001', 100),
+('002', 'ADIDAS COPA SENSE.3 TF GAME DATA PACK - GZ1366', 1890000, 'KM_002', '002.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 90),
+('003', 'ADIDAS PREDATOR EDGE.3 L TF - GV8527 Data Game Pac', 1900000, 'KM_002', '003.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 20),
+('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, 'KM_003', '004.jpg', 'DM-1', '#', '2021-12-10', 'MH-001', 89),
+('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, 'KM_002', '005.jpg', 'DM-1', '#', '2021-12-12', 'MH-001', 76),
+('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, 'KM_001', '006.jpg', 'DM-2', '#', '2023-03-11', 'MH-001', 80),
+('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '007.jpg', 'DM-2', '#', '2021-03-11', 'MH-001', 80),
+('008', 'ADIDAS X SPEEDFLOW .1 FG GW7456 DIAMOND EDGE PACK ', 3500000, '#', '008.jpg', 'DM-2', '#', '2021-03-11', 'MH-001', 80),
+('010', 'NIKE ZOOM MERCURIAL VAPOR 15 PRO TF TRẮNG', 2900000, '#', '010.jpg', 'DM-1', '#', '2023-02-10', 'MH-002', 190),
+('011', 'NIKE GRIPKNIT PHANTOM GX ELITE FG', 5500000, '#', '011.jpg', 'DM-2', '#', '2020-09-10', 'MH-002', 100),
+('012', 'NIKE TIEMPO LEGEND 9 ELITE FG CZ8482-075 RECHARGE ', 3900000, '#', '012.jpg', 'DM-2', '#', '2022-09-11', 'MH-002', 100),
+('013', 'NIKE MERCURIAL SUPERFLY 8 ELITE FG CV0958-760 MOTI', 4100000, '#', '013.jpg', 'DM-2', '#', '2023-09-11', 'MH-002', 100),
+('016', ' NIKE TIEMPO LEGEND 9 ACADEMY TF WORLD CUP', 1690000, '#', '016.jpg', 'DM-1', '#', '2020-09-10', 'MH-002', 100),
+('017', 'NIKE TIEMPO REACT LEGEND 9 PRO TF WORLD CUP', 2550000, '#', '017.jpg', 'DM-1', '#', '2021-09-10', 'MH-002', 100),
+('018', 'NIKE TIEMPO REACT LEGEND 9 PRO TF', 2550000, '#', '018.jpg', 'DM-1', '#', '2021-09-10', 'MH-002', 101),
+('019', ' NIKE ZOOM MERCURIAL VAPOR 15 PRO TF HỒNG', 2950000, '#', '019.jpg', 'DM-1', '#', '2023-02-10', 'MH-002', 190),
+('020', '  PUMA ULTRA ULTIMATE CAGE TF 10689301 FASTEST PAC', 2850000, '#', '020.jpg', 'DM-1', '#', '2023-02-10', 'MH-033', 190),
+('021', 'PUMA ULTRA 1.3 FG/AG 106477-02 FASTER FOOTBALL PAC', 3500000, '#', '021.jpg', 'DM-2', '#', '2023-01-10', 'MH-033', 190),
+('022', 'PUMA FUTURE Z NEYMAR X COPA AMERICA FG 10684201', 6500000, '#', '022.jpg', 'DM-2', '#', '2022-01-10', 'MH-033', 190),
+('031', 'GIÀY PAN VIGOR X TF ĐẾ ĐINH', 550000, '#', '031.jpg', 'DM-1', '#', '2023-07-11', 'MH-021', 190),
+('032', 'GIÀY PAN VIGOR X LTD XANH DƯƠNG', 1850000, '#', '032.jpg', 'DM-4', '#', '2022-07-11', 'MH-021', 190),
+('033', 'GIÀY PAN WAVE II LEGEND IC ĐEN', 990000, '#', '033.jpg', 'DM-4', '#', '2023-03-11', 'MH-021', 190),
+('034', 'GIÀY PAN VIGOR X IC ĐẾ BẰNG', 520000, '#', '034.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
+('035', 'GIÀY PAN SUPER SONIC IC ĐẾ BẰNG', 540000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
+('036', 'PHANTOM VSN ACADEMY BRIGHT CRIMSON IC', 1500000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-001', 190),
+('041', 'NIKE JR. MERCURIAL VAPOR 14 ACADEMY TF CV0822-474 ', 850000, '#', '041.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
+('042', 'NIKE PHANTOM VNM ACADEMY TF KIDS AO0377-600', 1250000, '#', '042.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
+('043', 'NIKE PHANTOM VSN ACADEMY TF KIDS AR4343-060', 750000, '#', '043.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
+('044', '  NIKE TIEMPO LEGEND 9 ACADEMY TF FOR KIDS', 850000, '#', '044.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190);
 
 -- --------------------------------------------------------
 
@@ -395,7 +409,7 @@ INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, 
 --
 
 CREATE TABLE `taikhoan` (
-  `MaTaiKhoan` varchar(50) NOT NULL,
+  `MaTaiKhoan` int(50) NOT NULL,
   `TenDN` varchar(50) NOT NULL,
   `MatKhau` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
@@ -409,10 +423,12 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`MaTaiKhoan`, `TenDN`, `MatKhau`, `Email`, `NgayTao`, `TinhTrang`, `Quyen`) VALUES
-('TK-001', 'TK1', '1', 'TK1@gmail.com', '2020-09-10', 1, ''),
-('TK-002', 'TK2', '1', 'TK2@gmail.com', '2022-06-23', 1, ''),
-('TK-003', 'TK3', '1', 'TK3@gmail.com', '2021-09-23', 1, ''),
-('TK-004', 'TK4', '1', 'TK4@gmail.com', '2021-09-23', 1, '');
+(1, 'TK1', '1', 'TK1@gmail.com', '2023-05-24', 1, 'Admin'),
+(2, 'TK2', '1', 'TK2@gmail.com', '2023-03-24', 1, 'User'),
+(3, 'TK3', '1', 'TK3@gmail.com', '2020-03-24', 1, 'User'),
+(4, 'TK4', '1', 'TK4@gmail.com', '2020-12-24', 1, 'User'),
+(5, 'TK5', '1', 'TK5@gmail.com', '2020-12-24', 1, 'User'),
+(6, 'TK6', '1', 'TK6@gmail.com', '2020-12-25', 1, 'User');
 
 --
 -- Indexes for dumped tables
@@ -511,13 +527,43 @@ ALTER TABLE `quyen`
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`MaSP`),
   ADD KEY `MaHang` (`MaHang`),
-  ADD KEY `KhuyenMai` (`MaKhuyenMai`);
+  ADD KEY `KhuyenMai` (`MaKhuyenMai`),
+  ADD KEY `MaDM` (`MaDM`);
 
 --
 -- Indexes for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  ADD PRIMARY KEY (`MaTaiKhoan`);
+  ADD PRIMARY KEY (`MaTaiKhoan`),
+  ADD KEY `Quyen` (`Quyen`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `donhang`
+--
+ALTER TABLE `donhang`
+  MODIFY `MaDonHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `khachhang`
+--
+ALTER TABLE `khachhang`
+  MODIFY `MaKhach` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `phieunhaphang`
+--
+ALTER TABLE `phieunhaphang`
+  MODIFY `MaPhieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  MODIFY `MaTaiKhoan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -533,15 +579,15 @@ ALTER TABLE `anhphu`
 -- Constraints for table `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  ADD CONSTRAINT `chitietdonhang_ibfk_1` FOREIGN KEY (`MaDonHang`) REFERENCES `donhang` (`MaDonHang`),
-  ADD CONSTRAINT `chitietdonhang_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
+  ADD CONSTRAINT `chitietdonhang_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`),
+  ADD CONSTRAINT `chitietdonhang_ibfk_3` FOREIGN KEY (`MaDonHang`) REFERENCES `donhang` (`MaDonHang`);
 
 --
 -- Constraints for table `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
-  ADD CONSTRAINT `chitietphieunhap_ibfk_1` FOREIGN KEY (`MaPhieu`) REFERENCES `phieunhaphang` (`MaPhieu`),
-  ADD CONSTRAINT `chitietphieunhap_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
+  ADD CONSTRAINT `chitietphieunhap_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`),
+  ADD CONSTRAINT `chitietphieunhap_ibfk_3` FOREIGN KEY (`MaPhieu`) REFERENCES `phieunhaphang` (`MaPhieu`);
 
 --
 -- Constraints for table `donhang`
@@ -580,7 +626,14 @@ ALTER TABLE `phieunhaphang`
 --
 ALTER TABLE `sanpham`
   ADD CONSTRAINT `sanpham_ibfk_1` FOREIGN KEY (`MaHang`) REFERENCES `hang` (`MaHang`),
-  ADD CONSTRAINT `sanpham_ibfk_2` FOREIGN KEY (`MaKhuyenMai`) REFERENCES `khuyenmai` (`MaKhuyenMai`);
+  ADD CONSTRAINT `sanpham_ibfk_2` FOREIGN KEY (`MaKhuyenMai`) REFERENCES `khuyenmai` (`MaKhuyenMai`),
+  ADD CONSTRAINT `sanpham_ibfk_3` FOREIGN KEY (`MaDM`) REFERENCES `danhmuc` (`MaDM`);
+
+--
+-- Constraints for table `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`Quyen`) REFERENCES `quyen` (`MaQuyen`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

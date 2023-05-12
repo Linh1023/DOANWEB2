@@ -86,7 +86,7 @@ body{
     font-size: 95%;
     padding: 0.3em 1em;
 }
-@media only screen and (min-width:600px) 
+@media  screen and (max-width:700px) 
 {
     .main::before, .main::after{
         content: "";
@@ -106,5 +106,32 @@ body{
         width: 35%;
         float: left;
     }
-    
+
+    .contact, .pocicy, .links, .fangape{
+        width: 100%;
+    }
+
+    .footer-col{
+        height: 529px;
+    }
+
+    .fangape img{
+        display: none;
+    }
+
+
 }
+
+@media  screen and (max-width:375px){
+    .contact, .pocicy, .links, .fangape{
+        width: 100%;
+    }
+    .footer-col{
+        height: 539px;
+    }
+
+    .fangape img{
+        display: none;
+    }
+} 
+

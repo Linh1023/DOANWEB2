@@ -43,3 +43,32 @@ p{
     padding: 8px;
 }
 
+
+#ctdh a{
+
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+}
+
+#ctdh a #back{
+    display: inline-block;
+    color: brown;
+    background-color: bisque;
+    padding: 20px 25px;
+    margin: 10px auto;
+    border-radius: 10px;
+    margin-left: 379px;
+}
+
+#ctdh a #back:hover{
+    color: black;
+    background-color: aqua;
+}
+
+@media  screen and (max-width:800px){
+    #ctdh a #back{
+        margin-left: 150px;
+    }
+}

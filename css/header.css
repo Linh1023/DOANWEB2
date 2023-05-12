@@ -51,16 +51,30 @@
 .content3 ul li {
   margin: 0px 15px;
   font-size: 25px;
+  position: relative;
 }
 .content3 ul li a {
   color:black;
   cursor: pointer;
 }
 
-.content3 ul .gh:hover, .content3 ul .user:hover, .content3 ul .kl:hover {
+
+.content3 ul .gh:hover, .content3 ul .user:hover, .content3 ul .kl:hover,.content3 ul .ti-share-alt:hover, .content3 ul li a:hover {
   color:aqua;
   cursor: pointer;
 }
+
+.content3 ul li span{
+    background-color: orangered;
+    color: white;
+    font-size: 13px;
+    position: absolute;
+    right: -15px;
+    top: -13px;
+    border-radius: 90%;
+    padding: 8px;
+}
+
 
 @media screen and (max-width: 1600px) {
   .container2{

@@ -11,8 +11,15 @@
     $db_kh = new DAOKhachHang();
     $db_kh->connect();
     $data = $db_kh->LayThongTinKhach($MaTK);
-    if($data == null){
-        header("location:../../index.php?id=dh");
+    if(isset($_GET['PQ'])){
+        if($data == null){
+            header("location:../../../../index.php?id=dh");
+        }
+    }
+    else{
+        if($data == null){
+            header("location:../../index.php?id=dh");
+        }
     }
 ?>
 
@@ -22,13 +29,13 @@
         <div class="col col-6">
                 <p>Mã đơn hàng:  <?php echo $Madon?></p>
                 <p>Mã tài khoản: <?php echo $MaTK?></p>
-                <p>Địa chỉ: <?php echo $data[3]?></p>
+                <p>Địa chỉ: <?php echo $data[2]?></p>
                 <!-- Hien thi theo tien viet nam -->
                 <p>Tổng tiền: <?php echo number_format($TT,0,',','.')."đ"?></p>
         </div>
         <div class="col col-6">
-            <p>Tên khách hàng: <?php echo $data[2]?></p>
-            <p>Số điện thoại: <?php echo $data[4]?></p>  
+            <p>Tên khách hàng: <?php echo $data[1]?></p>
+            <p>Số điện thoại: <?php echo $data[3]?></p>  
             <p>Ngày đặt: <?php echo $Date?></p>
         </div>
     </div>
@@ -63,4 +70,14 @@
                 $i++;
             }
         ?>
+    </table>
+
+    <?php
+        if(isset($_GET['PQ'])){
+    ?>
+        <a href="../../../GioHang.php"><div id="back">Xác nhận</div></a>
+    <?php        
+        }
+    ?>
+
 </div>

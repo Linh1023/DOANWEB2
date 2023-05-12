@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="./css/products.css">
     <script src="./js/index.js"></script>
     <script src="./js/login.js"></script>
-    <!-- <link rel="stylesheet" href="./fonts/fontawesome-free-5.12.0-web/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.4-web/css/all.min.css"> -->
 
     <!-- slider -->
     <link rel="stylesheet" href="./css/slider.css">
@@ -36,10 +37,10 @@
 </head>
 <body>
     <div id="wrapper">
-        <?php include('template/header.php');?>
-        <?php include('template/top_menu.php');?>
         <?php include('account/login.php');?>
         <?php include('account/register.php');?>
+        <?php include('template/header.php');?>
+        <?php include('template/top_menu.php');?>
         <div id="main">
             <?php include('template/slider.php');?>
             <?php include('template/products.php');?>
