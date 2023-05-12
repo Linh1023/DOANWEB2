@@ -12,6 +12,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/admin.js"></script>
+    <script src="../resources/ckeditor/ckeditor.js"></script>
 
 
     <link rel="stylesheet" href="./css/admin.css">
@@ -110,7 +111,7 @@
                                     <label class="row">
                                         <div class="col col-3">Mô tả:</div>
                                         <div class="col col-9">
-                                            <textarea class="w-100" rows="" cols="" name="mota"
+                                            <textarea id="textarea"class="w-100" rows="" cols="" name="mota"
                                                 value="<?php echo $moTa; ?>"><?php echo $moTa; ?></textarea>
                                         </div>
                                     </label>
@@ -154,11 +155,37 @@
                                     <div class="col col-9">
                                         <div class="row">
                                             <img style="width: 300px;min-height: 150px;"
-                                                src="<?php echo ($hinhAnh = "#") ? "../img/img-logo/sneaker.jpg" : $hinhAnh ?>"
+                                                src="<?php
+                                                //  echo ($hinhAnh = "#") ? "../img/img-logo/sneaker.jpg" : $hinhAnh
+                                                if($hinhAnh=="#")echo "../img/img-logo/sneaker.jpg";
+                                                else echo"../img/products/".$hinhAnh;
+                                                 ?>"
                                                 alt="" id="imagePreview">
                                         </div>
                                     </div>
                                 </div>
+                                <!-- <div class="row mt-2">
+                                    <label class="row"> 
+                                        <div class="col col-3">Thư viện ảnh :</div>
+                                        <div class="col col-9">
+                                            <input class="w-100" type="file" id="anhSPs" name="anhphu" multiple enctype="multipart/form-data" onchange="getLinkImgs()">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-3"></div>
+                                    <div class="col col-9">
+                                        <div class="row">
+                                            <img style="width: 300px;min-height: 150px;"
+                                                src="<?php
+                                                //  echo ($hinhAnh = "#") ? "../img/img-logo/sneaker.jpg" : $hinhAnh
+                                                if($hinhAnh=="#")echo "../img/img-logo/sneaker.jpg";
+                                                else echo"../img/products/".$hinhAnh;
+                                                 ?>"
+                                                alt="" id="imagePreview">
+                                        </div>
+                                    </div>
+                                </div> -->
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Hãng:</div>
@@ -228,6 +255,11 @@
     <script>
         showmenu();
         choosemenu();
+    </script>
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('textarea');
     </script>
 </body>
 

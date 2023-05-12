@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2023 at 04:36 AM
+-- Generation Time: May 11, 2023 at 05:50 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -374,10 +374,10 @@ CREATE TABLE `sanpham` (
 INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, `MoTa`, `NgayTao`, `MaHang`, `SLTonKho`) VALUES
 ('001', 'ADIDAS NEMEZIZ 19.3 TF TRẮNG XANH MUTATOR 2020 PAC', 1190000, 'KM_001', '001.jpg', 'DM-1', '#', '2021-09-23', 'MH-001', 100),
 ('002', 'ADIDAS COPA SENSE.3 TF GAME DATA PACK - GZ1366', 1890000, 'KM_002', '002.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 90),
-('003', 'ADIDAS PREDATOR EDGE.3 L TF - GV8527 Data Game Pac', 1900000, '#', '003.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 20),
-('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, '#', '004.jpg', 'DM-1', '#', '2021-12-10', 'MH-001', 89),
-('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, '#', '005.jpg', 'DM-1', '#', '2021-12-12', 'MH-001', 76),
-('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, '#', '006.jpg', 'DM-2', '#', '2023-03-11', 'MH-001', 80),
+('003', 'ADIDAS PREDATOR EDGE.3 L TF - GV8527 Data Game Pac', 1900000, 'KM_002', '003.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 20),
+('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, 'KM_003', '004.jpg', 'DM-1', '#', '2021-12-10', 'MH-001', 89),
+('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, 'KM_002', '005.jpg', 'DM-1', '#', '2021-12-12', 'MH-001', 76),
+('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, 'KM_001', '006.jpg', 'DM-2', '#', '2023-03-11', 'MH-001', 80),
 ('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '007.jpg', 'DM-2', '#', '2021-03-11', 'MH-001', 80),
 ('008', 'ADIDAS X SPEEDFLOW .1 FG GW7456 DIAMOND EDGE PACK ', 3500000, '#', '008.jpg', 'DM-2', '#', '2021-03-11', 'MH-001', 80),
 ('010', 'NIKE ZOOM MERCURIAL VAPOR 15 PRO TF TRẮNG', 2900000, '#', '010.jpg', 'DM-1', '#', '2023-02-10', 'MH-002', 190),
@@ -396,7 +396,11 @@ INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, 
 ('033', 'GIÀY PAN WAVE II LEGEND IC ĐEN', 990000, '#', '033.jpg', 'DM-4', '#', '2023-03-11', 'MH-021', 190),
 ('034', 'GIÀY PAN VIGOR X IC ĐẾ BẰNG', 520000, '#', '034.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
 ('035', 'GIÀY PAN SUPER SONIC IC ĐẾ BẰNG', 540000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
-('036', 'PHANTOM VSN ACADEMY BRIGHT CRIMSON IC', 1500000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-001', 190);
+('036', 'PHANTOM VSN ACADEMY BRIGHT CRIMSON IC', 1500000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-001', 190),
+('041', 'NIKE JR. MERCURIAL VAPOR 14 ACADEMY TF CV0822-474 ', 850000, '#', '041.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
+('042', 'NIKE PHANTOM VNM ACADEMY TF KIDS AO0377-600', 1250000, '#', '042.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
+('043', 'NIKE PHANTOM VSN ACADEMY TF KIDS AR4343-060', 750000, '#', '043.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
+('044', '  NIKE TIEMPO LEGEND 9 ACADEMY TF FOR KIDS', 850000, '#', '044.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190);
 
 -- --------------------------------------------------------
 
