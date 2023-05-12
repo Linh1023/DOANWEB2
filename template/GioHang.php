@@ -6,7 +6,6 @@
     //unset($_SESSION['cart']);
     
     if(isset($_POST['update-click'])){
-        var_dump($_POST);
         foreach($_POST['quantity'] as $id => $quantity){
             foreach($_SESSION['cart'] as $key => $value){
                 if($value['ID'] == $id){

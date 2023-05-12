@@ -1,9 +1,25 @@
-#main{
-    width: 100%;
-    min-height: 1000px;
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    /* user-select: none; */
 }
+html{
+    font-family: 'Roboto', sans-serif;
+}
+li{
+    list-style: none;
+}
+.container{
+
+    margin: 0 auto;
+}
+
 .Loc{
+    width: 300px;
     margin-top: 21px;
+    margin-left: 15px;
+    margin-right: 20px;
 }
 
 .Loc #Loc_submit{
@@ -97,5 +113,5 @@
 .block-main{
     margin-top: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
