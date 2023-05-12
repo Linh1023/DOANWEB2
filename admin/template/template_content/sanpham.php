@@ -19,6 +19,7 @@ if ($result->num_rows > 0) {
     echo "<table class='w-100  bangnoidung'>
             <tr>
                 <th>ID</th>
+                <th>Ảnh</th>
                 <th>Tên sản phẩm</th>
                 <th>Giá</th>
                 <th>Số lượng</th>
@@ -30,6 +31,7 @@ if ($result->num_rows > 0) {
         $rowTenHang = mysqli_fetch_assoc($resultTenHang);
         echo "<tr>
             <td>" . $row['MaSP']. "</td>
+            <td> <img style='max-height:60px; max-width:60px' src='../img/products/".$row['AnhChinh']."' alt=''> </td>
             <td>
                 <div class='row'>"
                     .$row['Ten']."

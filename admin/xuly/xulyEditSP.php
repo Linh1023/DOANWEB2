@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST['hd'])){
     $hd=$_POST['hd'];
+    if($_POST['id'])
     $id=$_POST['id'];
     include '../../db/dbconnect.php';
     switch($hd){
@@ -62,11 +63,12 @@ if (isset($_POST['hd'])){
             echo "$sql";
             if (!$result)
                 echo "Lỗi khi thực hiện ở database";
+                else echo "<script>alert(`thành công`)</script>";
             break;
     }
     // Đóng kết nối
     $conn->close();
-    // header("Location:../editsp.php?id=".$id);
+    header("Location:../editsp.php?id=".$id);
 }
 
 ?>
