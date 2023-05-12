@@ -272,21 +272,20 @@
                     <ul class="list list-size">
                         <li class="size clicked">
                             <label>
-                                <input onclick="getValueSize()" name="Size" checked="checked" type="radio" value="40"
-                                    id="">
+                                <input onclick="getValueSize()" name="Size" checked="checked" type="radio" value="40">
                                 <span>40</span>
                             </label>
                         </li>
                         <li class="size">
                             <label>
-                                <input onclick="getValueSize()" name="Size" type="radio" value="41" id="">
+                                <input onclick="getValueSize()" name="Size" type="radio" value="41">
                                 <span>41</span>
 
                             </label>
                         </li>
                         <li class="size">
                             <label>
-                                <input onclick="getValueSize()" name="Size" type="radio" value="42" id="">
+                                <input onclick="getValueSize()" name="Size" type="radio" value="42">
                                 <span>42</span>
                             </label>
                         </li>

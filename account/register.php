@@ -1,7 +1,6 @@
 
 
-<link rel="stylesheet" href="../css/formDN.css"/>
-<link rel="stylesheet" href="themify-icons-font/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="./css/formDN.css"/>
 
 <form method="post" action="" id="formdk">
     <p onclick=tatdk()>X</p>

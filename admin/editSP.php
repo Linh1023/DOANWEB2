@@ -98,10 +98,10 @@
                            
                             ?>
                             <!-- Tạo form thêm / sửa -->
-                            <form action="xuly/xulyEditSP.php" method="post">
+                            <form action="xuly/xulyEditSP.php" method="post" enctype="multipart/form-data">
                                 <div class="row mt-2">
                                     <label class="row">
-                                        <div class="col col-3">Tên:</div>
+                                        <div class="col col-3">Tên sản phẩm: </div>
                                         <div class="col col-9">
                                             <input class="w-100" required type="text" name='ten' value="<?php echo $ten; ?>">
                                         </div>

@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="../css/formDN.css" />
-<link rel="stylesheet" href="themify-icons-font/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="./css/formDN.css" />
 
 <form method="post" action="./index.php" id="form">
     <p onclick=tatdn()>X</p>

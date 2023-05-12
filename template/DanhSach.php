@@ -238,19 +238,19 @@
                         <li class="color clicked">
                             <label>
                                 <input onclick="getValueColor()" name="color" checked="checked" type="radio"
-                                    value="Xanh" id="">
+                                    value="Xanh" >
                                 <span>Xanh</span>
                             </label>
                         </li>
                         <li class="color">
                             <label>
-                                <input onclick="getValueColor()" name="color" type="radio" value="Đỏ" id="">
+                                <input onclick="getValueColor()" name="color" type="radio" value="Đỏ" >
                                 <span>Đỏ</span>
                             </label>
                         </li>
                         <li class="color">
                             <label>
-                                <input onclick="getValueColor()" name="color" type="radio" value="Vàng" id="">
+                                <input onclick="getValueColor()" name="color" type="radio" value="Vàng" >
                                 <span>Vàng</span>
                             </label>
                         </li>
@@ -264,20 +264,20 @@
                         <li class="size clicked">
                             <label>
                                 <input onclick="getValueSize()" name="size" checked="checked" type="radio" value="40"
-                                    id="">
+                                    >
                                 <span>40</span>
                             </label>
                         </li>
                         <li class="size">
                             <label>
-                                <input onclick="getValueSize()" name="size" type="radio" value="41" id="">
+                                <input onclick="getValueSize()" name="size" type="radio" value="41">
                                 <span>41</span>
 
                             </label>
                         </li>
                         <li class="size">
                             <label>
-                                <input onclick="getValueSize()" name="size" type="radio" value="42" id="">
+                                <input onclick="getValueSize()" name="size" type="radio" value="42">
                                 <span>42</span>
                             </label>
                         </li>
