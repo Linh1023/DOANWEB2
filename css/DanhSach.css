@@ -59,13 +59,13 @@ li{
     border-bottom: 3px solid gray;
     position: relative;
 }
-.Loc .selection .title .ti-minus{
+.Loc .selection .title .ti-minus, .Loc .selection .title .ti-plus{
     position: absolute;
-    top: 12px;
+    top: 19px;
     right: 4px;
     font-size: 18px;
     font-weight: bold;
-
+    cursor: pointer;
 }
 
 .Loc .selection .item{
@@ -141,6 +141,7 @@ li{
     background: darkcyan;
     font-size: 15px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 @media  screen and (max-width: 1000px){

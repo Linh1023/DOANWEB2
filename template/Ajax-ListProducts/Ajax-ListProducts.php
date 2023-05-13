@@ -35,48 +35,50 @@
         
         
         //kiem tra xem co loc hay khong
-        if(isset($_POST['Loc'])){
-            if(isset($_POST['Hang'])){
+            if(isset($_GET['Hang'])){
                 //Neu co chon Hang thi them dieu kien loc hang vao chuoi truy van
-                $Hang = $_POST['Hang'];
-                $sql = $sql . "AND sanpham.MaHang = '".$Hang."' ";
+                $Hang = $_GET['Hang'];
+                if($Hang != "All"){
+                    $sql = $sql . "AND sanpham.MaHang = '".$Hang."' ";
+                }
             }
-            if (isset($_POST['Gia'])){
+
+            if (isset($_GET['Gia'])){
                 // Dua dieu kien loc theo gia vao cau truy van
-                $Gia = $_POST['Gia'];
+                $Gia = $_GET['Gia'];
                 $sql = $sql . ' AND sanpham.Gia';
                 switch ($Gia) {
                     case '0-1000000':{
-                        $sql = $sql . " < 1000000";
+                        $sql = $sql . " < 1000000 ";
                         break;
                     }
                     case '1000000-1500000':{
-                        $sql = $sql . " BETWEEN 1000000 AND 1500000" ;
+                        $sql = $sql . " BETWEEN 1000000 AND 1500000 " ;
                         break;
                     }
                     case "1500000-2000000":{
-                        $sql = $sql . " BETWEEN 1500000 AND 2000000" ;
+                        $sql = $sql . " BETWEEN 1500000 AND 2000000 " ;
                         break;
                     }
                     case "2000000-3000000":{
-                        $sql = $sql . " BETWEEN 2000000 AND 3000000" ;
+                        $sql = $sql . " BETWEEN 2000000 AND 3000000 " ;
                         break;
                     }
                     case "3000000-":{
-                        $sql = $sql . " > 3000000";
+                        $sql = $sql . " > 3000000 ";
                         break;
                     }
 
                 }
 
             }
-        }
-
+        
         //Bien de xac dinh so trang khi nguoi dung nhan
         $SoTrang = $_GET['Trang'];
         $From = 6 * ($SoTrang - 1);
 
         $sql = $sql ."LIMIT ".$From.",6";
+
 
         $data = $db->getListDanhSach($sql);
 
