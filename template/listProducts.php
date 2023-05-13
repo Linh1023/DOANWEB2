@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 <div class="block-main">
         <div class = "Loc">
             <form method="POST" action="">
@@ -74,9 +66,7 @@
         </div>
         
         <div id="artificial_turf " class="block-product">
-            <div class="container">
-            
-                <div class="products">
+            <div class="products">
                     <?php
                         if(isset($_GET['MaDM']) || isset($_GET['Sale'])){
                         function TinhTienGiam($TiLegiam, $data){
@@ -184,7 +174,7 @@
                     ?>
                 </div>
             </div>
-    </div>
+        </div>
     
     <div id="wrapper-quickview">
         <div id="quickview">
@@ -298,8 +288,6 @@
                     Sản phẩm được thiết kế từ Quang Linh :>>>
                 </div>
             </div>
-        </div>
-
     </div>
 
     <script>

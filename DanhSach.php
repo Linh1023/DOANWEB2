@@ -34,7 +34,7 @@
         <?php include('account/register.php');?>
         <?php include('template/header.php');?>
         <?php include('template/top_menu.php');?>
-        <div id="main">
+        <div id="main" class="container">
             <?php include('template/listProducts.php');?>
         </div>
         

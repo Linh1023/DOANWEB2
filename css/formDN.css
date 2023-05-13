@@ -9,7 +9,7 @@
     transform: translate(-50%,-50%);
     font-weight: 700;
     background-color: white;
-
+    display: none;
 }
 #formdk{
     display: none;
