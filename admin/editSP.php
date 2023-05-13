@@ -66,7 +66,6 @@
                                 $maHang='';
                                 $maDanhMuc='';
                             }
-
                             //Luu bảng khuyen mãi, hang va danh muc
                                 // Xuat danh sách hãng db ra mảng
                                 $listHang = [];
@@ -147,24 +146,32 @@
                                         <div class="col col-9">
                                             <input class="w-100" type="file" id="anhSP" name="anhchinh"
                                                 onchange="getLinkImg()">
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="row">
-                                    <div class="col col-3"></div>
-                                    <div class="col col-9">
-                                        <div class="row">
-                                            <img style="width: 300px;min-height: 150px;"
+                                                <input class="w-100" type="hidden" name="anhchinhcu" value="<?php echo $hinhAnh;?> ">
+                                            </div>
+                                        </label>
+                                    </div>                     
+                                    <div class="row">
+                                        <div class="col col-3"></div>
+                                        <div class="col col-9">
+                                            <div class="row">
+                                                <img style="width: 300px;min-height: 150px;"
                                                 src="<?php
-                                                //  echo ($hinhAnh = "#") ? "../img/img-logo/sneaker.jpg" : $hinhAnh
-                                                if($hinhAnh=="#")echo "../img/img-logo/sneaker.jpg";
-                                                else echo"../img/products/".$hinhAnh;
-                                                 ?>"
+                                                echo"../img/products/".$hinhAnh;
+                                                ?>"
                                                 alt="" id="imagePreview">
+                                                <div id="myButton">Xóa ảnh</div>
+                                                <div id="inner"></div>
+                                                <script>
+                                                    var changeButton = document.getElementById('myButton');
+                                                    changeButton.addEventListener('click', function(){
+                                                        document.getElementById('inner').innerHTML=`<input class="w-100" type="hidden" name="xoa" value="">`;
+                                                        document.getElementById('imagePreview').style.display='none';
+                                                    });
+                                                </script>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="row mt-2">
+                                <div class="row mt-2">
                                     <label class="row"> 
                                         <div class="col col-3">Thư viện ảnh :</div>
                                         <div class="col col-9">
@@ -176,16 +183,10 @@
                                     <div class="col col-3"></div>
                                     <div class="col col-9">
                                         <div class="row">
-                                            <img style="width: 300px;min-height: 150px;"
-                                                src="<?php
-                                                //  echo ($hinhAnh = "#") ? "../img/img-logo/sneaker.jpg" : $hinhAnh
-                                                if($hinhAnh=="#")echo "../img/img-logo/sneaker.jpg";
-                                                else echo"../img/products/".$hinhAnh;
-                                                 ?>"
-                                                alt="" id="imagePreview">
+                                            <div id="ListAnhPhu"></div>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Hãng:</div>
@@ -213,7 +214,7 @@
                                                     if($maKM==$maKhuyenMai)
                                                     echo'<option value='.$maKM.' selected>'.$tenKM.'</option>';    
                                                     else
-                                                    echo"<option value='$maKM'>$tenKM</option>";                                                
+                                                    echo'<option value='.$maKM.'>'.$tenKM.'</option>';                                                
                                                 }
                                                 ?>
                                             </select>
