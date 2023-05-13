@@ -35,7 +35,7 @@
         <?php include('template/header.php');?>
         <?php include('template/top_menu.php');?>
         <div id="main">
-            <?php include('template/DanhSach.php');?>
+            <?php include('template/listProducts.php');?>
         </div>
         
     </div>
