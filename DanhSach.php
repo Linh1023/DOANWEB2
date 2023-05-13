@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/products.css">
     <script src="./js/index.js"></script>
     <script src="./js/login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <!-- <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.4-web/css/all.min.css"> -->
 
     <!-- header -->
@@ -37,7 +38,6 @@
         <div id="main" class="container">
             <?php include('template/listProducts.php');?>
         </div>
-        
     </div>
     <div id="footer">
             <?php include('template/footer.php');?>

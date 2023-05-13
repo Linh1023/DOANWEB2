@@ -1,4 +1,67 @@
+<script>
+    let SoTrang = 1;
+    $(document).ready(function(){
+        //Chay khi len web lan dau
+        $.get('./template/Ajax-ListProducts/Ajax-ListProducts.php',
+            {
+                Trang:SoTrang
+                <?php
+                    if(isset($_GET['MaDM'])){
+                        echo ",MaDM: '" . $_GET['MaDM']."'";
+                    }
+                ?>
+                <?php
+                    if(isset($_GET['MaHang'])){
+                        echo ",MaHang: '" . $_GET['MaHang']."'";
+                    }
+                ?>
+                <?php
+                    if(isset($_GET['Sale'])){
+                        echo ",Sale: '" . $_GET['Sale']."'";
+                    }
+                ?>
+            },
+            function(data){
+                    $(".products").append(data);
+            }
+        );
 
+        //Bat dau xuat hien khi nguoi dung nhan xem them
+        $("#xemthem").click(function(){
+            SoTrang += 1;
+            $.get('./template/Ajax-ListProducts/Ajax-ListProducts.php',
+            {
+                Trang:SoTrang
+                <?php
+                    if(isset($_GET['MaDM'])){
+                        echo ",MaDM: '" . $_GET['MaDM']."'";
+                    }
+                ?>
+                <?php
+                    if(isset($_GET['MaHang'])){
+                        echo ",MaHang: '" . $_GET['MaHang']."'";
+                    }
+                ?>
+                <?php
+                    if(isset($_GET['Sale'])){
+                        echo ",Sale: '" . $_GET['Sale']."'";
+                    }
+                ?>
+            },
+            function(data){
+                console.log(data);
+                if(data!=""){
+                    $(".products").append(data);
+                }
+                else{
+                    let xemthem = document.getElementById("xemthem");
+                    xemthem.style.display="none";
+                }
+            });
+        });
+    });
+
+</script>
 <div class="block-main">
         <div class = "Loc">
             <form method="POST" action="">
@@ -66,113 +129,11 @@
         </div>
         
         <div id="artificial_turf " class="block-product">
-            <div class="products">
-                    <?php
-                        if(isset($_GET['MaDM']) || isset($_GET['Sale'])){
-                        function TinhTienGiam($TiLegiam, $data){
-                            return $data - $data*$TiLegiam/100;
-                        }
-
-                        include('./db/DAOSP.php');
-                        $db = new DAOSP();
-                        $db->connect();
-
-
-                        $data = null;
-
-                        //su dung cach ghep chuoi de toi uu hoa cac thao tac loc
-                        if(isset($_GET['MaDM'])){
-                            $MaDM = $_GET['MaDM'];
-                            //Khoi tao chuoi de truy van theo danh muc
-                            $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang ";
-                        }
-
-                        if(isset($_GET['Sale'])){
-                            $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE sanpham.MaHang = hang.MaHang AND MaKhuyenMai != '#' ";
-                        }
-
-                        //Kiem tra xem nguoi dung co chon rieng 1 hang nao tu top menu khong
-                        if(isset($_GET['MaHang'])){
-                            $Hang = $_GET['MaHang'];
-                            $sql = $sql . "AND sanpham.MaHang = '".$Hang."' ";
-                        }
-                        
-                        
-                        
-                        //kiem tra xem co loc hay khong
-                        if(isset($_POST['Loc'])){
-                            if(isset($_POST['Hang'])){
-                                //Neu co chon Hang thi them dieu kien loc hang vao chuoi truy van
-                                $Hang = $_POST['Hang'];
-                                $sql = $sql . "AND sanpham.MaHang = '".$Hang."' ";
-                            }
-                            if (isset($_POST['Gia'])){
-                                // Dua dieu kien loc theo gia vao cau truy van
-                                $Gia = $_POST['Gia'];
-                                $sql = $sql . ' AND sanpham.Gia';
-                                switch ($Gia) {
-                                    case '0-1000000':{
-                                        $sql = $sql . " < 1000000";
-                                        break;
-                                    }
-                                    case '1000000-1500000':{
-                                        $sql = $sql . " BETWEEN 1000000 AND 1500000" ;
-                                        break;
-                                    }
-                                    case "1500000-2000000":{
-                                        $sql = $sql . " BETWEEN 1500000 AND 2000000" ;
-                                        break;
-                                    }
-                                    case "2000000-3000000":{
-                                        $sql = $sql . " BETWEEN 2000000 AND 3000000" ;
-                                        break;
-                                    }
-                                    case "3000000-":{
-                                        $sql = $sql . " > 3000000";
-                                        break;
-                                    }
-
-                                }
-
-                            }
-                        }
-                        $data = $db->getListDanhSach($sql);
-
-                        $n = 0;
-
-                        if($data != null) {
-                            $n = count($data);
-                        }
+            <div class="products" id="products">
                 
-                        for($i = 0; $i < $n ;$i++){
-                            $TiLeGiam = $db->getTiLeGiam($data[$i]['MaSP']);
-                    ?>
-                        <div class="product">
-                            <div class="product-image">
-                                <div class="quickview-background">
-                                    <div class="quickview-box">Xem Nhanh</div>
-
-                                </div>
-                                <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
-                            </div>
-                            <div class="product-info">
-
-                                <div class="product-name">
-                                    
-                                    <a href = "./ChiTietSP.php?MaSP=<?php echo $data[$i][0]?>"><?php echo $data[$i][1]?></a>
-                                </div>
-                                <div class="product-vendor"><?php echo $data[$i]['TenHang']?></div>
-                                <div class="product-price">
-                                    <span class="price-new price"><?php echo number_format(TinhTienGiam($TiLeGiam,$data[$i]['Gia']),0,',','.') ."đ"?></span>
-                                    <span class="price-old price"><?php echo number_format($data[$i]['Gia'],0,',','.') ."đ"?></span>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                </div>
+            </div>
+            <div id="block-xemthem">
+                <button id = "xemthem" clicked> Xem thêm các sản phẩm khác</button>
             </div>
         </div>
     
@@ -289,7 +250,7 @@
                 </div>
             </div>
     </div>
-
+    </div>
     <script>
         showQuickview();
         hideQuickview();

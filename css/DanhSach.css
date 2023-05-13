@@ -129,6 +129,20 @@ li{
     justify-content: flex-start;
 }
 
+#block-xemthem{
+    text-align: center;
+    display: block;
+}
+
+#block-xemthem #xemthem{
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    background: darkcyan;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 @media  screen and (max-width: 1000px){
     .block-main{
         display: inline-block;
