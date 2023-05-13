@@ -9,27 +9,22 @@ function getLinkImg(){
     });
 
     reader.readAsDataURL(selectedImage);
-};
+}
 function getLinkImgs() {
-    const myImages = document.getElementById("anhSPs");
-    const imageContainer = document.getElementById("imageContainer");
-    imageContainer.innerHTML = ""; // xóa các thẻ <img> cũ
-  
-    for (let i = 0; i < myImages.files.length; i++) {
-      const selectedImage = myImages.files[i];
-      const reader = new FileReader();
-      const newImg = document.createElement("img");
-  
-      reader.addEventListener("load", function(event) {
-        newImg.src = event.target.result;
+  const input = document.getElementById('anhSPs');
+  const galleryContainer = document.getElementById('ListAnhPhu')
+
+  // Lặp qua các tệp được chọn
+  for (let i = 0; i < input.files.length; i++) {
+    const file = input.files[i];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function(event) {
+      const image = document.createElement('img');
+      image.src = event.target.result;
+      galleryContainer.appendChild(image);
     });
-    
-    reader.readAsDataURL(selectedImage);
-    imageContainer.appendChild(newImg);
-  }
-    const formData = new FormData();
-  const fileInput = document.querySelector('#anhSPs');
-  for (const file of fileInput.files) {
-    formData.append('anhphu[]', file);
+
+    reader.readAsDataURL(file);
   }
 }

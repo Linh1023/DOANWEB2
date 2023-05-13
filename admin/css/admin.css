@@ -188,3 +188,14 @@ table.bangnoidung tr td .hanhdong >a{
     width: 100px;
     margin: 0 0 0 10px;
 }
+
+#ListAnhPhu > *{
+    max-height: 100px;
+    min-width: 50px;
+    margin: 5px;
+}
+div#myButton {
+    width: 54px;
+    height: 51px;
+    border: 3px solid #048390;
+}
