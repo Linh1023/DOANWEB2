@@ -36,6 +36,16 @@
         <?php include('template/header.php');?>
         <?php include('template/top_menu.php');?>
         <div id="main" class="container">
+            <?php
+                if(isset($_GET['Find'])){
+            ?>
+                 <div id="NoiDungTim">
+                    <p>Nội dung tìm kiếm: <?php echo $_GET['Find'] ;?></p>
+                </div>
+            <?php
+                }
+            ?>
+
             <?php include('template/listProducts.php');?>
         </div>
     </div>
