@@ -1,3 +1,4 @@
+
 <table>
     <tr>
         <th>Mã đơn</th>
@@ -22,10 +23,7 @@
             $sql = $sql . " AND NgayDat BETWEEN " .$From." AND " .$To ;
         }
 
-        $SoTrang = $_GET['SoTrang'];
-        $SoTrang = ($SoTrang - 1) * 5;
 
-        $sql = $sql . " LIMIT " . $SoTrang . ",5";
         $data = $db->getListDaDat($sql);
 
         $n = 0;
@@ -59,4 +57,7 @@
         }
     }
 ?>
+
+
 </table>
+

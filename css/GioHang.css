@@ -183,7 +183,6 @@ body{
     font-weight: bold;
     font-size: 17px;
     margin-right: 15px;
-
 }
 
 #donhang_container #Loc input{
@@ -212,6 +211,7 @@ body{
     border: none;
     border-radius: 30px;
     box-shadow: 0px 2px 5px 3px gray;
+    overflow-y: scroll;
 }
 
 
@@ -246,6 +246,23 @@ body{
 }
 
 
+#donhang_container #xemthem_block{
+    margin: 10px 50px;
+    text-align: center;
+}
+
+#donhang_container #xemthem_block #xemthem{
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: rgb(17, 82, 17);
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#donhang_container #xemthem_block #xemthem:hover{
+    background-color: rgb(9, 184, 9);
+}
 
 
 
@@ -254,6 +271,16 @@ body{
         padding: 0px;
         max-width: 100%;
         display: block;
+    }
+
+    #donhang_container{
+        padding: 10px;
+        max-width: 100%;
+        display: block;
+    }
+
+    #donhang_container #Loc{
+        margin: 5px 6px;
     }
 
     #gio_hang_container #thong_tin{
@@ -307,4 +334,19 @@ body{
         margin-right: 0px;
     }
     
+}
+
+@media  screen and (max-width: 400px){
+    #donhang_container #Loc label{
+        display: block;
+    }
+
+    #donhang_container #Loc input{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #donhang_container #Loc button{
+        margin-top: 5px;
+    }
 }

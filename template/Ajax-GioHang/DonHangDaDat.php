@@ -1,9 +1,7 @@
 <script>
-    let Trang = 1;
     $(document).ready(function() {
         $.get('./template/Ajax-GioHang/Ajax-GioHang.php',
         {
-            SoTrang: Trang,
             MaTK: <?php echo $_SESSION['MaTaiKhoan']?>
         },
         function(data){
@@ -11,6 +9,8 @@
         });
 
     });
+
+
 </script>
 
 
