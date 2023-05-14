@@ -30,6 +30,8 @@
 </head>
 <body>
     <div id="wrapper">
+        <?php include('account/login.php');?>
+        <?php include('account/register.php');?>
         <?php include('template/header.php');?>
         <?php include('template/top_menu.php');?>
 

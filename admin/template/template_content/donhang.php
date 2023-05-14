@@ -16,7 +16,7 @@
     <table id="ds_donhang">
         <tr>
             <th>Mã đơn</th>
-            <th>Mã khách hàng</th>
+            <th>Mã tài khoản</th>
             <th>Ngày đặt</th>
             <th>Trạng thái</th>
             <th>Tổng tiền</th>
