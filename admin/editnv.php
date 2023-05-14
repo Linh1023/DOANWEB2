@@ -45,7 +45,7 @@
                                     $row = mysqli_fetch_assoc($result);
                                     $ten = $row["TenNhanVien"];
                                     $diaChi = $row["DiaChi"];
-                                    $sdt = $row["SDT"];        
+                                    $sdt = "".$row["SDT"];        
                                     $matk=$row['MaTaiKhoan'];
                                     //lấy quyền nhân viên
                                     $selectTaiKhoan = 'SELECT * FROM taikhoan WHERE MaTaiKhoan = "'. $row['MaTaiKhoan'] . '"';
@@ -133,10 +133,23 @@
                                     <label class="row">
                                         <div class="col col-3">Tình Trạng: </div>
                                         <div class="col col-9">
-                                            <input class="w-100" required type="text" name='tinhtrang' value="<?php echo $tinhTrang; ?>">
+                                            <select class="w-100" name="tinhtrang">
+                                                <?php
+                                                
+                                                if($tinhTrang==1){
+                                                    echo "<option value='1' selected>Không khóa</option>";   
+                                                    echo "<option value='0' >Bị Khóa</option>";   
+                                                }
+                                                else {
+                                                    echo "<option value='1' >Không khóa</option>";   
+                                                    echo "<option value='0' selected>Khóa</option>";
+                                                }
+                                                ?> 
+                                                </select>
                                         </div>
                                     </label>
                                 </div>
+
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Email: </div>
@@ -173,7 +186,7 @@
                                             echo "<input type='hidden' name='idtk' value=" . $matk . ">";
                                             echo "<input type='hidden' name='id' value=" . $id . ">";
                                             echo '<a><input type="submit" class="btn bg-success" name="hd" value="Lưu"></a>';
-                                            echo "<a class='text-black' href='editsp.php'> 
+                                            echo "<a class='text-black' href='editnv.php'> 
                                                 <div class='btn bg-secondary'>Thêm mới</div>
                                             </a>";
                                         } else
