@@ -84,5 +84,16 @@ class DAODonHang
             return $data[0];
         }
     }
+
+    public function getListDaDat($sql){
+        $data = null;
+        if($result = mysqli_query($this->conn,$sql)){
+            while($row = mysqli_fetch_array($result)){
+                $data[] = $row;
+            }
+            mysqli_free_result($result);
+            return $data;
+        }
+    }
 }
 ?>

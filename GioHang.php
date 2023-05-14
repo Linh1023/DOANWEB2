@@ -39,6 +39,7 @@
 
         <div id="main">
             <?php include('template/GioHang.php');?>
+            <?php include('template/Ajax-GioHang/DonHangDaDat.php');?>
         </div>
 
         <div id="footer">
