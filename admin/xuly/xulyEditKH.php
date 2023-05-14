@@ -2,6 +2,27 @@
 if (isset($_POST['hd'])) {
     $hd = $_POST['hd'];
     include '../../db/dbconnect.php';
+
+        //kiểm tra điều kiện pattern
+        if(isset($_POST['id']))$id=$_POST['id'];
+
+        if (preg_match('/^0\d{9}$/', $_POST['sdt']) == false) {
+            echo "<script>
+                alert('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại 10 chữ số và bắt đầu bằng số 0.');
+                window.location = '../edikh.php?id=$id&hd=$hd'
+                </script>";
+            return;
+        }
+    
+        if (!preg_match('/^[a-zA-Z0-9]{5,}$/', $_POST['tendn'])) {
+            echo "<script>alert('Tên đăng nhập phải có ít nhất 5 kí tự và chỉ chứa chữ cái và số.'); window.location = '../editkh.php?id=$id&hd=$hd';</script>";
+            return;
+        }
+        if (substr($_POST['email'], -10) !== "@gmail.com") {
+            echo "<script>alert('Email phải có đuôi @gmail.com.'); window.location = '../editkh.php?id=$id&hd=$hd';</script>";
+            return;
+        }
+
     switch ($hd) {
         case "Lưu":
 
@@ -19,7 +40,7 @@ if (isset($_POST['hd'])) {
             // Truy vấn danh sách khách hàng
             $sql = "UPDATE khachhang   SET TenKhach='" . $_POST['ten'] . "',
                                         DiaChi='" . $_POST['diachi'] . "',
-                                        SDT =" . $_POST['sdt'] . ",
+                                        SDT ='" . $_POST['sdt'] . "',
                                         MaTaiKhoan='" . $_POST['idtk'] . "'
                                         WHERE MaKhach='" . $_POST['id'] . "'";
                                        
@@ -68,7 +89,7 @@ if (isset($_POST['hd'])) {
             VALUES (
                 '" . $_POST['ten'] . "',
                 '" . $_POST['diachi'] . "',
-                " . $_POST['sdt'] . ",
+                '" . $_POST['sdt'] . "',
                 '" . $id . "',
                 NULL)";
                                        
@@ -81,7 +102,7 @@ if (isset($_POST['hd'])) {
     }
     // Đóng kết nối
     $conn->close();
-    // header("Location:../editsp.php?id=" . $id);
+    // header("Location:../editkh.php?id=$id&hd=$hd");
 }
 
 ?>

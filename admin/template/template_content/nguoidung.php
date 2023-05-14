@@ -37,11 +37,6 @@ if ($result->num_rows > 0) {
                 <th>Tình trạng</th>
                 <th>Quyền</th>
             </tr>";
-    $hanhdong=array(
-        "xem"=>"Xem",
-        "sua"=>"Sửa",
-        "xoa"=>"Xóa"
-    );
     while($row = $result->fetch_assoc()) {
         $selectTaiKhoan = 'SELECT * FROM taikhoan WHERE MaTaiKhoan = "'. $row['MaTaiKhoan'] . '"';
         $resultTaiKhoan = mysqli_query($conn, $selectTaiKhoan);
