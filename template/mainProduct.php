@@ -159,17 +159,17 @@
             </ul>
             <div id = "danhmuc">
                 <div class = "item">
-                    <a href="#">
+                    <a href="./DanhSach.php?MaHang=MH-001">
                         <img src="./img/img-danhmuc/adidas.jpg">
                     </a>
                 </div>
                 <div class = "item">
-                    <a href="#">
+                    <a href="./DanhSach.php?MaHang=MH-002">
                         <img src="./img/img-danhmuc/nike.jpg">
                     </a>
                 </div>
                 <div class = "item">
-                    <a href="#">
+                    <a href="./DanhSach.php?MaHang=MH-021">
                         <img src="./img/img-danhmuc/pan.jpg">
                     </a>
                 </div>

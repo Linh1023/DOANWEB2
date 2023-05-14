@@ -1,5 +1,5 @@
 <?php
-        if(isset($_GET['MaDM']) || isset($_GET['Sale'])){
+        if(isset($_GET['MaDM']) || isset($_GET['Sale']) || isset($_GET['MaHang'])){
 
         function TinhTienGiam($TiLegiam, $data){
             return $data - $data*$TiLegiam/100;
@@ -10,16 +10,17 @@
         $db->connect();
         $data = null;
 
+        $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE sanpham.MaHang = hang.MaHang ";
 
         //su dung cach ghep chuoi de toi uu hoa cac thao tac loc
         if(isset($_GET['MaDM'])){
             $MaDM = $_GET['MaDM'];
             //Khoi tao chuoi de truy van theo danh muc
-            $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang ";
+            $sql = $sql . " AND MaDM = '".$MaDM."'";
         }
 
         if(isset($_GET['Sale'])){
-            $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE sanpham.MaHang = hang.MaHang AND MaKhuyenMai != '#' ";
+            $sql = $sql . " AND MaKhuyenMai != '#' ";
         }
 
 
@@ -98,7 +99,7 @@
                     <div class="quickview-box">Xem Nhanh</div>
 
                 </div>
-                <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
+                <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="" id="product-image">
             </div>
             <div class="product-info">
 

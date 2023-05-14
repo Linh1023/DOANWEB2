@@ -85,7 +85,7 @@
 .product-image:hover{
     background-image: url("/webmain/img/products/artificial_turf/xanh_03_70d12faf451144ee82be05c1789f9c9d_large.webp");
     background-size: cover;
-}
+} 
 .product-image:hover img{
     display: none;
 }
