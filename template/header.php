@@ -1,5 +1,18 @@
 <script src="./js/login.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#find').keydown(function() {
+            let keycode = event.which;
+            if(keycode == 13){
+                let text = $(this).val();
+                window.location = "./DanhSach.php?Find=" +text;
+            }
+        });
 
+    });
+
+
+</script>
         <header>
             <div id = "header">
                 <div class="container2">
@@ -13,7 +26,12 @@
                     </div>
                     <div class = "content3">
                         <ul>
-                            <!-- <li class = "ti-search kl"></li> -->
+                            <li>
+                                <div id="search-box">
+                                    <input type="text" name = "find" value="" id = "find" placeholder="Bạn muốn tìm gì ?" required>
+                                    <button id="btn-search"><i class = "ti-search"></i></button>
+                                </div>
+                            </li>
 
                             <?php 
                                 if (isset($_SESSION['MaTaiKhoan']) ){

@@ -22,6 +22,11 @@
                         echo ",Sale: '" . $_GET['Sale']."'";
                     }
                 ?>
+                <?php
+                    if(isset($_GET['Find'])){
+                        echo ",Find: '" . $_GET['Find']."'";
+                    }
+                ?>
             },
             function(data){
                     $(".products").append(data);
@@ -50,6 +55,11 @@
                 <?php
                     if(isset($_GET['Sale'])){
                         echo ",Sale: '" . $_GET['Sale']."'";
+                    }
+                ?>
+                <?php
+                    if(isset($_GET['Find'])){
+                        echo ",Find: '" . $_GET['Find']."'";
                     }
                 ?>
             },
@@ -88,6 +98,11 @@
                         echo ",Sale: '" . $_GET['Sale']."'";
                     }
                 ?>
+                <?php
+                    if(isset($_GET['Find'])){
+                        echo ",Find: '" . $_GET['Find']."'";
+                    }
+                ?>
             },
             function (data){
                 $(".products").html(data);
@@ -121,6 +136,11 @@
                 <?php
                     if(isset($_GET['Sale'])){
                         echo ",Sale: '" . $_GET['Sale']."'";
+                    }
+                ?>
+                <?php
+                    if(isset($_GET['Find'])){
+                        echo ",Find: '" . $_GET['Find']."'";
                     }
                 ?>
             },

@@ -74,6 +74,40 @@
     border-radius: 90%;
     padding: 8px;
 }
+#search-box{
+    display: flex;
+    margin-right: -12px;
+    border-radius: 30px;
+}
+#search-box #find{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 15px;
+    margin-right: 10px;
+    border-radius: 30px;
+    color: brown;
+    width: 0px;
+}
+/*  #search-box #find:valid  kiểm tra xem trên text có dữ liệu không nếu có thì áp dụng thuộc tính phía dưới */
+#search-box:hover #find, #search-box #find:valid {
+    padding: 6px 10px;
+    width: 300px;
+    border: 2px solid bisque;
+}
+#search-box #btn-search{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#search-box #btn-search:hover{
+  color: aqua;
+}
+#search-box .ti-search{
+  padding: 6px 10px;
+  font-size: 25px;
+}
 
 
 @media screen and (max-width: 1600px) {

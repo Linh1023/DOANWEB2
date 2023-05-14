@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
+    <!-- JS dùng để làm AJAX -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
     <link rel="stylesheet" href="./css/main.css">
 
     <link rel="stylesheet" href="./css/mainProduct.css">
