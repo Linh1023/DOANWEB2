@@ -2,7 +2,11 @@
     $(document).ready(function() {
         $.get('./template/Ajax-GioHang/Ajax-GioHang.php',
         {
-            MaTK: <?php echo $_SESSION['MaTaiKhoan']?>
+            <?php 
+                if(isset($_SESSION['MaTaiKhoan'])){
+                    echo "MaTK:" . $_SESSION['MaTaiKhoan'];
+                }
+            ?>
         },
         function(data){
             $('#donhang').html(data);
