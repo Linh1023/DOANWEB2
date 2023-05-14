@@ -1,5 +1,7 @@
 <script>
     let SoTrang = 1;
+    let ChonHang = "";
+    let ChonGia = "";
     $(document).ready(function(){
         //Chay khi len web lan dau
         $.get('./template/Ajax-ListProducts/Ajax-ListProducts.php',
@@ -33,6 +35,8 @@
             $.get('./template/Ajax-ListProducts/Ajax-ListProducts.php',
             {
                 Trang:SoTrang,
+                Hang:ChonHang,
+                Gia:ChonGia
                 <?php
                     if(isset($_GET['MaDM'])){
                         echo ",MaDM: '" . $_GET['MaDM']."'";
@@ -63,11 +67,12 @@
 
         $(".ChonHang").click(function (){
             SoTrang = 1;
-            let ChonHang = $(this).val();
+            ChonHang = $(this).val();
             $.get("./template/Ajax-ListProducts/Ajax-ListProducts.php",
             {
                 Trang:SoTrang,
-                Hang:ChonHang
+                Hang:ChonHang,
+                Gia:ChonGia
                 <?php
                     if(isset($_GET['MaDM'])){
                         echo ",MaDM: '" . $_GET['MaDM']."'";
@@ -96,12 +101,13 @@
 
         $(".ChonGia").click(function (){
             SoTrang = 1;
-            let ChonGia = $(this).val();
+            ChonGia = $(this).val();
             console.log(ChonGia);
             $.get("./template/Ajax-ListProducts/Ajax-ListProducts.php",
             {
                 Trang:SoTrang,
-                Gia:ChonGia
+                Gia:ChonGia,
+                Hang:ChonHang
                 <?php
                     if(isset($_GET['MaDM'])){
                         echo ",MaDM: '" . $_GET['MaDM']."'";
