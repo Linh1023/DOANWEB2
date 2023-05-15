@@ -1,5 +1,9 @@
+<?php
+    //Kiem tra xem so trang co bang 1 khong neu co thi in them ten cot cho bang
+    $Trang = $_GET['Trang'];
 
-<table>
+    if($Trang == 1){
+?>
     <tr>
         <th>Mã đơn</th>
         <th>Mã tài khoản</th>
@@ -8,8 +12,9 @@
         <th>Tổng tiền</th>
         <th style = "width: 23%">Xem chi tiết</th>
     </tr>
-
 <?php
+    }
+
     if(isset($_GET['MaTK'])){
         include ('../../db/DAODonHang.php');
         $db = new DAODonHang();
@@ -20,8 +25,17 @@
         if(isset($_GET['From']) || isset($_GET['To'])){
             $From = $_GET['From'];
             $To = $_GET['To'];
-            $sql = $sql . " AND NgayDat BETWEEN " .$From." AND " .$To ;
+            if($From != "" && $To != ""){
+                $sql = $sql . " AND NgayDat BETWEEN '" .$From."' AND '".$To."'" ;
+            }
+            
         }
+
+        
+
+        $From = ($Trang - 1) * 5;
+
+        $sql = $sql . "  ORDER BY MaDonHang DESC  LIMIT ".$From.",5";
 
 
         $data = $db->getListDaDat($sql);
@@ -50,14 +64,11 @@
                     </td>
                     <td><?php echo number_format($data[$i][4],0,',','.')."đ"?></td>
                     <td><a href="./admin/template/template_content/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&MaTK=<?php echo $data[$i][1]?>&Date=<?php echo $data[$i][2]?>&TT=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
-                
-                </tr>
-
+            </tr>
 <?php
         }
     }
 ?>
 
 
-</table>
 

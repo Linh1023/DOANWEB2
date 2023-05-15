@@ -64,7 +64,6 @@
                 ?>
             },
             function(data){
-                console.log(data);
                 if(data!=""){
                     $(".products").append(data);
                 }
