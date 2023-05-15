@@ -315,3 +315,70 @@
         showQuickview();
         hideQuickview();
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    
+<script type="text/javascript">
+    function fetch_data(page){
+        $.ajax({
+            url: "./template/paginationNhanTao.php",
+            method: "POST",
+            data: {
+                page: page
+            },
+            success: function(data){
+                $("#get_data_NT").html(data);
+            }
+        });
+    }
+    fetch_data();
+
+    $(document).on("click", ".page-item", function(){
+        var page = $(this).attr("id");
+        fetch_data(page);
+    })  
+</script>
+
+<script type="text/javascript">
+    function fetch_dataTN(pageTN){
+        $.ajax({
+            url: "./template/paginationTuNhien.php",
+            method: "POST",
+            data: {
+                page: pageTN
+            },
+            success: function(data){
+                $("#get_data_TN").html(data);
+            }
+        });
+    }
+    fetch_dataTN();
+
+    $(document).on("click", ".page-item-TN", function(){
+        var pageTN = $(this).attr("id");
+        fetch_dataTN(pageTN);
+    })
+    
+</script>
+
+<script type="text/javascript">
+    function fetch_dataFS(pageFS){
+        $.ajax({
+            url: "./template/paginationFulsan.php",
+            method: "POST",
+            data: {
+                page: pageFS
+            },
+            success: function(data){
+                $("#get_data_FS").html(data);
+            }
+        });
+    }
+    fetch_dataFS();
+
+    $(document).on("click", ".page-item-FS", function(){
+        var pageFS = $(this).attr("id");
+        fetch_dataFS(pageFS);
+    })
+    
+</script>
+
