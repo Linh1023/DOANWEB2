@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./css/products.css">
     <script src="./js/index.js"></script>
     <script src="./js/login.js"></script>
-    <!-- <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.4-web/css/all.min.css"> -->
 
     <!-- slider -->
     <link rel="stylesheet" href="./css/slider.css">

@@ -20,8 +20,6 @@ if(mysqli_num_rows($query) > 0){
         <div class="product">
         <div class="product-image">
             <div class="quickview-background">
-                <div class="quickview-box">Xem Nhanh</div>
-
             </div>
             <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
         </div>

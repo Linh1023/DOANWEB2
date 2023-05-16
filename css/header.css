@@ -88,6 +88,8 @@
     border-radius: 30px;
     color: brown;
     width: 0px;
+    position:absolute;
+    left:-300px;
 }
 /*  #search-box #find:valid  kiểm tra xem trên text có dữ liệu không nếu có thì áp dụng thuộc tính phía dưới */
 #search-box:hover #find, #search-box #find:valid {

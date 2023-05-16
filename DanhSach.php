@@ -14,8 +14,6 @@
     <script src="./js/login.js"></script>
     <script src="./js/jquery-3.7.0.min.js"></script>
 
-    <!-- <link rel="stylesheet" href="./fonts/fontawesome-free-5.15.4-web/css/all.min.css"> -->
-
     <!-- header -->
     <link rel="stylesheet" href="./css/top_menu.css">
     <link rel="stylesheet" href="./fonts/themify-icons-font/themify-icons/themify-icons.css">

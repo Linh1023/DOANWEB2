@@ -101,8 +101,6 @@
         <div class="product">
             <div class="product-image">
                 <div class="quickview-background">
-                    <div class="quickview-box">Xem Nhanh</div>
-
                 </div>
                 <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="" id="product-image">
             </div>

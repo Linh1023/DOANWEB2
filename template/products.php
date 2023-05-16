@@ -89,7 +89,7 @@
                         <div class="product">
                             <div class="product-image">
                                 <div class="quickview-background">
-                                    <div class="quickview-box">Xem Nhanh</div>
+                                    
 
                                 </div>
                                 <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
@@ -139,8 +139,6 @@
                     <div class="product">
                         <div class="product-image">
                             <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
-
                             </div>
                             <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
                         </div>
@@ -188,7 +186,7 @@
                     <div class="product">
                         <div class="product-image">
                             <div class="quickview-background">
-                                <div class="quickview-box">Xem Nhanh</div>
+                               
 
                             </div>
                             <img src="./img/products/<?php echo $data[$i]['AnhChinh']?>" alt="">
@@ -220,101 +218,7 @@
     
     <form action="./GioHang.php" method="post">
     <input type="hidden" name="MaSP" value="<?php echo $data[0][0]?>">
-    <div id="wrapper-quickview">
-        <div id="quickview">
-            <!-- <span class="icon-close-quickview">
-                <i class="far fa-times-circle"></i>
-            </span> -->
-            <div class="quickview-imgs">
-                <div class="img-main">
-                    <img src="./img/products/cotunhien.webp" alt="">
-                </div>
-                <div class="img-slider">
-                    <div class="items">
-                        <div class="item clicked">
-                            <label>
-                                <input onclick="getValueImgQuickview()" type="radio" name="img-quickview">
-                                <img data-image="./img/products/cotunhien.webp" src="./img/products/cotunhien.webp" alt="">
-                            </label>
-                        </div>
-                        <div class="item">
-                            <label>
-                                <input onclick="getValueImgQuickview()" type="radio" name="img-quickview">
-                                <img data-image="./img/products/futsal.webp" src="./img/products/futsal.webp" alt="">
-                            </label>
-                        </div>
-                        <div class="item">
-                            <label>
-                                <input onclick="getValueImgQuickview()" type="radio" name="img-quickview">
-                                <img data-image="./img/products/cotunhien.webp" src="./img/products/cotunhien.webp" alt="">
-                            </label>
-                        </div>
-                        <div class="item">
-                            <label>
-                                <input onclick="getValueImgQuickview()" type="radio" name="img-quickview">
-                                <img data-image="./img/products/futsal.webp" src="./img/products/futsal.webp" alt="">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="quickview-content">
-                <div class="title">
-                    Adidas X Speedflow .1 TF GW7473 Diamond Edge Pack
-                </div>
-                <div class="list-star"></div>
-                <div class="quickview-price">
-                    2.550.000đ
-                </div>
-             
-                <div class="quickview-select">
-                    <label>Kích thước:</label>
-                    <ul class="list list-size">
-                        <li class="size clicked">
-                            <label>
-                                <input onclick="getValueSize()" name="Size" checked="checked" type="radio" value="40">
-                                <span>40</span>
-                            </label>
-                        </li>
-                        <li class="size">
-                            <label>
-                                <input onclick="getValueSize()" name="Size" type="radio" value="41">
-                                <span>41</span>
-
-                            </label>
-                        </li>
-                        <li class="size">
-                            <label>
-                                <input onclick="getValueSize()" name="Size" type="radio" value="42">
-                                <span>42</span>
-                            </label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="quickview-quantity">
-                    Số lượng còn lại: <p>25 đôi</p>
-                </div>
-                <form id="add-to-cart-form" action="cart.php?action=add" method=""POST>
-                    <input type="text" value="1" name="quantity[]">
-                </form>
-                <label id="giohang">
-                    <input type = "submit" name = "add_to_cart" value = "ThemGio">
-                    <span id="icon"><i class="ti-shopping-cart"></i></span> 
-                    <span id = "themvaogio">Thêm vào giỏ</span>
-                </label>
-                <div class="quickview-description">
-                    <h4>Mô tả: </h4>
-                    Sản phẩm được thiết kế từ Quang Linh :>>>
-                </div>
-            </div>
-        </div>
-    </div>
     </form>
-
-    <script>
-        showQuickview();
-        hideQuickview();
-    </script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     
 <script type="text/javascript">
