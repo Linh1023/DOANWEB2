@@ -16,17 +16,20 @@
 }
 #form input,#formdk input {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 10px;
     background-color: rgb(195, 205, 230);
+    height: 50px;
+    font-size: 18px;
     
 }
 #form .icon-close,#formdk .icon-close {
-    margin-left: 250px;
     cursor: pointer;
     position: absolute;
-    left: 125px;
     top: 10px;
     cursor: pointer;
+    right: 15px;
+    font-size: 30px;
+    font-weight: 500;
 }
 #backgroundDN{
     background-color: #281c1c69;

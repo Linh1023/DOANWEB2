@@ -22,7 +22,7 @@
         </div>
         <ul id='ulMenu' class="mt-2 list-unstyled text-black ">
             <a href="index.php?id=tc">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "tc"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "tc"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -32,7 +32,7 @@
                 </li>
             </a>
             <a href="index.php?id=nd">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "nd"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "nd"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -42,7 +42,7 @@
                 </li>
             </a>
             <a href="index.php?id=sp">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "sp"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "sp"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -52,7 +52,7 @@
                 </li>
             </a>
             <a href="index.php?id=dh">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "dh"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "dh"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -62,7 +62,7 @@
                 </li>
             </a>
             <a href="index.php?id=bd">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "bd"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "bd"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -72,7 +72,7 @@
                 </li>
             </a>
             <a href="index.php?id=pq">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "pq"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "pq"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -82,7 +82,7 @@
                 </li>
             </a>
             <a href="index.php?id=pn">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "pn"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "pn"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -92,7 +92,7 @@
                 </li>
             </a>
             <a href="index.php?id=km">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "km"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "km"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -102,7 +102,7 @@
                 </li>
             </a>
             <a href="index.php?id=h">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "h"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "h"){echo "background: rown";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
@@ -112,7 +112,7 @@
                 </li>
             </a>
             <a href="index.php?id=dm">
-                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "background: <?php if($id ==  "dm"){echo "brown";}?>">
+                <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  "dm"){echo "background:  #6c757d";}?>">
                     <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                         <i class="fa fa-yin-yang"></i>
                     </div>
