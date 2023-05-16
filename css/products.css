@@ -160,6 +160,10 @@
     justify-content: center;
     text-align: center;
 }
+
+.viewall a{
+    text-decoration: none;
+}
 .viewall-content:hover{
     color: #333;
 }

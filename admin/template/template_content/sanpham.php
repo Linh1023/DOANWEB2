@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
                     .$row['Ten']."
                 </div>
                 <div class='row hanhdong'>";
-                echo"<a href='#' class='xem'>
+                echo"<a href='../ChiTietSP.php?MaSP=".$row['MaSP']."' class='xem'>
                 
                         <div class='col'>
                             Xem
