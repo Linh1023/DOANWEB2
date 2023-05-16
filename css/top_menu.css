@@ -5,8 +5,7 @@
     position: sticky;
     z-index: 20;
     background-color: white;
-    box-shadow: 1px 1px 15px 3px gray;
-    /*box-shadow : x y blur scale color*/
+    box-shadow: 0 14px 20px -17px rgba(0,0,0,.75);
 
 }
 

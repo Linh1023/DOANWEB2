@@ -27,7 +27,7 @@
 ?>
 <form method="POST" action="GioHang.php">
 <input type="hidden" name="MaSP" value="<?php echo $data[0][0]?>">
-<div id="main_product">
+<div id="main_product" class="container">
     <div id = "top_main">
         <div id = "selection">
             <div class = "item_selection">
