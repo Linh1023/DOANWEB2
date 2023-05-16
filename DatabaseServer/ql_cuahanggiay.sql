@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2023 at 05:50 PM
+-- Generation Time: May 16, 2023 at 03:21 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -42,7 +42,6 @@ CREATE TABLE `anhphu` (
 CREATE TABLE `chitietdonhang` (
   `MaSP` varchar(50) NOT NULL,
   `MaDonHang` int(11) NOT NULL,
-  `Size` int(11) NOT NULL,
   `SoLuong` int(11) NOT NULL,
   `Gia` int(11) NOT NULL,
   `TongTien` int(11) NOT NULL
@@ -52,24 +51,32 @@ CREATE TABLE `chitietdonhang` (
 -- Dumping data for table `chitietdonhang`
 --
 
-INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `Size`, `SoLuong`, `Gia`, `TongTien`) VALUES
-('001', 1, 39, 10, 1190000, 11900000),
-('001', 2, 41, 10, 1190000, 11900000),
-('001', 29, 40, 2, 1011500, 2023000),
-('003', 5, 40, 1, 1900000, 1900000),
-('004', 26, 42, 3, 2200000, 6600000),
-('004', 27, 42, 3, 2200000, 6600000),
-('007', 3, 39, 1, 3100000, 3100000),
-('007', 4, 41, 2, 3100000, 6200000),
-('008', 7, 40, 1, 3500000, 3500000),
-('010', 8, 41, 1, 2900000, 2900000),
-('013', 5, 39, 1, 4100000, 4100000),
-('013', 6, 42, 1, 4100000, 4100000),
-('013', 9, 40, 1, 4100000, 4100000),
-('021', 10, 39, 1, 3500000, 3500000),
-('021', 26, 40, 1, 3500000, 3500000),
-('021', 27, 40, 3, 3500000, 10500000),
-('031', 12, 41, 1, 550000, 550000);
+INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `SoLuong`, `Gia`, `TongTien`) VALUES
+('001', 2, 10, 1190000, 11900000),
+('001', 29, 2, 1011500, 2023000),
+('001', 31, 1, 1011500, 1011500),
+('003', 5, 1, 1900000, 1900000),
+('003', 35, 1, 1710000, 1710000),
+('004', 26, 3, 2200000, 6600000),
+('004', 27, 3, 2200000, 6600000),
+('004', 30, 2, 1760000, 3520000),
+('004', 36, 1, 1760000, 1760000),
+('007', 3, 1, 3100000, 3100000),
+('007', 4, 2, 3100000, 6200000),
+('008', 7, 1, 3500000, 3500000),
+('010', 8, 1, 2900000, 2900000),
+('010', 31, 1, 2900000, 2900000),
+('011', 32, 1, 5500000, 5500000),
+('011', 37, 1, 5500000, 5500000),
+('013', 5, 1, 4100000, 4100000),
+('013', 6, 1, 4100000, 4100000),
+('013', 9, 1, 4100000, 4100000),
+('021', 10, 1, 3500000, 3500000),
+('021', 26, 1, 3500000, 3500000),
+('021', 27, 3, 3500000, 10500000),
+('022', 33, 1, 6500000, 6500000),
+('031', 12, 1, 550000, 550000),
+('041', 34, 1, 850000, 850000);
 
 -- --------------------------------------------------------
 
@@ -166,7 +173,6 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`MaDonHang`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongTien`) VALUES
-(1, 1, '2023-02-23', 1, 11900000),
 (2, 2, '2022-09-08', 1, 11900000),
 (3, 2, '2021-07-12', 1, 3100000),
 (4, 2, '2020-08-09', 1, 6200000),
@@ -179,7 +185,15 @@ INSERT INTO `donhang` (`MaDonHang`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongT
 (12, 3, '2023-08-24', 1, 550000),
 (26, 2, '2023-05-11', 1, 10100000),
 (27, 2, '2023-05-11', 1, 17100000),
-(29, 2, '2023-05-11', 0, 2023000);
+(29, 2, '2023-05-11', 1, 2023000),
+(30, 7, '2023-05-14', 1, 3520000),
+(31, 7, '2023-05-14', 0, 3911500),
+(32, 7, '2023-05-14', 0, 5500000),
+(33, 7, '2023-05-14', 0, 6500000),
+(34, 7, '2023-05-14', 0, 850000),
+(35, 7, '2023-05-14', 0, 1710000),
+(36, 7, '2023-05-15', 0, 1760000),
+(37, 7, '2023-05-16', 0, 5500000);
 
 -- --------------------------------------------------------
 
@@ -224,7 +238,8 @@ CREATE TABLE `khachhang` (
 
 INSERT INTO `khachhang` (`MaKhach`, `TenKhach`, `DiaChi`, `SDT`, `MaTaiKhoan`) VALUES
 (1, 'Le Trung Kien', '187 Le Van Tho Phuong 15 Quan Go Vap', '0908123456', 2),
-(2, 'Nguyen Thi Trang', '589/965 Nguyen Kiem Quan Go Vap', '0908878795', 3);
+(2, 'Nguyen Thi Trang', '589/965 Nguyen Kiem Quan Go Vap', '0908878795', 3),
+(3, 'kien', '456 Lê Đức Thọ', '123456789', 7);
 
 -- --------------------------------------------------------
 
@@ -396,7 +411,7 @@ INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, 
 ('033', 'GIÀY PAN WAVE II LEGEND IC ĐEN', 990000, '#', '033.jpg', 'DM-4', '#', '2023-03-11', 'MH-021', 190),
 ('034', 'GIÀY PAN VIGOR X IC ĐẾ BẰNG', 520000, '#', '034.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
 ('035', 'GIÀY PAN SUPER SONIC IC ĐẾ BẰNG', 540000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
-('036', 'PHANTOM VSN ACADEMY BRIGHT CRIMSON IC', 1500000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-001', 190),
+('036', 'PHANTOM VSN ACADEMY BRIGHT CRIMSON IC', 1500000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
 ('041', 'NIKE JR. MERCURIAL VAPOR 14 ACADEMY TF CV0822-474 ', 850000, '#', '041.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
 ('042', 'NIKE PHANTOM VNM ACADEMY TF KIDS AO0377-600', 1250000, '#', '042.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
 ('043', 'NIKE PHANTOM VSN ACADEMY TF KIDS AR4343-060', 750000, '#', '043.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
@@ -428,7 +443,8 @@ INSERT INTO `taikhoan` (`MaTaiKhoan`, `TenDN`, `MatKhau`, `Email`, `NgayTao`, `T
 (3, 'TK3', '1', 'TK3@gmail.com', '2020-03-24', 1, 'User'),
 (4, 'TK4', '1', 'TK4@gmail.com', '2020-12-24', 1, 'User'),
 (5, 'TK5', '1', 'TK5@gmail.com', '2020-12-24', 1, 'User'),
-(6, 'TK6', '1', 'TK6@gmail.com', '2020-12-25', 1, 'User');
+(6, 'TK6', '1', 'TK6@gmail.com', '2020-12-25', 1, 'User'),
+(7, 'trungkien2543', 'c4ca4238a0b923820dcc509a6f75849b', 'ad@gmail.com', '2023-05-14', 1, 'User');
 
 --
 -- Indexes for dumped tables
@@ -545,13 +561,13 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT for table `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `MaDonHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `MaDonHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MaKhach` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `MaKhach` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `phieunhaphang`
@@ -563,7 +579,7 @@ ALTER TABLE `phieunhaphang`
 -- AUTO_INCREMENT for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `MaTaiKhoan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `MaTaiKhoan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
