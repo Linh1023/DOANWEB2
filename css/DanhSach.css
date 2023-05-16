@@ -110,7 +110,7 @@ li{
 .Loc .selection .item label i{
     position: absolute;
     top: -20px;
-    left:3px;
+    left: 3px;
     transition: all 0.3s linear;
     font-weight: bold;
     color: steelblue;
@@ -119,8 +119,8 @@ li{
 }
 
 .Loc .selection .item label input:checked~i{
-    top: 5px;
-    left: 3px;
+    top: 4px;
+    left: 5px;
 }
 
 .block-main{

@@ -34,7 +34,7 @@
         $MaDon = $db->getMaDon();
         foreach ($_SESSION['cart'] as $key => $value){
             $ThanhTien = $value['SL'] * $value['Price'];
-            if($dbCTHD->Insert($value['ID'],$MaDon[0],$value['Size'],$value['SL'],$value['Price'],$ThanhTien)){
+            if($dbCTHD->Insert($value['ID'],$MaDon[0],$value['SL'],$value['Price'],$ThanhTien)){
 
             }
             else{
