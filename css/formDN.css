@@ -1,11 +1,11 @@
 #form, #formdk {
     position: fixed;
     z-index: 10;
-    width: 300px;
+    width: 400px;
     border: 1px solid green;
     padding: 20px;
     top:50%;
-    right:50%;
+    left:50%;
     transform: translate(-50%,-50%);
     font-weight: 700;
     background-color: white;
@@ -17,8 +17,26 @@
 #form input,#formdk input {
     width: 100%;
     padding: 10px 0;
+    background-color: rgb(195, 205, 230);
+    
 }
-#form p,#formdk p {
-    margin-left:250px;
+#form .icon-close,#formdk .icon-close {
+    margin-left: 250px;
     cursor: pointer;
+    position: absolute;
+    left: 125px;
+    top: 10px;
+    cursor: pointer;
+}
+#backgroundDN{
+    background-color: #281c1c69;
+    position: fixed;
+    height: 100%;
+    z-index: 9;
+    width: 100%;
+    display: none;
+}
+.buttonDN{
+    background-color: #242121 !important;
+    color: #ccc;
 }

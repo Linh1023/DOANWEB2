@@ -1,9 +1,5 @@
-
-
-<link rel="stylesheet" href="./css/formDN.css"/>
-
 <form method="post" action="" id="formdk">
-    <p onclick=tatdk()>X</p>
+    <p class="icon-close" onclick=tatdk()>X</p>
     <h2>Đăng ký</h2>
     Username: 
     <input type="text" name="username" value="" required/>
@@ -19,9 +15,9 @@
     <input type="text" name="SDT" value="" required/>
     <br/>
     <br/>
-    <input type="button" name="dangnhap" value="Đăng Nhập" onclick="hienthidangnhap()"/>
+    <input type="button" class="buttonDN" name="dangnhap" value="Đăng Nhập" onclick="hienthidangnhap()"/>
     <br/>
     <br/>
-    <input type="submit" name="dangky" value="Đăng Ký"/>
+    <input type="submit" class="buttonDN" name="dangky" value="Đăng Ký"/>
     <?php require 'register_submit.php';?>
 </form>
