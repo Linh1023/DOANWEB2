@@ -10,42 +10,42 @@
                 <div id ="row">
                     <div class = "box-banner-index">
                         <div class = "index">
-                            <a href = "#">
+                            <a href = "./DanhSach.php?MaDM=DM-2">
                                 <img src = ".\img\img-listFav\banner_index_1.webp">
                             </a>
                         </div>
                     </div>
                     <div class = "box-banner-index">
                         <div class = "index">
-                            <a href = "#">
+                            <a href = "./DanhSach.php?MaDM=DM-1">
                                 <img src = ".\img\img-listFav\banner_index_2.webp">
                             </a>
                         </div>
                     </div>
                     <div class = "box-banner-index">
                         <div class = "index">
-                            <a href = "#">
+                            <a href = "./DanhSach.php?MaDM=DM-4">
                                 <img src = ".\img\img-listFav\banner_index_3.webp">
                             </a>
                         </div>
                     </div>
                     <div class = "box-banner-index">
                         <div class = "index">
-                            <a href = "#">
+                            <a href = "./DanhSach.php?MaDM=DM-5">
                                 <img src = ".\img\img-listFav\banner_index_4.webp">
                             </a>
                         </div>
                     </div>
                     <div class = "box-banner-index">
                         <div class = "index">
-                            <a href = "#">
+                            <a href = "./DanhSach.php?Sale=1">
                                 <img src = ".\img\img-listFav\banner_index_5.webp">
                             </a>
                         </div>
                     </div>
                     <div class = "box-banner-index">
                         <div class = "index">
-                            <a href = "#">
+                            <a href = "./DanhSach.php?MaDM=DM-3">
                                 <img src = ".\img\img-listFav\banner_index_6.webp" style="width: 360px; max-height: 200px;">
                             </a>
                         </div>
@@ -110,8 +110,9 @@
                     ?>
                 </div>
                 <div class="viewall">
-                    <div class="viewall-content">Xem tất cả</div>
+                    <a href="./DanhSach.php?MaDM=DM-1"><div class="viewall-content">Xem tất cả</div></a>
                 </div>
+                
             </div>
         </div>
   
@@ -158,7 +159,7 @@
                     ?>
                 </div>
                 <div class="viewall">
-                    <div class="viewall-content">Xem tất cả</div>
+                <a href="./DanhSach.php?MaDM=DM-2"><div class="viewall-content">Xem tất cả</div></a>
                 </div>
             </div>
 
@@ -208,7 +209,7 @@
                 </div>
                 </div>
                 <div class="viewall">
-                    <div class="viewall-content">Xem tất cả</div>
+                <a href="./DanhSach.php?MaDM=DM-4"><div class="viewall-content">Xem tất cả</div></a>
                 </div>
             </div>
 

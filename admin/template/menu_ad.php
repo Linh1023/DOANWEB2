@@ -1,5 +1,8 @@
 <?php
-    $id = $_GET['id'];
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+    }
+    
 ?>
 
 <div id="menu" class="col col-sm-12 col-lg-2 col-md-2 bg-black text-bg-dark position-fixed width-show-icon">
