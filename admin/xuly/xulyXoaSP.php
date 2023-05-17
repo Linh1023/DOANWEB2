@@ -1,4 +1,5 @@
 <?php
+$MaQuyen = $_GET['pq'];
 include '../../db/dbconnect.php';
 if(isset($_GET['idsp'])) {
     $idsp = $_GET['idsp'];
@@ -8,6 +9,6 @@ if(isset($_GET['idsp'])) {
 }
 $conn->close();
 
-header("Location: ../index.php?id=sp");
+header("Location: ../index.php?pq=".$MaQuyen."&id=sp");
 
 ?>
