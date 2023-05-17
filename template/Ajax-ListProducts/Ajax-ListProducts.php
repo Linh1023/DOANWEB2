@@ -10,7 +10,7 @@
             $db->connect();
             $data = null;
 
-            $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE sanpham.MaHang = hang.MaHang ";
+            $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE sanpham.TrangThai = 1 AND sanpham.MaHang = hang.MaHang ";
 
             //su dung cach ghep chuoi de toi uu hoa cac thao tac loc
             if(isset($_GET['MaDM'])){

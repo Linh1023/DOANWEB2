@@ -1,5 +1,6 @@
 <?php
-    if (isset($_GET['pq'])){
+    session_start();
+    if (isset($_GET['pq']) && isset($_SESSION['MaTaiKhoan'])){
 
         $MaQuyen = $_GET['pq'];
         include("../db/DAOPhanQuyen.php");
