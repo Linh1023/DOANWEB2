@@ -4,6 +4,7 @@
     include("../../../db/DAODonHang.php");
     if(isset($_GET['MaDon'])){
         $MaDon = $_GET['MaDon'];
+        $MaQuyen = $_GET['pq'];
         $dbCTDH = new DAOChiTietDonHang();
         $dbCTDH->connect();
 
@@ -66,8 +67,8 @@
             }
 
             if($db->xulyDon($MaDon)){
-                echo "<script>alert('Xử lý đơn ".$MaDon." thành công')</script>";
-                
+                echo "<script>alert('Xử lý đơn ".$MaDon." thành công');window.location='index.php?pq=".$MaQuyen."&id=dh';</script>";
+
             }
     
         }

@@ -7,7 +7,8 @@
         $(".XuLyDon").click(function(){
             MaDonHang = $(this).val();
             $.get("./template/template_content/xulyDonHang.php",{
-                MaDon: MaDonHang
+                MaDon: MaDonHang,
+                pq:"<?php echo $MaQuyen?>",
             },
             function(data){
                 $("#ThongBao").html(data);
