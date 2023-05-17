@@ -1,4 +1,6 @@
-
+<?php
+    $MaQuyen = $_GET['pq'];
+?>
 <form action="" method="POST">
     <h2 id="title_dh">Danh sách đơn hàng</h2>
     <!-- Tạo thành chọn ngày lọc -->
@@ -55,7 +57,7 @@
                     <td>
                         <?php
                             if($data[$i][3]!=1){
-                                echo '<a href="./template/template_content/xulyDonHang.php?XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
+                                echo '<a href="./template/template_content/xulyDonHang.php?pq='.$MaQuyen.'&XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
                             }
                         ?>
                     </td>
@@ -101,7 +103,7 @@
                             <td>
                                 <?php
                                         if($data[$i][3]!=1){
-                                            echo '<a href="./template/template_content/xulyDonHang.php?XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
+                                            echo '<a href="./template/template_content/xulyDonHang.php?pq='.$MaQuyen.'&XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
                                         }
                                     ?>
                             </td>

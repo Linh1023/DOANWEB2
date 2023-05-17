@@ -39,8 +39,8 @@
             <tr>
                 <td><?php echo $data[$i][0]?></td>
                 <td><?php echo $data[$i][1]?></td>
-                <td><a href = "../admin/template/template_content/PhanQuyen/xulyPhanQuyen.php?id=<?php echo $data[$i][0]?>"><div>Thực hiện phân quyền</div></a></td>
-                <td><a href = "index.php?id=pq&MaQuyen=<?php echo $data[$i][0]?>&delete=1" onclick = "return confirm(`Bạn có muốn xóa không`)"><i class="fas fa-trash"></i></a></td>
+                <td><a href = "../admin/template/template_content/PhanQuyen/xulyPhanQuyen.php?pq=Admin&id=<?php echo $data[$i][0]?>"><div>Thực hiện phân quyền</div></a></td>
+                <td><a href = "index.php?pq=Admin&id=pq&MaQuyen=<?php echo $data[$i][0]?>&delete=1" onclick = "return confirm(`Bạn có muốn xóa không`)"><i class="fas fa-trash"></i></a></td>
             <tr>
         <?php
                 $i++;
@@ -67,7 +67,7 @@
         }
         
         if($db->insertQuyen($MaQuyen,$TenQuyen)){
-            echo "<script>alert('Thêm quyền thành công');window.location='index.php?id=pq';</script>";
+            echo "<script>alert('Thêm quyền thành công');window.location='index.php?pq=Admin&id=pq';</script>";
         }
     }
 
@@ -75,7 +75,7 @@
         $MaQuyen = $_GET['MaQuyen'];
         if($dbPQ->delete($MaQuyen)){
             if($db->deleteQuyen($MaQuyen)){
-                echo "<script>alert('Xóa quyền thành công');window.location='index.php?id=pq';</script>"; 
+                echo "<script>alert('Xóa quyền thành công');window.location='index.php?pq=Admin&id=pq';</script>"; 
             }
         }
     }
