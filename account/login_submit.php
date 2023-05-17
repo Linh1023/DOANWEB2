@@ -26,8 +26,10 @@
             echo '<script language="javascript">alert("Mật khẩu không đúng. Vui lòng nhập lại!"); window.location="index.php";</script>';
             exit;
         }
-        if($row['Quyen'] == "Admin") {
-            echo '<script language="javascript">alert("Ban da dang nhap thanh cong!"); window.location="admin/index.php";</script>';
+        if($row['Quyen'] != "User") {
+            $_SESSION['MaTaiKhoan'] = $row['MaTaiKhoan'];
+            
+            echo '<script language="javascript">alert("Ban da dang nhap thanh cong!"); window.location="admin/index.php?pq='.$row['Quyen'].'";</script>';
         }
         else{
             //Lưu tên đăng nhập

@@ -1,3 +1,7 @@
+<?php
+    $MaQuyen = $_GET['pq'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,7 +101,7 @@
                            
                             ?>
                             <!-- Tạo form thêm / sửa -->
-                            <form action="xuly/xulyEditSP.php" method="post" enctype="multipart/form-data">
+                            <form action="xuly/xulyEditSP.php?pq=<?php echo $MaQuyen?>" method="post" enctype="multipart/form-data">
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Tên sản phẩm: </div>
@@ -229,13 +233,13 @@
                                         if (isset($_GET['id'])) {
                                             echo "<input type='hidden' name='id' value=" . $id . ">";
                                             echo '<a><input type="submit" class="btn bg-success" name="hd" value="Lưu"></a>';
-                                            echo "<a class='text-black' href='editsp.php'> 
+                                            echo "<a class='text-black' href='editsp.php?pq=".$MaQuyen."'> 
                                                 <div class='btn bg-secondary'>Thêm mới</div>
                                             </a>";
                                         } else
                                             echo '<input type="submit" class="btn bg-success"name="hd" value="Thêm">';
                                         ?>
-                                        <a href="index.php?id=sp ">
+                                        <a href="index.php?pq=<?php echo $MaQuyen?>&id=sp">
                                             <div class='btn text-black bg-danger'>Hủy</div>
                                         </a>
                                     </div>

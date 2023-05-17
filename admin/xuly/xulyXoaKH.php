@@ -1,4 +1,5 @@
 <?php
+$MaQuyen = $_GET['pq'];
 include '../../db/dbconnect.php';
 if (isset($_GET['idnd'])) {
     
@@ -12,7 +13,7 @@ if (isset($_GET['idnd'])) {
         if($result){
             echo "<script>
             alert('Xóa Thành Công');
-            window.location = '../index.php?id=nd'
+            window.location = '../index.php?pq=".$MaQuyen."&id=nd'
             </script>";
             $conn->close();
             return;
@@ -20,12 +21,9 @@ if (isset($_GET['idnd'])) {
     }
     echo "<script>
     alert('Xóa không Thành Công');
-    window.location = '../index.php?id=nd'
+    window.location = '../index.php?pq=".$MaQuyen."&id=nd'
     </script>";
     $conn->close();
     return;
 }
-
-// header("Location: ../index.php?id=nd");
-
 ?>

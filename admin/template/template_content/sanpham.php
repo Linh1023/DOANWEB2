@@ -1,12 +1,18 @@
+<?php
+    $MaQuyen = $_GET['pq'];
+
+?>
 <div id="sanpham">
     <div class="row">
         <div class="col mx-2 adminthem">
-            <a href="editsp.php" class="row">
+            <a href="editsp.php?pq=<?php echo $MaQuyen?>" class="row">
                 <div class="col text-black">Thêm Sản Phẩm</div>
             </a>
         </div>
     </div>
 <?php
+
+
 include '../db/dbconnect.php';
 
 // Truy vấn danh sách sản phẩm
@@ -44,13 +50,13 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='editsp.php?hd=s&id=".$row['MaSP']."' class='sua'>
+                echo"<a href='editsp.php?pq=".$MaQuyen."&hd=s&id=".$row['MaSP']."' class='sua'>
                         <div class='col'>
                             Sửa
                         </div>
                     </a>";
                 
-                echo"<a href='xuly/xulyXoaSP.php?idsp=".$row['MaSP']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['Ten']." và thông tin liên quan tới nó vĩnh viễn hong <3')\">
+                echo"<a href='xuly/xulyXoaSP.php?pq=".$MaQuyen."&idsp=".$row['MaSP']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['Ten']." và thông tin liên quan tới nó vĩnh viễn hong <3')\">
                 
                         <div class='col'>
                             Xóa
