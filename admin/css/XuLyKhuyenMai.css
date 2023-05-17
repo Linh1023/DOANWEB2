@@ -64,6 +64,12 @@ input, #MoTa{
 #MoTa{
     height: 70px;
 }
+
+.button-block{
+    text-align: center;
+    display: block;
+}
+
 #Add, #Edit{
     text-align: center;
     color:black;

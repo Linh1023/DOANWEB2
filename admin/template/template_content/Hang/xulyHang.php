@@ -35,7 +35,7 @@
                         <input type="text" id="TenHang" name="TenHang" value="<?php echo $_TenHang?>"><br>
             
                         
-                        <input type="submit" id="Add" name="Add" value="Thêm hãng">
+                        <div class="button-block"><input type="submit" id="Add" name="Add" value="Thêm hãng"></div>
                     </form>
                 <?php
                 break;
@@ -78,7 +78,7 @@
                         <label for="TenHang">Tên hãng: </label><br>
                         <input type="text" id="TenHang" name="TenHang" value="<?php echo $_TenHang?>"><br>
                         
-                        <input type="submit" id="Edit" name="Edit" value="Sửa hãng">
+                        <div class="button-block"><input type="submit" id="Edit" name="Edit" value="Sửa hãng"></div>
                     </form>
                 <?php
                 break;

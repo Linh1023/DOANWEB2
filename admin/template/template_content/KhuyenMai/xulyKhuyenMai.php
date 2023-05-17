@@ -52,7 +52,7 @@
                         <label for="TiLeGiam">Phần trăm sẽ giảm:</label><br>
                         <input type="number" id="TiLeGiam" name="TiLeGiam" min="1" max="100" value="<?php echo $_TiLeGiam?>"><br>
                         
-                        <input type="submit" id="Add" name="Add" value="Thêm khuyến mãi">
+                        <div class = "button-block"><input type="submit" id="Add" name="Add" value="Thêm khuyến mãi"></div>
                     </form>
                 <?php
                 break;
@@ -119,7 +119,7 @@
                         <label for="TiLeGiam">Phần trăm sẽ giảm:</label><br>
                         <input type="number" id="TiLeGiam" name="TiLeGiam" min="1" max="100" value="<?php echo $_TiLeGiam?>"><br>
                         
-                        <input type="submit" id="Edit" name="Edit" value="Sửa khuyến mãi">
+                        <div class="button-block"><input type="submit" id="Edit" name="Edit" value="Sửa khuyến mãi"></div>
                     </form>
                 <?php
                 break;

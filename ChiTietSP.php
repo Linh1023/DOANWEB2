@@ -10,8 +10,10 @@
     <!-- JS dùng để làm AJAX -->
     <script src="./js/jquery-3.7.0.min.js"></script>
 
+    
+    <link rel="stylesheet" href="./css/formDN.css">
     <link rel="stylesheet" href="./css/main.css">
-
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/mainProduct.css">
     <link rel="stylesheet" href="./fonts/fontawesome-free-5.12.0-web/css/all.min.css">
     

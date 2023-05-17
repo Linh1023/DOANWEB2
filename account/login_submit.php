@@ -27,6 +27,8 @@
             exit;
         }
         if($row['Quyen'] != "User") {
+            $_SESSION['MaTaiKhoan'] = $row['MaTaiKhoan'];
+            
             echo '<script language="javascript">alert("Ban da dang nhap thanh cong!"); window.location="admin/index.php?pq='.$row['Quyen'].'";</script>';
         }
         else{
