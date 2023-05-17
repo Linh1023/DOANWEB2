@@ -103,7 +103,7 @@ if (isset($_POST['hd'])) {
     }
     // Đóng kết nối
     $conn->close();
-    // header("Location:../editnv.php?id=$id&hd=$hd");
+    header("Location:../editnv.php?id=$id&hd=$hd");
 }
 
 ?>

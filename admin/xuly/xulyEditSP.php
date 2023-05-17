@@ -103,6 +103,8 @@ function validateUploadFile($file, $uploadPath)
 
 if (isset($_POST['hd'])) {
     $hd = $_POST['hd'];
+    if(isset($_POST['id']))
+    $id=$_POST['id'];
     include '../../db/dbconnect.php';
 
     //Xử lý ảnh đại diện

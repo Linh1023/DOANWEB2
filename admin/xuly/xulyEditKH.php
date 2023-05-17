@@ -122,7 +122,7 @@ if (isset($_POST['hd'])) {
     }
     // Đóng kết nối
     $conn->close();
-    // header("Location:../editkh.php?id=$id&hd=$hd");
+    header("Location:../editkh.php?id=$id&hd=$hd");
 }
 
 ?>
