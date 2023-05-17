@@ -10,6 +10,7 @@
         </tr>
 
         <?php 
+            $MaQuyen = $_GET["pq"];
             include ("../db/DAODanhMuc.php");
             $db_km = new DAODanhMuc();
             $db_km->connect();
@@ -25,7 +26,7 @@
                 <td><?php echo $data[$i][1]?></td>
                 <td>
                     <button id="edit_dm" onclick="edit(`<?php echo $data[$i][0]?>`,`<?php echo $data[$i][1]?>`)">Sửa</button>
-                    <a href="./template/template_content/DanhMuc/xulyDanhMuc.php?cn=Delete&MaDanhMuc=<?php echo $data[$i][0]?>"><div id="delete_dm" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</div></a>
+                    <a href="./template/template_content/DanhMuc/xulyDanhMuc.php?pq=<?php echo $MaQuyen?>&cn=Delete&MaDanhMuc=<?php echo $data[$i][0]?>"><div id="delete_dm" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</div></a>
                     <!--onclick="return confirm(`Bạn có muốn xóa không ?`)" thực hiện kiểm tra xem người dùng có muốn xóa hay không nếu onclick trả về giá trị false thì không thực hiện di chuyển đến href  -->
                 </td>
             </tr>
@@ -36,7 +37,7 @@
     </table>
 </div>
 
-<form  method="POST" action="./template/template_content/DanhMuc/xulyDanhMuc.php" id="form_dm">
+<form  method="POST" action="./template/template_content/DanhMuc/xulyDanhMuc.php?pq=<?php echo $MaQuyen?>" id="form_dm">
         <p id="exit_dm" onclick=exit()>X</p> 
         <label for="MaDanhMuc">Mã danh mục: </label><br>
         <input type="text" id="MaDanhMuc" name="MaDanhMuc" value=""><br>

@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../../../css/XuLyKhuyenMai.css" >
 <!-- ^Hang_ -->
 <?php
+    $MaQuyen = $_GET['pq'];
     include("../../../../db/DAOHang.php");
     $db = new DAOHang();
     $db->connect();
@@ -24,7 +25,7 @@
 
                 ?>
                     <form method="POST" action="">
-                        <a href="../../../index.php?id=h"><div id="Back">X</div></a>
+                        <a href="../../../index.php?pq=<?php echo $MaQuyen?>&id=h"><div id="Back">X</div></a>
                         <h2>Thêm hãng</h2>
 
                         <label for="MaHang">Mã hãng: </label><br>
@@ -43,11 +44,11 @@
                 $_MaHang = $_GET['MaHang'];
 
                 if($db->deleteHang($_MaHang) == true){
-                    echo "<script>alert('Đã xóa hãng ');window.location='../../../index.php?id=h';</script>";
+                    echo "<script>alert('Đã xóa hãng ');window.location='../../../index.php?pq=". $MaQuyen. "&id=h';</script>";
                     return;
                 }
                 else{
-                    echo "<script>alert('Không xóa hãng này được');window.location='../../../index.php?id=h';</script>";
+                    echo "<script>alert('Không xóa hãng này được');window.location='../../../index.php?pq=". $MaQuyen. "&id=h';</script>";
                     return;
                 }
             }
@@ -67,7 +68,7 @@
                         }
                 ?>
                     <form method="POST" action="">
-                        <a href="../../../index.php?id=h"><div id="Back">X</div></a>
+                        <a href="../../../index.php?pq=<?php echo $MaQuyen?>&id=h"><div id="Back">X</div></a>
                         <h2>Sửa hãng</h2>
                         
                         <label for="MaHang">Mã hãng: </label><br>
@@ -108,7 +109,7 @@
 
         if($db->checkHangDaXoa($_MaHang)==true){
             if($db->insertHangDaXoa($_MaHang,$_TenHang,$_NgayTao)==true){
-                echo "<script>alert('Thêm thành công');window.location='../../../index.php?id=h';</script>";
+                echo "<script>alert('Thêm thành công');window.location='../../../index.php?pq=". $MaQuyen. "&id=h';</script>";
                 return;
             }
             return;
@@ -121,7 +122,7 @@
 
         
         if($db->insertHang($_MaHang,$_TenHang,$_NgayTao) == true){
-            echo "<script>alert('Them thanh cong');window.location='../../../index.php?id=h';</script>";
+            echo "<script>alert('Them thanh cong');window.location='../../../index.php?pq=". $MaQuyen. "&id=h';</script>";
         }
     }
 
@@ -135,7 +136,7 @@
         }
 
         if($db->updateHang($_MaHang,$_TenHang) == true){
-            echo "<script>alert('Sua thanh cong');window.location='../../../index.php?id=h';</script>";
+            echo "<script>alert('Sua thanh cong');window.location='../../../index.php?pq=". $MaQuyen. "&id=h';</script>";
         }
         else{
             echo "<script>alert('Sua that bai');</script>";

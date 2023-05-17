@@ -23,7 +23,7 @@
         </tr>
         <?php
             include("../db/DAOQuyen.php");
-            include("../db/DAOPhanQuyen.php");
+            //include("../db/DAOPhanQuyen.php");
             $db = new DAOQuyen();
             $db->connect();
             $dbPQ = new DAOPhanQuyen();
