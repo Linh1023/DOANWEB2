@@ -12,7 +12,7 @@ if ($result->num_rows > 0) {
     }
 }
 // Truy vấn danh sách sản phẩm
-$sql = "SELECT * FROM khachhang";
+$sql = "SELECT * FROM khachhang Where TrangThai=1";
 $result = $conn->query($sql);
 
 // Kiểm tra kết quả trả về
@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
                 <th>Quyền</th>
             </tr>";
     while($row = $result->fetch_assoc()) {
-        $selectTaiKhoan = 'SELECT * FROM taikhoan WHERE MaTaiKhoan = "'. $row['MaTaiKhoan'] . '"';
+        $selectTaiKhoan = 'SELECT * FROM taikhoan WHERE TrangThai=1 AND MaTaiKhoan = "'. $row['MaTaiKhoan'] . '"';
         $resultTaiKhoan = mysqli_query($conn, $selectTaiKhoan);
         $rowTaiKhoan = mysqli_fetch_assoc($resultTaiKhoan);
         echo "<tr>
@@ -62,7 +62,7 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='xuly/xulyXoaKH.php?pq=".$MaQuyen."idsp=".$row['MaKhach']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['TenKhach']." và thông tin liên quan tới nó vĩnh viễn hong <3')\">
+                echo"<a href='xuly/xulyXoaKH.php?pq=".$MaQuyen."&idnd=".$row['MaKhach']."&idtk=".$row['MaTaiKhoan']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['TenKhach']."  <3')\">
                 
                         <div class='col'>
                             Xóa
@@ -72,8 +72,12 @@ if ($result->num_rows > 0) {
         echo "        </div>
             </td>
             <td>" . $rowTaiKhoan["TenDN"]. "</td>
-            <td>" . $rowTaiKhoan["MatKhau"]. "</td>
-            <td>" . $rowTaiKhoan["TinhTrang"]. "</td>";
+            <td>" . $rowTaiKhoan["MatKhau"]. "</td>";
+            if( $rowTaiKhoan["TinhTrang"]=="0")
+            echo" <td>Khóa</td>";
+            else
+            echo" <td>Không Khóa</td>";
+           
             foreach ($listQuyen as $ma=>$ten ){
                 if($rowTaiKhoan["Quyen"]==$ma){
                     echo "<th>$ten</th>";
@@ -87,7 +91,7 @@ if ($result->num_rows > 0) {
     echo "Không có sản phẩm.";
 }
 
-$sql = "SELECT * FROM nhanvien";
+$sql = "SELECT * FROM nhanvien Where TrangThai=1 ";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -112,7 +116,7 @@ if ($result->num_rows > 0) {
             <th>Quyền</th>
         </tr>";
     while($row = $result->fetch_assoc()) {
-        $selectTaiKhoan = 'SELECT * FROM taikhoan WHERE MaTaiKhoan = "'. $row['MaTaiKhoan'] . '"';
+        $selectTaiKhoan = 'SELECT * FROM taikhoan WHERE TrangThai=1 AND MaTaiKhoan = "'. $row['MaTaiKhoan'] . '"';
         $resultTaiKhoan = mysqli_query($conn, $selectTaiKhoan);
         $rowTaiKhoan = mysqli_fetch_assoc($resultTaiKhoan);
         echo "<tr>
@@ -134,9 +138,7 @@ if ($result->num_rows > 0) {
                             Sửa
                         </div>
                     </a>";
-                
-                echo"<a href='xuly/xulyXoanv.php?".$MaQuyen."idsp=".$row['MaNhanVien']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['TenNhanVien']." và thông tin liên quan tới nó vĩnh viễn hong <3')\">
-                
+                echo"<a href='xuly/xulyXoanv.php?pq=".$MaQuyen."&idnd=".$row['MaNhanVien']."&idtk=".$row['MaTaiKhoan']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['TenNhanVien']." <3')\">                
                         <div class='col'>
                             Xóa
                         </div>
@@ -145,8 +147,11 @@ if ($result->num_rows > 0) {
         echo "        </div>
             </td>
             <td>" . $rowTaiKhoan["TenDN"]. "</td>
-            <td>" . $rowTaiKhoan["MatKhau"]. "</td>
-            <td>" . $rowTaiKhoan["TinhTrang"]. "</td>";
+            <td>" . $rowTaiKhoan["MatKhau"]. "</td>";
+            if( $rowTaiKhoan["TinhTrang"]==0)
+            echo" <td>Khóa</td>";
+            else
+            echo" <td>Không Khóa</td>";
             foreach ($listQuyen as $ma=>$ten ){
                 if($rowTaiKhoan["Quyen"]==$ma){
                     echo "<th>$ten</th>";

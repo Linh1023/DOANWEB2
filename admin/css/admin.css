@@ -194,10 +194,14 @@ table.bangnoidung tr td .hanhdong >a{
     min-width: 50px;
     margin: 5px;
 }
+div#myButton:hover {
+    background-color: #ccccccb3;
+}
 div#myButton {
     width: 54px;
     height: 51px;
     border: 3px solid #048390;
+    cursor: pointer;
 }
 li.row.LiMenu.mx-0.text-center.p-2.align-items-center.border-secondary.border-size-menu{
     transition: box-shadow 0.5s ease;
@@ -205,4 +209,10 @@ li.row.LiMenu.mx-0.text-center.p-2.align-items-center.border-secondary.border-si
 li.row.LiMenu.mx-0.text-center.p-2.align-items-center.border-secondary.border-size-menu:hover{
 box-shadow: -8px 0 0 #6c757d;
 background-color: #735fe61b;
+}
+span#cke_1_top {
+    background: #6c757d73 !important;
+}
+span#cke_1_bottom {
+    background: #6c757d73 !important;
 }

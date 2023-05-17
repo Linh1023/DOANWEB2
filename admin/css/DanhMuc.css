@@ -44,13 +44,14 @@
 #form_dm{
     border: none;
     border-radius: 20px;
-    background-color: bisque;
-    width: 35%;
-    top: 100px;
-    left: 539px;
+    background-color: #ffe4c4;
+        width: 800px;
+    top: 50%;
+    left: 50%;
     position: fixed;
     padding: 50px;
     display: none;
+    transform: translate(-50%, -50%);
 }
 #exit_dm{
     color: brown;
@@ -62,7 +63,7 @@
     cursor: pointer;
 }
 #exit_dm:hover{
-    color: aqua;
+    color: #5c3b12;
 }
 label {
     font-weight: bold;
