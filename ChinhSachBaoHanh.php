@@ -24,10 +24,10 @@
         <div id="main">
             <h1>CHÍNH SÁCH BẢO HÀNH</h1>
             <div class="logo">
-                <img src="img\img-CSBH\2.png" >
+                <img src="img\img-CS\2.png" >
             </div>
             <div class="giay">
-                <img src="img\img-CSBH\4.jpg" >
+                <img src="img\img-CS\4.jpg" >
             </div><br>
             <div class="container">
                 <p class="text1">Tất cả sản phẩm Giày Bóng Đá Chính Hãng đều được hỗ trợ bảo hành như sau:</p>
@@ -51,9 +51,9 @@
                 <ul class="BH">
                     <li>Gãy đinh hay bể đế do thi đấu trên mặt sân cứng hoặc tiếp xúc vật cứng, sử dụng sai mặt sân (đối với những đôi giày cỏ tự nhiên).</li>
                     <li>Rách da do va chạm hoặc vật sắc nhọn đâm thủng</li>
-                    <img src="img\img-CSBH\6.png" ><br><br><br>
+                    <img src="img\img-CS\6.png" ><br><br><br>
                     <p class="text3">LỖI KHÔNG ĐỔI HÀNG TRONG 30 NGÀY (ĐÃ QUA SỬ DỤNG)</p>
-                    <img src="img\img-CSBH\8.png" >
+                    <img src="img\img-CS\8.png" >
                 </ul><br><br><br>
                 <p class="text1">LƯU Ý:</p>
                 <ul class="BH">
