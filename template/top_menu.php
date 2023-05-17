@@ -41,8 +41,8 @@
            <li>
                 <a href="">GIỚI THIỆU <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
-                    <li><a href="">Thêu tên FREE Tag ID</a></li>
-                    <li><a href="">Album khách hàng</a></li>
+                    <li><a href="https://www.facebook.com/giaydabanhchinhhang.vn/photos/?tab=album&album_id=2420665091507845">Thêu tên FREE Tag ID</a></li>
+                    <li><a href="https://www.facebook.com/giaydabanhchinhhang.vn/photos/?tab=album&album_id=2374627602778261">Album khách hàng</a></li>
                     <li><a href="">Về chúng tôi</a></li>
                     <li><a href="">Tin tức</a></li>
                 </ul>
@@ -50,7 +50,7 @@
            <li>
                 <a href="">HƯỚNG DẪN MUA HÀNG <i class="ti-angle-down"></i></a>
                 <ul class="ds_phu">
-                    <li><a href="">Chính sách bảo hành</a></li>
+                    <li><a href="ChinhSachBaoHanh.php">Chính sách bảo hành</a></li>
                     <li><a href="">Chính sách đổi hàng</a></li>
                     <li><a href="">Chính sách thanh toán</a></li>
                 </ul>
