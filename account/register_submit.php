@@ -47,7 +47,7 @@ if(isset($_POST['dangky'])){
         die ();
     }
     else {
-        $sql1 = "INSERT INTO `taikhoan`( `TenDN`, `MatKhau`, `Email`, `NgayTao`, `TinhTrang`, `Quyen`) VALUES ('$username','$password','$email','$today','$tinhtrang','$quyen')";
+        $sql1 = "INSERT INTO `taikhoan`( `TenDN`, `MatKhau`, `Email`, `NgayTao`, `TinhTrang`, `Quyen`,`TrangThai`) VALUES ('$username','$password','$email','$today','$tinhtrang','$quyen',1)";
         $result1= mysqli_query($conn, $sql1);
         $mataikhoan=getMaTaiKhoan($conn);
         $sql2 = "INSERT INTO `khachhang`(`TenKhach`, `DiaChi`, `SDT`, `MaTaiKhoan`) VALUES ('$TenKhach','$DiaChi','$SDT','$mataikhoan[0]')";

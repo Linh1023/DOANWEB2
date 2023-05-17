@@ -103,6 +103,8 @@ function validateUploadFile($file, $uploadPath)
 
 if (isset($_POST['hd'])) {
     $hd = $_POST['hd'];
+    if(isset($_POST['id']))
+    $id=$_POST['id'];
     include '../../db/dbconnect.php';
 
     //Xử lý ảnh đại diện
@@ -132,9 +134,23 @@ if (isset($_POST['hd'])) {
                                         AnhChinh='" . $anhchinh . "',
                                         MaHang='" . $_POST['hang'] . "'
                                         WHERE maSP='" . $_POST['id'] . "'";
-            echo $sql;
             $result = mysqli_query($conn, $sql);
-            break;
+            if($result){
+                echo "<script>
+                alert('Sửa Thành Công');
+                window.location = '../index.php?id=sp'
+                </script>";
+                $conn->close();
+                return;
+            }
+            else{
+                echo "<script>
+                alert('Sửa Thành Công');
+                window.location = '../index.php?id=sp'
+                </script>";
+                $conn->close();
+                return;
+            }
         case "Thêm":
             // Tao listid da co san
             $listId = [];
@@ -167,7 +183,7 @@ if (isset($_POST['hd'])) {
             }
 
             // Thêm vào db
-            $sql = "INSERT INTO sanpham (MaSP, Ten, MoTa, Gia, MaKhuyenMai, MaDM, AnhChinh,MaHang,NgayTao)
+            $sql = "INSERT INTO sanpham (MaSP, Ten, MoTa, Gia, MaKhuyenMai, MaDM, AnhChinh,MaHang,NgayTao,TrangThai)
             VALUES ('" . $id . "',
             '" . $_POST['ten'] . "',
             '" . $_POST['mota'] . "',
@@ -176,16 +192,28 @@ if (isset($_POST['hd'])) {
             '" . $_POST['danhmuc'] . "',
             '" . $anhchinh . "',
             '" . $_POST['hang'] . "',
-            CURDATE())";
+            CURDATE(),1)";
             $result = mysqli_query($conn, $sql);
             echo "$sql";
-            if (!$result)
-                echo "Lỗi khi thực hiện ở database";
-            else
-                break;
+            if (!$result){
+                echo "<script>
+                alert('Thêm không Thành Công');
+                window.location = '../index.php?id=sp'
+                </script>";
+                $conn->close();
+                return;
+            }
+            else{
+                echo "<script>
+                alert('Thêm Thành Công');
+                window.location = '../index.php?id=sp'
+                </script>";
+                $conn->close();
+                    return;
+            }
     }
     // Đóng kết nối
-    $conn->close();
+    // $conn->close();
     // header("Location:../editsp.php?id=" . $id);
 }
 

@@ -25,7 +25,7 @@ class DAOSP{
 
 
     public function getList($MaSP) {
-        $sql = "SELECT * FROM sanpham WHERE MaSP = ".$MaSP;
+        $sql = "SELECT * FROM sanpham WHERE TrangThai=1 AND MaSP = ".$MaSP;
         $data=null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row=mysqli_fetch_array($result)){
@@ -38,7 +38,7 @@ class DAOSP{
 
 
     public function getListLienQuan($MaH,$MaSP) {
-        $sql = "SELECT * FROM sanpham WHERE MaHang = '".$MaH."' AND MaSP != ".$MaSP ;
+        $sql = "SELECT * FROM sanpham WHERE TrangThai=1 AND MaHang = '".$MaH."' AND MaSP != ".$MaSP ;
         $data=null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row=mysqli_fetch_array($result)){
