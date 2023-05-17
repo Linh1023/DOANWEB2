@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 17, 2023 at 04:11 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 17, 2023 lúc 05:21 PM
+-- Phiên bản máy phục vụ: 10.4.27-MariaDB
+-- Phiên bản PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ql_cuahanggiay`
+-- Cơ sở dữ liệu: `ql_cuahanggiay`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `anhphu`
+-- Cấu trúc bảng cho bảng `anhphu`
 --
 
 CREATE TABLE `anhphu` (
@@ -36,7 +36,7 @@ CREATE TABLE `anhphu` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitietdonhang`
+-- Cấu trúc bảng cho bảng `chitietdonhang`
 --
 
 CREATE TABLE `chitietdonhang` (
@@ -48,7 +48,7 @@ CREATE TABLE `chitietdonhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `chitietdonhang`
+-- Đang đổ dữ liệu cho bảng `chitietdonhang`
 --
 
 INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `SoLuong`, `Gia`, `TongTien`) VALUES
@@ -81,7 +81,7 @@ INSERT INTO `chitietdonhang` (`MaSP`, `MaDonHang`, `SoLuong`, `Gia`, `TongTien`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitietphieunhap`
+-- Cấu trúc bảng cho bảng `chitietphieunhap`
 --
 
 CREATE TABLE `chitietphieunhap` (
@@ -93,7 +93,7 @@ CREATE TABLE `chitietphieunhap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `chitietphieunhap`
+-- Đang đổ dữ liệu cho bảng `chitietphieunhap`
 --
 
 INSERT INTO `chitietphieunhap` (`MaSP`, `MaPhieu`, `SoLuong`, `Gia`, `TongGia`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `chitietphieunhap` (`MaSP`, `MaPhieu`, `SoLuong`, `Gia`, `TongGia`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `chitietquyen`
+-- Cấu trúc bảng cho bảng `chitietquyen`
 --
 
 CREATE TABLE `chitietquyen` (
@@ -118,7 +118,7 @@ CREATE TABLE `chitietquyen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `chitietquyen`
+-- Đang đổ dữ liệu cho bảng `chitietquyen`
 --
 
 INSERT INTO `chitietquyen` (`MaChiTiet`, `TenChiTiet`, `MoTa`) VALUES
@@ -136,7 +136,7 @@ INSERT INTO `chitietquyen` (`MaChiTiet`, `TenChiTiet`, `MoTa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `danhmuc`
+-- Cấu trúc bảng cho bảng `danhmuc`
 --
 
 CREATE TABLE `danhmuc` (
@@ -146,7 +146,7 @@ CREATE TABLE `danhmuc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `danhmuc`
+-- Đang đổ dữ liệu cho bảng `danhmuc`
 --
 
 INSERT INTO `danhmuc` (`MaDM`, `TenDM`, `TrangThai`) VALUES
@@ -160,7 +160,7 @@ INSERT INTO `danhmuc` (`MaDM`, `TenDM`, `TrangThai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `donhang`
+-- Cấu trúc bảng cho bảng `donhang`
 --
 
 CREATE TABLE `donhang` (
@@ -172,7 +172,7 @@ CREATE TABLE `donhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `donhang`
+-- Đang đổ dữ liệu cho bảng `donhang`
 --
 
 INSERT INTO `donhang` (`MaDonHang`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongTien`) VALUES
@@ -201,7 +201,7 @@ INSERT INTO `donhang` (`MaDonHang`, `MaTaiKhoan`, `NgayDat`, `TrangThai`, `TongT
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hang`
+-- Cấu trúc bảng cho bảng `hang`
 --
 
 CREATE TABLE `hang` (
@@ -212,7 +212,7 @@ CREATE TABLE `hang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `hang`
+-- Đang đổ dữ liệu cho bảng `hang`
 --
 
 INSERT INTO `hang` (`MaHang`, `Ten`, `NgayTao`, `TrangThai`) VALUES
@@ -225,7 +225,7 @@ INSERT INTO `hang` (`MaHang`, `Ten`, `NgayTao`, `TrangThai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `khachhang`
+-- Cấu trúc bảng cho bảng `khachhang`
 --
 
 CREATE TABLE `khachhang` (
@@ -233,22 +233,24 @@ CREATE TABLE `khachhang` (
   `TenKhach` varchar(50) NOT NULL,
   `DiaChi` varchar(50) NOT NULL,
   `SDT` varchar(50) NOT NULL,
-  `MaTaiKhoan` int(50) NOT NULL
+  `MaTaiKhoan` int(50) NOT NULL,
+  `TrangThai` int(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `khachhang`
+-- Đang đổ dữ liệu cho bảng `khachhang`
 --
 
-INSERT INTO `khachhang` (`MaKhach`, `TenKhach`, `DiaChi`, `SDT`, `MaTaiKhoan`) VALUES
-(1, 'Le Trung Kien', '187 Le Van Tho Phuong 15 Quan Go Vap', '0908123456', 2),
-(2, 'Nguyen Thi Trang', '589/965 Nguyen Kiem Quan Go Vap', '0908878795', 3),
-(3, 'kien', '456 Lê Đức Thọ', '123456789', 7);
+INSERT INTO `khachhang` (`MaKhach`, `TenKhach`, `DiaChi`, `SDT`, `MaTaiKhoan`, `TrangThai`) VALUES
+(1, 'Le Trung Kien', '187 Le Van Tho Phuong 15 Quan Go Vap', '0908123456', 2, 1),
+(2, 'Nguyen Thi Trang', '589/965 Nguyen Kiem Quan Go Vap', '0908878795', 3, 1),
+(3, 'kien', '456 Lê Đức Thọ', '123456789', 7, 0),
+(8, '52345', '233452', '0569896512', 9, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `khuyenmai`
+-- Cấu trúc bảng cho bảng `khuyenmai`
 --
 
 CREATE TABLE `khuyenmai` (
@@ -259,7 +261,7 @@ CREATE TABLE `khuyenmai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `khuyenmai`
+-- Đang đổ dữ liệu cho bảng `khuyenmai`
 --
 
 INSERT INTO `khuyenmai` (`MaKhuyenMai`, `TenKhuyenMai`, `MoTa`, `TiLeGiam`) VALUES
@@ -272,7 +274,7 @@ INSERT INTO `khuyenmai` (`MaKhuyenMai`, `TenKhuyenMai`, `MoTa`, `TiLeGiam`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nhanvien`
+-- Cấu trúc bảng cho bảng `nhanvien`
 --
 
 CREATE TABLE `nhanvien` (
@@ -281,22 +283,23 @@ CREATE TABLE `nhanvien` (
   `DiaChi` varchar(50) NOT NULL,
   `TenNhanVien` varchar(50) NOT NULL,
   `SDT` varchar(50) NOT NULL,
-  `MaTaiKhoan` int(50) NOT NULL
+  `MaTaiKhoan` int(50) NOT NULL,
+  `TrangThai` int(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `nhanvien`
+-- Đang đổ dữ liệu cho bảng `nhanvien`
 --
 
-INSERT INTO `nhanvien` (`MaNhanVien`, `Quyen`, `DiaChi`, `TenNhanVien`, `SDT`, `MaTaiKhoan`) VALUES
-('NV-001', 1, '589/965 Le Van Duyet Quan Binh Thanh', 'Nguyen Thi Linh', '0569896512', 3),
-('NV-002', 1, '589/965 Le Quang Dinh Quan Binh Thanh', 'Nguyen Van Tai', '0598978954', 4),
-('NV-003', 1, '589/965 Le Quang Dinh Quan Binh Thanh', 'Le Kien', '0598978985', 8);
+INSERT INTO `nhanvien` (`MaNhanVien`, `Quyen`, `DiaChi`, `TenNhanVien`, `SDT`, `MaTaiKhoan`, `TrangThai`) VALUES
+('1', 1, '589/965 Le Van Duyet Quan Binh Thanh', 'Nguyen Thi Linh', '0569896512', 3, 1),
+('2', 1, '589/965 Le Quang Dinh Quan Binh Thanh', 'Nguyen Van Tai', '0598978954', 4, 1),
+('3', 1, '589/965 Le Quang Dinh Quan Binh Thanh', 'Le Kien', '0598978985', 8, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phanquyen`
+-- Cấu trúc bảng cho bảng `phanquyen`
 --
 
 CREATE TABLE `phanquyen` (
@@ -305,7 +308,7 @@ CREATE TABLE `phanquyen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `phanquyen`
+-- Đang đổ dữ liệu cho bảng `phanquyen`
 --
 
 INSERT INTO `phanquyen` (`MaQuyen`, `MaChiTiet`) VALUES
@@ -326,7 +329,7 @@ INSERT INTO `phanquyen` (`MaQuyen`, `MaChiTiet`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phieunhaphang`
+-- Cấu trúc bảng cho bảng `phieunhaphang`
 --
 
 CREATE TABLE `phieunhaphang` (
@@ -338,7 +341,7 @@ CREATE TABLE `phieunhaphang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `phieunhaphang`
+-- Đang đổ dữ liệu cho bảng `phieunhaphang`
 --
 
 INSERT INTO `phieunhaphang` (`MaPhieu`, `NgayTao`, `TongDon`, `MaHang`, `MaTaiKhoan`) VALUES
@@ -352,7 +355,7 @@ INSERT INTO `phieunhaphang` (`MaPhieu`, `NgayTao`, `TongDon`, `MaHang`, `MaTaiKh
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quyen`
+-- Cấu trúc bảng cho bảng `quyen`
 --
 
 CREATE TABLE `quyen` (
@@ -361,7 +364,7 @@ CREATE TABLE `quyen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `quyen`
+-- Đang đổ dữ liệu cho bảng `quyen`
 --
 
 INSERT INTO `quyen` (`MaQuyen`, `TenQuyen`) VALUES
@@ -372,7 +375,7 @@ INSERT INTO `quyen` (`MaQuyen`, `TenQuyen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sanpham`
+-- Cấu trúc bảng cho bảng `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -385,48 +388,49 @@ CREATE TABLE `sanpham` (
   `MoTa` varchar(50) NOT NULL,
   `NgayTao` date NOT NULL,
   `MaHang` varchar(50) NOT NULL,
-  `SLTonKho` int(11) NOT NULL
+  `SLTonKho` int(11) NOT NULL,
+  `TrangThai` int(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `sanpham`
+-- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
-INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, `MoTa`, `NgayTao`, `MaHang`, `SLTonKho`) VALUES
-('001', 'ADIDAS NEMEZIZ 19.3 TF TRẮNG XANH MUTATOR 2020 PAC', 1190000, 'KM_001', '001.jpg', 'DM-1', '#', '2021-09-23', 'MH-001', 100),
-('002', 'ADIDAS COPA SENSE.3 TF GAME DATA PACK - GZ1366', 1890000, 'KM_002', '002.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 90),
-('003', 'ADIDAS PREDATOR EDGE.3 L TF - GV8527 Data Game Pac', 1900000, 'KM_002', '003.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 20),
-('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, 'KM_003', '004.jpg', 'DM-1', '#', '2021-12-10', 'MH-001', 89),
-('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, 'KM_002', '005.jpg', 'DM-1', '#', '2021-12-12', 'MH-001', 76),
-('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, 'KM_001', '006.jpg', 'DM-2', '#', '2023-03-11', 'MH-001', 80),
-('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '007.jpg', 'DM-2', '#', '2021-03-11', 'MH-001', 80),
-('008', 'ADIDAS X SPEEDFLOW .1 FG GW7456 DIAMOND EDGE PACK ', 3500000, '#', '008.jpg', 'DM-2', '#', '2021-03-11', 'MH-001', 80),
-('010', 'NIKE ZOOM MERCURIAL VAPOR 15 PRO TF TRẮNG', 2900000, '#', '010.jpg', 'DM-1', '#', '2023-02-10', 'MH-002', 190),
-('011', 'NIKE GRIPKNIT PHANTOM GX ELITE FG', 5500000, '#', '011.jpg', 'DM-2', '#', '2020-09-10', 'MH-002', 100),
-('012', 'NIKE TIEMPO LEGEND 9 ELITE FG CZ8482-075 RECHARGE ', 3900000, '#', '012.jpg', 'DM-2', '#', '2022-09-11', 'MH-002', 100),
-('013', 'NIKE MERCURIAL SUPERFLY 8 ELITE FG CV0958-760 MOTI', 4100000, '#', '013.jpg', 'DM-2', '#', '2023-09-11', 'MH-002', 100),
-('016', ' NIKE TIEMPO LEGEND 9 ACADEMY TF WORLD CUP', 1690000, '#', '016.jpg', 'DM-1', '#', '2020-09-10', 'MH-002', 100),
-('017', 'NIKE TIEMPO REACT LEGEND 9 PRO TF WORLD CUP', 2550000, '#', '017.jpg', 'DM-1', '#', '2021-09-10', 'MH-002', 100),
-('018', 'NIKE TIEMPO REACT LEGEND 9 PRO TF', 2550000, '#', '018.jpg', 'DM-1', '#', '2021-09-10', 'MH-002', 101),
-('019', ' NIKE ZOOM MERCURIAL VAPOR 15 PRO TF HỒNG', 2950000, '#', '019.jpg', 'DM-1', '#', '2023-02-10', 'MH-002', 190),
-('020', '  PUMA ULTRA ULTIMATE CAGE TF 10689301 FASTEST PAC', 2850000, '#', '020.jpg', 'DM-1', '#', '2023-02-10', 'MH-033', 190),
-('021', 'PUMA ULTRA 1.3 FG/AG 106477-02 FASTER FOOTBALL PAC', 3500000, '#', '021.jpg', 'DM-2', '#', '2023-01-10', 'MH-033', 190),
-('022', 'PUMA FUTURE Z NEYMAR X COPA AMERICA FG 10684201', 6500000, '#', '022.jpg', 'DM-2', '#', '2022-01-10', 'MH-033', 190),
-('031', 'GIÀY PAN VIGOR X TF ĐẾ ĐINH', 550000, '#', '031.jpg', 'DM-1', '#', '2023-07-11', 'MH-021', 190),
-('032', 'GIÀY PAN VIGOR X LTD XANH DƯƠNG', 1850000, '#', '032.jpg', 'DM-4', '#', '2022-07-11', 'MH-021', 190),
-('033', 'GIÀY PAN WAVE II LEGEND IC ĐEN', 990000, '#', '033.jpg', 'DM-4', '#', '2023-03-11', 'MH-021', 190),
-('034', 'GIÀY PAN VIGOR X IC ĐẾ BẰNG', 520000, '#', '034.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
-('035', 'GIÀY PAN SUPER SONIC IC ĐẾ BẰNG', 540000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
-('036', 'PHANTOM VSN ACADEMY BRIGHT CRIMSON IC', 1500000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190),
-('041', 'NIKE JR. MERCURIAL VAPOR 14 ACADEMY TF CV0822-474 ', 850000, '#', '041.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
-('042', 'NIKE PHANTOM VNM ACADEMY TF KIDS AO0377-600', 1250000, '#', '042.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
-('043', 'NIKE PHANTOM VSN ACADEMY TF KIDS AR4343-060', 750000, '#', '043.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190),
-('044', '  NIKE TIEMPO LEGEND 9 ACADEMY TF FOR KIDS', 850000, '#', '044.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190);
+INSERT INTO `sanpham` (`MaSP`, `Ten`, `Gia`, `MaKhuyenMai`, `AnhChinh`, `MaDM`, `MoTa`, `NgayTao`, `MaHang`, `SLTonKho`, `TrangThai`) VALUES
+('001', 'ADIDAS NEMEZIZ 19.3 TF TRẮNG XANH MUTATOR 2020 PAC', 1190000, 'KM_001', '001.jpg', 'DM-1', '#', '2021-09-23', 'MH-001', 100, 1),
+('002', 'ADIDAS COPA SENSE.3 TF GAME DATA PACK - GZ1366', 1890000, 'KM_002', '002.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 90, 1),
+('003', 'ADIDAS PREDATOR EDGE.3 L TF - GV8527 Data Game Pac', 1900000, 'KM_002', '003.jpg', 'DM-1', '#', '2022-06-23', 'MH-001', 20, 1),
+('004', ' ADIDAS PREDATOR EDGE .1 TF GW9997 SAPPHIRE EDGE', 2200000, 'KM_003', '004.jpg', 'DM-1', '#', '2021-12-10', 'MH-001', 89, 1),
+('005', 'ADIDAS X SPEEDPORTAL.1 TF GW8973 GAME DATA PACK - ', 2950000, 'KM_002', '005.jpg', 'DM-1', '#', '2021-12-12', 'MH-001', 76, 1),
+('006', 'ADIDAS X SPEEDPORTAL .1 FG GW8426 GAME DATA PACK', 3800000, 'KM_001', '006.jpg', 'DM-2', '#', '2023-03-11', 'MH-001', 80, 1),
+('007', 'ADIDAS PREDATOR MUTATOR 20.1 FG EG1602', 3100000, '#', '007.jpg', 'DM-2', '#', '2021-03-11', 'MH-001', 80, 1),
+('008', 'ADIDAS X SPEEDFLOW .1 FG GW7456 DIAMOND EDGE PACK ', 3500000, '#', '008.jpg', 'DM-2', '#', '2021-03-11', 'MH-001', 80, 1),
+('010', 'NIKE ZOOM MERCURIAL VAPOR 15 PRO TF TRẮNG', 2900000, '#', '010.jpg', 'DM-1', '#', '2023-02-10', 'MH-002', 190, 1),
+('011', 'NIKE GRIPKNIT PHANTOM GX ELITE FG', 5500000, '#', '011.jpg', 'DM-2', '#', '2020-09-10', 'MH-002', 100, 1),
+('012', 'NIKE TIEMPO LEGEND 9 ELITE FG CZ8482-075 RECHARGE ', 3900000, '#', '012.jpg', 'DM-2', '#', '2022-09-11', 'MH-002', 100, 1),
+('013', 'NIKE MERCURIAL SUPERFLY 8 ELITE FG CV0958-760 MOTI', 4100000, '#', '013.jpg', 'DM-2', '#', '2023-09-11', 'MH-002', 100, 1),
+('016', ' NIKE TIEMPO LEGEND 9 ACADEMY TF WORLD CUP', 1690000, '#', '016.jpg', 'DM-1', '#', '2020-09-10', 'MH-002', 100, 1),
+('017', 'NIKE TIEMPO REACT LEGEND 9 PRO TF WORLD CUP', 2550000, '#', '017.jpg', 'DM-1', '#', '2021-09-10', 'MH-002', 100, 1),
+('018', 'NIKE TIEMPO REACT LEGEND 9 PRO TF', 2550000, '#', '018.jpg', 'DM-1', '#', '2021-09-10', 'MH-002', 101, 1),
+('019', ' NIKE ZOOM MERCURIAL VAPOR 15 PRO TF HỒNG', 2950000, '#', '019.jpg', 'DM-1', '#', '2023-02-10', 'MH-002', 190, 1),
+('020', '  PUMA ULTRA ULTIMATE CAGE TF 10689301 FASTEST PAC', 2850000, '#', '020.jpg', 'DM-1', '#', '2023-02-10', 'MH-033', 190, 1),
+('021', 'PUMA ULTRA 1.3 FG/AG 106477-02 FASTER FOOTBALL PAC', 3500000, '#', '021.jpg', 'DM-2', '#', '2023-01-10', 'MH-033', 190, 1),
+('022', 'PUMA FUTURE Z NEYMAR X COPA AMERICA FG 10684201', 6500000, '#', '022.jpg', 'DM-2', '#', '2022-01-10', 'MH-033', 190, 1),
+('031', 'GIÀY PAN VIGOR X TF ĐẾ ĐINH', 550000, '#', '031.jpg', 'DM-1', '#', '2023-07-11', 'MH-021', 190, 1),
+('032', 'GIÀY PAN VIGOR X LTD XANH DƯƠNG', 1850000, '#', '032.jpg', 'DM-4', '#', '2022-07-11', 'MH-021', 190, 1),
+('033', 'GIÀY PAN WAVE II LEGEND IC ĐEN', 990000, '#', '033.jpg', 'DM-4', '#', '2023-03-11', 'MH-021', 190, 1),
+('034', 'GIÀY PAN VIGOR X IC ĐẾ BẰNG', 520000, '#', '034.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190, 1),
+('035', 'GIÀY PAN SUPER SONIC IC ĐẾ BẰNG', 540000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190, 1),
+('036', 'PHANTOM VSN ACADEMY BRIGHT CRIMSON IC', 1500000, '#', '035.jpg', 'DM-4', '#', '2023-02-11', 'MH-021', 190, 1),
+('041', 'NIKE JR. MERCURIAL VAPOR 14 ACADEMY TF CV0822-474 ', 850000, '#', '041.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190, 1),
+('042', 'NIKE PHANTOM VNM ACADEMY TF KIDS AO0377-600', 1250000, '#', '042.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190, 1),
+('043', 'NIKE PHANTOM VSN ACADEMY TF KIDS AR4343-060', 750000, '#', '043.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190, 1),
+('044', '  NIKE TIEMPO LEGEND 9 ACADEMY TF FOR KIDS', 850000, '#', '044.jpg', 'DM-3', '#', '2022-02-11', 'MH-002', 190, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `taikhoan`
+-- Cấu trúc bảng cho bảng `taikhoan`
 --
 
 CREATE TABLE `taikhoan` (
@@ -436,102 +440,104 @@ CREATE TABLE `taikhoan` (
   `Email` varchar(50) NOT NULL,
   `NgayTao` date NOT NULL,
   `TinhTrang` tinyint(1) NOT NULL,
-  `Quyen` varchar(50) NOT NULL
+  `Quyen` varchar(50) NOT NULL,
+  `TrangThai` int(2) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `taikhoan`
+-- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`MaTaiKhoan`, `TenDN`, `MatKhau`, `Email`, `NgayTao`, `TinhTrang`, `Quyen`) VALUES
-(1, 'TK1', 'c4ca4238a0b923820dcc509a6f75849b', 'TK1@gmail.com', '2023-05-24', 1, 'Admin'),
-(2, 'TK2', '1', 'TK2@gmail.com', '2023-03-24', 1, 'User'),
-(3, 'TK3', '1', 'TK3@gmail.com', '2020-03-24', 1, 'User'),
-(4, 'TK4', '1', 'TK4@gmail.com', '2020-12-24', 1, 'User'),
-(5, 'TK5', '1', 'TK5@gmail.com', '2020-12-24', 1, 'User'),
-(6, 'TK6', '1', 'TK6@gmail.com', '2020-12-25', 1, 'User'),
-(7, 'trungkien2543', 'c4ca4238a0b923820dcc509a6f75849b', 'ad@gmail.com', '2023-05-14', 1, 'User'),
-(8, 'kiennhanvien', 'c4ca4238a0b923820dcc509a6f75849b', 'a@gmail.com', '2023-05-14', 1, 'BTV');
+INSERT INTO `taikhoan` (`MaTaiKhoan`, `TenDN`, `MatKhau`, `Email`, `NgayTao`, `TinhTrang`, `Quyen`, `TrangThai`) VALUES
+(1, 'TK1', 'c4ca4238a0b923820dcc509a6f75849b', 'TK1@gmail.com', '2023-05-24', 1, 'Admin', 1),
+(2, 'TK2', 'c4ca4238a0b923820dcc509a6f75849b', 'TK2@gmail.com', '2023-03-24', 1, 'User', 1),
+(3, 'TK33423', 'c4ca4238a0b923820dcc509a6f75849b', 'TK3@gmail.com', '2020-03-24', 1, 'User', 1),
+(4, 'TK4', 'c4ca4238a0b923820dcc509a6f75849b', 'TK4@gmail.com', '2020-12-24', 1, 'User', 1),
+(5, 'TK5', 'c4ca4238a0b923820dcc509a6f75849b', 'TK5@gmail.com', '2020-12-24', 1, 'User', 1),
+(6, 'TK6', 'c4ca4238a0b923820dcc509a6f75849b', 'TK6@gmail.com', '2020-12-25', 1, 'User', 1),
+(7, 'trungkien2543', 'c4ca4238a0b923820dcc509a6f75849b', 'ad@gmail.com', '2023-05-14', 1, 'User', 0),
+(8, 'kiennhanvien', 'c4ca4238a0b923820dcc509a6f75849b', 'a@gmail.com', '2023-05-14', 1, 'BTV', 1),
+(9, '234234', '111', 'quanglinh1023m@gmail.com', '2023-05-17', 1, 'User', 1);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `anhphu`
+-- Chỉ mục cho bảng `anhphu`
 --
 ALTER TABLE `anhphu`
   ADD PRIMARY KEY (`Ma`),
   ADD KEY `MaSP` (`MaSP`);
 
 --
--- Indexes for table `chitietdonhang`
+-- Chỉ mục cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
   ADD PRIMARY KEY (`MaSP`,`MaDonHang`),
   ADD KEY `MaDonHang` (`MaDonHang`);
 
 --
--- Indexes for table `chitietphieunhap`
+-- Chỉ mục cho bảng `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
   ADD PRIMARY KEY (`MaSP`,`MaPhieu`),
   ADD KEY `MaPhieu` (`MaPhieu`);
 
 --
--- Indexes for table `chitietquyen`
+-- Chỉ mục cho bảng `chitietquyen`
 --
 ALTER TABLE `chitietquyen`
   ADD PRIMARY KEY (`MaChiTiet`);
 
 --
--- Indexes for table `danhmuc`
+-- Chỉ mục cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
   ADD PRIMARY KEY (`MaDM`);
 
 --
--- Indexes for table `donhang`
+-- Chỉ mục cho bảng `donhang`
 --
 ALTER TABLE `donhang`
   ADD PRIMARY KEY (`MaDonHang`),
   ADD KEY `MaTaiKhoan` (`MaTaiKhoan`);
 
 --
--- Indexes for table `hang`
+-- Chỉ mục cho bảng `hang`
 --
 ALTER TABLE `hang`
   ADD PRIMARY KEY (`MaHang`);
 
 --
--- Indexes for table `khachhang`
+-- Chỉ mục cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`MaKhach`),
   ADD KEY `MaTaiKhoan` (`MaTaiKhoan`);
 
 --
--- Indexes for table `khuyenmai`
+-- Chỉ mục cho bảng `khuyenmai`
 --
 ALTER TABLE `khuyenmai`
   ADD PRIMARY KEY (`MaKhuyenMai`);
 
 --
--- Indexes for table `nhanvien`
+-- Chỉ mục cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNhanVien`),
   ADD KEY `MaTaiKhoan` (`MaTaiKhoan`);
 
 --
--- Indexes for table `phanquyen`
+-- Chỉ mục cho bảng `phanquyen`
 --
 ALTER TABLE `phanquyen`
   ADD PRIMARY KEY (`MaQuyen`,`MaChiTiet`),
   ADD KEY `MaChiTiet` (`MaChiTiet`);
 
 --
--- Indexes for table `phieunhaphang`
+-- Chỉ mục cho bảng `phieunhaphang`
 --
 ALTER TABLE `phieunhaphang`
   ADD PRIMARY KEY (`MaPhieu`),
@@ -539,13 +545,13 @@ ALTER TABLE `phieunhaphang`
   ADD KEY `MaTaiKhoan` (`MaTaiKhoan`);
 
 --
--- Indexes for table `quyen`
+-- Chỉ mục cho bảng `quyen`
 --
 ALTER TABLE `quyen`
   ADD PRIMARY KEY (`MaQuyen`);
 
 --
--- Indexes for table `sanpham`
+-- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`MaSP`),
@@ -554,98 +560,98 @@ ALTER TABLE `sanpham`
   ADD KEY `MaDM` (`MaDM`);
 
 --
--- Indexes for table `taikhoan`
+-- Chỉ mục cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`MaTaiKhoan`),
   ADD KEY `Quyen` (`Quyen`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `donhang`
+-- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
   MODIFY `MaDonHang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `khachhang`
+-- AUTO_INCREMENT cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `MaKhach` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `MaKhach` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `phieunhaphang`
+-- AUTO_INCREMENT cho bảng `phieunhaphang`
 --
 ALTER TABLE `phieunhaphang`
   MODIFY `MaPhieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `taikhoan`
+-- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `MaTaiKhoan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `MaTaiKhoan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `anhphu`
+-- Các ràng buộc cho bảng `anhphu`
 --
 ALTER TABLE `anhphu`
   ADD CONSTRAINT `anhphu_ibfk_1` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
 
 --
--- Constraints for table `chitietdonhang`
+-- Các ràng buộc cho bảng `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
   ADD CONSTRAINT `chitietdonhang_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`),
   ADD CONSTRAINT `chitietdonhang_ibfk_3` FOREIGN KEY (`MaDonHang`) REFERENCES `donhang` (`MaDonHang`);
 
 --
--- Constraints for table `chitietphieunhap`
+-- Các ràng buộc cho bảng `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
   ADD CONSTRAINT `chitietphieunhap_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`),
   ADD CONSTRAINT `chitietphieunhap_ibfk_3` FOREIGN KEY (`MaPhieu`) REFERENCES `phieunhaphang` (`MaPhieu`);
 
 --
--- Constraints for table `donhang`
+-- Các ràng buộc cho bảng `donhang`
 --
 ALTER TABLE `donhang`
   ADD CONSTRAINT `donhang_ibfk_1` FOREIGN KEY (`MaTaiKhoan`) REFERENCES `taikhoan` (`MaTaiKhoan`);
 
 --
--- Constraints for table `khachhang`
+-- Các ràng buộc cho bảng `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD CONSTRAINT `khachhang_ibfk_1` FOREIGN KEY (`MaTaiKhoan`) REFERENCES `taikhoan` (`MaTaiKhoan`);
 
 --
--- Constraints for table `nhanvien`
+-- Các ràng buộc cho bảng `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD CONSTRAINT `nhanvien_ibfk_1` FOREIGN KEY (`MaTaiKhoan`) REFERENCES `taikhoan` (`MaTaiKhoan`);
 
 --
--- Constraints for table `phanquyen`
+-- Các ràng buộc cho bảng `phanquyen`
 --
 ALTER TABLE `phanquyen`
   ADD CONSTRAINT `phanquyen_ibfk_1` FOREIGN KEY (`MaQuyen`) REFERENCES `quyen` (`MaQuyen`),
   ADD CONSTRAINT `phanquyen_ibfk_2` FOREIGN KEY (`MaChiTiet`) REFERENCES `chitietquyen` (`MaChiTiet`);
 
 --
--- Constraints for table `phieunhaphang`
+-- Các ràng buộc cho bảng `phieunhaphang`
 --
 ALTER TABLE `phieunhaphang`
   ADD CONSTRAINT `phieunhaphang_ibfk_1` FOREIGN KEY (`MaHang`) REFERENCES `hang` (`MaHang`),
   ADD CONSTRAINT `phieunhaphang_ibfk_2` FOREIGN KEY (`MaTaiKhoan`) REFERENCES `taikhoan` (`MaTaiKhoan`);
 
 --
--- Constraints for table `sanpham`
+-- Các ràng buộc cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD CONSTRAINT `sanpham_ibfk_1` FOREIGN KEY (`MaHang`) REFERENCES `hang` (`MaHang`),
@@ -653,7 +659,7 @@ ALTER TABLE `sanpham`
   ADD CONSTRAINT `sanpham_ibfk_3` FOREIGN KEY (`MaDM`) REFERENCES `danhmuc` (`MaDM`);
 
 --
--- Constraints for table `taikhoan`
+-- Các ràng buộc cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`Quyen`) REFERENCES `quyen` (`MaQuyen`);

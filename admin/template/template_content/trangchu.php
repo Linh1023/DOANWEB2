@@ -56,7 +56,7 @@
                             </script>
                         </head>
                         <body>
-                            <div id="columnchart_values" style="width: 100%; height: 400px;"></div>
+                            <div id="columnchart_values" style="width: 1000px; height: 400px;"></div>
                         </body>
                         </html>
 
@@ -101,7 +101,7 @@
                             </script>
                         </head>
                         <body>
-                            <div id="piechart" style="width: 1200px; height: 500px;"></div>
+                            <div id="piechart" style="width: 1000px; height: 500px;"></div>
                         </body>
                         </html>
 
