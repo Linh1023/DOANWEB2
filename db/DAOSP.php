@@ -84,5 +84,25 @@ class DAOSP{
         return $data;
     } 
 
+    public function getALL() {
+        $sql = "SELECT * FROM sanpham ";
+        $data=null;
+        if($result = mysqli_query($this->conn,$sql)){
+            while($row=mysqli_fetch_array($result)){
+                    $data[] = $row;
+            }
+            mysqli_free_result($result);
+        }
+        return $data;
+    }
+
+    public function TruSLBanHang($MaSP, $SoLuongMoi){
+        $sql = 'UPDATE sanpham SET SLTonKho = '.$SoLuongMoi.' WHERE MaSP = '.$MaSP;
+        if($result = mysqli_query($this->conn,$sql)){
+            return true;
+        }
+        else
+            return false;
+    }
 }
 ?>

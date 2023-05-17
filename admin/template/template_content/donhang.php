@@ -1,8 +1,31 @@
 <?php
     $MaQuyen = $_GET['pq'];
 ?>
+
+<script>
+    $(document).ready(function(){
+        $(".XuLyDon").click(function(){
+            MaDonHang = $(this).val();
+            $.get("./template/template_content/xulyDonHang.php",{
+                MaDon: MaDonHang
+            },
+            function(data){
+                $("#ThongBao").html(data);
+            });
+        });
+
+    });
+
+</script>
+
+
+
 <form action="" method="POST">
     <h2 id="title_dh">Danh sách đơn hàng</h2>
+
+
+    
+
     <!-- Tạo thành chọn ngày lọc -->
     <h3 id="title_loc">Lọc đơn hàng theo ngày</h3>
     <label for="from" class="label_from">Từ :</label>
@@ -13,7 +36,10 @@
     <input type="submit" name="Refresh" id="Refresh" value="Refresh">
  
 
+    <!-- Chỗ để thông tin hàng bị thiếu -->
+    <div id= "ThongBao">
 
+    </div>
     
     <table id="ds_donhang">
         <tr>
@@ -57,7 +83,7 @@
                     <td>
                         <?php
                             if($data[$i][3]!=1){
-                                echo '<a href="./template/template_content/xulyDonHang.php?pq='.$MaQuyen.'&XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
+                                echo '<button type="button" class="XuLyDon" value = "'.$data[$i][0].'">Xử lý đơn hàng</button></td>';
                             }
                         ?>
                     </td>
@@ -103,7 +129,7 @@
                             <td>
                                 <?php
                                         if($data[$i][3]!=1){
-                                            echo '<a href="./template/template_content/xulyDonHang.php?pq='.$MaQuyen.'&XL='.$data[$i][0].'"><div>Xử lý đơn hàng</div></a></td>';
+                                            echo '<button type="button" class="XuLyDon" value = "'.$data[$i][0].'">Xử lý đơn hàng</button></td>';
                                         }
                                     ?>
                             </td>
