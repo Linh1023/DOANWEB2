@@ -135,13 +135,13 @@
                                         <div class="col col-9">
                                             <select class="w-100" name="tinhtrang">
                                                 <?php
-                                                if($tinhTrang=="1"){
-                                                    echo "<option value='1' selected>Không khóa</option>";   
-                                                    echo "<option value='0' >Bị Khóa</option>";   
-                                                }
-                                                else {
+                                                if($tinhTrang=="0"){
                                                     echo "<option value='1' >Không khóa</option>";   
                                                     echo "<option value='0' selected>Khóa</option>";
+                                                }
+                                                else {
+                                                    echo "<option value='1' selected>Không khóa</option>";   
+                                                    echo "<option value='0' >Khóa</option>";   
                                                 }
                                                 ?> 
                                                 </select>

@@ -37,7 +37,7 @@ if (isset($_POST['hd'])) {
                                         WHERE MaTaiKhoan='" . $_POST['idtk'] . "'";
                                        
             $result = mysqli_query($conn, $sql);
-            echo $sql;
+            if(!$result)return;
             // Truy vấn danh sách khách hàng
             $sql = "UPDATE nhanvien   SET TenNhanVien='" . $_POST['ten'] . "',
                                         DiaChi='" . $_POST['diachi'] . "',
@@ -46,10 +46,47 @@ if (isset($_POST['hd'])) {
                                         WHERE MaNhanVien='" . $_POST['id'] . "'";
                                        
             $result = mysqli_query($conn, $sql);
-            echo $sql;
-
-            break;
+            if ($result) {
+                echo "<script>
+                alert('Thêm Thành Công');
+                window.location = '../editkh.php?id=$id&hd=$hd';
+                </script>";
+                $conn->close();
+                return;
+            } else {
+                echo "<script>
+                alert('Thêm không Thành Công');
+                 window.location = '../editkh.php';
+                </script>";
+                $conn->close();
+                return;
+            }
         case "Thêm":
+            //tạo id mơi
+            // Tao listid da co san
+            $listId = [];
+            $sql = "SELECT MaNhanVien FROM nhanvien";
+            $result = $conn->query($sql);
+            // Kiểm tra kết quả trả về
+            if ($result->num_rows > 0) {
+                $i = 0;
+                while ($row = $result->fetch_assoc()) {
+                    $listId[$i] = $row['MaNhanVien'];
+                    $i++;
+                }
+            }
+            // tìm id thích hợp
+            for ($i = 1; $i < 1000; $i++) {
+                $found = false;
+                if (!in_array($i, $listId)) {
+                    $id = $i;
+                    break;
+                }
+            }
+            // ép kiểu string
+            $id = (string) $id;
+            //////////////////////////////////////
+            //tạo mã taikhoan mới
             // Tao listid da co san
             $listId = [];
             $sql = "SELECT MaTaiKhoan FROM taikhoan";
@@ -66,44 +103,53 @@ if (isset($_POST['hd'])) {
             for ($i = 1; $i < 1000; $i++) {
                 $found = false;
                 if (!in_array($i, $listId)) {
-                    $id = $i;
+                    $mataikhoan = $i;
                     break;
                 }
             }
             // ép kiểu string
-            $id = (string) $id;
+            $mataikhoan = (string) $mataikhoan;
 
             // Thêm vào db
-            $sql = "INSERT INTO taikhoan (TenDN,MatKhau,Email ,Quyen ,TinhTrang ,MaTaiKhoan,NgayTao )
+            $sql = "INSERT INTO taikhoan (TenDN,MatKhau,Email ,Quyen ,TinhTrang ,MaTaiKhoan,NgayTao ,TrangThai)
             VALUES (
             '" . $_POST['tendn'] . "',
             '" . $_POST['matkhau'] . "',
             '" . $_POST['email'] . "',
             '" . $_POST['quyen'] . "',
             '" . $_POST['tinhtrang'] . "',
-            '" . $id . "',
-            CURDATE())";                                      
+            '" . $mataikhoan . "',
+            CURDATE(),1)";                                      
             $result = mysqli_query($conn, $sql);
-            echo $sql;
+            if(!$result)return;
             // Truy vấn danh sách khách hàng
-            $sql = "INSERT INTO nhanvien  (TenNhanVien,DiaChi,SDT ,MaTaiKhoan,MaNhanVien)
+            $sql = "INSERT INTO nhanvien  (TenNhanVien,DiaChi,SDT ,MaTaiKhoan,MaNhanVien,TrangThai)
             VALUES (
                 '" . $_POST['ten'] . "',
                 '" . $_POST['diachi'] . "',
                 '" . $_POST['sdt'] . "',
+                '" . $mataikhoan . "',
                 '" . $id . "',
-                NULL)";
+                1)";
                                        
             $result = mysqli_query($conn, $sql);
-            echo "$sql";
-            if (!$result)
-                echo "Lỗi khi thực hiện ở database";
-            else
-                break;
+            if ($result) {
+                echo "<script>
+                alert('Thêm Thành Công');
+                window.location = '../editkh.php?id=$id&hd=$hd';
+                </script>";
+                $conn->close();
+                return;
+            } else {
+                echo "<script>
+                alert('Thêm không Thành Công');
+                 window.location = '../editkh.php';
+                </script>";
+                $conn->close();
+                return;
+            }
     }
     // Đóng kết nối
-    $conn->close();
-    header("Location:../editnv.php?id=$id&hd=$hd");
 }
 
 ?>

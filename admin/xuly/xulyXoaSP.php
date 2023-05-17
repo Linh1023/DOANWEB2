@@ -2,12 +2,22 @@
 include '../../db/dbconnect.php';
 if(isset($_GET['idsp'])) {
     $idsp = $_GET['idsp'];
-    $sql = 'DELETE FROM sanpham WHERE MaSP = "'.$idsp.'"';
+    $sql = 'UPDATE sanpham SET TrangThai=0 where  MaSP = "'.$idsp.'"';
     $result = $conn->query($sql);
-
+    if($result)
+    echo "<script>
+    alert('Xóa Thành Công');
+    window.location = '../index.php?id=sp'
+    </script>";
+    $conn->close();
+    return;
 }
-$conn->close();
-
-header("Location: ../index.php?id=sp");
-
+else{
+    echo "<script>
+    alert('Xóa không Thành Công');
+    window.location = '../index.php?id=sp'
+    </script>";
+    $conn->close();
+        return;
+}
 ?>

@@ -10,7 +10,7 @@
 include '../db/dbconnect.php';
 
 // Truy vấn danh sách sản phẩm
-$sql = "SELECT * FROM sanpham";
+$sql = "SELECT * FROM sanpham where TrangThai= 1";
 $result = $conn->query($sql);
 
 // Kiểm tra kết quả trả về

@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
                 <th>Trạng thái</th>
             </tr>";
     while($row = $result->fetch_assoc()) {
-        $sqlDemDM = 'SELECT COUNT(*) as count FROM sanpham WHERE MaDM = "'. $row['MaDM'] . '"';
+        $sqlDemDM = 'SELECT COUNT(*) as count FROM sanpham WHERE TrangThai=1 AND MaDM = "'. $row['MaDM'] . '"';
         $resultDemDM = mysqli_query($conn, $sqlDemDM);
         $soSP = mysqli_fetch_assoc($resultDemDM);
         echo "<tr>

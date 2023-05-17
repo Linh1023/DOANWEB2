@@ -1,14 +1,35 @@
 <?php
 include '../../db/dbconnect.php';
-if(isset($_GET['idsp'])) {
-    $idsp = $_GET['idsp'];
-    $sql = 'DELETE FROM nhanvien WHERE MaNhanVien = "'.$idsp.'"';
+if (isset($_GET['idnd'])) {
+    
+    $idnd = $_GET['idnd'];
+    $idtk = $_GET['idtk'];
+    $sql = 'UPDATE nhanvien SET TrangThai=0 WHERE MaNhanVien = "' . $idnd . '"';
     $result = $conn->query($sql);
-    echo $sql;
-
+    if ($result) {
+        $sql = 'UPDATE taikhoan SET TrangThai=0 WHERE MaTaiKhoan = "' . $idtk . '"';
+        $result = $conn->query($sql);
+        if($result){
+            echo "<script>
+            alert('Xóa Thành Công');
+            window.location = '../index.php?id=nd'
+            </script>"; 
+            $conn->close();
+            return;
+        }
+        
+        
+        
+        
+    }
+    echo "<script>
+    alert('Xóa không Thành Công');
+    window.location = '../index.php?id=nd'
+    </script>";
+    $conn->close();
+    return;
 }
-$conn->close();
 
-header("Location: ../index.php?id=nd");
+// header("Location: ../index.php?id=nd");
 
 ?>

@@ -26,7 +26,7 @@
                             <label for=<?php echo $data[$i][0]?> class="checkbox_item w-100 ">
                                 <input type="checkbox" name=<?php echo $data[$i][0]?> class="checkbox" id=<?php echo $data[$i][0]?> <?php if($db->checkQuyen($MaQuyen, $data[$i][0])==true) echo "checked"?>/> 
                                 <span><?php echo $data[$i][1]?></span>
-                                <i class="fas fa-circle"></i>     
+                                <i class="fas fa-circle"></i>
                             </label>
                         </div>
                 <?php
