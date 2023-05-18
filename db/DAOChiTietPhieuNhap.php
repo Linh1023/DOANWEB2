@@ -57,7 +57,7 @@ class DAOChiTietPhieuNhap
     }
 
     public function getTenNhanVien($MaNV){
-        $sql = "SELECT TenNhanVien FROM NhanVien WHERE TrangThai=1 AND MaTaiKhoan = '".$MaNV."'";
+        $sql = "SELECT TenNhanVien FROM NhanVien WHERE  MaTaiKhoan = '".$MaNV."'";
         $data = null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row = mysqli_fetch_array($result)){

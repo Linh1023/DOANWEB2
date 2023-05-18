@@ -1,5 +1,4 @@
 <?php
-$MaQuyen = $_GET['pq'];
 include '../../db/dbconnect.php';
 if(isset($_GET['idpn'])) {
     $idpn = $_GET['idpn'];

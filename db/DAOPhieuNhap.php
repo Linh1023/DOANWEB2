@@ -54,5 +54,6 @@ class DAOPhieuNhap
         else
             return false;
     }
+
 }
 ?>

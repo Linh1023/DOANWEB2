@@ -36,40 +36,33 @@
                         
                             // Phiếu nhập
                               
-                                echo '<div class="row justify-content-center display-4">Thêm Phiếu Nhập</div>';
+                                echo '<div class="row justify-content-center display-4">Thêm Chi Tiết Phiếu Nhập</div>';
                                
                             
                             //Luu bảng khuyen mãi, hang va danh muc
                                 // Xuat danh sách hãng db ra mảng
-                                $listHang = [];
-                                $sql = "SELECT * FROM hang";
+                                if(!isset($_GET['CT'])) return;
+                                else  $Madon=$_GET['CT'];
+                                $listSP = [];
+                                $sql = "SELECT * FROM sanpham where TrangThai=1";
                                 $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
-                                        $listHang[$row['MaHang']]=$row['Ten'];
+                                        $listSP[$row['MaSP']]=$row['Ten'];
                                     }
                                 }
-                                
-                                $listNhanVien = [];
-                                $sql = "SELECT nhanvien.MaTaiKhoan, nhanvien.TenNhanVien , taikhoan.Quyen  from nhanvien 
-                                join taikhoan on taikhoan.MaTaiKhoan= nhanvien.MaNhanVien WHERE nhanvien.TrangThai=1 AND taikhoan.TrangThai=1 AND taikhoan.quyen <> 'User'";
-                                $result = $conn->query($sql);
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        $listNhanVien[$row['MaTaiKhoan']]=$row['TenNhanVien'];
-                                    }
-                                }
+                            
                             ?>
                             <!-- Tạo form thêm / sửa -->
-                            <form action="xuly/xulyEditpn.php" method="post">
+                            <form action="xuly/xulyEditCTPN.php" method="post">
                     
                                 <div class="row mt-2">
                                     <label class="row">
-                                        <div class="col col-3">Tên Nhân Viên:</div>
+                                        <div class="col col-3">Tên sản phẩm:</div>
                                         <div class="col col-9">
-                                            <select class="w-100" name="nhanvien">
+                                            <select class="w-100" name="sanpham">
                                             <?php
-                                                foreach($listNhanVien as $ma=>$ten){
+                                                foreach($listSP as $ma=>$ten){
                                                     echo"<option value='$ma'>$ten</option>";                                                
                                                 }
                                                 ?>
@@ -77,29 +70,31 @@
                                         </div>
                                     </label>
                                 </div>
-                                
                                 <div class="row mt-2">
                                     <label class="row">
-                                        <div class="col col-3">Hãng</div>
+                                        <div class="col col-3">Số lượng: </div>
                                         <div class="col col-9">
-                                            <select class="w-100" name="hang">
-                                            <?php
-                                                foreach($listHang as $ma=>$ten){
-                                                    echo'<option value='.$ma.'>'.$ten.'</option>';                                                
-                                                }
-                                                ?>
-                                            </select>
+                                            <input class="w-100" required type="text" name='soluong' >
                                         </div>
                                     </label>
                                 </div>
-
+                                <div class="row mt-2">
+                                    <label class="row">
+                                        <div class="col col-3">Đơn Giá: </div>
+                                        <div class="col col-9">
+                                            <input class="w-100" required type="text" name='dongia' >
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <input type="hidden" name="id" value="<?php echo $Madon?>">
                                 <div class="row mt-2">
                                     <div class="col col-3"></div>
                                     <div class="col col-9">
                                         <?php
                                             echo '<input type="submit" class="btn bg-success"name="hd" value="Thêm">';
                                         ?>
-                                        <a href="index.php?id=pn">
+                                        <a href="ChiTietPhieuNhap.php?CT=<?php echo$Madon?>">
                                             <div class='btn text-black bg-danger'>Hủy</div>
                                         </a>
                                     </div>

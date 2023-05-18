@@ -4,7 +4,6 @@
     include("../../../db/DAODonHang.php");
     if(isset($_GET['MaDon'])){
         $MaDon = $_GET['MaDon'];
-        $MaQuyen = $_GET['pq'];
         $dbCTDH = new DAOChiTietDonHang();
         $dbCTDH->connect();
 

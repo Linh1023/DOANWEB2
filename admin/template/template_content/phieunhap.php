@@ -1,4 +1,3 @@
-
 <form action="" method="POST">
     <h2 id="title_dh">Danh sách phiếu nhập</h2>
     <!-- Tạo thành chọn ngày lọc -->
@@ -10,19 +9,24 @@
     <input type="submit" name="Loc" id="Loc" value="Lọc">
     <input type="submit" name="Refresh" id="Refresh" value="Refresh">
  </form>
-    <a href="editpn.php?pq=<?php echo $MaQuyen?>" class="row">
-        <div class="col text-black">Thêm Sản Phẩm</div>
-    </a>
+ <div class="row">
+    <div class="buttonadd">
+        <a href="editpn.php?">
+            <div class="col text-black">
+                Thêm Phiếu
+            </div>
+        </a>
+    </div>
+ </div>
 
     
     <table id="ds_donhang">
         <tr>
-            <th>Mã phiếu</th>
-            <th>Ngày tạo</th>
-            <th>Tổng đơn</th>
+            <th>Mã</th>
+            <th style = "width: 20%">Tổng đơn</th>
             <th>Mã hãng</th>
-            <th>Mã tài khoản</th>
-            <th style = "width: 23%">Xem chi tiết</th>
+            <th style = "width: 15%">Mã tài khoản</th>
+            <th style = "width: 23%">Hành động</th>
         </tr>
         <?php
             if(isset($_POST['Loc']) == false){
@@ -38,12 +42,15 @@
         ?>
                 <tr>
                     <td><?php echo $data[$i][0]?></td>
-                    <td><?php echo $data[$i][1]?></td>
                     <td><?php echo number_format($data[$i][2],0,',','.')."đ"?></td>
                     <td><?php echo $data[$i][3]?></td>
                     <td><?php echo $data[$i][4]?></td>
-                    <td><a href="./template/template_content/ChiTietPhieuNhap.php?CT=<?php echo $data[$i][0]?>&NgayTao=<?php echo $data[$i][1]?>&TongDon=<?php echo $data[$i][2]?>&MaH=<?php echo $data[$i][3]?>&MaTK=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
-                
+                    <td>
+                        <a href="ChiTietPhieuNhap.php?CT=<?php echo $data[$i][0]?>"><div>Xem chi tiết</div></a>
+                        <a href='xuly/xulyXoaPN.php?idpn=<?php echo $data[$i][0]?>'>
+                            <div>Xóa</div>
+                        </a>
+                    </td>
                 </tr>
         <?php
                     $i++;
@@ -65,12 +72,11 @@
         ?>
                         <tr>
                     <td><?php echo $data[$i][0]?></td>
-                    <td><?php echo $data[$i][1]?></td>
                     <td><?php echo number_format($data[$i][2],0,',','.')."đ"?></td>
                     <td><?php echo $data[$i][3]?></td>
                     <td><?php echo $data[$i][4]?></td>
-                    <td><a href="./template/template_content/ChiTietPhieuNhap.php?CT=<?php echo $data[$i][0]?>&NgayTao=<?php echo $data[$i][1]?>&TongDon=<?php echo $data[$i][2]?>&MaH=<?php echo $data[$i][3]?>&MaTK=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
-                
+                    <td><a href="ChiTietPhieuNhap.php?CT=<?php echo $data[$i][0]?>"><div>Xem chi tiết đơn hàng</div></a></td>
+                        
                 </tr>
         <?php    
                         $i++;

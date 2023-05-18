@@ -1,5 +1,4 @@
 <?php
-$MaQuyen = $_GET['pq'];
 if (isset($_POST['hd'])) {
     $hd = $_POST['hd'];
     include '../../db/dbconnect.php';
@@ -49,14 +48,14 @@ if (isset($_POST['hd'])) {
             if ($result) {
                 echo "<script>
                 alert('Thêm Thành Công');
-                window.location = '../editpn.php';
+                window.location = '../index.php?id=pn';
                 </script>";
                 $conn->close();
                 return;
             } else {
                 echo "<script>
                 alert('Thêm không Thành Công');
-                // window.location = '../editkh.php';
+                // window.location = '../index.php?id=pn';
                 </script>";
                 $conn->close();
                 return;
