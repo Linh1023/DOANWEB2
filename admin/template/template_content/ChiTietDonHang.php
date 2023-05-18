@@ -11,16 +11,17 @@
     $db_kh = new DAOKhachHang();
     $db_kh->connect();
     $data = $db_kh->LayThongTinKhach($MaTK);
-    // if(isset($_GET['PQ'])){
-    //     if($data == null){
-    //         header("location:../../../../index.php?id=dh");
-    //     }
-    // }
-    // else{
-    //     if($data == null){
-    //         header("location:../../index.php?id=dh");
-    //     }
-    // }
+    
+    if(isset($_GET['PQ'])){
+        if($data == null){
+            header("location:../../../GioHang.php");
+        }
+    }
+    else{
+        if($data == null){
+            header("location:../../index.php?id=dh");
+        }
+    }
 ?>
 
 <div id="ctdh" class="container">
