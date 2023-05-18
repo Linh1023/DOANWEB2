@@ -14,7 +14,7 @@
 ?>
 <form action="" method="POST">
         <div id="check_item">
-            <a id="exit" href="../../../index.php?pq=Admin&id=pq">X</a>
+            <a id="exit" href="../../../index.php?id=pq">X</a>
             <div class="row">
                 <?php
                     $data = $db->getListCTQ();
@@ -59,7 +59,7 @@
             
         } 
 
-        echo "<script>alert('Phan quyen thanh cong');window.location='../../../index.php?pq=Admin&id=pq';</script>";
+        echo "<script>alert('Phan quyen thanh cong');window.location='../../../index.php?id=pq';</script>";
     }
 ?>
 
