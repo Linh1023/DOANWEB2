@@ -30,7 +30,7 @@ label{
     background-color: burlywood;
     border: 1px solid black;
     padding: 5px 15px;
-    margin: 20px 30px;
+    margin: 0 30px;
     cursor: pointer;
 }
 #Loc:hover, #Refresh:hover{
@@ -40,6 +40,7 @@ label{
     width: 100%;
     border: 1px solid black;
     border-collapse: collapse;
+    min-height:500px;
 }
 #ds_donhang th{
     text-align: center;
@@ -108,4 +109,14 @@ label{
 
 .XuLyDon:hover{
     background-color: aqua;
+}
+.buttonadd{
+    width: 120px !important;
+    color: black;
+    font-weight: bold;
+    background-color: burlywood;
+    border: 1px solid black;
+    padding: 5px 15px;
+    margin: 0 30px;
+    cursor: pointer;
 }

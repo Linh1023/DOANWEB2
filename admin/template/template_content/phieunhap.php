@@ -9,8 +9,10 @@
     <input type="date" name="to" id="to">
     <input type="submit" name="Loc" id="Loc" value="Lọc">
     <input type="submit" name="Refresh" id="Refresh" value="Refresh">
- 
-
+ </form>
+    <a href="editpn.php?pq=<?php echo $MaQuyen?>" class="row">
+        <div class="col text-black">Thêm Sản Phẩm</div>
+    </a>
 
     
     <table id="ds_donhang">
@@ -79,4 +81,4 @@
 
     </table>
 
-</from>
+

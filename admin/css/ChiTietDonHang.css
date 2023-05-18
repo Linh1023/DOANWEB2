@@ -8,6 +8,7 @@
     border: 2px solid black;
     border-radius: 10px;
     width: 900px;
+
 }
 h2{
     color: brown;
@@ -28,6 +29,7 @@ p{
     border: 1px solid black;
     border-collapse: collapse;
     margin: 30px 50px;
+
 }
 #ds_donhang th{
     text-align: center;

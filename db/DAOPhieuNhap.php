@@ -28,7 +28,7 @@ class DAOPhieuNhap
 
     public function getList()
     {
-        $sql = 'SELECT * FROM phieunhaphang';
+        $sql = 'SELECT * FROM phieunhaphang where TrangThai=1 ';
         $data = null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row = mysqli_fetch_array($result)){
