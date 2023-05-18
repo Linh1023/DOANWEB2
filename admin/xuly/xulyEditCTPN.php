@@ -2,7 +2,6 @@
 if (isset($_POST['hd'])) {
     $hd = $_POST['hd'];
     include '../../db/dbconnect.php';
-
     //kiểm tra điều kiện pattern
     if (isset($_POST['id']))
         $id = $_POST['id'];

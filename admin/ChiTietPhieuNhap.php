@@ -85,7 +85,7 @@
 
                                     </div>
                                     <div class="buttonadd">
-                                        <a href="editCTPN.php?CT=<?php echo$Madon?>">
+                                        <a href="editCTPN.php?CT=<?php echo$Madon?>&Hang=<?php echo $MaH?>">
                                             <div class="col text-black">
                                                 Thêm Chi tiết
                                             </div>
