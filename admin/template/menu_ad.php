@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if ($_SESSION['MaQuyen'] && isset($_SESSION['MaTaiKhoan'])){
+    if (isset($_SESSION['MaQuyen']) && isset($_SESSION['MaTaiKhoan'])){
 
         $MaQuyen = $_SESSION['MaQuyen'];
         include("../db/DAOPhanQuyen.php");
