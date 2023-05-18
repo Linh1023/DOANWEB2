@@ -97,9 +97,11 @@
     cursor: pointer;
     background-color: bisque;
 }
-@media screen and (max-width: 760px) {
+
+@media screen and (max-width: 1200px) {
     .top_menu ul{
         flex-direction: column;
+        text-align: center;
     }
     #toggle{
         display: block;
@@ -109,3 +111,4 @@
     }
 
 }
+

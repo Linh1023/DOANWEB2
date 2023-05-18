@@ -66,6 +66,7 @@
                         <div class="describe">Giày đá bóng đinh TF cập nhật thường xuyên</div>
                     </div>
                 </div>
+               
                 <div class="products">
                     <?php
                         function TinhTienGiam($TiLegiam, $data){
@@ -109,6 +110,8 @@
                         }
                     ?>
                 </div>
+                    
+                    <div id="get_data_NT"></div>
                 <div class="viewall">
                     <a href="./DanhSach.php?MaDM=DM-1"><div class="viewall-content">Xem tất cả</div></a>
                 </div>
