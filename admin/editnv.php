@@ -192,7 +192,7 @@
                                         } else
                                             echo '<input type="submit" class="btn bg-success"name="hd" value="Thêm">';
                                         ?>
-                                        <a href="index.php?id=nd&pq=<?php echo $MaQuyen?>">
+                                        <a href="index.php?id=nd">
                                             <div class='btn text-black bg-danger'>Hủy</div>
                                         </a>
                                     </div>

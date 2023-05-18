@@ -67,7 +67,7 @@
             }
 
             if($db->xulyDon($MaDon)){
-                echo "<script>alert('Xử lý đơn ".$MaDon." thành công');window.location='index.php?pq=".$MaQuyen."&id=dh';</script>";
+                echo "<script>alert('Xử lý đơn ".$MaDon." thành công');window.location='index.php?id=dh';</script>";
 
             }
     

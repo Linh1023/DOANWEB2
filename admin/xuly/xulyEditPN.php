@@ -49,14 +49,14 @@ if (isset($_POST['hd'])) {
             if ($result) {
                 echo "<script>
                 alert('Thêm Thành Công');
-                window.location = '../editpn.php?pq=".$MaQuyen."';
+                window.location = '../editpn.php';
                 </script>";
                 $conn->close();
                 return;
             } else {
                 echo "<script>
                 alert('Thêm không Thành Công');
-                // window.location = '../editkh.phppq=".$MaQuyen."';
+                // window.location = '../editkh.php';
                 </script>";
                 $conn->close();
                 return;

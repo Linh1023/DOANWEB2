@@ -99,7 +99,7 @@
                            
                             ?>
                             <!-- Tạo form thêm / sửa -->
-                            <form action="xuly/xulyEditSP.php?pq=<?php echo $MaQuyen?>" method="post" enctype="multipart/form-data">
+                            <form action="xuly/xulyEditSP.php?" method="post" enctype="multipart/form-data">
                                 <div class="row mt-2">
                                     <label class="row">
                                         <div class="col col-3">Tên sản phẩm: </div>

@@ -67,7 +67,7 @@
         }
         
         if($db->insertQuyen($MaQuyen,$TenQuyen)){
-            echo "<script>alert('Thêm quyền thành công');window.location='index.php?pq=Admin&id=pq';</script>";
+            echo "<script>alert('Thêm quyền thành công');window.location='index.php?id=pq';</script>";
         }
     }
 
@@ -75,7 +75,7 @@
         $MaQuyen = $_GET['MaQuyen'];
         if($dbPQ->delete($MaQuyen)){
             if($db->deleteQuyen($MaQuyen)){
-                echo "<script>alert('Xóa quyền thành công');window.location='index.php?pq=Admin&id=pq';</script>"; 
+                echo "<script>alert('Xóa quyền thành công');window.location='index.php?id=pq';</script>"; 
             }
         }
     }

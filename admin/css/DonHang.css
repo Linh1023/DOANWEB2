@@ -111,7 +111,8 @@ label{
     background-color: aqua;
 }
 .buttonadd{
-    width: 120px !important;
+    width: 126px !important;
+    height: 40px;
     color: black;
     font-weight: bold;
     background-color: burlywood;

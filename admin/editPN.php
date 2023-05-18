@@ -66,7 +66,7 @@
                            
                             ?>
                             <!-- Tạo form thêm / sửa -->
-                            <form action="xuly/xulyEditpn.php?pq=<?php echo $MaQuyen?>" method="post">
+                            <form action="xuly/xulyEditpn.php" method="post">
                     
                                 <div class="row mt-2">
                                     <label class="row">
@@ -104,7 +104,7 @@
                                         <?php
                                             echo '<input type="submit" class="btn bg-success"name="hd" value="Thêm">';
                                         ?>
-                                        <a href="index.php?pq=<?php echo $MaQuyen?>&id=pn">
+                                        <a href="index.php?id=pn">
                                             <div class='btn text-black bg-danger'>Hủy</div>
                                         </a>
                                     </div>

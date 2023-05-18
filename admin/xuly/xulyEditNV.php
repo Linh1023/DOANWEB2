@@ -3,30 +3,31 @@ if (isset($_POST['hd'])) {
     $hd = $_POST['hd'];
     include '../../db/dbconnect.php';
     
-    //kiểm tra điều kiện pattern
-    if(isset($_POST['id']))$id=$_POST['id'];
-
-    if (preg_match('/^0\d{9}$/', $_POST['sdt']) == false) {
-        echo "<script>
-            alert('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại 10 chữ số và bắt đầu bằng số 0.');
-            window.location = '../editnv.php?id=$id&hd=$hd'
-            </script>";
-        return;
-    }
-
-    if (!preg_match('/^[a-zA-Z0-9]{5,}$/', $_POST['tendn'])) {
-        echo "<script>alert('Tên đăng nhập phải có ít nhất 5 kí tự và chỉ chứa chữ cái và số.'); window.location = '../editnv.php?id=$id&hd=$hd';</script>";
-        return;
-    }
-    if (substr($_POST['email'], -10) !== "@gmail.com") {
-        echo "<script>alert('Email phải có đuôi @gmail.com.'); window.location = '../editnv.php?id=$id&hd=$hd';</script>";
-        return;
-    }
 
 
 
     switch ($hd) {
         case "Lưu":
+            //kiểm tra điều kiện pattern
+            if(isset($_POST['id']))$id=$_POST['id'];
+
+            if (preg_match('/^0\d{9}$/', $_POST['sdt']) == false) {
+                echo "<script>
+                    alert('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại 10 chữ số và bắt đầu bằng số 0.');
+                    window.location = '../editnv.php?id=$id&hd=$hd'
+                    </script>";
+                return;
+            }
+
+            if (!preg_match('/^[a-zA-Z0-9]{5,}$/', $_POST['tendn'])) {
+                echo "<script>alert('Tên đăng nhập phải có ít nhất 5 kí tự và chỉ chứa chữ cái và số.'); window.location = '../editnv.php?id=$id&hd=$hd';</script>";
+                return;
+            }
+            if (substr($_POST['email'], -10) !== "@gmail.com") {
+                echo "<script>alert('Email phải có đuôi @gmail.com.'); window.location = '../editnv.php?id=$id&hd=$hd';</script>";
+                return;
+            }
+            
             // Truy vấn danh sách tai khoan
             $mataikhoan=$_POST['idtk'];
             $sql = "UPDATE taikhoan  SET TenDN='" . $_POST['tendn'] . "',
@@ -62,6 +63,27 @@ if (isset($_POST['hd'])) {
                 return;
             }
         case "Thêm":
+
+            //kiểm tra điều kiện pattern
+            if(isset($_POST['id']))$id=$_POST['id'];
+
+            if (preg_match('/^0\d{9}$/', $_POST['sdt']) == false) {
+                echo "<script>
+                    alert('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại 10 chữ số và bắt đầu bằng số 0.');
+                    window.location = '../editnv.php'
+                    </script>";
+                return;
+            }
+
+            if (!preg_match('/^[a-zA-Z0-9]{5,}$/', $_POST['tendn'])) {
+                echo "<script>alert('Tên đăng nhập phải có ít nhất 5 kí tự và chỉ chứa chữ cái và số.'); window.location = '../editnv.php';</script>";
+                return;
+            }
+            if (substr($_POST['email'], -10) !== "@gmail.com") {
+                echo "<script>alert('Email phải có đuôi @gmail.com.'); window.location = '../editnv.php';</script>";
+                return;
+            }
+
             //tạo id mơi
             // Tao listid da co san
             $listId = [];
