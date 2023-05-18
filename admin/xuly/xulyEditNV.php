@@ -158,14 +158,14 @@ if (isset($_POST['hd'])) {
             if ($result) {
                 echo "<script>
                 alert('Thêm Thành Công');
-                window.location = '../editnv.php?id=$id&hd=$hd';
+                window.location = '../index.php?id=nd';
                 </script>";
                 $conn->close();
                 return;
             } else {
                 echo "<script>
                 alert('Thêm không Thành Công');
-                 window.location = '../editnv.php';
+                window.location = '../editnv.php?id=$id&hd=$hd';
                 </script>";
                 $conn->close();
                 return;
