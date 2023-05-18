@@ -6,7 +6,7 @@
     z-index: 8;
     background-color: white;
     box-shadow: 0 14px 20px -17px rgba(0,0,0,.75);
-
+    
 }
 
 .top_menu ul{
@@ -89,9 +89,23 @@
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
 }
-
-@media screen and (max-width: 1200px) {
+#toggle{
+    display: none;
+    text-align: right;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: bisque;
+}
+@media screen and (max-width: 760px) {
     .top_menu ul{
+        flex-direction: column;
+    }
+    #toggle{
+        display: block;
+    }
+    nav{
         display: none;
     }
+
 }
