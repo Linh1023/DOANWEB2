@@ -11,9 +11,10 @@
     $db_kh = new DAOKhachHang();
     $db_kh->connect();
     $data = $db_kh->LayThongTinKhach($MaTK);
+    
     if(isset($_GET['PQ'])){
         if($data == null){
-            header("location:../../../../index.php?id=dh");
+            header("location:../../../GioHang.php");
         }
     }
     else{

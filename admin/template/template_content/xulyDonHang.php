@@ -4,7 +4,6 @@
     include("../../../db/DAODonHang.php");
     if(isset($_GET['MaDon'])){
         $MaDon = $_GET['MaDon'];
-        $MaQuyen = $_GET['pq'];
         $dbCTDH = new DAOChiTietDonHang();
         $dbCTDH->connect();
 
@@ -42,17 +41,22 @@
         }
 
         if($count != 0){
+            $HangThieu = "";
             ?>
                 <p id="ThongBao-title">Đơn hàng: <?php echo $MaDon?></p>
             <?php
             foreach($ThongTin as $MaSP => $value)
             {       
                 if($value <= 0)  {
+                    $HangThieu = $HangThieu . '\nMã hàng ' . $MaSP . ' thiếu '. -1 * $value . 'đôi' ;
 ?>
                     <p class="ThongBao-content">Mã hàng <?php echo $MaSP?> thiếu <?php echo -1 * $value?> đôi</p>
 <?php
                 }
             }
+            echo $HangThieu;
+            echo '<script>alert("Xử lý đơn '.$MaDon.' thất bại '.$HangThieu.'");</script>';
+            
         }
         else{
             foreach($ThongTin as $MaSP => $value)
