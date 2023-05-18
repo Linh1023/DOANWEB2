@@ -77,6 +77,9 @@
             if($db->deleteQuyen($MaQuyen)){
                 echo "<script>alert('Xóa quyền thành công');window.location='index.php?id=pq';</script>"; 
             }
+            else{
+                echo "<script>alert('Có tài khoản đang dùng quyền này');window.location='index.php?id=pq';</script>";
+            }
         }
     }
 
