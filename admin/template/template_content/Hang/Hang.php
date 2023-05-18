@@ -1,9 +1,7 @@
-<?php
-    $MaQuyen = $_GET['pq'];
-?>
-<form method="post" action="./template/template_content/Hang/xulyHang.php?pq=<?php echo $MaQuyen?>">
+
+<form method="post" action="./template/template_content/Hang/xulyHang.php?">
     <h3 id="title_km">Quản lý hãng</h3>
-    <a href="./template/template_content/Hang/xulyHang.php?pq=<?php echo $MaQuyen?>&cn=Add"><div id="add_km">Tạo hãng</div></a>
+    <a href="./template/template_content/Hang/xulyHang.php?cn=Add"><div id="add_km">Tạo hãng</div></a>
     <table id="tbl_km">
         <tr>
             <th style = "width: 15%">Mã hãng</th>
@@ -28,8 +26,8 @@
                 <td><?php echo $data[$i][1]?></td>
                 <td><?php echo $data[$i][2]?></td>
                 <td>
-                    <a href="./template/template_content/Hang/xulyHang.php?pq=<?php echo $MaQuyen?>&cn=Edit&MaHang=<?php echo $data[$i][0]?>&TenHang=<?php echo $data[$i][1]?>"><div id="edit_km">Sửa</div></a>
-                    <a href="./template/template_content/Hang/xulyHang.php?pq=<?php echo $MaQuyen?>&cn=Delete&MaHang=<?php echo $data[$i][0]?>"><div id="delete_km" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</div></a>
+                    <a href="./template/template_content/Hang/xulyHang.php?cn=Edit&MaHang=<?php echo $data[$i][0]?>&TenHang=<?php echo $data[$i][1]?>"><div id="edit_km">Sửa</div></a>
+                    <a href="./template/template_content/Hang/xulyHang.php?cn=Delete&MaHang=<?php echo $data[$i][0]?>"><div id="delete_km" onclick="return confirm(`Bạn có muốn xóa không ?`)">Xóa</div></a>
                     <!--onclick="return confirm(`Bạn có muốn xóa không ?`)" thực hiện kiểm tra xem người dùng có muốn xóa hay không nếu onclick trả về giá trị false thì không thực hiện di chuyển đến href  -->
                 </td>
             </tr>

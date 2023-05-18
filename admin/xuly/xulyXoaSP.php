@@ -1,5 +1,4 @@
 <?php
-$MaQuyen = $_GET['pq'];
 include '../../db/dbconnect.php';
 if(isset($_GET['idsp'])) {
     $idsp = $_GET['idsp'];
@@ -8,7 +7,7 @@ if(isset($_GET['idsp'])) {
     if($result)
     echo "<script>
     alert('Xóa Thành Công');
-    window.location = '../index.php?pq=".$MaQuyen."&id=sp'
+    window.location = '../index.php?id=sp'
     </script>";
     $conn->close();
     return;
@@ -16,7 +15,7 @@ if(isset($_GET['idsp'])) {
 else{
     echo "<script>
     alert('Xóa không Thành Công');
-    window.location = '../index.php?pq=".$MaQuyen."&id=sp'
+    window.location = '../index.php?id=sp'
     </script>";
     $conn->close();
         return;

@@ -10,6 +10,7 @@ function exit(){
 }
 
 function add(){
+
     let form = document.getElementById("form_dm");
     form.style.display = "block";
 

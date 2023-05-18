@@ -1,7 +1,6 @@
 <div id="nguoidung">
 
 <?php
-$MaQuyen = $_GET['pq'];
 include '../db/dbconnect.php';
 $listQuyen = [];
 $sql = "SELECT * FROM quyen";
@@ -24,7 +23,7 @@ if ($result->num_rows > 0) {
     <p class='text-center'>Bảng khách hàng</p></div>
     <div class='row m-2'>
         <div class='col mx-2 adminthem'>
-            <a href='editkh.php?pq=".$MaQuyen."' class='row'>
+            <a href='editkh.php?' class='row'>
                 <div class='col text-black'>Thêm Khách Hàng</div>
             </a>
         </div>
@@ -56,13 +55,13 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='editkh.php?pq=".$MaQuyen."hd=s&id=".$row['MaKhach']."' class='sua'>
+                echo"<a href='editkh.php?hd=s&id=".$row['MaKhach']."' class='sua'>
                         <div class='col'>
                             Sửa
                         </div>
                     </a>";
                 
-                echo"<a href='xuly/xulyXoaKH.php?pq=".$MaQuyen."&idnd=".$row['MaKhach']."&idtk=".$row['MaTaiKhoan']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['TenKhach']."  <3')\">
+                echo"<a href='xuly/xulyXoaKH.php?idnd=".$row['MaKhach']."&idtk=".$row['MaTaiKhoan']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['TenKhach']."  <3')\">
                 
                         <div class='col'>
                             Xóa
@@ -101,7 +100,7 @@ if ($result->num_rows > 0) {
     <p class='text-center'>Bảng nhân viên</p></div>
     <div class='row m-2'>
         <div class='col mx-2 adminthem'>
-            <a href='editnv.php?pq=".$MaQuyen."' class='row'>
+            <a href='editnv.php?' class='row'>
                 <div class='col text-black'>Thêm Nhân Viên</div>
             </a>
         </div>
@@ -133,12 +132,12 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='editnv.php?".$MaQuyen."hd=s&id=".$row['MaNhanVien']."' class='sua'>
+                echo"<a href='editnv.php?hd=s&id=".$row['MaNhanVien']."' class='sua'>
                         <div class='col'>
                             Sửa
                         </div>
                     </a>";
-                echo"<a href='xuly/xulyXoanv.php?pq=".$MaQuyen."&idnd=".$row['MaNhanVien']."&idtk=".$row['MaTaiKhoan']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['TenNhanVien']." <3')\">                
+                echo"<a href='xuly/xulyXoanv.php?&idnd=".$row['MaNhanVien']."&idtk=".$row['MaTaiKhoan']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['TenNhanVien']." <3')\">                
                         <div class='col'>
                             Xóa
                         </div>
