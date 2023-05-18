@@ -1,6 +1,3 @@
-<?php
-    $MaQuyen = $_GET['pq'];
-?>
 
 <script>
     $(document).ready(function(){

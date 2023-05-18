@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="../../../css/XuLyKhuyenMai.css" >
 <!-- ^KM_ -->
 <?php
-    $MaQuyen = $_GET['pq'];
     include("../../../../db/DAOKhuyenMai.php");
     $db = new DAOKhuyenMai();
     $db->connect();
@@ -37,7 +36,7 @@
                         }
                 ?>
                     <form method="POST" action="">
-                        <a href="../../../index.php?pq=<?php echo $MaQuyen?>&id=km"><div id="Back">X</div></a>
+                        <a href="../../../index.php?id=km"><div id="Back">X</div></a>
                         <h2>Thêm khuyến mãi</h2>
 
                         <label for="MaKM">Mã khuyến mãi: </label><br>
@@ -60,15 +59,15 @@
             case 'Delete':{
                 $_MaKM = $_GET['MaKM'];
                 if($db->hasSP($_MaKM) == false){
-                    echo "<script>alert('Còn sản phẩm đang áp dụng khuyến mãi này');window.location='../../../index.php?pq=".$MaQuyen."&id=km';</script>";
+                    echo "<script>alert('Còn sản phẩm đang áp dụng khuyến mãi này');window.location='../../../index.php?id=km';</script>";
                     return;
                 }
                 if($db->deleteKM($_MaKM) == true){
-                    echo "<script>alert('Đã xóa khuyến mãi ');window.location='../../../index.php?pq=".$MaQuyen."&id=km';</script>";
+                    echo "<script>alert('Đã xóa khuyến mãi ');window.location='../../../index.php?id=km';</script>";
                     return;
                 }
                 else{
-                    echo "<script>alert('Không xóa khuyến mãi này được');window.location='../../../index.php?pq=".$MaQuyen."&id=km';</script>";
+                    echo "<script>alert('Không xóa khuyến mãi này được');window.location='../../../index.php?id=km';</script>";
                     return;
                 }
                 
@@ -103,7 +102,7 @@
                         }
                 ?>
                     <form method="POST" action="">
-                        <a href="../../../index.php?pq=<?php echo $MaQuyen;?>&id=km"><div id="Back">X</div></a>
+                        <a href="../../../index.php?id=km"><div id="Back">X</div></a>
                         <h2>Sửa khuyến mãi</h2>
                         
                         <label for="MaKM">Mã khuyến mãi: </label><br>
@@ -151,7 +150,7 @@
             return;
         }
         if($db->insertKM($_MaKM,$_TenKM,$_MoTa,$_TiLeGiam) == true){
-            echo "<script>alert('Them thanh cong');window.location='../../../index.php?pq=".$MaQuyen."&id=km';</script>";
+            echo "<script>alert('Them thanh cong');window.location='../../../index.php?id=km';</script>";
         }
     }
 
@@ -168,7 +167,7 @@
         }
 
         if($db->updateKM($_MaKM,$_TenKM,$_MoTa,$_TiLeGiam) == true){
-            echo "<script>alert('Sua thanh cong');window.location='../../../index.php?pq=".$MaQuyen."&id=km';</script>";
+            echo "<script>alert('Sua thanh cong');window.location='../../../index.php?id=km';</script>";
         }
         else{
             echo "<script>alert('Sua that bai');</script>";

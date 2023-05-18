@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if (isset($_GET['pq']) && isset($_SESSION['MaTaiKhoan'])){
+    if (isset($_SESSION['MaQuyen']) && isset($_SESSION['MaTaiKhoan'])){
 
-        $MaQuyen = $_GET['pq'];
+        $MaQuyen = $_SESSION['MaQuyen'];
         include("../db/DAOPhanQuyen.php");
         $db = new DAOPhanQuyen();
         $db->connect();
@@ -41,7 +41,7 @@
                         }
                         for($i = $n-1; $i >= 0;$i--){
                     ?>
-                        <a href="index.php?pq=<?php echo $MaQuyen?>&id=<?php echo $PQ[$i]["MaChiTiet"]?>">
+                        <a href="index.php?id=<?php echo $PQ[$i]["MaChiTiet"]?>">
                             <li class="row LiMenu mx-0 text-center p-2 align-items-center border-secondary border-size-menu " style = "<?php if($id ==  $PQ[$i]["MaChiTiet"]){echo "background:  #6c757d";}?>">
                                 <div class="col-3 px-0 d-none d-lg-flex justify-content-center">
                                     <i class="fa fa-yin-yang"></i>
