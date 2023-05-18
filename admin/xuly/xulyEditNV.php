@@ -50,14 +50,14 @@ if (isset($_POST['hd'])) {
             if ($result) {
                 echo "<script>
                 alert('Sửa Thành Công');
-                window.location = '../editkh.php?id=$id&hd=$hd';
+                window.location = '../editnv.php?id=$id&hd=$hd';
                 </script>";
                 $conn->close();
                 return;
             } else {
                 echo "<script>
                 alert('Sửa không Thành Công');
-                 window.location = '../editkh.php';
+                 window.location = '../editnv.php';
                 </script>";
                 $conn->close();
                 return;
@@ -158,14 +158,14 @@ if (isset($_POST['hd'])) {
             if ($result) {
                 echo "<script>
                 alert('Thêm Thành Công');
-                window.location = '../editkh.php?id=$id&hd=$hd';
+                window.location = '../editnv.php?id=$id&hd=$hd';
                 </script>";
                 $conn->close();
                 return;
             } else {
                 echo "<script>
                 alert('Thêm không Thành Công');
-                 window.location = '../editkh.php';
+                 window.location = '../editnv.php';
                 </script>";
                 $conn->close();
                 return;

@@ -219,7 +219,7 @@
 
     </div>
     
-    <form action="./GioHang.php" method="post">
+    <!-- <form action="./GioHang.php" method="post">
     <input type="hidden" name="MaSP" value="<?php echo $data[0][0]?>">
     </form>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -287,5 +287,5 @@
         fetch_dataFS(pageFS);
     })
     
-</script>
+</script> -->
 
