@@ -48,14 +48,14 @@ if (isset($_POST['hd'])) {
             $result = mysqli_query($conn, $sql);
             if ($result) {
                 echo "<script>
-                alert('Thêm Thành Công');
+                alert('Sửa Thành Công');
                 window.location = '../editkh.php?id=$id&hd=$hd';
                 </script>";
                 $conn->close();
                 return;
             } else {
                 echo "<script>
-                alert('Thêm không Thành Công');
+                alert('Sửa không Thành Công');
                  window.location = '../editkh.php';
                 </script>";
                 $conn->close();
