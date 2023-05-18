@@ -13,9 +13,9 @@
                     Tổng số lượng đơn hàng đã bán: <?php echo $tongSPDaBan;?> sản phẩm
                 </div>
                 <div class="row">
-                    Biểu đồ doanh thu theo tháng(2023):
+                    Biểu đồ doanh thu theo quý của các năm :
                     <?php
-                        $sql = " SELECT MONTH(NgayDat) AS Thang, SUM(TongTien) AS TongDoanhThu FROM donhang WHERE YEAR(NgayDat) = 2023 AND TrangThai = 1 GROUP BY MONTH(NgayDat);";
+                        $sql = "SELECT YEAR(NgayDat) AS Nam ,QUARTER(NgayDat) AS Quy, SUM(TongTien) AS TongDoanhThu FROM donhang WHERE TrangThai = 1 GROUP BY YEAR(NgayDat),QUARTER(NgayDat);";
                         $data=[];
                                 $result = $conn->query($sql);
                                 while ($row = $result->fetch_assoc()) {
@@ -30,10 +30,10 @@
                                 google.charts.setOnLoadCallback(drawChart);
                                 function drawChart() {
                                 var data = google.visualization.arrayToDataTable([
-                                    ["Element", "Density", { role: "style" } ],
+                                    ["Element", "Total", { role: "style" } ],
                                     <?php 
                                     foreach ($data as $key)
-                                        echo "['".$key['Thang']."',".$key['TongDoanhThu'].",'#ccc'],";
+                                        echo "['Quý ".$key['Quy']." Năm ".$key['Nam']."',".$key['TongDoanhThu'].",'#ccc'],";
                                     ?>
                                 ]);
 
@@ -46,7 +46,7 @@
                                                 2]);
 
                                 var options = {
-                                    title: "Density of Precious Metals, in g/cm^3",
+                                    title: "Tổng tiền tính theo đơn vị vnđ",
                                     bar: {groupWidth: "95%"},
                                     legend: { position: "none" },
                                 };

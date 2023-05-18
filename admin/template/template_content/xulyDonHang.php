@@ -54,7 +54,6 @@
 <?php
                 }
             }
-            echo $HangThieu;
             echo '<script>alert("Xử lý đơn '.$MaDon.' thất bại '.$HangThieu.'");</script>';
             
         }
