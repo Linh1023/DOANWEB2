@@ -66,7 +66,7 @@
                         <div class="describe">Giày đá bóng đinh TF cập nhật thường xuyên</div>
                     </div>
                 </div>
-               
+               <!--
                 <div class="products">
                     <?php
                         function TinhTienGiam($TiLegiam, $data){
@@ -110,7 +110,7 @@
                         }
                     ?>
                 </div>
-                    
+                    -->
                     <div id="get_data_NT"></div>
                 <div class="viewall">
                     <a href="./DanhSach.php?MaDM=DM-1"><div class="viewall-content">Xem tất cả</div></a>
@@ -128,6 +128,7 @@
                         <div class="describe">Giày đá banh đinh SG/MG/FG cập nhật thường xuyên</div>
                     </div>
                 </div>
+                <!--
                 <div class="products">
                     <?php
                         $MaDM1 = "DM-2";
@@ -161,6 +162,8 @@
                         }
                     ?>
                 </div>
+                    -->
+                    <div id="get_data_TN"></div>
                 <div class="viewall">
                 <a href="./DanhSach.php?MaDM=DM-2"><div class="viewall-content">Xem tất cả</div></a>
                 </div>
@@ -175,6 +178,7 @@
                         <div class="describe">Giày đá banh đế bằng IC cập nhật thường xuyên</div>
                     </div>
                 </div>
+                <!--
                 <div class="products">
                     <?php
                         $MaDM1 = "DM-4";
@@ -209,21 +213,25 @@
                     <?php
                         }
                     ?>
-                </div>
-                </div>
+                </div>  
+                    -->
+                    <div id="get_data_FS"></div>
+            
+                    
                 <div class="viewall">
                 <a href="./DanhSach.php?MaDM=DM-4"><div class="viewall-content">Xem tất cả</div></a>
                 </div>
             </div>
-
+            </div>
 
     </div>
     
     <!-- <form action="./GioHang.php" method="post">
     <input type="hidden" name="MaSP" value="<?php echo $data[0][0]?>">
     </form>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     
+                    -->
+                    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script type="text/javascript">
     function fetch_data(page){
         $.ajax({
@@ -268,12 +276,12 @@
 </script>
 
 <script type="text/javascript">
-    function fetch_dataFS(pageFS){
+    function fetch_dataFS(pageTN){
         $.ajax({
-            url: "./template/paginationFulsan.php",
+            url: "./template/paginationFuslan.php",
             method: "POST",
             data: {
-                page: pageFS
+                page: pageTN
             },
             success: function(data){
                 $("#get_data_FS").html(data);
@@ -283,9 +291,9 @@
     fetch_dataFS();
 
     $(document).on("click", ".page-item-FS", function(){
-        var pageFS = $(this).attr("id");
-        fetch_dataFS(pageFS);
+        var pageTN = $(this).attr("id");
+        fetch_dataFS(pageTN);
     })
     
-</script> -->
+</script>
 

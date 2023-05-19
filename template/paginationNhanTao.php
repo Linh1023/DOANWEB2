@@ -11,7 +11,7 @@
         $page = 1;
     }
     $star_from = ($page -1)*$limit;
-    $query = mysqli_query($conn,"SELECT * FROM `sanpham` WHERE DanhMuc = 'Giày đinh sân cỏ nhân tạo' ORDER BY 'MaSP' ASC LIMIT $star_from, $limit ");
+    $query = mysqli_query($conn,"SELECT *,hang.Ten AS TenHang FROM sanpham,hang WHERE sanpham.MaHang = hang.MaHang AND MaDM = 'DM-1' ORDER BY 'MaSP' ASC LIMIT $star_from, $limit  ");
     $output .='
     <div class="products">
    ';
@@ -19,21 +19,23 @@ if(mysqli_num_rows($query) > 0){
     while($row = mysqli_fetch_array($query)){
         $output .='
         <div class="product">
-        <div class="product-image">
-            <div class="quickview-background">
-            </div>
-            <img src="./img/products/artificial_turf/xanh_cdec749c849644c9aa4d5923bdb65de6_large.webp" alt="">
-        </div>
-        <div class="product-info">
-            <div class="product-name">'.$row['Ten'].'
-            </div>
-            <div class="product-vendor">'.$row['MoTa'].'</div>
-            <div class="product-price">
-                <span class="price-new price">'.number_format($row['Gia'], 0, ",", ".").' đ</span>
-                <span class="price-old price">2.890.000 đ</span>
-            </div>
-        </div>
-        </div>
+                            <div class="product-image">
+                                <div class="quickview-background">
+                                </div>
+                                <img src="./img/products/' . $row['AnhChinh'] . '" alt="">
+                            </div>
+                            <div class="product-info">
+                                <div class="product-name">
+                                    <a href="./ChiTietSP.php?MaSP=' . $row['MaSP'] . '">' . $row[1] . '</a>
+                                </div>
+                                <div class="product-vendor">' . $row['TenHang'] . '</div>
+                                <div class="product-price">
+                                    <span class="price-new price">' .number_format($row['Gia'], 0, ",", "."). '</span>
+                                    <span class="price-old price">' . $row['Gia'] . '</span>
+                                </div>
+                            </div>
+                        </div>
+
         
         ';
     }
@@ -47,7 +49,7 @@ $output .= '
 ';
 
 //pagination
-$query = mysqli_query($conn,"SELECT * FROM `sanpham` WHERE DanhMuc = 'Giày đinh sân cỏ nhân tạo'");
+$query = mysqli_query($conn,"SELECT * FROM `sanpham` WHERE MaDM = 'DM-1'");
 $total_records = mysqli_num_rows($query);
 $total_page = ceil($total_records / $limit);
 $output .= '<ul class="pagination">';

@@ -63,7 +63,7 @@
                         ?></div>
                     </td>
                     <td><?php echo number_format($data[$i][4],0,',','.')."đ"?></td>
-                    <td><a href="./admin/template/template_content/ChiTietDonHang.php?CT=<?php echo $data[$i][0]?>&MaTK=<?php echo $data[$i][1]?>&Date=<?php echo $data[$i][2]?>&TT=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
+                    <td><a href="./admin/template/template_content/ChiTietDonHang.php?PQ=User&CT=<?php echo $data[$i][0]?>&MaTK=<?php echo $data[$i][1]?>&Date=<?php echo $data[$i][2]?>&TT=<?php echo $data[$i][4]?>"><div>Xem chi tiết đơn hàng</div></a></td>
             </tr>
 <?php
         }

@@ -53,7 +53,7 @@ if(isset($_POST['dangky'])){
         $sql2 = "INSERT INTO `khachhang`(`TenKhach`, `DiaChi`, `SDT`, `MaTaiKhoan`) VALUES ('$TenKhach','$DiaChi','$SDT','$mataikhoan[0]')";
         $result2= mysqli_query($conn, $sql2);
         echo '<script language="javascript">alert("Ban da dang ky thanh cong!"); window.location="index.php";</script>';
-        $_SESSION['MaTaiKhoan'] = $mataikhoan;
+        $_SESSION['MaTaiKhoan'] = $mataikhoan[0];
         die(); 
     }
 }
