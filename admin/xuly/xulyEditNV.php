@@ -31,7 +31,7 @@ if (isset($_POST['hd'])) {
             // Truy vấn danh sách tai khoan
             $mataikhoan=$_POST['idtk'];
             $sql = "UPDATE taikhoan  SET TenDN='" . $_POST['tendn'] . "',
-                                        MatKhau='" . $_POST['matkhau'] . "',
+                                        MatKhau='" . md5($_POST['matkhau']) . "',
                                         Email ='" . $_POST['email'] ."',
                                         Quyen ='". $_POST['quyen'] ."',
                                         TinhTrang ='". $_POST['tinhtrang'] ."'
@@ -136,7 +136,7 @@ if (isset($_POST['hd'])) {
             $sql = "INSERT INTO taikhoan (TenDN,MatKhau,Email ,Quyen ,TinhTrang ,MaTaiKhoan,NgayTao ,TrangThai)
             VALUES (
             '" . $_POST['tendn'] . "',
-            '" . $_POST['matkhau'] . "',
+            '" . md5($_POST['matkhau']). "',
             '" . $_POST['email'] . "',
             '" . $_POST['quyen'] . "',
             '" . $_POST['tinhtrang'] . "',
