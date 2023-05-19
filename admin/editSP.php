@@ -71,7 +71,7 @@
                             //Luu bảng khuyen mãi, hang va danh muc
                                 // Xuat danh sách hãng db ra mảng
                                 $listHang = [];
-                                $sql = "SELECT * FROM hang";
+                                $sql = "SELECT * FROM hang WHERE TrangThai = 1";
                                 $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
@@ -80,7 +80,7 @@
                                 }
                                 // Xuat danh sách danhmuc db ra mảng
                                 $listDanhMuc = [];
-                                $sql = "SELECT * FROM danhmuc";
+                                $sql = "SELECT * FROM danhmuc WHERE TrangThai = 1";
                                 $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {

@@ -62,7 +62,7 @@ class DAOSP{
     }
 
     public function getListDanhMuc($MaDM) {
-        $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang" ;
+        $sql = "SELECT *, hang.Ten as TenHang FROM sanpham,hang WHERE sanpham.TrangThai=1 AND MaDM = '".$MaDM."' AND sanpham.MaHang = hang.MaHang" ;
         $data=null;
         if($result = mysqli_query($this->conn,$sql)){
             while($row=mysqli_fetch_array($result)){
@@ -103,6 +103,18 @@ class DAOSP{
         }
         else
             return false;
+    }
+
+    public function checkSoLuongTonKho($MaSP) {
+        $sql = "SELECT * FROM sanpham WHERE SLTonKho = 0 AND TrangThai=1 AND MaSP = ".$MaSP;
+        $data=null;
+        if($result = mysqli_query($this->conn,$sql)){
+            while($row=mysqli_fetch_array($result)){
+                    $data[] = $row;
+            }
+            mysqli_free_result($result);
+        }
+        return $data;
     }
 }
 ?>

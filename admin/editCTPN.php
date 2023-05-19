@@ -42,9 +42,12 @@
                             //Luu bảng khuyen mãi, hang va danh muc
                                 // Xuat danh sách hãng db ra mảng
                                 if(!isset($_GET['CT'])) return;
-                                else  $Madon=$_GET['CT'];
+                                else  {
+                                        $Madon=$_GET['CT'];
+                                        $MaH = $_GET['Hang'];
+                                    }
                                 $listSP = [];
-                                $sql = "SELECT * FROM sanpham where TrangThai=1";
+                                $sql = "SELECT * FROM sanpham where TrangThai=1 AND MaHang = '".$MaH."'";
                                 $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
@@ -82,7 +85,7 @@
                                     <label class="row">
                                         <div class="col col-3">Đơn Giá: </div>
                                         <div class="col col-9">
-                                            <input class="w-100" required type="text" name='dongia' >
+                                            <input class="w-100"  type="text" name='dongia' value="">
                                         </div>
                                     </label>
                                 </div>

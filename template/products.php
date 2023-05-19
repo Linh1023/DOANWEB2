@@ -66,6 +66,7 @@
                         <div class="describe">Giày đá bóng đinh TF cập nhật thường xuyên</div>
                     </div>
                 </div>
+               
                 <div class="products">
                     <?php
                         function TinhTienGiam($TiLegiam, $data){
@@ -109,6 +110,8 @@
                         }
                     ?>
                 </div>
+                    
+                    <div id="get_data_NT"></div>
                 <div class="viewall">
                     <a href="./DanhSach.php?MaDM=DM-1"><div class="viewall-content">Xem tất cả</div></a>
                 </div>
@@ -216,7 +219,7 @@
 
     </div>
     
-    <form action="./GioHang.php" method="post">
+    <!-- <form action="./GioHang.php" method="post">
     <input type="hidden" name="MaSP" value="<?php echo $data[0][0]?>">
     </form>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -284,5 +287,5 @@
         fetch_dataFS(pageFS);
     })
     
-</script>
+</script> -->
 
