@@ -127,7 +127,7 @@ if (isset($_POST['hd'])) {
         case "Lưu":
             // Truy vấn danh sách sản phẩm
             $sql = "UPDATE sanpham   SET Ten='" . $_POST['ten'] . "',
-                                        MoTa=`" . $_POST['mota'] . "`,
+                                        MoTa='" . $_POST['mota'] . "',
                                         Gia=" . $_POST['gia'] . ",
                                         MaKhuyenMai='" . $_POST['khuyenmai'] . "' ,
                                         MaDM='" . $_POST['danhmuc'] . "' ,
@@ -198,7 +198,7 @@ if (isset($_POST['hd'])) {
             if (!$result){
                 echo "<script>
                 alert('Thêm không Thành Công');
-                window.location = '../index.php?id=sp'
+                // window.location = '../index.php?id=sp'
                 </script>";
                 $conn->close();
                 return;
@@ -206,7 +206,7 @@ if (isset($_POST['hd'])) {
             else{
                 echo "<script>
                 alert('Thêm Thành Công');
-                window.location = '../index.php?id=sp'
+                // window.location = '../index.php?id=sp'
                 </script>";
                 $conn->close();
                     return;

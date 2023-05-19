@@ -58,7 +58,7 @@ if ($result->num_rows > 0) {
                 else
                 echo"<a href='#' class='xoa' onclick=\"return confirm('Số lượng sản phẩm lớn hơn 0 nên không được phép xóa')\">";
                 echo "
-                        <div class='col'>8
+                        <div class='col'>
                             Xóa
                         </div>
                     </a>";

@@ -107,7 +107,7 @@
 
                 </div>
                 <div class="row">
-                    Sản phẩm phố biến nhất: <?php
+                    Sản phẩm bán chạy nhất: <?php
                     $SPPB='';
                     $max=0;
                     foreach ($data as $key){
