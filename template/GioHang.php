@@ -3,7 +3,6 @@
     $db = new DAOSP();
     $db->connect();
     
-    //unset($_SESSION['cart']);
     
     if(isset($_POST['update-click'])){
         foreach($_POST['quantity'] as $id => $quantity){

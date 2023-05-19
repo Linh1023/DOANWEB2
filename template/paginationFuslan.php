@@ -25,7 +25,7 @@ if(mysqli_num_rows($query) > 0){
                             </div>
                             <div class="product-info">
                                 <div class="product-name">
-                                    <a href="./ChiTietSP.php?MaSP=' . $row['MaSP'] . '">' . $row['Ten'] . '</a>
+                                    <a href="./ChiTietSP.php?MaSP=' . $row['MaSP'] . '">' . $row[1] . '</a>
                                 </div>
                                 <div class="product-vendor">' . $row['TenHang'] . '</div>
                                 <div class="product-price">
