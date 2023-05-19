@@ -71,12 +71,18 @@
         ?>
     </table>
 
-    <!-- <?php
-        // if(isset($_GET['PQ'])){
+    <?php
+        if(isset($_GET['PQ'])){
     ?>
-        <a href="../../../GioHang.php"><div id="back">Xác nhận</div></a>huhu
+        <a href="../../../GioHang.php"><div id="back">Xác nhận</div></a>
     <?php        
-        // }
-    ?> -->
+         }
+         else{
+    ?>
+            <a href="../../index.php?id=dh"><div id="back">Xác nhận</div></a>
+    <?php 
+
+         }
+    ?>
 
 </div>
