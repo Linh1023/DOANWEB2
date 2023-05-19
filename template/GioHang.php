@@ -5,7 +5,7 @@
     
     //unset($_SESSION['cart']);
     
-    if(isset($_POST['update-click'])){
+    if(isset($_POST['update-click'])){                           
         foreach($_POST['quantity'] as $id => $quantity){
             foreach($_SESSION['cart'] as $key => $value){
                 if($value['ID'] == $id){
@@ -151,6 +151,7 @@
                             foreach ($_SESSION['cart'] as $key => $value){
                                 $TongTien += $value['SL'] * $value['Price'];
                             }
+                            
                         }
                         echo number_format($TongTien,0,",",".") . "đ";
                     ?></label>
