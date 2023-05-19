@@ -53,9 +53,12 @@ if ($result->num_rows > 0) {
                         </div>
                     </a>";
                 
-                echo"<a href='xuly/xulyXoaSP.php?idsp=".$row['MaSP']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['Ten']." và thông tin liên quan tới nó vĩnh viễn hong <3')\">
-                
-                        <div class='col'>
+                if($row["SLTonKho"]==0)
+                echo"<a href='xuly/xulyXoaSP.php?idsp=".$row['MaSP']."' class='xoa' onclick=\"return confirm('Bạn có chắc chắn muốn xóa sản phẩm ".$row['Ten']."')\">";
+                else
+                echo"<a href='#' class='xoa' onclick=\"return confirm('Số lượng sản phẩm lớn hơn 0 nên không được phép xóa')\">";
+                echo "
+                        <div class='col'>8
                             Xóa
                         </div>
                     </a>";

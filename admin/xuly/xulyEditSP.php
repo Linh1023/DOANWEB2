@@ -127,7 +127,7 @@ if (isset($_POST['hd'])) {
         case "Lưu":
             // Truy vấn danh sách sản phẩm
             $sql = "UPDATE sanpham   SET Ten='" . $_POST['ten'] . "',
-                                        MoTa='" . $_POST['mota'] . "',
+                                        MoTa=`" . $_POST['mota'] . "`,
                                         Gia=" . $_POST['gia'] . ",
                                         MaKhuyenMai='" . $_POST['khuyenmai'] . "' ,
                                         MaDM='" . $_POST['danhmuc'] . "' ,
