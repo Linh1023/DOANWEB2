@@ -5,7 +5,7 @@
     
     //unset($_SESSION['cart']);
     
-    if(isset($_POST['update-click'])){
+    if(isset($_POST['update-click'])){                   //
         foreach($_POST['quantity'] as $id => $quantity){
             foreach($_SESSION['cart'] as $key => $value){
                 if($value['ID'] == $id){
@@ -59,7 +59,8 @@
                     "Price" => TinhTienGiam($TiLegiam,$data),
                     "Img" => $data[0][4],
                     "Size" => $Size,
-                    "SL" => "1"
+                    "SL" => "1",
+                    "SLTonKho" => $data[0][9]
                 );
     
                 $_SESSION['cart'][] = $session_array;
@@ -72,7 +73,8 @@
                 "Price" => TinhTienGiam($TiLegiam,$data),
                 "Img" => $data[0][4],
                 "Size" => $Size,
-                "SL" => "1"
+                "SL" => "1",
+                "SLTonKho" => $data[0][9]
             );
 
             $_SESSION['cart'][] = $session_array;
@@ -113,8 +115,8 @@
                                 <td>
                                     <?php echo number_format($value['Price'],0,",",".")."đ"?>
                                 </td>
-                                <td>
-                                    <input type = "number" value="<?php echo $value['SL']?>" min = "1" class = "sl" name="quantity[<?=$value['ID']?>]">
+                                <td style="padding: 20px 5px;">
+                                    <input type = "number" value="<?php echo $value['SL']?>" min = "1" max = "<?php echo $value['SLTonKho']?>" class = "sl" name="quantity[<?=$value['ID']?>]">
                                 </td>
                                 <td>
                                 <?php echo number_format($value['Price'] * $value['SL'],0,",",".")."đ"?>
