@@ -127,18 +127,19 @@ if (isset($_POST['hd'])) {
         case "Lưu":
             // Truy vấn danh sách sản phẩm
             $sql = "UPDATE sanpham   SET Ten='" . $_POST['ten'] . "',
-                                        MoTa='" . $_POST['mota'] . "',
+                                        MoTa=" . $_POST['mota'] . ",
                                         Gia=" . $_POST['gia'] . ",
                                         MaKhuyenMai='" . $_POST['khuyenmai'] . "' ,
                                         MaDM='" . $_POST['danhmuc'] . "' ,
                                         AnhChinh='" . $anhchinh . "',
                                         MaHang='" . $_POST['hang'] . "'
-                                        WHERE maSP='" . $_POST['id'] . "'";
+                                        WHERE MaSP='" . $_POST['id'] . "'";
             $result = mysqli_query($conn, $sql);
+            echo $sql;
             if($result){
                 echo "<script>
                 alert('Sửa Thành Công');
-                window.location = '../index.php?id=sp'
+                // window.location = '../index.php?id=sp'
                 </script>";
                 $conn->close();
                 return;
@@ -146,7 +147,7 @@ if (isset($_POST['hd'])) {
             else{
                 echo "<script>
                 alert('Sửa Thành Công');
-                window.location = '../index.php?id=sp'
+                // window.location = '../index.php?id=sp'
                 </script>";
                 $conn->close();
                 return;
@@ -183,7 +184,7 @@ if (isset($_POST['hd'])) {
             }
 
             // Thêm vào db
-            $sql = "INSERT INTO sanpham (MaSP, Ten, MoTa, Gia, MaKhuyenMai, MaDM, AnhChinh,MaHang,NgayTao,TrangThai)
+            $sql = "INSERT INTO `sanpham` (`MaSP`, `Ten`, `MoTa`, `Gia`, `MaKhuyenMai`, `MaDM`, `AnhChinh`,`MaHang`,`NgayTao`,`TrangThai`)
             VALUES ('" . $id . "',
             '" . $_POST['ten'] . "',
             '" . $_POST['mota'] . "',

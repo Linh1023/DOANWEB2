@@ -200,6 +200,7 @@
 #MoTa #content {
     border: 2px solid gray;
     padding: 20px;
+    max-width: 700px;
 }
 #danhsach{
     width: 30%;

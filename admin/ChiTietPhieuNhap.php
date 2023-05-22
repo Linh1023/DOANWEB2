@@ -57,7 +57,7 @@
 
                             ?>
 
-                            <div id="ctdh" class="container">
+                            <div id="ctdh" >
                                 <h2>Chi Tiết Phiếu Nhập</h2>
                                 <div class="row mx-5">
                                     <div class="col col-6">

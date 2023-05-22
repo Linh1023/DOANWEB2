@@ -3,8 +3,8 @@
     margin: 100px auto;
     border: 2px solid black;
     border-radius: 10px;
-    width: 900px;
-
+    width: 100%;
+    max-width: 900px;
 }
 
 #ctdh h2 {
