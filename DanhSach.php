@@ -39,7 +39,7 @@
                 if(isset($_GET['Find'])){
             ?>
                  <div id="NoiDungTim">
-                    <p>Bạn vừa tìm : <?php echo $_GET['Find'] ;?></p>
+                    <p>Bạn vừa tìm kiếm: <?php echo $_GET['Find'] ;?></p>
                 </div>
             <?php
                 }
